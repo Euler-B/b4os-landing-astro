@@ -41,7 +41,7 @@
             rgba(0, 0, 0, 0.6) 70%,         /* Oscuro medio */
             rgba(0, 0, 0, 0.8) 100%         /* Oscuro total derecha */
         ),
-        url('/images/team-working-4.jpg') no-repeat center center;
+        url('/images/team-working-4.webp') no-repeat center center;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -112,7 +112,7 @@
                 rgba(0, 0, 0, 0.3) 70%,
                 transparent 100%
             ),
-            url('/images/team-working-4.jpg') no-repeat center center;
+            url('/images/team-working-4.webp') no-repeat center center;
         background-size: cover;
         background-position: center left; /* CAMBIO: En móvil, imagen a la izquierda */
     }
