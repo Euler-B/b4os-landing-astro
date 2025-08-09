@@ -16,12 +16,6 @@ This is the official landing page for **B4OS (Bitcoin 4 Open Source)**, a free t
 
 Perfect for landing pages like B4OS where performance and SEO are critical.
 
-## Astro Starter Kit: Minimal
-
-```sh
-npm create astro@latest -- --template minimal
-```
-
 ## 🏗️ Project Structure
 
 ```text
@@ -33,7 +27,9 @@ npm create astro@latest -- --template minimal
 │   ├── layouts/          # Page layouts (Layout.astro)
 │   ├── pages/            # Routes (index.astro, terminos.astro)
 │   └── styles/           # CSS modules (global.css, nav.css, etc.)
+├── netlify/               # Netlify functions (if any)
 ├── reports/               # Lighthouse audit reports (auto-generated)
+├── netlify.toml           # Netlify configuration
 └── package.json
 ```
 
@@ -50,50 +46,21 @@ npm create astro@latest -- --template minimal
 
 ## 📊 Lighthouse Performance Commands
 
-### Basic Lighthouse Commands
+### Local Development
 
-| Command | Action | Usage |
-|---------|--------|-------|
-| `npm install -g lighthouse` | Install Lighthouse globally | One-time setup |
-| `lighthouse http://localhost:4321` | Basic audit | Simple performance check |
-| `npm run check:server` | Verify server is running | Checks if `localhost:4321` is accessible |
+| Command | Description |
+|---------|-------------|
+| `npm run lighthouse:mobile` | Mobile performance audit with HTML report |
+| `npm run lighthouse:desktop` | Desktop performance audit |
+| `npm run lighthouse:both` | Run both mobile & desktop audits |
+| `npm run lighthouse:ci` | Full CI/CD pipeline (build + preview + audit) |
+| `npm run check:server` | Verify server is running at `localhost:4321` |
 
-### Advanced Lighthouse Scripts
-
-| Command | Description | What it does |
-|---------|-------------|--------------|
-| `npm run lighthouse:mobile` | **Mobile performance audit** | Tests with mobile throttling, saves HTML report to `./reports/lighthouse-mobile.html`, auto-opens results |
-| `npm run lighthouse:desktop` | **Desktop performance audit** | Tests with desktop preset (faster CPU/network), saves to `./reports/lighthouse-desktop.html` |
-| `npm run lighthouse:both` | **Run both mobile & desktop** | Sequential execution of mobile then desktop audits |
-| `npm run lighthouse:ci` | **Full CI/CD pipeline audit** | Builds project → starts preview server → runs both audits → closes server |
-| `npm run lighthouse:quiet` | **Silent desktop audit** | Desktop audit with minimal console output, useful for scripts |
-
-### Command Breakdown
-
-**`lighthouse:mobile`** - Mobile-first audit with realistic conditions:
-```bash
-lighthouse http://localhost:4321 \
-  --output=html \                                    # HTML report format
-  --output-path=./reports/lighthouse-mobile.html \   # Save location
-  --view \                                          # Auto-open in browser
-  --chrome-flags="--headless=new --no-sandbox --disable-gpu" \  # Chrome optimizations
-  --throttling-method=provided                      # Use Lighthouse's throttling
-```
-
-**`lighthouse:desktop`** - Desktop performance testing:
-```bash
-lighthouse http://localhost:4321 \
-  --preset=desktop \                                # Desktop-optimized settings
-  --output=html \                                   # HTML report
-  --output-path=./reports/lighthouse-desktop.html   # Save location
-```
-
-**`lighthouse:ci`** - Complete automated workflow:
-1. `npm run build` - Build production version
-2. `npm run preview &` - Start preview server in background
-3. `sleep 8` - Wait for server to be ready
-4. `npm run lighthouse:both` - Run both audits
-5. `pkill -f 'astro preview'` - Clean up preview server
+### Netlify Integration
+Lighthouse runs automatically on each deploy via Netlify's Lighthouse plugin (managed in UI).
+- View scores directly in deploy details
+- Reports embedded in Netlify UI 
+- No additional configuration needed
 
 ### Performance Targets
 - **Performance**: 95+ score target
@@ -111,9 +78,6 @@ npm run lighthouse:mobile
 
 # Full audit for production
 npm run lighthouse:ci
-
-# Silent audit for automated checks
-npm run lighthouse:quiet
 ```
 
 ## 🎨 Key Features
@@ -127,13 +91,17 @@ npm run lighthouse:quiet
 
 ## 🌐 Deployment
 
-The site generates static files perfect for any hosting service:
+### Netlify (Recommended)
+- **Auto-deploy**: Connected to main branch
+- **Lighthouse integration**: Automatic performance audits
+- **Headers optimization**: Security and caching configured
+- **Forms handling**: Contact form processing
 
+### Manual Deploy
 ```bash
 npm run build              # Creates ./dist/ folder
+# Upload ./dist/ folder to any static hosting
 ```
-
-Deploy the `./dist/` folder to Netlify, Vercel, GitHub Pages, or any static host.
 
 ## 📈 Performance Monitoring Workflow
 
