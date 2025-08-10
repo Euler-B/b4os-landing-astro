@@ -242,11 +242,120 @@
         "help": "Conte-nos através de quem nos conheceu ou por qual meio chegou até nós"
       },
       "terms": {
-        "label": "Aceito os termos e condições do programa",
+        "label": "Aceito os {link} do programa",
         "help": "Você deve aceitar os termos para continuar",
         "link_text": "termos e condições"
       },
       "submit": "Enviar aplicação para B4OS 2025"
+    }
+  },
+  "benefits": {
+    "title": "Benefícios do Programa B4OS",
+    "subtitle": "Descubra tudo o que você obtém ao participar do <strong>programa mais completo de formação Bitcoin</strong>",
+    "cards": {
+      "1": {
+        "icon": "heroicons:book-open",
+        "title": "Treinamento em Open Source e Bitcoin",
+        "description": "Acesso a <strong>conteúdo exclusivo</strong> e acesso a capacitação técnica de primeiro nível em Bitcoin Core e tecnologias FOSS."
+      },
+      "2": {
+        "icon": "heroicons:wrench-screwdriver",
+        "title": "Portfólio Internacional Sólido",
+        "description": "Oportunidade de <strong>construir um portfólio e um currículo</strong> com contribuições reais para projetos de código aberto."
+      },
+      "3": {
+        "icon": "heroicons:chat-bubble-left-right",
+        "title": "Rede de Contatos",
+        "description": "Conecte-se com uma comunidade global de desenvolvedores, empresários e especialistas do <strong>ecossistema Bitcoin</strong> em todo o mundo."
+      },
+      "4": {
+        "icon": "mdi:human-capacity-increase",
+        "title": "Mentoria de Especialistas",
+        "description": "Aprendizagem e orientação de <strong>líderes respeitados</strong> no ecossistema Bitcoin."
+      },
+      "5": {
+        "icon": "heroicons:computer-desktop",
+        "title": "Residências Hackers",
+        "description": "Residências presenciais para developers com especialistas no ecossistema Bitcoin para desenvolver todo o seu potencial."
+      },
+      "6": {
+        "icon": "mdi:bitcoin",
+        "title": "Microbolsas",
+        "description": "Possibilidade de obter apoio financeiro para dedicar-se part-time ao desenvolvimento FOSS."
+      },
+      "7": {
+        "icon": "mdi:school",
+        "title": "Formação em idiomas e programação",
+        "description": "Aulas de inglês e de desenvolvimento de software para bolsistas."
+      },
+      "8": {
+        "icon": "mdi:calendar-clock",
+        "title": "Full-time jobs",
+        "description": "Trabalhos em tempo integral, através de grants para se dedicar ao Bitcoin Open Source."
+      },
+      "9": {
+        "icon": "mdi:earth",
+        "title": "Conferências internacionais",
+        "description": "Bolsas para aceder a conferências internacionais sobre Bitcoin e tecnologias do ecossistema."
+      }
+    }
+  },
+  "faq": {
+    "title": "Perguntas Frequentes",
+    "subtitle": "Conheça as <strong>perguntas frequentes</strong> sobre o programa B4OS 2025",
+    "questions": {
+      "1": {
+        "question": "O B4OS é realmente gratuito? Existem custos ocultos?",
+        "answer": "<strong>Sim, o B4OS é 100% gratuito.</strong> Não há taxas de inscrição, materiais pagos nem custos ocultos de nenhum tipo. O programa é financiado pela Biblioteca de Satoshi para tornar a educação Bitcoin de qualidade profissional acessível a desenvolvedores de língua portuguesa."
+      },
+      "2": {
+        "question": "Todo o código desenvolvido é de código aberto?",
+        "answer": "<strong>Absolutamente.</strong> Todo o código desenvolvido como parte do programa B4OS é de código aberto e segue os princípios FOSS. Os participantes contribuem para projetos reais de código aberto no ecossistema Bitcoin, incluindo Bitcoin Core e Lightning Network."
+      },
+      "3": {
+        "question": "Quais tecnologias Bitcoin são ensinadas?",
+        "answer": "<strong>O B4OS concentra-se no desenvolvimento de Bitcoin Core e Lightning Network.</strong> Você aprenderá C++, arquitetura P2P, validação de transações, canais de pagamento, e contribuirá para projetos reais. Não cobrimos outras criptomoedas - apenas Bitcoin e seu ecossistema."
+      },
+      "4": {
+        "question": "Preciso de experiência prévia programando Bitcoin?",
+        "answer": "<strong>Você não precisa de experiência em Bitcoin, mas sim conhecimentos básicos de programação.</strong> Deve ter experiência com pelo menos uma linguagem (Python, C++, JavaScript), Git, e linha de comando. Ensinaremos tudo o que é específico do Bitcoin do zero."
+      },
+      "5": {
+        "question": "Quanto tempo devo dedicar ao programa semanalmente?",
+        "answer": "<strong>Recomendamos 8-10 horas semanais</strong> durante as 24 semanas do programa. Isso inclui 3 horas de seminários socráticos semanais, 2-3 horas de leitura preparatória, e 3-4 horas de prática de código e projetos."
+      },
+      "6": {
+        "question": "Posso escolher meu caminho de aprendizagem?",
+        "answer": "<strong>Sim, após as primeiras 8 semanas</strong> você pode se especializar escolhendo entre: Desenvolvimento de Protocolo Bitcoin Core, Desenvolvimento de Lightning Network, ou Desenvolvimento de Aplicações. Seu mentor ajudará você a escolher de acordo com seus interesses profissionais."
+      },
+      "7": {
+        "question": "Como funcionam os seminários socráticos?",
+        "answer": "<strong>São sessões interativas de 3 horas</strong> onde exploramos conceitos Bitcoin através de perguntas e discussão em grupo. Não são aulas magistrais - incluem preparação prévia, discussão aberta, código ao vivo e aplicação prática imediata."
+      },
+      "8": {
+        "question": "Existem gravações das sessões disponíveis?",
+        "answer": "<strong>Não gravamos os seminários</strong> para manter um ambiente seguro e privado de aprendizagem. Em vez disso, fornecemos resumos detalhados pós-sessão, materiais de estudo complementares e sessões de recuperação para casos especiais."
+      },
+      "9": {
+        "question": "Quais ferramentas técnicas preciso instalar?",
+        "answer": "<strong>Configuraremos as ferramentas juntos na primeira semana:</strong> Git, Bitcoin Core, editor de código (VS Code/CLion), compiladores GCC/Clang, e Python 3.8+. Requisitos mínimos: 8GB RAM, 500GB de armazenamento disponível."
+      },
+      "10": {
+        "question": "Quais resultados posso esperar ao finalizar?",
+        "answer": "<strong>Conquistas tangíveis e verificáveis:</strong> Mínimo de 3 contribuições aceitas no Bitcoin Core ou Lightning Network, um projeto pessoal funcional, conexões diretas com desenvolvedores Bitcoin seniores, e certificado verificável com suas contribuições específicas."
+      },
+      "11": {
+        "question": "Como o B4OS me conecta com oportunidades de trabalho?",
+        "answer": "<strong>Parcerias diretas com empresas Bitcoin:</strong> Entrevistas garantidas para os 20% melhores graduados, quadro de empregos exclusivo para alunos, referências pessoais de mentores, e eventos de networking com recrutadores Bitcoin."
+      },
+      "12": {
+        "question": "Existem restrições geográficas ou de idade?",
+        "answer": "<strong>Não há restrições geográficas.</strong> B4OS está aberto para desenvolvedores de qualquer país que falem espanhol. Idade mínima: 18 anos. Os horários são coordenados considerando a diversidade de fusos horários dos participantes."
+      },
+      "13": {
+        "question": "Onde posso enviar comentários ou reportar problemas?",
+        "answer": "<strong>Múltiplos canais disponíveis:</strong> Email principal <a href=\"mailto:hola@b4os.dev\">hola@b4os.dev</a>, comunidade Discord para chat direto, GitHub Issues para relatórios técnicos, e sessões de feedback regulares durante o programa."
+      }
     }
   },
   "partnerships": {
@@ -267,6 +376,123 @@
     "partner_descriptions": {
       "bitcoin_argentina": "Organização referência de Bitcoin na Argentina.",
       "chaincode": "Laboratório de P&D focado em Bitcoin Core e Lightning."
+    }
+  },
+  "terms": {
+    "page_title": "Termos e Condições - B4OS | Bitcoin 4 Open Source",
+    "page_description": "Termos e condições do programa B4OS 2025. Informações sobre seleção de participantes, uso de dados, propriedade intelectual e políticas do programa.",
+    "nav": {
+      "logo_alt": "B4OS - Bitcoin 4 Open Source Logo",
+      "back_home_aria": "Voltar ao início do B4OS",
+      "close_btn": "✕ Fechar"
+    },
+    "header": {
+      "title": "B4OS 2025/26 - O que você precisa saber",
+      "intro_1": "<strong>Olá, developer!</strong> Antes de se juntar a esta aventura, queremos que você saiba exatamente o que esperar do programa <strong>B4OS</strong>.",
+      "intro_2": "Sem letras miúdas confusas - aqui está tudo claro e direto."
+    },
+    "sections": {
+      "about": {
+        "title": "Do que se trata",
+        "content_1": "B4OS é um programa projetado para devs com experiência que querem contribuir para o ecossistema de <strong>Bitcoin, Lightning e Nostr</strong>.",
+        "content_2": "Se você se inscrever, significa que concorda com tudo o que vem a seguir."
+      },
+      "eligibility": {
+        "title": "Posso participar?",
+        "process": {
+          "title": "O processo:",
+          "content": "Avaliamos sua aplicação, suas habilidades nos code challenges e alguns critérios internos. <strong>Simples.</strong>"
+        },
+        "target": {
+          "title": "Para quem é?",
+          "content_1": "Buscamos developers seniores ou com experiência suficiente para fazer contribuições reais a projetos open source.",
+          "content_2": "Reservamo-nos o direito de decidir quem entra (nada pessoal, só queremos o melhor ajuste para todos)."
+        }
+      },
+      "how_it_works": {
+        "title": "Como funciona o programa",
+        "phase1": {
+          "title": "Fase 1: Code Challenges",
+          "items": [
+            "Período definido por nós",
+            "Exercícios de código para mostrar suas habilidades",
+            "Tudo assíncrono no GitHub Classroom",
+            "Comunicação pelo Discord"
+          ]
+        },
+        "phase2": {
+          "title": "Fase 2: Portfólio + Contribuições FOSS",
+          "intro": "<strong>Se você passar nos challenges, entra na fase boa:</strong>",
+          "items": [
+            "<strong>Contribui ativamente</strong> para projetos open source (Bitcoin Core, Lightning Network, ou Nostr)",
+            "<strong>Participa em sessões em grupo</strong> e conversas com convidados",
+            "<strong>Comunica-te regularmente</strong> com mentores e a equipe"
+          ]
+        },
+        "tools": {
+          "title": "As ferramentas que usaremos",
+          "items": [
+            "<strong>Discord:</strong> Para tudo - suporte, comunidade, dúvidas",
+            "<strong>GitHub Classroom:</strong> Para entregar e revisar código",
+            "<strong>Plataforma LMS:</strong> Para materiais e recursos"
+          ]
+        }
+      },
+      "intellectual_property": {
+        "title": "Sobre o código e a propriedade intelectual",
+        "your_code": {
+          "title": "Seu código:",
+          "content": "Tudo o que contribuíres para projetos FOSS segue as licenças desses projetos. É teu, nós não reclamamos nada."
+        },
+        "our_content": {
+          "title": "Nosso conteúdo:",
+          "content": "Os materiais educativos que te fornecemos estão sob licenças Open Source, a menos que te digamos o contrário. Usa-os para aprender durante o programa. Por favor, não publiques os code challenges nem os resultados, estes desafios custam muito trabalho e pedimos que não os compartilhes, por favor."
+        }
+      },
+      "conduct": {
+        "title": "Código de conduta (aka \"não sejas tóxico\")",
+        "content": "Mantém-te <strong>profissional e respeitoso</strong> no Discord, sessões online e eventos. <strong>Zero tolerância</strong> com assédio, discriminação ou comportamentos tóxicos."
+      },
+      "scholarships": {
+        "title": "Sobre bolsas e a residência presencial",
+        "expectations": {
+          "title": "Expectativas realistas:",
+          "content": "O programa não garante bolsas nem convite para a residência. Isso depende de como te desempenhares durante o programa."
+        },
+        "criteria": "Trabalhamos com critérios claros que te comunicaremos."
+      },
+      "data": {
+        "title": "Teus dados",
+        "content_1": "Precisamos dos teus dados para gerir o programa. Tratamo-los de acordo com nossas políticas de privacidade e a lei.",
+        "content_2": "Nunca os compartilhamos com terceiros sem a tua permissão."
+      },
+      "communications": {
+        "title": "Comunicações",
+        "content_1": "Ao te juntares, aceitas receber atualizações do programa e do ecossistema B4OS - convites para eventos, novos programas, notícias relevantes.",
+        "content_2": "Podes cancelar isto quando quiseres."
+      },
+      "changes": {
+        "title": "Mudanças nestes termos",
+        "content_1": "Podemos atualizar estes termos quando necessário. As alterações são publicadas no site do programa.",
+        "content_2": "É sua responsabilidade manter-se atualizado."
+      },
+      "contact": {
+        "title": "Dúvidas?",
+        "content": "Escreva-nos para <a href=\"mailto:hola@libreriadesatoshi.com\">hola@libreriadesatoshi.com</a>"
+      },
+      "tldr": {
+        "content": "<em>TL;DR: É um programa sério para devs sérios que querem contribuir para o ecossistema Bitcoin/Lightning/Nostr. Seja profissional, contribua com código, aprenda muito. Sem garantias de bolsas, mas com muito potencial de crescimento. ✨</em>"
+      }
+    },
+    "footer": {
+      "last_updated": "Última atualização:",
+      "date": "Agosto 2025",
+      "close_btn": "Fechar",
+      "register_btn": "Ir para o registro",
+      "copyright": "&copy; 2025 <strong>B4OS (Bitcoin 4 Open Source)</strong>. Feito com <span class=\"heart\" aria-label=\"amor\">❤️</span> para a comunidade Bitcoin",
+      "legal_links": {
+        "terms": "Termos de uso"
+      }
     }
   },
   "footer": {

@@ -162,10 +162,67 @@ checksums:
     registration/form/how_heard/label: d69d324c9005a19980e6cb02b03c2bc5
     registration/form/how_heard/placeholder: 8d56132fd38786e73143f84b536a770d
     registration/form/how_heard/help: 7cc7ace2e4d238db7d4d829b4abdd808
-    registration/form/terms/label: 07875722b66d05a5f2b2bed917235a6b
+    registration/form/terms/label: 97b8cabca25fb92b63f40b194af2db88
     registration/form/terms/help: cd2c58a137a3e88e874361f169a37055
     registration/form/terms/link_text: cc2cc10744634ecf4496c25a7abefb06
     registration/form/submit: 651d82ce59130a6a35ebe01477cd74b7
+    benefits/title: 69654c89b9ae675f51ea24b2c9436630
+    benefits/subtitle: d93ff44d0521b34f75baad0b68de2f96
+    benefits/cards/1/icon: 27bf3b5690ae43df216547bad109bfed
+    benefits/cards/1/title: 847cfdbbc3e4a0d11fe79faad1fdcdfa
+    benefits/cards/1/description: e9aaba304aeabde4ccd02abcdb3eaf73
+    benefits/cards/2/icon: cab1297a14f6b987754e34f4ce8eb684
+    benefits/cards/2/title: bf8ae14c43f2ad98e871fef409237f61
+    benefits/cards/2/description: 83719f7f14f4cdad395356662a74f8e2
+    benefits/cards/3/icon: 64a58058427862ae17ab98f84bfccdbd
+    benefits/cards/3/title: 3c7f92e6b74ca7ba461d349c72dd641c
+    benefits/cards/3/description: 12692e5ea9d49f118049d823b9dcf23d
+    benefits/cards/4/icon: f725cd87f10089a175c4a60b141d22c2
+    benefits/cards/4/title: 04d45e1a19b3e2cbb16ed9d9ad9ccafe
+    benefits/cards/4/description: dffa337e7dd8d7d121c95f1afa0a1ca4
+    benefits/cards/5/icon: 3bc1c17ed543a1de3934d9bad566c0ea
+    benefits/cards/5/title: 5fef9eed862d73af715357d06d512307
+    benefits/cards/5/description: 6cf1ccff5886b772f53c65cb663401d3
+    benefits/cards/6/icon: 1823d8315e3eb843cc4dc51835c2bfa9
+    benefits/cards/6/title: 9eacc8bfcfc94d696bb0d6a671b60122
+    benefits/cards/6/description: 35a54f668179eb582994a1d29c5b031c
+    benefits/cards/7/icon: 4832e87e795b14db09341ece374943d2
+    benefits/cards/7/title: 060075687be7151c584b2a3ff37351cf
+    benefits/cards/7/description: b7557315f7db9797abbc5816512edfa0
+    benefits/cards/8/icon: d770da332c2057341738d1933c1a920e
+    benefits/cards/8/title: 8f3b6d87bf73d3eb6e22ffc235f5cbdc
+    benefits/cards/8/description: 10b07c9b5763dd821f0dae77b5cb64f2
+    benefits/cards/9/icon: 86ef07f9140c8afdfa9e2af84fdabf34
+    benefits/cards/9/title: aa146ba14ccba4b5380ec816de0af957
+    benefits/cards/9/description: 9462e1a5ceb18669a0caf24004117e7a
+    faq/title: e2ad2ff9fa4a2ee13f5464f67b708778
+    faq/subtitle: c314076ce6e7da1868116c112093d124
+    faq/questions/1/question: df5dad7521ee65780d1086c27cd21c2e
+    faq/questions/1/answer: 284bb148fa565bcca14ef9fcc0efd47a
+    faq/questions/2/question: 955d89392ebd97bca2827c1a3a5e6a20
+    faq/questions/2/answer: 245127212941d5cf32714aa4a482196b
+    faq/questions/3/question: f62c7c523f9181d17f962f2d02ff531e
+    faq/questions/3/answer: 50a5c8f7512c6b854cb03b1adc2413f5
+    faq/questions/4/question: 0a4bcddb26e2cd5cbd77f28c9273f2b2
+    faq/questions/4/answer: 814ac0c6286a886694cad2e69e8525f6
+    faq/questions/5/question: 3a973c5130f83c2af3feeef529fa8bff
+    faq/questions/5/answer: 822422b275d6a635aac60d938b93ab59
+    faq/questions/6/question: b232316b05d1098f148c51c2cc9c0024
+    faq/questions/6/answer: baeb5d398b036f5f2a50a6395d426824
+    faq/questions/7/question: 8686a52fe7d4bf15ae75a72110b2b694
+    faq/questions/7/answer: 3611c52d475682235f2c25fba27a5eeb
+    faq/questions/8/question: 3610d067a0bef57470a5319987105c51
+    faq/questions/8/answer: b5a14390d09634289ed8a812a11da4e3
+    faq/questions/9/question: 68dc6901103d24739214a2a0c28c3dbe
+    faq/questions/9/answer: 9f152ef6e65497c28c791c2acbf669e0
+    faq/questions/10/question: dbecf496bca85676a1b78fd365ec077a
+    faq/questions/10/answer: 1f068a282cd0cd7e9d15dd7b89965f6f
+    faq/questions/11/question: 7046e5930542a5700a697a8de4ad2d7c
+    faq/questions/11/answer: 7282d3ee79a910ef5910dd7316623fbf
+    faq/questions/12/question: 046e0faa52c3665d19b3be36a6fc8c43
+    faq/questions/12/answer: b97e3eef03af7caf208503fc2e094c2a
+    faq/questions/13/question: c0784a4dc31b9c50344e6478fd485149
+    faq/questions/13/answer: fe9cf5a85fff94c3510b50a5b1b2080e
     partnerships/title: a63917828ffc6b3be5ebdc4b66cb5dcb
     partnerships/subtitle: 6a15c8e75506cc52bed44a5a25e10434
     partnerships/main_sponsor/text: 105a02523665c94f0aa781e25ed28817
@@ -174,6 +231,67 @@ checksums:
     partnerships/communities/title: f977ba571f8e87fa28f6bf90c465b2b1
     partnerships/partner_descriptions/bitcoin_argentina: f87f663aa6888de735f9378ffa5a15f5
     partnerships/partner_descriptions/chaincode: a8a56e85a7249a72eab8ad46ce7d1f4a
+    terms/page_title: 4808b7f51ec0965fe366d804f9f5ab8c
+    terms/page_description: 61f6b4af64fb28f9da8b92d52a5d81ea
+    terms/nav/logo_alt: e632f62da421be89d63f013eff260f59
+    terms/nav/back_home_aria: 4a412d1ab6aaf6ca34ecf0664129e368
+    terms/nav/close_btn: 349e0d61f4dd47e93b505a133bb21d9a
+    terms/header/title: 177c4dd0cbe54dbc4004ca125430774a
+    terms/header/intro_1: 7052b87f4c119a0316e6d9f33d18bf20
+    terms/header/intro_2: b65a7367f2b7b60141712e34f7a43bde
+    terms/sections/about/title: a4128e1566dbc124f17e592bd52c3e1d
+    terms/sections/about/content_1: b46e0410010ed39b058ef5c2508ea864
+    terms/sections/about/content_2: 551e29281a03b2b3d40d757f34f034d6
+    terms/sections/eligibility/title: a6dbb32bd4de457632788d9a164a983f
+    terms/sections/eligibility/process/title: 16601d63e0474c6e9ad5841a2f2db87b
+    terms/sections/eligibility/process/content: a7444902b4f1391d5617fbfc36c3d97b
+    terms/sections/eligibility/target/title: 7c9fc6ebdb170ffee8cb490f3f3fcba6
+    terms/sections/eligibility/target/content_1: 74c7dd3857cbf528fb4744a6c7bb5fd1
+    terms/sections/eligibility/target/content_2: 0b95069d512b331923cc8ac19bb7b0d3
+    terms/sections/how_it_works/title: 1deb6da9886fbf6897032f6cee84eddd
+    terms/sections/how_it_works/phase1/title: 373f266c5a38f7c8956bbb3f1136e643
+    terms/sections/how_it_works/phase1/items/0: 363400f7d6b8d76bd9cdbcd56e529e4d
+    terms/sections/how_it_works/phase1/items/1: 848edaf03690a154e76aa85460dfb8a7
+    terms/sections/how_it_works/phase1/items/2: c7d73fa81040d7bc1778f3f5abffea37
+    terms/sections/how_it_works/phase1/items/3: 692b71ab9525042c85dfc3e3083f2693
+    terms/sections/how_it_works/phase2/title: d1314ca579ccfc3f288c0a939bd29c2c
+    terms/sections/how_it_works/phase2/intro: 84d4b70f2b72fee361d105a61558a3b3
+    terms/sections/how_it_works/phase2/items/0: 1a2c8dd80be6bca81c84a513a14d7d20
+    terms/sections/how_it_works/phase2/items/1: 392f2288b1babe5284bb0cf6580493ff
+    terms/sections/how_it_works/phase2/items/2: 7a24a59bc2b0a7b59b61ab6c14d82fa7
+    terms/sections/how_it_works/tools/title: d3d3cc1ef4a36021bce19d2a031c5ccc
+    terms/sections/how_it_works/tools/items/0: 1bce53bc7e152ec5c17b7911fa9f5294
+    terms/sections/how_it_works/tools/items/1: 64d64d1960b554266737fe5e68500993
+    terms/sections/how_it_works/tools/items/2: 42945fcbdae5197aadaad110eafa7b09
+    terms/sections/intellectual_property/title: b24ab4a74c7095bf844f311b6c0b6a37
+    terms/sections/intellectual_property/your_code/title: 0226c74e87d0445fff97e8d3904ede38
+    terms/sections/intellectual_property/your_code/content: c45a3ef733d0b5e513bfaf7baf230bfc
+    terms/sections/intellectual_property/our_content/title: 951b7848335efde74c0fe5a1a14234c3
+    terms/sections/intellectual_property/our_content/content: 257f693ed1e24e202f41c1a0e2101732
+    terms/sections/conduct/title: cfb689374f607e279ddecf56436eccbc
+    terms/sections/conduct/content: 90afbc844f75afcbe56ecad3de6fa5ed
+    terms/sections/scholarships/title: 33ef90404613240fd3e380667727b8ed
+    terms/sections/scholarships/expectations/title: de23e510dca3bb0f8fae6cabdf70f969
+    terms/sections/scholarships/expectations/content: 3c294d00fde0e687324683dcf3983f10
+    terms/sections/scholarships/criteria: c2289017152c1cbb58a0a9538e03daa2
+    terms/sections/data/title: a6a51583ef6bad2013ea92a5c37884ef
+    terms/sections/data/content_1: 290347b4c53cb449de34e7bc591df049
+    terms/sections/data/content_2: 9478293e4fb7ac908722cf00d6ee7702
+    terms/sections/communications/title: f7a06dde5fd0b26405f3d7e11a43f389
+    terms/sections/communications/content_1: ea49e32309e873e74d840c012199d2bc
+    terms/sections/communications/content_2: ed8307846c3010eea27c10e5b93fac71
+    terms/sections/changes/title: 676f10e9072e83b4eed56f0ad3b2a619
+    terms/sections/changes/content_1: 531eaa8a74a7982d22bbf78d1c881e01
+    terms/sections/changes/content_2: 71bf907832597d309cee716e2aba4414
+    terms/sections/contact/title: 505d4c86e7ad3ce701487abb30b89614
+    terms/sections/contact/content: e3b6f76a47876945da1dee813bed05d9
+    terms/sections/tldr/content: 963d863091b348c334f292d6f2f06211
+    terms/footer/last_updated: 3fcc2c6efd856d259c24a0b6975e03ad
+    terms/footer/date: 0735926f0f70f5bcfbc5626684498739
+    terms/footer/close_btn: 8d666219d7e38a8c12bd7acbdda8815f
+    terms/footer/register_btn: 49b0c89bcb861273d570a1c631b0b9ab
+    terms/footer/copyright: 699de6a9fd134a83ef785668886d8449
+    terms/footer/legal_links/terms: 5f760af55361ecf8f54a168491c41eb7
     footer/logo_alt: e632f62da421be89d63f013eff260f59
     footer/description: 53ba421f4c640bb2b5d33095a6653e57
     footer/quick_links/title: 7261cfd749bf1f4d43928835586012e5
