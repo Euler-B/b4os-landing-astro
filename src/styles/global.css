@@ -192,8 +192,6 @@ body {
     display: none;
 }
 
-
-
 .objectives-background {
     position: absolute;
     top: 0;
@@ -858,9 +856,19 @@ a:hover .sponsor-highlight {
     text-decoration: none;
 }
 
-.sponsor-highlight::after {
+.sponsor-highlight::before {
     content: '';
     display: block;
+    width: 60px;
+    height: 2px;
+    background: #f7931a;
+    margin: 1rem auto;
+    border-radius: 1px;
+}
+
+.sponsor-highlight::after {
+    content: '';
+    display: none;
     width: 60px;
     height: 2px;
     background: #f7931a;
@@ -1528,8 +1536,6 @@ a:hover .sponsor-highlight {
 }
 
 /* Alumni Icons */
-/* Reemplaza las reglas de .alumni-avatar y .alumni-icons en tu CSS */
-
 /* Alumni Avatar */
 .alumni-avatar {
     position: relative;
