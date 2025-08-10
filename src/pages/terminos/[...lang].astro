@@ -1,0 +1,191 @@
+---
+// src/pages/terminos/[...lang].astro - Términos dinámicos multiidioma
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/terms.css';
+import { getTranslation } from '../../i18n/utils.js';
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: undefined } },  
+    { params: { lang: 'en' } },      
+    { params: { lang: 'pt' } }        
+  ];
+}
+
+const { lang } = Astro.params;
+
+const locale = lang || 'es';
+const translations = getTranslation(locale);
+const t = translations as any;
+
+const pageTitle = t.terms.page_title;
+const pageDescription = t.terms.page_description;
+
+const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  locale={locale}
+  noindex={true}
+>
+    <header class="header" role="banner">
+        <nav class="nav" role="navigation" aria-label="Navegación principal">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href={backHomeUrl} class="nav-link" aria-label={t.terms.nav.back_home_aria}>
+                        <img src="/b4os.png" alt={t.terms.nav.logo_alt} class="logo" width="64" height="64">
+                    </a>
+                </div>
+                <div class="nav-menu">
+                    <button onclick="window.close()" class="nav-link nav-close-btn">{t.terms.nav.close_btn}</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="terms-page">
+    <div class="container">
+        <article class="terms-content">
+        <header class="terms-header">
+            <h1>{t.terms.header.title}</h1>
+            <p class="terms-intro" set:html={t.terms.header.intro_1}></p>
+            <p class="terms-intro">{t.terms.header.intro_2}</p>
+        </header>
+
+        <section class="terms-section">
+            <h2>{t.terms.sections.about.title}</h2>
+            <p set:html={t.terms.sections.about.content_1}></p>
+            <p>{t.terms.sections.about.content_2}</p>
+        </section>
+
+        <section class="terms-section">
+            <h2>{t.terms.sections.eligibility.title}</h2>
+            
+            <div class="info-box">
+                <p><strong>{t.terms.sections.eligibility.process.title}</strong> <span set:html={t.terms.sections.eligibility.process.content}></span></p>
+            </div>
+
+            <div class="info-box">
+                <p><strong>{t.terms.sections.eligibility.target.title}</strong> {t.terms.sections.eligibility.target.content_1}</p>
+                <p>{t.terms.sections.eligibility.target.content_2}</p>
+            </div>
+        </section>
+
+        <section class="terms-section">
+            <h2>{t.terms.sections.how_it_works.title}</h2>
+            
+            <div class="phase-box">
+                <h3>{t.terms.sections.how_it_works.phase1.title}</h3>
+                <ul>
+                    {t.terms.sections.how_it_works.phase1.items.map((item: string) => (
+                        <li>{item}</li>
+                    ))}
+                </ul>
+            </div>
+
+            <div class="phase-box">
+                <h3>{t.terms.sections.how_it_works.phase2.title}</h3>
+                <p set:html={t.terms.sections.how_it_works.phase2.intro}></p>
+                <ul>
+                    {t.terms.sections.how_it_works.phase2.items.map((item: string) => (
+                        <li set:html={item}></li>
+                    ))}
+                </ul>
+            </div>
+
+            <div class="phase-box">
+                <h3>{t.terms.sections.how_it_works.tools.title}</h3>
+                <ul>
+                    {t.terms.sections.how_it_works.tools.items.map((item: string) => (
+                        <li set:html={item}></li>
+                    ))}
+                </ul>
+            </div>
+        </section>
+
+        <section class="terms-section">
+            <h2>{t.terms.sections.intellectual_property.title}</h2>
+            
+            <div class="info-box">
+                <p><strong>{t.terms.sections.intellectual_property.your_code.title}</strong> {t.terms.sections.intellectual_property.your_code.content}</p>
+            </div>
+
+            <div class="warning-box">
+                <p><strong>{t.terms.sections.intellectual_property.our_content.title}</strong> {t.terms.sections.intellectual_property.our_content.content}</p>
+            </div>
+        </section>
+
+        <section class="terms-section">
+            <h2>{t.terms.sections.conduct.title}</h2>
+            <div class="conduct-box">
+                <p set:html={t.terms.sections.conduct.content}></p>
+            </div>
+        </section>
+
+        <section class="terms-section">
+            <h2>{t.terms.sections.scholarships.title}</h2>
+            <div class="important-box">
+                <p><strong>{t.terms.sections.scholarships.expectations.title}</strong> {t.terms.sections.scholarships.expectations.content}</p>
+                <p>{t.terms.sections.scholarships.criteria}</p>
+            </div>
+        </section>
+
+        <section class="terms-section">
+            <h2>{t.terms.sections.data.title}</h2>
+            <p>{t.terms.sections.data.content_1}</p>
+            <p>{t.terms.sections.data.content_2}</p>
+        </section>
+
+        <section class="terms-section">
+            <h2>{t.terms.sections.communications.title}</h2>
+            <p>{t.terms.sections.communications.content_1}</p>
+            <p>{t.terms.sections.communications.content_2}</p>
+        </section>
+
+        <section class="terms-section">
+            <h2>{t.terms.sections.changes.title}</h2>
+            <p>{t.terms.sections.changes.content_1}</p>
+            <p>{t.terms.sections.changes.content_2}</p>
+        </section>
+
+        <section class="terms-contact">
+            <h2>{t.terms.sections.contact.title}</h2>
+            <p set:html={t.terms.sections.contact.content}></p>
+        </section>
+
+        <section class="terms-section tldr-section">
+            <div class="tldr-box">
+                <p set:html={t.terms.sections.tldr.content}></p>
+            </div>
+        </section>
+
+        <footer class="terms-footer">
+            <p><strong>{t.terms.footer.last_updated}</strong> {t.terms.footer.date}</p>
+            <div class="terms-actions">
+            <button onclick="window.close()" class="btn btn-primary">{t.terms.footer.close_btn}</button>
+            <a href={`${backHomeUrl}#registro`} class="btn btn-primary">{t.terms.footer.register_btn}</a>
+            </div>
+        </footer>
+        </article>
+    </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div>
+                        <p set:html={t.terms.footer.copyright}></p>
+                    </div>
+                    <nav class="footer-legal" aria-label="Enlaces legales">
+                        <a href={locale === 'es' ? '/terminos' : `/terminos/${locale}`} rel="nofollow">{t.terms.footer.legal_links.terms}</a>
+                         <a href="/privacidad" rel="nofollow">Política de Privacidad</a>
+                        <a href="/codigo-conducta" rel="nofollow">Código de Conducta</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+</Layout>

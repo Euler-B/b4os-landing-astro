@@ -52,3 +52,16 @@ export function getLocalizedPath(targetLocale, currentPath = '/') {
   
   return `/${targetLocale}${cleanPath}`;
 }
+
+/**
+ * Genera URL para páginas especiales (como términos) basada en el idioma
+ * @param {string} page - Nombre de la página (ej: 'terminos')
+ * @param {string} lang - Código del idioma
+ * @returns {string} URL localizada
+ */
+export function getLocalizedPageUrl(page, lang = defaultLocale) {
+  if (lang === 'es') {
+    return `/${page}`;
+  }
+  return `/${page}/${lang}`;
+}

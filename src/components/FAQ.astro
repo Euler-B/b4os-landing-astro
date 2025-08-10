@@ -1,170 +1,36 @@
 ---
 // FAQ Component
 import '../styles/faq.css';
+import { getTranslation } from '../i18n/utils.js';
+
+// Obtener props del componente
+const { locale = 'es' } = Astro.props;
+const t = getTranslation(locale);
 ---
 
 <section class="faq-section">
   <div class="container">
       <header class="faq-section-header">
-          <h2 class="faq-section-title">Preguntas Frecuentes</h2>
+          <h2 class="faq-section-title">{t.faq.title}</h2>
       </header>
       
       <div class="faq-container">
-          <div class="faq-item">
-              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
-                  <span>¿Es B4OS realmente gratuito? ¿Hay costos ocultos?</span>
-                  <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="6,9 12,15 18,9"></polyline>
-                  </svg>
-              </button>
-              <div class="faq-answer" id="faq-answer-1">
-                  <p><strong>Sí, B4OS es 100% gratuito.</strong> No hay tarifas de inscripción, materiales pagos ni costos ocultos de ningún tipo. El programa está financiado por la Librería de Satoshi para hacer accesible la educación Bitcoin de calidad profesional a desarrolladores de habla hispana.</p>
+          {Object.entries(t.faq.questions).map(([id, faq]) => {
+            const faqItem = faq as { question: string; answer: string };
+            return (
+              <div class="faq-item">
+                  <button class="faq-question" aria-expanded="false" aria-controls={`faq-answer-${id}`}>
+                      <span>{faqItem.question}</span>
+                      <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="6,9 12,15 18,9"></polyline>
+                      </svg>
+                  </button>
+                  <div class="faq-answer" id={`faq-answer-${id}`}>
+                      <p set:html={faqItem.answer}></p>
+                  </div>
               </div>
-          </div>
-
-          <div class="faq-item">
-              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
-                  <span>¿Todo el código desarrollado es de código abierto?</span>
-                  <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="6,9 12,15 18,9"></polyline>
-                  </svg>
-              </button>
-              <div class="faq-answer" id="faq-answer-2">
-                  <p><strong>Absolutamente.</strong> Todo el código desarrollado como parte del programa B4OS es de código abierto y sigue los principios FOSS. Los participantes contribuyen a proyectos reales de código abierto en el ecosistema Bitcoin, incluyendo Bitcoin Core y Lightning Network.</p>
-              </div>
-          </div>
-
-          <div class="faq-item">
-              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
-                  <span>¿Qué tecnologías de Bitcoin se enseñan?</span>
-                  <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="6,9 12,15 18,9"></polyline>
-                  </svg>
-              </button>
-              <div class="faq-answer" id="faq-answer-3">
-                  <p><strong>B4OS se enfoca en desarrollo de Bitcoin Core y Lightning Network.</strong> Aprenderás C++, arquitectura P2P, validación de transacciones, payment channels, y contribuirás a proyectos reales. No cubrimos otras criptomonedas - solo Bitcoin y su ecosistema.</p>
-              </div>
-          </div>
-
-          <div class="faq-item">
-              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
-                  <span>¿Necesito experiencia previa programando Bitcoin?</span>
-                  <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="6,9 12,15 18,9"></polyline>
-                  </svg>
-              </button>
-              <div class="faq-answer" id="faq-answer-4">
-                  <p><strong>No necesitas experiencia en Bitcoin, pero sí conocimientos básicos de programación.</strong> Debes tener experiencia con al menos un lenguaje (Python, C++, JavaScript), Git, y línea de comandos. Te enseñaremos todo lo específico de Bitcoin desde cero.</p>
-              </div>
-          </div>
-
-          <div class="faq-item">
-              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
-                  <span>¿Cuánto tiempo debo dedicar al programa semanalmente?</span>
-                  <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="6,9 12,15 18,9"></polyline>
-                  </svg>
-              </button>
-              <div class="faq-answer" id="faq-answer-5">
-                  <p><strong>Recomendamos 8-10 horas semanales</strong> durante las 24 semanas del programa. Esto incluye 3 horas de seminarios socráticos semanales, 2-3 horas de lectura preparatoria, y 3-4 horas de práctica de código y proyectos.</p>
-              </div>
-          </div>
-
-          <div class="faq-item">
-              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
-                  <span>¿Puedo elegir mi ruta de aprendizaje?</span>
-                  <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="6,9 12,15 18,9"></polyline>
-                  </svg>
-              </button>
-              <div class="faq-answer" id="faq-answer-6">
-                  <p><strong>Sí, después de las primeras 8 semanas</strong> puedes especializarte eligiendo entre: Desarrollo de Protocolo Bitcoin Core, Desarrollo de Lightning Network, o Desarrollo de Aplicaciones. Tu mentor te ayudará a elegir según tus intereses profesionales.</p>
-              </div>
-          </div>
-
-          <div class="faq-item">
-              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-7">
-                  <span>¿Cómo funcionan los seminarios socráticos?</span>
-                  <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="6,9 12,15 18,9"></polyline>
-                  </svg>
-              </button>
-              <div class="faq-answer" id="faq-answer-7">
-                  <p><strong>Son sesiones interactivas de 3 horas</strong> donde exploramos conceptos Bitcoin mediante preguntas y discusión grupal. No son clases magistrales - incluyen preparación previa, discusión abierta, código en vivo y aplicación práctica inmediata.</p>
-              </div>
-          </div>
-
-          <div class="faq-item">
-              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-8">
-                  <span>¿Hay grabaciones de las sesiones disponibles?</span>
-                  <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="6,9 12,15 18,9"></polyline>
-                  </svg>
-              </button>
-              <div class="faq-answer" id="faq-answer-8">
-                  <p><strong>No grabamos los seminarios</strong> para mantener un ambiente seguro y privado de aprendizaje. En su lugar, proporcionamos resúmenes detallados post-sesión, materiales de estudio complementarios y sesiones de recuperación para casos especiales.</p>
-              </div>
-          </div>
-
-          <div class="faq-item">
-              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-9">
-                  <span>¿Qué herramientas técnicas necesito instalar?</span>
-                  <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="6,9 12,15 18,9"></polyline>
-                  </svg>
-              </button>
-              <div class="faq-answer" id="faq-answer-9">
-                  <p><strong>Configuraremos las herramientas juntos en la primera semana:</strong> Git, Bitcoin Core, editor de código (VS Code/CLion), compiladores GCC/Clang, y Python 3.8+. Requisitos mínimos: 8GB RAM, 500GB almacenamiento disponible.</p>
-              </div>
-          </div>
-
-          <div class="faq-item">
-              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-10">
-                  <span>¿Qué resultados puedo esperar al finalizar?</span>
-                  <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="6,9 12,15 18,9"></polyline>
-                  </svg>
-              </button>
-              <div class="faq-answer" id="faq-answer-10">
-                  <p><strong>Logros tangibles y verificables:</strong> Mínimo 3 contribuciones aceptadas en Bitcoin Core o Lightning Network, un proyecto personal funcional, conexiones directas con desarrolladores Bitcoin senior, y certificado verificable con tus contribuciones específicas.</p>
-              </div>
-          </div>
-
-          <div class="faq-item">
-              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-11">
-                  <span>¿Cómo me conecta B4OS con oportunidades laborales?</span>
-                  <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="6,9 12,15 18,9"></polyline>
-                  </svg>
-              </button>
-              <div class="faq-answer" id="faq-answer-11">
-                  <p><strong>Partnerships directos con empresas Bitcoin:</strong> Entrevistas garantizadas para el top 20% de graduados, tablero de empleos exclusivo para alumnos, referencias personales de mentores, y eventos networking con recruiters Bitcoin.</p>
-              </div>
-          </div>
-
-          <div class="faq-item">
-              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-12">
-                  <span>¿Hay restricciones geográficas o de edad?</span>
-                  <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="6,9 12,15 18,9"></polyline>
-                  </svg>
-              </button>
-              <div class="faq-answer" id="faq-answer-12">
-                  <p><strong>No hay restricciones geográficas.</strong> B4OS está abierto para desarrolladores de cualquier país que hablen español. Edad mínima: 18 años. Los horarios se coordinan considerando la diversidad de zonas horarias de los participantes.</p>
-              </div>
-          </div>
-
-          <div class="faq-item">
-              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-14">
-                  <span>¿Dónde puedo enviar comentarios o reportar problemas?</span>
-                  <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="6,9 12,15 18,9"></polyline>
-                  </svg>
-              </button>
-              <div class="faq-answer" id="faq-answer-14">
-                  <p><strong>Múltiples canales disponibles:</strong> Email principal <a href="mailto:hola@b4os.dev">hola@b4os.dev</a>, comunidad Discord para chat directo, GitHub Issues para reportes técnicos, y sesiones de feedback regulares durante el programa.</p>
-              </div>
-          </div>
+            );
+          })}
       </div>
   </div>
 </section>
