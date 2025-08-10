@@ -1,0 +1,79 @@
+---
+import { getTranslation, getLocalizedPath } from '../i18n/utils.js';
+import { Icon } from 'astro-icon/components'
+import '../styles/language-selector.css';
+
+// Obtener props del componente
+const { locale = 'es' } = Astro.props;
+const t = getTranslation(locale);
+
+// Obtener la ruta actual sin el prefijo de idioma
+const currentPath = Astro.url.pathname;
+
+// Configuración de idiomas
+const languages = [
+  {
+    code: 'es',
+    name: 'Español',
+    region: '(España)',
+    fullName: 'Español (España)'
+  },
+  {
+    code: 'en', 
+    name: 'English',
+    region: '(United States)',
+    fullName: 'English (United States)'
+  },
+  {
+    code: 'pt',
+    name: 'Português', 
+    region: '(Brasil)',
+    fullName: 'Português (Brasil)'
+  }
+];
+
+// Encontrar el idioma actual
+const currentLanguage = languages.find(lang => lang.code === locale) || languages[0];
+---
+
+<!-- Selector de idioma -->
+<div class="language-selector">
+  <!-- Botón principal que muestra el idioma actual -->
+  <button class="lang-button" id="langButton" aria-label="Cambiar idioma" aria-expanded="false" aria-haspopup="true">
+    <!-- Icono del globo -->
+    <Icon name="mdi:translate-variant" size={16} />
+    
+    <!-- Texto del idioma actual
+    <span class="lang-current">
+      {currentLanguage.fullName}
+    </span>-->
+    
+    <!-- Icono de flecha -->
+    <svg class="lang-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="6,9 12,15 18,9"/>
+    </svg>
+  </button>
+  
+  <!-- Dropdown con opciones -->
+  <div class="lang-dropdown" id="langDropdown" role="menu" aria-labelledby="langButton">
+    {languages.map(lang => {
+      const href = getLocalizedPath(lang.code, currentPath);
+      const isActive = lang.code === locale;
+      
+      return (
+        <a 
+          href={href} 
+          class={`lang-option ${isActive ? 'active' : ''}`}
+          role="menuitem"
+          aria-current={isActive ? 'true' : 'false'}
+        >
+          <span class="lang-text">
+            <span class="lang-name">{lang.name}</span>
+            <span class="lang-region">{lang.region}</span>
+          </span>
+          {isActive && <span class="lang-check">✓</span>}
+        </a>
+      );
+    })}
+  </div>
+</div>

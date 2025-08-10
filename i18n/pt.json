@@ -1,0 +1,303 @@
+{
+  "meta": {
+    "site_title": "B4OS 2025 - Programa Gratuito de Formação Bitcoin para Desenvolvedores Sênior | Bitcoin 4 Open Source",
+    "site_description": "Programa gratuito de formação técnica para desenvolvedores sênior interessados no ecossistema open source do Bitcoin na América Latina, Caribe e Espanha. Junte-se ao B4OS 2025.",
+    "keywords": "Bitcoin FOSS, Lightning development, Bitcoin Latin America, Bitcoin Core, desenvolvimento Bitcoin, programação blockchain, Bitcoin open source, formação Bitcoin, desenvolvedores Bitcoin, Lightning Network, Bitcoin América Latina, Bitcoin Espanha, Bitcoin Caribe, residências Bitcoin, mentoria Bitcoin",
+    "author": "Librería de Satoshi",
+    "site_name": "B4OS - Bitcoin 4 Open Source",
+    "og_image_alt": "B4OS - Programa de formação técnica em Bitcoin para desenvolvedores sênior",
+    "twitter_site": "@libdesatoshi",
+    "twitter_creator": "@libdesatoshi",
+    "twitter_image_alt": "B4OS - Programa de formação técnica em Bitcoin"
+  },
+  "schema": {
+    "organization_name": "B4OS - Bitcoin 4 Open Source",
+    "organization_description": "Programa gratuito de formação técnica para desenvolvedores sênior interessados no ecossistema open source do Bitcoin na América Latina, Caribe e Espanha",
+    "address_region": "América Latina, Caribe, Espanha",
+    "offer_description": "Programa gratuito de formação em Bitcoin e Lightning Network",
+    "credential_awarded": "Certificação em Bitcoin FOSS Development",
+    "catalog_name": "Programas B4OS 2025",
+    "course_southamerica_name": "Residência América do Sul",
+    "course_southamerica_description": "Programa intensivo de 1 ano para desenvolvedores sênior",
+    "course_europe_name": "Residência Europa",
+    "course_europe_description": "Residência intensiva de 2 semanas em Valência (Espanha)"
+  },
+  "nav": {
+    "logo_alt": "B4OS - Bitcoin 4 Open Source Logo",
+    "menu_aria": "Navegação principal",
+    "brand_link_aria": "Ir para o início do B4OS",
+    "toggle_aria": "Abrir menu de navegação",
+    "objectives": "Objetivos",
+    "alumni": "Alunos",
+    "residences": "Residências",
+    "schedule": "Cronograma",
+    "register": "Registro",
+    "benefits": "Benefícios",
+    "alliances": "Alianças",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title_main": "Bitcoin 4 Open Source",
+    "title_sub": "Programa gratuito de treinamento técnico em Bitcoin para desenvolvedores",
+    "cta_primary": "Aceitar o Desafio",
+    "cta_secondary": "Conhecer as Residências"
+  },
+  "objectives": {
+    "image_alt": "Desenvolvedora trabalhando em Bitcoin",
+    "title": "B4OS oferece rotas de aprendizagem especializadas, permitindo que os devs se concentrem nas áreas de maior demanda",
+    "potential": {
+      "title": "Desperte seu potencial",
+      "description": "Desafie-se com nossos challenges e descubra suas habilidades ocultas no complexo protocolo do Bitcoin. Vamos guiá-lo com cursos e seminários para que você possa contribuir efetivamente para Bitcoin e Lightning."
+    },
+    "open_source": {
+      "title": "Open Source e Liberdade",
+      "description": "Aprenda a contribuir em código aberto como os líderes do Linux, Google ou as melhores empresas do Silicon Valley. Quer fazer parte dos 5% top mundial que escrevem 95% do código aberto?"
+    },
+    "networking": {
+      "title": "Networking e Comunidade",
+      "description": "Bitcoin é uma indústria em crescimento constante que oferece oportunidades únicas para interagir com uma comunidade global de profissionais e entusiastas."
+    }
+  },
+  "alumni": {
+    "title": "B4OS 2024 FOI UM SUCESSO!",
+    "stats_aria": "Estatísticas do programa",
+    "stats": {
+      "registered": "Devs registrados",
+      "selected": "Selecionados para a residência",
+      "fulltime": "Full-time Grantees",
+      "parttime": "Part-time ou Micro-grant Grantees"
+    },
+    "subtitle": "Conheça alguns dos nossos <strong>graduados mais bem-sucedidos</strong> que agora contribuem ativamente para o ecossistema Bitcoin e projetos FOSS",
+    "github_aria": "GitHub de {name}",
+    "linkedin_aria": "LinkedIn de {name}",
+    "twitter_aria": "Twitter de {name}",
+    "grantee_b4os": "Grantee do B4OS",
+    "grantee_localhost": "Grantee do LocalHost",
+    "grantee_spiral": "Grantee do Spiral",
+    "grantee_bdk": "Grantee da BDK Foundation",
+    "grantee_whitenoise_b4os": "Grantee do White Noise - B4OS",
+    "grantee_whitenoise": "Grantee do White Noise"
+  },
+  "residencies": {
+    "title": "Residências B4OS",
+    "subtitle": "B4OS oferece <strong>residências especializadas em Bitcoin</strong> para desenvolvedores da América Latina, Caribe e Espanha. <strong>Desenvolva todo o seu potencial com B4OS</strong>: os melhores devs são selecionados para participar de residências com mentorias e master classes com despesas cobertas. Para participar, é indispensável registrar-se e completar os desafios de programação (PoW).",
+    "duration_label": "Duração",
+    "start_label": "Início",
+    "location_label": "Localização",
+    "southamerica": {
+      "title": "América do Sul",
+      "duration": "2 semanas",
+      "start": "Fev. 2026",
+      "location": "Florianópolis, Brasil",
+      "description": "Programa intensivo para desenvolvedores seniores de países sul-americanos com formação especializada em <strong>Bitcoin Core e Lightning Network</strong>."
+    },
+    "europe": {
+      "title": "Europa",
+      "duration": "2 fins de semana",
+      "start": "Data a definir",
+      "location": "Valência, Espanha",
+      "description": "Residência intensiva na Europa, focada em <strong>networking e colaboração</strong> com o ecossistema Bitcoin espanhol."
+    },
+    "centralamerica": {
+      "title": "América Central",
+      "duration": "1 ano completo",
+      "start": "Data a definir",
+      "location": "El Salvador ou Costa Rica",
+      "description": "Programa especial que inclui <strong>trabalho em tempo integral remunerado</strong> na <strong>América Central</strong>."
+    },
+    "northamerica1": {
+      "title": "América do Norte I",
+      "duration": "8 semanas",
+      "start": "15 Out. - Dez. 2025",
+      "location": "Guadalajara, México",
+      "description": "Estágio para desenvolvedores na Bitcoin House Guadalajara."
+    },
+    "northamerica2": {
+      "title": "América do Norte II",
+      "duration": "6 semanas",
+      "start": "15 Out. - Nov. 2026",
+      "location": "Cidade do México",
+      "description": "Exclusiva para <strong>bolsistas do programa</strong>, focada em projetos avançados e mentoria especializada."
+    },
+    "disclaimer": "* As datas podem estar sujeitas a alterações. Os participantes selecionados serão notificados com antecedência."
+  },
+  "timeline": {
+    "title": "Cronograma B4OS",
+    "subtitle": "Conheça as <strong>datas importantes</strong> do programa B4OS 2025–2026",
+    "registration": {
+      "date": "6 Ago. - 15 Set. 2025",
+      "title": "Registro",
+      "description": "Registro de participantes para o programa B4OS 2025–2026."
+    },
+    "challenges": {
+      "date": "15 SET 2025",
+      "title": "B4OS Challenges",
+      "description": "Vamos ver qual é o seu nível de programação e conhecimento de Bitcoin. Esta etapa é uma fase assíncrona no Discord sem aulas ou mentorias, mas com apoio da comunidade.",
+      "highlight": "🏆 <strong>Os melhores desenvolvedores passam para a próxima etapa.</strong><br><strong>Prêmio para novato:</strong> $300 USD para o melhor código de desenvolvedores novos que nunca participaram do B4OS, BOSS ou outros programas."
+    },
+    "review": {
+      "date": "10 OUT 2025",
+      "title": "Revisão de candidaturas",
+      "description": "Seleção de desenvolvedores."
+    },
+    "guadalajara_selection": {
+      "date": "12 OUT 2025",
+      "title": "Seleção Guadalajara, México",
+      "description": "Seleção de 3 desenvolvedores júnior para o programa em Guadalajara, México."
+    },
+    "division": {
+      "date": "15 OUT 2025",
+      "title": "Divisão em Rotas",
+      "description": "De <strong>15 de outubro de 2025</strong> a <strong>fevereiro de 2026</strong>: construção de portfólio e contribuição FOSS. Seminários, grupos de trabalho, bitdevs e meetups (5 meses online).",
+      "routes": {
+        "core": "Bitcoin Core Protocol Developer",
+        "lightning": "Lightning Network Protocol Developer",
+        "application": "Application Developer"
+      }
+    },
+    "southamerica_selection": {
+      "date": "DEZ 2025",
+      "title": "Seleção Residência América do Sul",
+      "description": "Avaliação baseada em <strong>Proof of Work</strong> em projetos Open Source e participação em cursos. Ambas as rotas se unem e continuam trabalhando em projetos.",
+      "note": "Em casos excepcionais, desenvolvedores também poderão ser escolhidos em janeiro."
+    },
+    "residency": {
+      "date": "FEV-MAR 2026",
+      "title": "Residência Presencial América do Sul",
+      "description": "Experiência imersiva de 2 semanas em <strong>Florianópolis, Brasil</strong>. Trabalho direto com mentores e pares em projetos de alto impacto."
+    },
+    "grantees": {
+      "date": "ABR 2026",
+      "title": "Atribuição de Novos Bolsistas",
+      "description": "Processo de seleção e atribuição de financiamento para novos beneficiários do programa."
+    }
+  },
+  "registration": {
+    "title": "Pronto para se juntar ao B4OS 2025?",
+    "description": "O programa <strong>B4OS 2025</strong> está aberto para desenvolvedores seniores da América Latina, Caribe e Espanha. O processo de <em>inscrição é completamente gratuito</em>.",
+    "requirements": {
+      "title": "Requisitos para se candidatar:",
+      "experience": "<strong>Experiência em desenvolvimento</strong> de software (2+ anos)",
+      "languages": "Conhecimentos sólidos em linguagens como <strong>C++, Rust, Python ou JavaScript</strong>",
+      "interest": "Interesse genuíno em contribuir para o <strong>ecossistema open source do Bitcoin</strong>",
+      "availability": "<strong>Disponibilidade</strong> para investir de 5 a 10 horas semanais",
+      "resilience": "<strong>Resiliência</strong> para completar o programa na sua totalidade"
+    },
+    "period": {
+      "label": "Inscrições abertas",
+      "dates": "6 - 31 de agosto 2025"
+    },
+    "form": {
+      "title": "Formulário de Inscrição B4OS 2025",
+      "aria_label": "Formulário de inscrição B4OS 2025",
+      "name": {
+        "label": "Nome ou pseudônimo *",
+        "help": "Você pode usar seu nome real ou um pseudônimo"
+      },
+      "email": {
+        "label": "Email *",
+        "help": "Verifique seu email duas vezes, o usaremos para nos comunicar com você"
+      },
+      "country": {
+        "label": "País *",
+        "placeholder": "Selecione seu país",
+        "help": "Selecione o país onde reside atualmente"
+      },
+      "city": {
+        "label": "Cidade *",
+        "placeholder": "Primeiro selecione um país",
+        "help": "Sua cidade de residência atual"
+      },
+      "experience": {
+        "label": "Anos de experiência em desenvolvimento *",
+        "placeholder": "Selecione",
+        "options": {
+          "2-5": "2-5 anos",
+          "5-10": "5-10 anos",
+          "10+": "Mais de 10 anos"
+        }
+      },
+      "dev_language": {
+        "label": "Linguagem de desenvolvimento em que programa melhor *",
+        "placeholder": "Selecione uma linguagem...",
+        "help": "Selecione a linguagem em que se sente mais produtivo/a"
+      },
+      "technologies": {
+        "label": "Outras linguagens e tecnologias que domina *",
+        "placeholder": "Exemplo: C++, Python, JavaScript, Rust...",
+        "help": "Indique quais outras linguagens e tecnologias domina"
+      },
+      "github": {
+        "label": "GitHub / Portfólio *",
+        "placeholder": "https://github.com/tu-usuario",
+        "help": "Compartilhe seu perfil do GitHub ou portfólio"
+      },
+      "motivation": {
+        "label": "O que lhe interessa no ecossistema Bitcoin e nas tecnologias \"freedom tech\"? *",
+        "help": "Estamos interessados em saber quais aspectos específicos do ecossistema Bitcoin lhe apaixonam (Privacidade, Segurança, Resistência à censura, Descentralização, etc.)."
+      },
+      "how_heard": {
+        "label": "Por qual meio você ficou sabendo do B4OS? *",
+        "placeholder": "Exemplo: Redes sociais, amigos, eventos...",
+        "help": "Conte-nos através de quem nos conheceu ou por qual meio chegou até nós"
+      },
+      "terms": {
+        "label": "Aceito os termos e condições do programa",
+        "help": "Você deve aceitar os termos para continuar",
+        "link_text": "termos e condições"
+      },
+      "submit": "Enviar aplicação para B4OS 2025"
+    }
+  },
+  "partnerships": {
+    "title": "Alianças",
+    "subtitle": "Bitcoin for Open Source não seria possível sem o apoio dos nossos <strong>aliados</strong>.",
+    "main_sponsor": {
+      "text": "Este programa é possível graças ao inestimável suporte de"
+    },
+    "strategic": {
+      "title": "Aliados estratégicos"
+    },
+    "conferences": {
+      "title": "Conferências que nos apoiam"
+    },
+    "communities": {
+      "title": "Comunidades"
+    },
+    "partner_descriptions": {
+      "bitcoin_argentina": "Organização referência de Bitcoin na Argentina.",
+      "chaincode": "Laboratório de P&D focado em Bitcoin Core e Lightning."
+    }
+  },
+  "footer": {
+    "logo_alt": "B4OS - Bitcoin 4 Open Source Logo",
+    "description": "<strong>B4OS (Bitcoin 4 Open Source)</strong> - Programa gratuito de treinamento técnico em Bitcoin para desenvolvedores.",
+    "quick_links": {
+      "title": "Links rápidos"
+    },
+    "quick_links_aria": "Links rápidos",
+    "resources": {
+      "title": "Recursos",
+      "library": "Librería de Satoshi",
+      "courses": "Cursos Bitcoin"
+    },
+    "resources_aria": "Recursos externos",
+    "contact": {
+      "title": "Contato B4OS"
+    },
+    "social_aria": {
+      "facebook": "Siga-nos no Facebook",
+      "linkedin": "Conecte-se conosco no LinkedIn",
+      "twitter": "Siga-nos no Twitter/X",
+      "github": "Visite nosso GitHub",
+      "discord": "Junte-se à nossa comunidade no Discord",
+      "nostr": "Siga-nos no Nostr"
+    },
+    "copyright": "&copy; 2025 <strong>B4OS (Bitcoin 4 Open Source)</strong>. Feito com <span class=\"heart\" aria-label=\"amor\">❤️</span> para a comunidade Bitcoin",
+    "legal": {
+      "terms": "Termos de uso",
+      "conduct": "Código de conduta"
+    },
+    "legal_aria": "Links legais"
+  }
+}

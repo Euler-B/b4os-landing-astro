@@ -1,0 +1,752 @@
+---
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components'
+import { getTranslation } from '../i18n/utils.js';
+
+// Importar componentes
+import FAQ from '../components/FAQ.astro';
+import Benefits from '../components/benefits.astro';
+import LanguageSelector from '../components/languageSelector.astro';
+
+// Generar rutas estáticas para todos los idiomas
+export async function getStaticPaths() {
+  return [
+    { params: { lang: undefined } },  // Para la ruta raíz / (español)
+    { params: { lang: 'en' } },       // Para /en (inglés)
+    { params: { lang: 'pt' } }        // Para /pt (portugués)
+  ];
+}
+
+// Obtener el parámetro de idioma
+const { lang } = Astro.params;
+
+// Determinar locale: si no hay lang, es español
+const locale = lang || 'es';
+const t = getTranslation(locale);
+---
+
+<Layout locale={locale}>
+    <!-- Header / Navigation -->
+    <header class="header" role="banner">
+        <nav class="nav" role="navigation" aria-label={t.nav.menu_aria}>
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="#inicio" class="nav-link" aria-label={t.nav.brand_link_aria}>
+                        <img src="/b4os.png" alt={t.nav.logo_alt} class="logo" width="64" height="64">
+                    </a>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="#objectives" class="nav-link">{t.nav.objectives}</a>
+                    <a href="#alumni" class="nav-link">{t.nav.alumni}</a>
+                    <a href="#residencias" class="nav-link">{t.nav.residences}</a>
+                    <a href="#cronograma" class="nav-link">{t.nav.schedule}</a>
+                    <a href="#registro" class="nav-link">{t.nav.register}</a>
+                    <a href="#beneficios" class="nav-link">{t.nav.benefits}</a>
+                    <a href="#alianzas" class="nav-link">{t.nav.alliances}</a>
+                    <a href="#contacto" class="nav-link">{t.nav.contact}</a>
+                </div>
+                <LanguageSelector locale={locale} />                        
+                <button class="nav-toggle" id="navToggle" aria-label={t.nav.toggle_aria} aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title-main">{t.hero.title_main}</h1>
+                <h2 class="hero-title">
+                    <span class="hero-title-sub">{t.hero.title_sub}</span>
+                </h2>
+                <div class="hero-actions">
+                    <a href="#registro" class="btn btn-primary" rel="nofollow">{t.hero.cta_primary}</a>
+                    <a href="#residencias" class="btn btn-secondary">{t.hero.cta_secondary}</a>
+                </div>
+            </div>
+            <div class="hero-background" aria-hidden="true"></div>
+        </div>
+    </section>
+
+    <!-- Objectives Section -->
+    <section id="objectives" class="objectives">
+        <div class="container">
+            <div class="objectives-content">
+                <div class="objectives-media">
+                    <img src="images/laptop-code-1.webp" 
+                        alt={t.objectives.image_alt}
+                        loading="eager"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                </div>
+
+                <div>
+                    <h3 class="objectives-title-stats">
+                        {t.objectives.title}
+                    </h3>
+                </div>
+
+                <div class="program-grid">
+                    <div class="program-card">
+                        <div class="program-icon" aria-hidden="true">
+                            <Icon name="mdi:weight-lifter" size={64} />
+                        </div>
+                        <h3>{t.objectives.potential.title}</h3>
+                        <p>{t.objectives.potential.description}</p>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon" aria-hidden="true">
+                            <Icon name="mdi:hand-peace" size={128} />
+                        </div>
+                        <h3>{t.objectives.open_source.title}</h3>
+                        <p>{t.objectives.open_source.description}</p>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon" aria-hidden="true">
+                            <Icon name="mdi:account-group" size={48} />
+                        </div>
+                        <h3>{t.objectives.networking.title}</h3>
+                        <p>{t.objectives.networking.description}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alumni Section -->
+    <section id="alumni" class="alumni">
+        <div class="container">
+            <header class="section-header">
+                <h2 class="section-title">{t.alumni.title}</h2>
+                <div class="objectives-stats" role="complementary" aria-label={t.alumni.stats_aria}>
+                    <div class="stat">
+                        <span class="stat-number">350</span>
+                        <span class="stat-label">{t.alumni.stats.registered}</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">16</span>
+                        <span class="stat-label">{t.alumni.stats.selected}</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">7</span>
+                        <span class="stat-label">{t.alumni.stats.fulltime}</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">{t.alumni.stats.parttime}</span>
+                    </div>
+                </div>
+                <p class="section-subtitle" set:html={t.alumni.subtitle}></p>
+            </header>
+           
+            <div class="alumni-grid">
+                <!-- Alumni Card 1 -->
+                <article class="alumni-card">
+                    <div class="alumni-avatar">
+                        <img src="/fledesma.png" alt="Fernando Ledesma" loading="lazy">
+                        <div class="alumni-icons">
+                            <a href="https://github.com/f3r10" aria-label={t.alumni.github_aria.replace('{name}', 'Fernando')} target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/fernando-ledesma-ec" aria-label={t.alumni.linkedin_aria.replace('{name}', 'Fernando')} target="_blank" rel="noopener">
+                                <Icon name="mdi:linkedin" size={24} />
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="alumni-name">Fernando Ledesma</h3>
+                    <p class="alumni-description">
+                        <span class="project-highlight">SimLN</span> y <span class="project-highlight">LNDK</span>
+                        <span class="sponsor-highlight">{t.alumni.grantee_b4os}</span>
+                    </p>
+                </article>
+
+                <!-- Alumni Card 2 -->
+                <article class="alumni-card">
+                    <div class="alumni-avatar">
+                        <img src="/sliv3r.jpg" alt="Pol Espinasa" loading="lazy">
+                        <div class="alumni-icons">
+                            <a href="https://github.com/polespinasa" aria-label={t.alumni.github_aria.replace('{name}', 'Pol')} target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                            <a href="https://x.com/sliv3r__" aria-label={t.alumni.twitter_aria.replace('{name}', 'Pol')} target="_blank" rel="noopener">
+                                <Icon name="mdi:twitter" size={24} />
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="alumni-name">Pol Espinasa</h3>
+                    <p class="alumni-description">
+                        <span class="project-highlight">SimLN</span> y <span class="project-highlight">LNDK</span>
+                        <a href="https://lclhost.org/" target="_blank" rel="noopener">
+                            <span class="sponsor-highlight">{t.alumni.grantee_localhost}</span>
+                        </a> 
+                    </p>
+                </article>                
+                
+                <!-- Alumni Card 3 -->
+                <article class="alumni-card">
+                    <div class="alumni-avatar">
+                        <img src="/maurice.jpg" alt="Maurice Poirrier" loading="lazy">
+                        <div class="alumni-icons">
+                            <a href="http://github.com/a-mpch" aria-label={t.alumni.github_aria.replace('{name}', 'Maurice')} target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/maurice-poirrier/" aria-label={t.alumni.linkedin_aria.replace('{name}', 'Maurice')} target="_blank" rel="noopener">
+                                <Icon name="mdi:linkedin" size={24} />
+                            </a>
+                            <a href="https://x.com/mauricepoirrier" aria-label={t.alumni.twitter_aria.replace('{name}', 'Maurice')} target="_blank" rel="noopener">
+                                <Icon name="mdi:twitter" size={24} />
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="alumni-name">Maurice Poirrier</h3>
+                    <p class="alumni-description">
+                        <span class="project-highlight">LNDK</span> como mantenedor principal.
+                        <a href="https://spiral.xyz" target="_blank" rel="noopener"><span class="sponsor-highlight">{t.alumni.grantee_spiral}</span></a>
+                    </p>
+                </article>
+
+                <!-- Alumni Card 4 -->
+                <article class="alumni-card">
+                    <div class="alumni-avatar">
+                        <img src="/nymius.jpeg" alt="Nymius" loading="lazy">
+                        <div class="alumni-icons">
+                            <a href="https://github.com/nymius" aria-label={t.alumni.github_aria.replace('{name}', 'Nymius')} target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="alumni-name">Nymius</h3>
+                    <p class="alumni-description">
+                        BDK<span class="project-highlight">(Silent Payments - BIP 352)</span>
+                        <a href="https://bitcoindevkit.org/" target="_blank" rel="noopener">
+                            <span class="sponsor-highlight">{t.alumni.grantee_bdk}</span></a>
+                    </p>
+                </article>
+
+                <!-- Alumni Card 5 -->
+                <article class="alumni-card">
+                    <div class="alumni-avatar">
+                        <img src="/josefinalliende.png" alt="Josefina Alliende" loading="lazy">
+                        <div class="alumni-icons">
+                            <a href="https://github.com/josefinalliende" aria-label={t.alumni.github_aria.replace('{name}', 'Josefina')} target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/mar%C3%ADa-josefina-alliende/" aria-label={t.alumni.linkedin_aria.replace('{name}', 'Josefina')} target="_blank" rel="noopener">
+                                <Icon name="mdi:linkedin" size={24} />
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="alumni-name">Josefina Alliende</h3>
+                    <p class="alumni-description">
+                        <span class="project-highlight">White Noise</span>
+                        <a href="https://github.com/parres-hq/whitenoise" target="_blank" rel="noopener"><span class="sponsor-highlight">{t.alumni.grantee_whitenoise_b4os}</span></a>
+                    </p>
+                </article>                                   
+
+                <!-- Alumni Card 6 -->
+                <article class="alumni-card">
+                    <div class="alumni-avatar">
+                        <img src="/jmontoya.jpg" alt="Javier Montoya" loading="lazy">
+                        <div class="alumni-icons">
+                            <a href="https://github.com/jgmontoya" aria-label={t.alumni.github_aria.replace('{name}', 'Javier')} target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/jgmontoya/" aria-label={t.alumni.linkedin_aria.replace('{name}', 'Javier')} target="_blank" rel="noopener">
+                                <Icon name="mdi:linkedin" size={24} />
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="alumni-name">Javier Montoya</h3>
+                    <p class="alumni-description">
+                        <span class="project-highlight">White Noise</span>
+                        <a href="https://github.com/parres-hq/whitenoise" target="_blank" rel="noopener"><span class="sponsor-highlight">{t.alumni.grantee_whitenoise}</span></a>
+                    </p>
+                </article>                                   
+            </div>
+        </div>
+    </section>
+
+    <!-- Residencies Section -->
+    <section id="residencias" class="program-overview">
+        <div class="container">
+            <header class="section-header">
+                <h2 class="section-title">{t.residencies.title}</h2>
+                <p class="section-subtitle" set:html={t.residencies.subtitle}></p>
+            </header>
+            <div class="program-grid">
+                <article class="program-card">
+                    <div class="program-icon" aria-hidden="true">
+                        <Icon name="heroicons:globe-americas" size={64} />
+                    </div>
+                    <h3>{t.residencies.southamerica.title}</h3>
+                    <p><strong>{t.residencies.duration_label}:</strong> {t.residencies.southamerica.duration}<br>
+                    <strong>{t.residencies.start_label}:</strong> {t.residencies.southamerica.start}<br>
+                    <strong>{t.residencies.location_label}:</strong> {t.residencies.southamerica.location}<br>
+                    </p>
+                    <p set:html={t.residencies.southamerica.description}></p>
+                </article>
+                
+                <article class="program-card">
+                    <div class="program-icon" aria-hidden="true">
+                        <Icon name="heroicons:globe-europe-africa" size={64} />
+                    </div>
+                    <h3>{t.residencies.europe.title}</h3>
+                    <p><strong>{t.residencies.duration_label}:</strong> {t.residencies.europe.duration}<br>
+                    <strong>{t.residencies.start_label}:</strong> {t.residencies.europe.start}<br>
+                    <strong>{t.residencies.location_label}:</strong> {t.residencies.europe.location}<br>
+                    </p>
+                    <p set:html={t.residencies.europe.description}></p>
+                </article>
+                
+                <article class="program-card">
+                    <div class="program-icon" aria-hidden="true">
+                        <Icon name="heroicons:globe-americas" size={64} />
+                    </div>
+                    <h3>{t.residencies.centralamerica.title}</h3>
+                    <p><strong>{t.residencies.duration_label}:</strong> {t.residencies.centralamerica.duration}<br>
+                    <strong>{t.residencies.start_label}:</strong> {t.residencies.centralamerica.start}<br>
+                    <strong>{t.residencies.location_label}:</strong> {t.residencies.centralamerica.location}<br>
+                    </p>
+                    <p set:html={t.residencies.centralamerica.description}></p>
+                </article>
+                
+                <article class="program-card">
+                    <div class="program-icon" aria-hidden="true">
+                        <Icon name="heroicons:globe-americas" size={64} />
+                    </div>
+                    <h3>{t.residencies.northamerica1.title}</h3>
+                    <p><strong>{t.residencies.duration_label}:</strong> {t.residencies.northamerica1.duration}<br>
+                    <strong>{t.residencies.start_label}:</strong> {t.residencies.northamerica1.start}<br>
+                    <strong>{t.residencies.location_label}:</strong> {t.residencies.northamerica1.location}<br>
+                    </p>
+                    <p>{t.residencies.northamerica1.description}</p>
+                </article>
+
+                <article class="program-card">
+                    <div class="program-icon" aria-hidden="true">
+                        <Icon name="heroicons:globe-americas" size={64} />
+                    </div>
+                    <h3>{t.residencies.northamerica2.title}</h3>
+                    <p><strong>{t.residencies.duration_label}:</strong> {t.residencies.northamerica2.duration}<br>
+                    <strong>{t.residencies.start_label}:</strong> {t.residencies.northamerica2.start}<br>
+                    <strong>{t.residencies.location_label}:</strong> {t.residencies.northamerica2.location}<br>
+                    </p>
+                    <p set:html={t.residencies.northamerica2.description}></p>
+                </article>
+            </div>
+            <article style="text-align: center; margin-top: 2rem; color: var(--text-light); font-size: var(--font-size-sm);">
+                <p>{t.residencies.disclaimer}</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="cronograma" class="timeline">
+        <div class="container">
+            <header class="section-header">
+                <h2 class="section-title">{t.timeline.title}</h2>
+                <p class="section-subtitle" set:html={t.timeline.subtitle}></p>
+            </header>
+            <div class="timeline-container">
+                <article class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <p class="timeline-subdate">{t.timeline.registration.date}</p>
+                        <h3>{t.timeline.registration.title}</h3>
+                        <p>{t.timeline.registration.description}</p>
+                    </div>
+                </article>
+                
+                <article class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <p class="timeline-subdate">{t.timeline.challenges.date}</p>
+                        <h3>{t.timeline.challenges.title}</h3>
+                        <p>{t.timeline.challenges.description}</p>
+                        <div class="timeline-highlight">
+                            <p set:html={t.timeline.challenges.highlight}></p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <p class="timeline-subdate">{t.timeline.review.date}</p>
+                        <h3>{t.timeline.review.title}</h3>
+                        <p>{t.timeline.review.description}</p>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <p class="timeline-subdate">{t.timeline.guadalajara_selection.date}</p>
+                        <h3>{t.timeline.guadalajara_selection.title}</h3>
+                        <p>{t.timeline.guadalajara_selection.description}</p>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <p class="timeline-subdate">{t.timeline.division.date}</p>
+                        <h3>{t.timeline.division.title}</h3>
+                        <ul>
+                            <li><strong>{t.timeline.division.routes.core}</strong></li>
+                            <li><strong>{t.timeline.division.routes.lightning}</strong></li>
+                            <li><strong>{t.timeline.division.routes.application}</strong></li>
+                        </ul>
+                        <p set:html={t.timeline.division.description}></p>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <p class="timeline-subdate">{t.timeline.southamerica_selection.date}</p>
+                        <h3>{t.timeline.southamerica_selection.title}</h3>
+                        <p set:html={t.timeline.southamerica_selection.description}></p>
+                        <p>{t.timeline.southamerica_selection.note}</p>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <p class="timeline-subdate">{t.timeline.residency.date}</p>
+                        <h3>{t.timeline.residency.title}</h3>
+                        <p set:html={t.timeline.residency.description}></p>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <p class="timeline-subdate">{t.timeline.grantees.date}</p>
+                        <h3>{t.timeline.grantees.title}</h3>
+                        <p>{t.timeline.grantees.description}</p>
+                    </div>
+                </article>            
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registro" class="registration">
+        <div class="container">
+            <div class="registration-content">
+                <div class="registration-info">
+                    <h2>{t.registration.title}</h2>
+                    <p set:html={t.registration.description}></p>
+                    
+                    <div class="requirements">
+                        <h3>{t.registration.requirements.title}</h3>
+                        <ul>
+                            <li set:html={t.registration.requirements.experience}></li>
+                            <li set:html={t.registration.requirements.languages}></li>
+                            <li set:html={t.registration.requirements.interest}></li>
+                            <li set:html={t.registration.requirements.availability}></li>
+                            <li set:html={t.registration.requirements.resilience}></li>
+                        </ul>
+                    </div>
+                    <div class="registration-period">
+                        <div class="period-badge">
+                            <span><strong>{t.registration.period.label}:</strong> {t.registration.period.dates}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="registration-form-container">
+                    <form class="registration-form" id="registrationForm" role="form" aria-label={t.registration.form.aria_label}>
+                        <h3>{t.registration.form.title}</h3>
+                        
+                        <div class="form-group">
+                            <label for="name">{t.registration.form.name.label}</label>
+                            <input type="text" id="name" name="name" required aria-describedby="name-help">
+                            <small id="name-help">{t.registration.form.name.help}</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">{t.registration.form.email.label}</label>
+                            <input type="email" id="email" name="email" required aria-describedby="email-help">
+                            <small id="email-help">{t.registration.form.email.help}</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="country">{t.registration.form.country.label}</label>
+                            <select id="country" name="country" required aria-describedby="country-help">
+                                <option value="">{t.registration.form.country.placeholder}</option>
+                            </select>
+                            <small id="country-help">{t.registration.form.country.help}</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="city">{t.registration.form.city.label}</label>
+                            <select id="city" name="city" required disabled aria-describedby="city-help">
+                                <option value="">{t.registration.form.city.placeholder}</option>
+                            </select>
+                            <small id="city-help">{t.registration.form.city.help}</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="experience">{t.registration.form.experience.label}</label>
+                            <select id="experience" name="experience" required>
+                                <option value="">{t.registration.form.experience.placeholder}</option>
+                                <option value="2-5">{t.registration.form.experience.options['2-5']}</option>
+                                <option value="5-10">{t.registration.form.experience.options['5-10']}</option>
+                                <option value="10+">{t.registration.form.experience.options['10+']}</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dev-language">{t.registration.form.dev_language.label}</label>
+                            <select id="dev-language" name="dev-language" required aria-describedby="dev-language-help">
+                                <option value="">{t.registration.form.dev_language.placeholder}</option>
+                                <option value="javascript">JavaScript</option>
+                                <option value="python">Python</option>
+                                <option value="java">Java</option>
+                                <option value="typescript">TypeScript</option>
+                                <option value="csharp">C#</option>
+                                <option value="cpp">C++</option>
+                                <option value="php">PHP</option>
+                                <option value="go">Go</option>
+                                <option value="rust">Rust</option>
+                                <option value="swift">Swift</option>
+                                <option value="kotlin">Kotlin</option>
+                                <option value="ruby">Ruby</option>
+                                <option value="scala">Scala</option>
+                                <option value="dart">Dart</option>
+                                <option value="c">C</option>
+                                <option value="r">R</option>
+                                <option value="matlab">MATLAB</option>
+                                <option value="perl">Perl</option>
+                                <option value="lua">Lua</option>
+                                <option value="haskell">Haskell</option>
+                                <option value="elixir">Elixir</option>
+                                <option value="clojure">Clojure</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                            <small id="dev-language-help">{t.registration.form.dev_language.help}</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="technologies">{t.registration.form.technologies.label}</label>
+                            <textarea id="technologies" name="technologies" placeholder={t.registration.form.technologies.placeholder} required aria-describedby="tech-help"></textarea>
+                            <small id="tech-help">{t.registration.form.technologies.help}</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="github">{t.registration.form.github.label}</label>
+                            <input type="url" id="github" name="github" placeholder={t.registration.form.github.placeholder} aria-describedby="github-help" required>
+                            <small id="github-help">{t.registration.form.github.help}</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="motivation">{t.registration.form.motivation.label}</label>
+                            <textarea id="motivation" name="motivation" required aria-describedby="motivation-help"></textarea>
+                            <small id="motivation-help">{t.registration.form.motivation.help}</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="how-heard">{t.registration.form.how_heard.label}</label>
+                            <input id="how-heard" name="how-heard" placeholder={t.registration.form.how_heard.placeholder} required aria-describedby="how-heard-help">
+                            <small id="how-heard-help">{t.registration.form.how_heard.help}</small>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="terms" required aria-describedby="terms-help">
+                                <span>{t.registration.form.terms.label.replace('{link}', `<a href="/terminos" target="_blank" rel="noopener">${t.registration.form.terms.link_text}</a>`)}</span>
+                            </label>
+                            <small id="terms-help">{t.registration.form.terms.help}</small>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            {t.registration.form.submit}
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <Benefits locale={locale} />
+    
+    <!-- FAQ Section -->
+    <FAQ locale={locale} />
+
+    <!-- Partnerships Section -->
+    <section id="alianzas" class="partnerships">
+        <div class="container">
+            <div class="partnerships-content">
+                <header class="section-header">
+                    <h2 class="section-title">{t.partnerships.title}</h2>
+                    <p class="section-subtitle" set:html={t.partnerships.subtitle}></p>
+                </header>
+
+                <div class="main-sponsor">
+                    <header class="sponsor-header">
+                        <p class="sponsor-highlight">{t.partnerships.main_sponsor.text}</p>
+                    </header>
+                    <article class="main-sponsor-card">
+                        <a href="https://www.btrust.tech/" target="_blank" rel="noopener">
+                            <img src="/btrust-black.png" alt="Btrust" class="sponsor-logo" width="300" height="120" loading="lazy">
+                        </a>
+                    </article>
+                </div>
+
+                <div class="strategic-partners">
+                    <header class="strategic-header">
+                        <h3 class="strategic-title">{t.partnerships.strategic.title}</h3>
+                    </header>
+
+                    <div class="partners-grid">
+                        <article class="partner-card">
+                            <a href="https://bitcoinargentina.org" target="_blank" rel="noopener">
+                                <img src="/argentinabitcoin.png" alt="ONG Bitcoin Argentina" class="partner-logo" loading="lazy">
+                            </a>
+                            <p class="partner-description">{t.partnerships.partner_descriptions.bitcoin_argentina}</p>
+                        </article>
+
+                        <article class="partner-card">
+                            <a href="https://chaincode.com/" target="_blank" rel="noopener">
+                                <img src="/chaincode.png" alt="Chaincode Labs" class="partner-logo" loading="lazy">
+                            </a>
+                            <p class="partner-description">{t.partnerships.partner_descriptions.chaincode}</p>
+                        </article>
+                    </div>
+                </div>
+
+                <article class="conferences-support">
+                    <header class="strategic-header">
+                        <h3 class="strategic-title">{t.partnerships.conferences.title}</h3>
+                    </header>
+                    <div class="conferences-logos" role="group" aria-label="Logos de conferencias que apoyan B4OS">
+                        <a href="https://www.labitconf.com" target="_blank" rel="noopener">
+                            <img src="/labitconf.png" alt="Labitconf - Conferencia Bitcoin Latinoamérica" class="conference-logo" height="150" loading="lazy">
+                        </a>
+                        <a href="https://wobitcoin.org" target="_blank" rel="noopener">
+                            <img src="/watchoutbtc.jpg" alt="WatchOut - Conferencia Bitcoin" class="conference-logo" height="250" loading="lazy">
+                        </a>
+                        <a href="https://btcplusplus.dev" target="_blank" rel="noopener">
+                            <span class="font-bitcoin">bitcoin++</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="communities-support">
+                    <header class="strategic-header">
+                        <h3 class="strategic-title">{t.partnerships.communities.title}</h3>
+                    </header>
+                    <div class="communities-logos" role="group" aria-label="Logos de comunidades que apoyan B4OS">
+                        <a href="https://co.linkedin.com/company/blockchain-colombia" target="_blank" rel="noopener">
+                            <img src="/blockchain-colombia.jpg" alt="Blockchain Colombia - Comunidad Bitcoin Colombia" class="community-logo" width="150" height="60" loading="lazy">
+                        </a>
+                        <a href="https://lacrypta.ar" target="_blank" rel="noopener">
+                            <img src="/lacrypta.svg" alt="La Crypta - Comunidad Bitcoin Argentina" class="community-logo" width="150" height="60" loading="lazy">
+                        </a>
+                        <a href="https://achicrip.org" target="_blank" rel="noopener">
+                            <img src="/ongbtcchile.png" alt="Bitcoin Chile - Comunidad Bitcoin Chile" class="community-logo" height="100" loading="lazy">
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content"> 
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="/b4os.png" alt={t.footer.logo_alt} class="footer-logo" width="32" height="32">
+                    </div>
+                    <p set:html={t.footer.description}></p>
+                </div>
+                
+                <nav class="footer-section" aria-label={t.footer.quick_links_aria}>
+                    <h4>{t.footer.quick_links.title}</h4>
+                    <ul class="footer-links">
+                        <li><a href="#residencias">{t.nav.residences}</a></li>
+                        <li><a href="#cronograma">{t.nav.schedule}</a></li>
+                        <li><a href="#registro">{t.nav.register}</a></li>
+                        <li><a href="#beneficios">{t.nav.benefits}</a></li>
+                    </ul>
+                </nav>
+                
+                <nav class="footer-section" aria-label={t.footer.resources_aria}>
+                    <h4>{t.footer.resources.title}</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.libreriadesatoshi.com/" target="_blank" rel="noopener">{t.footer.resources.library}</a></li>
+                        <li><a href="https://www.libreriadesatoshi.com/#courses" target="_blank" rel="noopener">{t.footer.resources.courses}</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="footer-section">
+                    <h4>{t.footer.contact.title}</h4>
+                    <div class="contact-info">
+                        <p>
+                            <Icon name="heroicons:envelope-solid" size={24} />
+                            <a href="mailto:hola@b4os.dev">hola@b4os.dev</a>
+                        </p>
+                        <div class="footer-social">
+                            <a href="https://www.facebook.com/libsatoshi" aria-label={t.footer.social_aria.facebook} target="_blank" rel="noopener">
+                                <Icon name="mdi:facebook" size={24} />
+                            </a>
+                            <a href="https://www.linkedin.com/company/libdesatoshi/" aria-label={t.footer.social_aria.linkedin} target="_blank" rel="noopener">
+                                <Icon name="mdi:linkedin" size={24} />
+                            </a>
+                            <a href="https://x.com/libdesatoshi" aria-label={t.footer.social_aria.twitter} target="_blank" rel="noopener">
+                                <Icon name="mdi:twitter" size={24} />
+                            </a>
+                            <a href="https://github.com/LibreriadeSatoshi" aria-label={t.footer.social_aria.github} target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                            <a href="https://discord.gg/MSrtGYf4Jh" aria-label={t.footer.social_aria.discord} target="_blank" rel="noopener">
+                                <Icon name="mdi:discord" size={24} />
+                            </a>                            
+                            <a href="https://primal.net/p/nprofile1qqsgkt24wdkaksa8exnxgy6tmzs42tra8g30mvplcmk3eqar0z30rxggvqeay" aria-label={t.footer.social_aria.nostr} target="_blank" rel="noopener">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"> 
+                                    <path d="M0 0 C12.91292423 11.0346807 19.95052027 26.0774237 22.015625 42.828125 C22.55231273 50.52571717 22.43901902 58.25321098 22.4140625 65.96484375 C22.41608688 68.17967321 22.41900135 70.39450202 22.42276001 72.60932922 C22.42715604 77.22098215 22.42083376 81.83245944 22.40673828 86.4440918 C22.38953706 92.36018716 22.39957355 98.27587744 22.41745567 104.19195843 C22.4282731 108.75148094 22.42485847 113.31090654 22.4170723 117.8704319 C22.41507035 120.05337383 22.41752936 122.23632453 22.42451096 124.41925621 C22.43210377 127.45642022 22.42055659 130.49291534 22.40380859 133.5300293 C22.40988129 134.43232269 22.41595398 135.33461609 22.42221069 136.26425171 C22.40952148 137.50221245 22.40952148 137.50221245 22.39657593 138.7651825 C22.39544485 139.48166804 22.39431377 140.19815359 22.39314842 140.93635082 C21.8982356 143.4163646 20.98316503 144.28056789 19.015625 145.828125 C15.61868577 146.96043808 13.00265458 146.96894314 9.42041016 146.98925781 C8.75500717 146.99422272 8.08960419 146.99918762 7.40403748 147.00430298 C5.2042436 147.01889977 3.00452183 147.02572227 0.8046875 147.03125 C-0.72604372 147.03700331 -2.25677492 147.04276102 -3.7875061 147.04852295 C-6.99701269 147.05902574 -10.20649428 147.06487319 -13.41601562 147.06835938 C-17.52405757 147.07384394 -21.63176804 147.09787394 -25.73970604 147.12633133 C-28.90189574 147.14497516 -32.06400586 147.15016422 -35.22624588 147.15169525 C-36.74048297 147.15471816 -38.25471878 147.16273453 -39.76890182 147.17588043 C-41.88964666 147.19297881 -44.00958487 147.19105204 -46.13037109 147.18457031 C-47.33599701 147.18821594 -48.54162292 147.19186157 -49.78378296 147.19561768 C-53.58658897 146.75897866 -56.25854084 145.55395916 -58.984375 142.828125 C-59.0975011 140.59069996 -59.13911732 138.34961905 -59.15234375 136.109375 C-59.1565332 135.42385056 -59.16072266 134.73832611 -59.16503906 134.0320282 C-59.1748711 131.7973364 -59.17482218 129.56283496 -59.171875 127.328125 C-59.17160309 126.57270416 -59.17133118 125.81728333 -59.17105103 125.03897095 C-59.10134379 83.23415005 -59.10134379 83.23415005 -48.984375 72.828125 C-38.29799936 65.45821077 -26.39333044 66.7306617 -13.98242188 66.95507812 C-6.17443832 67.02927361 1.07543764 66.99924865 8.078125 63.140625 C10.33851916 60.86864835 10.33851916 60.86864835 10.453125 57.265625 C10.26011616 53.71254926 10.26011616 53.71254926 8.015625 50.828125 C5.84404366 50.36872544 5.84404366 50.36872544 3.32421875 50.421875 C1.90592773 50.38900391 1.90592773 50.38900391 0.45898438 50.35546875 C-0.53294922 50.34644531 -1.52488281 50.33742187 -2.546875 50.328125 C-19.88955885 50.16593557 -19.88955885 50.16593557 -26.421875 43.828125 C-29.39602335 39.99025137 -29.849089 36.12845618 -30.5078125 31.4140625 C-31.41232513 26.50596935 -33.77410134 23.73364089 -37.68359375 20.80859375 C-52.93186455 11.65963127 -75.22466468 13.18667647 -91.984375 16.828125 C-96.88574096 18.1284874 -100.78304225 19.73041908 -103.984375 23.828125 C-108.51943408 37.43330224 -103.27088637 53.70954598 -100.171875 67.078125 C-99.25872698 71.08095677 -98.35664353 75.08610841 -97.46484375 79.09375 C-97.24745041 80.07049683 -97.03005707 81.04724365 -96.80607605 82.05358887 C-85.94742092 131.99733806 -85.94742092 131.99733806 -92.984375 144.828125 C-96.66619446 147.46593188 -100.76720855 147.11705633 -105.109375 147.09375 C-105.89328613 147.09566345 -106.67719727 147.0975769 -107.48486328 147.09954834 C-109.13900067 147.10090675 -110.79314884 147.09723432 -112.44726562 147.08886719 C-114.9755046 147.07816256 -117.50303306 147.08877385 -120.03125 147.1015625 C-121.64062656 147.10024084 -123.25000269 147.09767832 -124.859375 147.09375 C-125.6136377 147.09779846 -126.36790039 147.10184692 -127.14501953 147.10601807 C-130.8764241 147.07277024 -133.88081186 147.04077837 -136.984375 144.828125" transform="translate(189.984375,60.171875)"/>
+                                    <path d="M0 0 C3.11395357 1.28619821 4.60562133 2.55122427 6.8125 5.0625 C8.57137441 9.41339986 8.79133407 13.37772156 8 18 C6.2916453 21.43780021 3.91333042 23.48478797 0.5625 25.375 C-4.13422023 26.52054152 -6.87152271 26.61955616 -11.1875 24.25 C-15.01411943 21.18870446 -16.61407312 19.46100891 -17.875 14.6875 C-18.02677896 10.21002077 -17.25801042 7.86046943 -15 4 C-10.36438892 -0.30449601 -6.06166087 -0.918773 0 0 Z" transform="translate(143,87)"/>
+                                </svg>
+                            </a>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div>
+                        <p set:html={t.footer.copyright}></p>
+                    </div>
+                    <nav class="footer-legal" aria-label={t.footer.legal_aria}>
+                        <a href="/terminos" rel="nofollow">{t.footer.legal.terms}</a>
+                        <a href="/codigo-conducta" rel="nofollow">{t.footer.legal.conduct}</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+</Layout>

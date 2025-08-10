@@ -1,85 +1,124 @@
 ---
 // src/layouts/Layout.astro
+import { getTranslation } from '../i18n/utils.js';
+
 export interface Props {
-  title: string;
+  title?: string;
   description?: string;
   keywords?: string;
   ogImage?: string;
   canonicalURL?: string;
   noindex?: boolean;
+  locale?: string;
 }
 
 const { 
   title, 
-  description = "Programa gratuito de formación técnica para desarrolladores senior interesados en el ecosistema open source de Bitcoin en América Latina, el Caribe y España. Únete a B4OS 2025.",
-  keywords = "Bitcoin FOSS, Lightning development, Bitcoin Latin America, Bitcoin Core, desarrollo Bitcoin, programación blockchain, Bitcoin open source, formación Bitcoin, desarrolladores Bitcoin, Lightning Network, Bitcoin América Latina, Bitcoin España, Bitcoin Caribe, residencias Bitcoin, mentoría Bitcoin",
+  description,
+  keywords,
   ogImage = "/og-image-b4os.jpg",
   canonicalURL,
-  noindex = false
+  noindex = false,
+  locale = 'es'
 } = Astro.props;
+
+// Obtener traducciones para el idioma actual
+const t = getTranslation(locale);
+
+// Usar traducciones como fallback si no se proporcionan props
+const pageTitle = title || t.meta.site_title;
+const pageDescription = description || t.meta.site_description;
+const pageKeywords = keywords || t.meta.keywords;
 
 import '../styles/global.css';
 import '../styles/nav.css';
 import '../styles/carousel.css';
 import '../styles/hero.css';
 
-// Configurar site base URL - cambiar por tu dominio en producción
+// Configurar site base URL
 const siteUrl = Astro.site ? Astro.site.toString() : 'https://b4os.dev';
 
-// Generar URL canónica de forma segura
-const canonical = canonicalURL || `${siteUrl}${Astro.url.pathname}`;
-const siteName = "B4OS - Bitcoin 4 Open Source";
+// Generar URL canónica según el idioma
+let canonical;
+if (canonicalURL) {
+  canonical = canonicalURL;
+} else {
+  const basePath = Astro.url.pathname;
+  if (locale === 'es') {
+    canonical = `${siteUrl}${basePath}`;
+  } else {
+    // Para otros idiomas, asegurar que tengan el prefijo
+    const cleanPath = basePath.replace(/^\/(en|pt)/, '');
+    canonical = `${siteUrl}/${locale}${cleanPath === '/' ? '' : cleanPath}`;
+  }
+}
 
 // Generar URL completa para Open Graph images
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 
-// NO EXPONER CLAVES DE CUSTOMER.IO AQUÍ - Se usan en el servidor
+// Mapear locales a códigos de Open Graph
+const ogLocaleMap = {
+  'es': 'es_ES',
+  'en': 'en_US', 
+  'pt': 'pt_BR'
+};
+const ogLocale = ogLocaleMap[locale] || 'es_ES';
+
+// URLs para hreflang
+const basePathClean = Astro.url.pathname.replace(/^\/(en|pt)/, '') || '/';
+const hrefLangUrls = {
+  es: `${siteUrl}${basePathClean}`,
+  en: `${siteUrl}/en${basePathClean === '/' ? '' : basePathClean}`,
+  pt: `${siteUrl}/pt${basePathClean === '/' ? '' : basePathClean}`
+};
 ---
 
 <!DOCTYPE html>
-<html lang="es" prefix="og: https://ogp.me/ns#">
+<html lang={locale} prefix="og: https://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
     
     <!-- Title optimizado -->
-    <title>{title}</title>
+    <title>{pageTitle}</title>
     
     <!-- Meta básicos SEO -->
-    <meta name="description" content={description}>
-    <meta name="keywords" content={keywords}>
-    <meta name="author" content="Librería de Satoshi">
+    <meta name="description" content={pageDescription}>
+    <meta name="keywords" content={pageKeywords}>
+    <meta name="author" content={t.meta.author}>
     <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"}>
     
     <!-- URL Canónica -->
     <link rel="canonical" href={canonical}>
     
     <!-- Idiomas alternativos -->
-    <link rel="alternate" hreflang="es" href={canonical}>
-    <link rel="alternate" hreflang="x-default" href={canonical}>
+    <link rel="alternate" hreflang="es" href={hrefLangUrls.es}>
+    <link rel="alternate" hreflang="en" href={hrefLangUrls.en}>
+    <link rel="alternate" hreflang="pt" href={hrefLangUrls.pt}>
+    <link rel="alternate" hreflang="x-default" href={hrefLangUrls.es}>
     
     <!-- Open Graph optimizado -->
-    <meta property="og:locale" content="es_ES">
+    <meta property="og:locale" content={ogLocale}>
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content={siteName}>
+    <meta property="og:site_name" content={t.meta.site_name}>
     <meta property="og:url" content={canonical}>
-    <meta property="og:title" content={title}>
-    <meta property="og:description" content={description}>
+    <meta property="og:title" content={pageTitle}>
+    <meta property="og:description" content={pageDescription}>
     <meta property="og:image" content={ogImageUrl}>
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="B4OS - Programa de formación técnica en Bitcoin para desarrolladores senior">
+    <meta property="og:image:alt" content={t.meta.og_image_alt}>
 
     <!-- Twitter Cards optimizado -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@libdesatoshi">
-    <meta name="twitter:creator" content="@libdesatoshi">
+    <meta name="twitter:site" content={t.meta.twitter_site}>
+    <meta name="twitter:creator" content={t.meta.twitter_creator}>
     <meta name="twitter:url" content={canonical}>
-    <meta name="twitter:title" content={title}>
-    <meta name="twitter:description" content={description}>
+    <meta name="twitter:title" content={pageTitle}>
+    <meta name="twitter:description" content={pageDescription}>
     <meta name="twitter:image" content={ogImageUrl}>
-    <meta name="twitter:image:alt" content="B4OS - Programa de formación técnica en Bitcoin">
+    <meta name="twitter:image:alt" content={t.meta.twitter_image_alt}>
 
     <!-- Favicons optimizados -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -99,18 +138,17 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Datos estructurados JSON-LD -->
-    <script type="application/ld+json">
-    {
+    <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "EducationalOrganization",
-      "name": "B4OS - Bitcoin 4 Open Source",
-      "description": "Programa gratuito de formación técnica para desarrolladores senior interesados en el ecosistema open source de Bitcoin en América Latina, el Caribe y España",
+      "name": t.schema.organization_name,
+      "description": t.schema.organization_description,
       "url": siteUrl,
       "logo": `${siteUrl}/b4os.png`,
       "foundingDate": "2025",
       "address": {
         "@type": "PostalAddress",
-        "addressRegion": "América Latina, Caribe, España"
+        "addressRegion": t.schema.address_region
       },
       "contactPoint": {
         "@type": "ContactPoint",
@@ -122,17 +160,17 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`
         "category": "Education",
         "price": "0",
         "priceCurrency": "USD",
-        "description": "Programa gratuito de formación en Bitcoin y Lightning Network"
+        "description": t.schema.offer_description
       },
-      "educationalCredentialAwarded": "Certificación en Bitcoin FOSS Development",
+      "educationalCredentialAwarded": t.schema.credential_awarded,
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Programas B4OS 2025",
+        "name": t.schema.catalog_name,
         "itemListElement": [
           {
             "@type": "Course",
-            "name": "Residencia Sudamérica",
-            "description": "Programa intensivo de 1 año para desarrolladores senior",
+            "name": t.schema.course_southamerica_name,
+            "description": t.schema.course_southamerica_description,
             "provider": {
               "@type": "Organization",
               "name": "B4OS"
@@ -140,8 +178,8 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`
           },
           {
             "@type": "Course", 
-            "name": "Residencia Europa",
-            "description": "Residencia intensiva de 2 semanas en Valencia (España)",
+            "name": t.schema.course_europe_name,
+            "description": t.schema.course_europe_description,
             "provider": {
               "@type": "Organization",
               "name": "B4OS"
@@ -153,8 +191,7 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`
         "https://twitter.com/libdesatoshi",
         "https://github.com/LibreriadeSatoshi"
       ]
-    }
-    </script>
+    })} />
     
     <!-- Google Analytics 4 optimizado -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-K5KB3NMFS3"></script>
@@ -212,12 +249,18 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`
                 await loadScript('/js/location-api.js', () => typeof window.LocationAPI !== 'undefined');
                 await loadScript('/js/form-handler.js', () => typeof window.FormHandler !== 'undefined');
                 await loadScript('/js/nav.js', () => typeof window.NavigationHandler !== 'undefined');
-                await loadScript('/js/carousel.js', () => typeof window.HeroCarousel !== 'undefined'); // NUEVO
+                await loadScript('/js/carousel.js', () => typeof window.HeroCarousel !== 'undefined');
+                await loadScript('/js/language-selector.js', () => typeof window.initLanguageSelector === 'function');
                 await loadScript('/js/main.js', () => true);
                 
                 // Inicializar carousel si está en la página principal
                 if (document.querySelector('.hero-carousel')) {
                     window.initHeroCarousel();
+                }
+
+                // Inicializar selector de idioma
+                if (typeof window.initLanguageSelector === 'function') {
+                    window.initLanguageSelector();
                 }
                                 
                 const form = document.getElementById('registrationForm');
@@ -236,7 +279,7 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`
                 console.error('Error initializing B4OS:', error);
                 
                 // Fallback silencioso
-                const scripts = ['/js/location-api.js', '/js/form-handler.js', '/js/nav.js', '/js/carousel.js', '/js/main.js'];
+                const scripts = ['/js/location-api.js', '/js/form-handler.js', '/js/nav.js', '/js/carousel.js', '/js/language-selector.js', '/js/main.js'];
                 scripts.forEach(src => {
                     const script = document.createElement('script');
                     script.src = src;
@@ -250,6 +293,11 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`
                         const nav = new window.NavigationHandler();
                         nav.init();
                     }
+                    // Intentar inicializar lenguage selector si está disponible
+                    if (typeof window.initLanguageSelector === 'function') {
+                        window.initLanguageSelector();
+                    }
+                    
                     // Inicializar carousel si está disponible
                     if (typeof window.initHeroCarousel !== 'undefined') {
                         window.initHeroCarousel();

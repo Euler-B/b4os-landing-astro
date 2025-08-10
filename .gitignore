@@ -170,3 +170,4 @@ Thumbs.db
 *.trunk/
 
 reports
+i18n.cache

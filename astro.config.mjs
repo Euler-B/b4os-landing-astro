@@ -11,7 +11,15 @@ export default defineConfig({
     format: 'directory',
     inlineStylesheets: 'auto',
   },
-  
+
+  i18n: {
+    defaultLocale: "es",
+    locales: ["es", "en", "pt"],
+    routing: {
+      prefixDefaultLocale: false // español sin prefijo (/), inglés (/en/), portugués (/pt/)
+    }
+  },
+    
   vite: {
     build: {
       cssCodeSplit: true,
