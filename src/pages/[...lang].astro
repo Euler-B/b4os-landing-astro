@@ -162,7 +162,7 @@ const t = translations as any; // Type casting para evitar errores de TypeScript
                     </div>
                     <h3 class="alumni-name">Fernando Ledesma</h3>
                     <p class="alumni-description">
-                        <span class="project-highlight">SimLN</span> y <span class="project-highlight">LNDK</span>
+                        <span class="project-highlight">SimLN</span> & <span class="project-highlight">LNDK</span>
                         <span class="sponsor-highlight">{t.alumni.grantee_b4os}</span>
                     </p>
                 </article>
@@ -184,9 +184,9 @@ const t = translations as any; // Type casting para evitar errores de TypeScript
                     </div>
                     <h3 class="alumni-name">Pol Espinasa</h3>
                     <p class="alumni-description">
-                        <span class="project-highlight">SimLN</span> y <span class="project-highlight">LNDK</span>
+                        <span class="project-highlight">Bitcoin Core</span>
                         <a href="https://lclhost.org/" target="_blank" rel="noopener">
-                            <span class="sponsor-highlight">{t.alumni.grantee_localhost}</span>
+                            <span class="sponsor-highlight" set:html={t.alumni.grantee_b4os_localhost}></span>
                         </a> 
                     </p>
                 </article>                
@@ -211,7 +211,7 @@ const t = translations as any; // Type casting para evitar errores de TypeScript
                     </div>
                     <h3 class="alumni-name">Maurice Poirrier</h3>
                     <p class="alumni-description">
-                        <span class="project-highlight">LNDK</span> como mantenedor principal.
+                        <span class="project-highlight">LNDK</span> {t.alumni.main_maintainer}
                         <a href="https://spiral.xyz" target="_blank" rel="noopener"><span class="sponsor-highlight">{t.alumni.grantee_spiral}</span></a>
                     </p>
                 </article>
@@ -276,7 +276,7 @@ const t = translations as any; // Type casting para evitar errores de TypeScript
                     <h3 class="alumni-name">Javier Montoya</h3>
                     <p class="alumni-description">
                         <span class="project-highlight">White Noise</span>
-                        <a href="https://github.com/parres-hq/whitenoise" target="_blank" rel="noopener"><span class="sponsor-highlight">{t.alumni.grantee_whitenoise}</span></a>
+                        <a href="https://github.com/parres-hq/whitenoise" target="_blank" rel="noopener"><span class="sponsor-highlight">{t.alumni.grantee_whitenoise_b4os}</span></a>
                     </p>
                 </article>                                   
             </div>
