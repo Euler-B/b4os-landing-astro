@@ -841,12 +841,21 @@ section {
 }
 
 .sponsor-highlight {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 500;
     color: #495057;
     margin: 0;
     font-style: italic;
     position: relative;
+    transition: color 0.3s ease;
+}
+
+.sponsor-highlight:hover {
+    color: var(--primary-color);
+}
+
+a:hover .sponsor-highlight {
+    text-decoration: none;
 }
 
 .sponsor-highlight::after {
@@ -1403,6 +1412,10 @@ section {
     z-index: 2;
 }
 
+.alumni-card a {
+    text-decoration: none;
+}
+
 /* Year Badge */
 .alumni-year-badge {
     text-align: center;
@@ -1459,7 +1472,8 @@ section {
     overflow: hidden;
     border: 1px solid var(--border-color);
     flex: 0 0 auto;
-    width: 240px;
+    width: 280px;
+    height: 480px;
 }
 
 .alumni-card::before {
