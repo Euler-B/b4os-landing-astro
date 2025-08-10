@@ -72,11 +72,12 @@
     "linkedin_aria": "LinkedIn de {name}",
     "twitter_aria": "Twitter de {name}",
     "grantee_b4os": "Grantee do B4OS",
-    "grantee_localhost": "Grantee do LocalHost",
+    "grantee_b4os_localhost": "Grantee do B4OS - <br/>Intern Localhost",
     "grantee_spiral": "Grantee do Spiral",
     "grantee_bdk": "Grantee da BDK Foundation",
     "grantee_whitenoise_b4os": "Grantee do White Noise - B4OS",
-    "grantee_whitenoise": "Grantee do White Noise"
+    "grantee_whitenoise": "Grantee do White Noise",
+    "main_maintainer": "mantenedor principal"
   },
   "residencies": {
     "title": "Residências B4OS",

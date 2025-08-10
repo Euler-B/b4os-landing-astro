@@ -55,11 +55,12 @@ checksums:
     alumni/linkedin_aria: 53598a231e5a2aeff0bec269f1415385
     alumni/twitter_aria: cab8c32e3aff53697c0ab04f33fbd7fd
     alumni/grantee_b4os: 4563f41ecc19e723fe0c42103c8c1503
-    alumni/grantee_localhost: c268158328a3fb4345693f19085c9c7b
+    alumni/grantee_b4os_localhost: 49c1decf4f0408cb8d415f5921cbd8a3
     alumni/grantee_spiral: d3e2fbf46b6532e7d236d6c553763086
     alumni/grantee_bdk: 4a7fb6eb68fbfb96a037091c56489c13
     alumni/grantee_whitenoise_b4os: 0c8d16504ed43db91ff842b706997bfc
     alumni/grantee_whitenoise: 1e8fa4402b11d75a36ae2fec8cde878c
+    alumni/main_maintainer: 213c002a24d01aa6a3bb96ec99dd8b7f
     residencies/title: 0c5cedac6af0dd4f0db8cf44dae8d8e3
     residencies/subtitle: 8db12b0bc7720b51329456e355f500b4
     residencies/duration_label: af8c4a8bd427b341e6fc280b30e3b00a
