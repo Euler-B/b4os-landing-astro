@@ -47,15 +47,15 @@
     "title": "B4OS oferece rotas de aprendizagem especializadas, permitindo que os devs se concentrem nas áreas de maior demanda",
     "potential": {
       "title": "Desperte seu potencial",
-      "description": "Desafie-se com nossos challenges e descubra suas habilidades ocultas no complexo protocolo do Bitcoin. Vamos guiá-lo com cursos e seminários para que você possa contribuir efetivamente para Bitcoin e Lightning."
+      "description": "Aceite o desafio e domine o protocolo do Bitcoin. Faça parte de um treinamento de elite e comece a contribuir para o Bitcoin e Lightning."
     },
     "open_source": {
       "title": "Open Source e Liberdade",
-      "description": "Aprenda a contribuir em código aberto como os líderes do Linux, Google ou as melhores empresas do Silicon Valley. Quer fazer parte dos 5% top mundial que escrevem 95% do código aberto?"
+      "description": "Contribua para o código aberto como os líderes do Linux, Google e Silicon Valley. Junte-se aos 5% que criam 95% do código do mundo."
     },
     "networking": {
       "title": "Networking e Comunidade",
-      "description": "Bitcoin é uma indústria em crescimento constante que oferece oportunidades únicas para interagir com uma comunidade global de profissionais e entusiastas."
+      "description": "Conecte-se com desenvolvedores e especialistas de todo o mundo. Abra a porta para oportunidades técnicas e profissionais únicas no Bitcoin."
     }
   },
   "alumni": {
@@ -67,12 +67,12 @@
       "fulltime": "Full-time Grantees",
       "parttime": "Part-time ou Micro-grant Grantees"
     },
-    "subtitle": "Conheça alguns dos nossos <strong>graduados mais bem-sucedidos</strong> que agora contribuem ativamente para o ecossistema Bitcoin e projetos FOSS",
+    "subtitle": "<strong>Graduados B4OS 2024:</strong> construindo Bitcoin Open Source em tempo integral",
     "github_aria": "GitHub de {name}",
     "linkedin_aria": "LinkedIn de {name}",
     "twitter_aria": "Twitter de {name}",
     "grantee_b4os": "Grantee do B4OS",
-    "grantee_b4os_localhost": "Grantee do B4OS - <br/>Intern Localhost",
+    "grantee_b4os_localhost": "Bolsista do B4OS - <br/>Estagiário Localhost",
     "grantee_spiral": "Grantee do Spiral",
     "grantee_bdk": "Grantee da BDK Foundation",
     "grantee_whitenoise_b4os": "Grantee do White Noise - B4OS",

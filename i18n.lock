@@ -39,23 +39,23 @@ checksums:
     objectives/image_alt: 3eb458de67a25c6c28db306eb0da208c
     objectives/title: e9cb045faa42500d2dbb37816053474e
     objectives/potential/title: 501d5e532bc0bf445c235bb9b429f532
-    objectives/potential/description: ee96da37d09f7c10263bae53d1f2e932
+    objectives/potential/description: f72262cfc72c9d559bb6799ec084c414
     objectives/open_source/title: fe348e6cf9cd71f27f342380b2b274ac
-    objectives/open_source/description: 180f87424a031fd2dbbcaf75ec2cb85e
+    objectives/open_source/description: 48f059f44f707ffba45060ea0cd94f55
     objectives/networking/title: cd9ac4809535775494f5184c32b7b766
-    objectives/networking/description: dd4baeedaa91cb1488e561ddde3d3866
+    objectives/networking/description: e336714bd701ddeaeed2fd6c502e1795
     alumni/title: 450c2a6b435f1c364f6a18cc2bebc4c3
     alumni/stats_aria: 31901b82c080087eeb7770e94869b086
     alumni/stats/registered: b93c22965726496ffbcde1ee10c0b11e
     alumni/stats/selected: 8e8f3551a18bc3af48953a5f0e30227e
     alumni/stats/fulltime: 622027013331e5b26dcdd25477657c5b
     alumni/stats/parttime: c643114fd4820166c8dd9001cc2c4485
-    alumni/subtitle: 273a99024552af2f20dc2cbd315aaccc
+    alumni/subtitle: 013d214136dac47a43ae1e4dc1d7b8c5
     alumni/github_aria: 34ed08e5c1cc70e88aab50aee67c8bd6
     alumni/linkedin_aria: 53598a231e5a2aeff0bec269f1415385
     alumni/twitter_aria: cab8c32e3aff53697c0ab04f33fbd7fd
     alumni/grantee_b4os: 4563f41ecc19e723fe0c42103c8c1503
-    alumni/grantee_b4os_localhost: 49c1decf4f0408cb8d415f5921cbd8a3
+    alumni/grantee_b4os_localhost: b0aa51549af8f54257ede1b73d961780
     alumni/grantee_spiral: d3e2fbf46b6532e7d236d6c553763086
     alumni/grantee_bdk: 4a7fb6eb68fbfb96a037091c56489c13
     alumni/grantee_whitenoise_b4os: 0c8d16504ed43db91ff842b706997bfc

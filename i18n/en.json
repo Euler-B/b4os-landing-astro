@@ -47,15 +47,15 @@
     "title": "B4OS offers specialized learning paths, allowing devs to focus on the areas of highest demand",
     "potential": {
       "title": "Awaken your potential",
-      "description": "Challenge yourself with our challenges and discover your hidden skills in the complex Bitcoin protocol. We'll guide you with courses and seminars so you can effectively contribute to Bitcoin and Lightning."
+      "description": "Accept the challenge and master the Bitcoin protocol. Be part of an elite training and start contributing to Bitcoin and Lightning."
     },
     "open_source": {
       "title": "Open source and freedom",
-      "description": "Learn to contribute to open source like the leaders of Linux, Google or the best Silicon Valley companies. Want to be part of the top 5% worldwide that writes 95% of open source code?"
+      "description": "Contribute to open source like the leaders of Linux, Google and Silicon Valley. Join the 5% that creates 95% of the world's code."
     },
     "networking": {
       "title": "Networking and community",
-      "description": "Bitcoin is a constantly growing industry that offers unique opportunities to interact with a global community of professionals and enthusiasts."
+      "description": "Connect with developers and experts from around the world. Open the door to unique technical and professional opportunities in Bitcoin."
     }
   },
   "alumni": {
@@ -67,7 +67,7 @@
       "fulltime": "Full-time grantees",
       "parttime": "Part-time or micro-grant grantees"
     },
-    "subtitle": "Meet some of our <strong>most successful graduates</strong> who are now actively contributing to the Bitcoin ecosystem and FOSS projects",
+    "subtitle": "<strong>B4OS 2024 Graduates:</strong> building Bitcoin Open Source full-time",
     "github_aria": "GitHub of {name}",
     "linkedin_aria": "LinkedIn of {name}",
     "twitter_aria": "Twitter of {name}",
