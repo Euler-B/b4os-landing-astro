@@ -192,8 +192,6 @@ body {
     display: none;
 }
 
-
-
 .objectives-background {
     position: absolute;
     top: 0;
@@ -841,17 +839,36 @@ section {
 }
 
 .sponsor-highlight {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 500;
     color: #495057;
     margin: 0;
     font-style: italic;
     position: relative;
+    transition: color 0.3s ease;
+}
+
+.sponsor-highlight:hover {
+    color: var(--primary-color);
+}
+
+a:hover .sponsor-highlight {
+    text-decoration: none;
+}
+
+.sponsor-highlight::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: #f7931a;
+    margin: 1rem auto;
+    border-radius: 1px;
 }
 
 .sponsor-highlight::after {
     content: '';
-    display: block;
+    display: none;
     width: 60px;
     height: 2px;
     background: #f7931a;
@@ -1403,6 +1420,10 @@ section {
     z-index: 2;
 }
 
+.alumni-card a {
+    text-decoration: none;
+}
+
 /* Year Badge */
 .alumni-year-badge {
     text-align: center;
@@ -1459,7 +1480,8 @@ section {
     overflow: hidden;
     border: 1px solid var(--border-color);
     flex: 0 0 auto;
-    width: 240px;
+    width: 280px;
+    height: 480px;
 }
 
 .alumni-card::before {
@@ -1514,8 +1536,6 @@ section {
 }
 
 /* Alumni Icons */
-/* Reemplaza las reglas de .alumni-avatar y .alumni-icons en tu CSS */
-
 /* Alumni Avatar */
 .alumni-avatar {
     position: relative;
