@@ -5,17 +5,29 @@ import icon from 'astro-icon';
 export default defineConfig({
   site: 'https://b4os.dev',
   
+  compressHTML: true,
+
   build: {
-    format: 'directory'
+    format: 'directory',
+    inlineStylesheets: 'auto',
   },
   
   vite: {
     build: {
+      cssCodeSplit: true,
       rollupOptions: {
         output: {
           entryFileNames: 'assets/[name].[hash].js',
           chunkFileNames: 'assets/[name].[hash].js',
-          assetFileNames: 'assets/[name].[hash][extname]'
+          assetFileNames: 'assets/[name].[hash][extname]',
+          manualChunks: (id) => {
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
+            if (id.includes('astro-icon')) {
+              return 'icons';
+            }
+          },
         }
       }
     }
