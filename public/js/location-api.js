@@ -17,8 +17,8 @@ window.LocationAPI = class LocationAPI {
         };
         
         this.countries = [];
-        this.targetRegions = ['Americas', 'Europe']; // América + Europa (España)
-        this.targetSubregions = ['South America', 'Central America', 'Caribbean', 'Southern Europe', 'North America'];
+        this.targetRegions = ['Americas', 'Europe', 'Africa']; // América + Europa (España) + África
+        this.targetSubregions = ['South America', 'Central America', 'Caribbean', 'Southern Europe', 'North America', 'Northern Africa', 'Western Africa', 'Eastern Africa', 'Southern Africa', 'Middle Africa'];
     }
 
     /**
@@ -60,8 +60,8 @@ window.LocationAPI = class LocationAPI {
      * Cargar países desde la API
      */
     async loadCountries() {
-        // Intentar obtener del caché primero
-        const cached = this.getFromCache('countries');
+        // Intentar obtener del caché primero (v3 incluye África)
+        const cached = this.getFromCache('countries_v3');
         if (cached) {
             console.log('Países cargados desde caché');
             this.countries = cached;
@@ -96,7 +96,7 @@ window.LocationAPI = class LocationAPI {
                 .sort((a, b) => a.name.localeCompare(b.name, 'es', { sensitivity: 'base' }));
 
             this.countries = filteredCountries;
-            this.saveToCache('countries', filteredCountries);
+            this.saveToCache('countries_v3', filteredCountries);
             
             console.log(`Cargados ${filteredCountries.length} países desde API`);
             return filteredCountries;
@@ -157,7 +157,8 @@ window.LocationAPI = class LocationAPI {
             { code: 'PE', name: 'Perú', region: 'Americas', subregion: 'South America' },
             { code: 'DO', name: 'República Dominicana', region: 'Americas', subregion: 'Caribbean' },
             { code: 'UY', name: 'Uruguay', region: 'Americas', subregion: 'South America' },
-            { code: 'VE', name: 'Venezuela', region: 'Americas', subregion: 'South America' }
+            { code: 'VE', name: 'Venezuela', region: 'Americas', subregion: 'South America' },
+            { code: 'AO', name: 'Angola', region: 'Africa', subregion: 'Middle Africa' }
         ];
         
         this.countries = fallbackList;
@@ -220,7 +221,8 @@ window.LocationAPI = class LocationAPI {
             'UY': ['Montevideo', 'Salto', 'Paysandú', 'Las Piedras', 'Rivera', 'Maldonado', 'Tacuarembó'],
             'VE': ['Caracas', 'Maracaibo', 'Valencia', 'Barquisimeto', 'Maracay', 'Ciudad Guayana', 'San Cristóbal', 'Maturín', 'Barcelona', 'Turmero'],
             'US': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix', 'Philadelphia', 'San Antonio', 'San Diego', 'Dallas', 'San Jose'],
-            'CA': ['Toronto', 'Montreal', 'Vancouver', 'Calgary', 'Edmonton', 'Ottawa', 'Winnipeg', 'Quebec City']
+            'CA': ['Toronto', 'Montreal', 'Vancouver', 'Calgary', 'Edmonton', 'Ottawa', 'Winnipeg', 'Quebec City'],
+            'AO': ['Luanda', 'Huambo', 'Lobito', 'Benguela', 'Kuito', 'Lubango', 'Malanje', 'Namibe', 'Soyo', 'Cabinda']
         };
         
         return curatedCities[countryCode] || [];
@@ -276,6 +278,13 @@ window.LocationAPI = class LocationAPI {
                 }
             });
 
+            // Añadir opción "Otros"
+            const otherOption = document.createElement('option');
+            otherOption.value = 'other';
+            otherOption.textContent = 'Mi país no está en la lista';
+            selectElement.appendChild(otherOption);
+            addedCount++;
+
             // Habilitar select
             selectElement.disabled = false;
             
@@ -318,6 +327,9 @@ window.LocationAPI = class LocationAPI {
             countries.forEach(country => {
                 optionsHTML += `<option value="${country.code}">${country.name}</option>`;
             });
+            
+            // Añadir opción "Otros"
+            optionsHTML += '<option value="other">Mi país no está en la lista</option>';
             
             selectElement.innerHTML = optionsHTML;
             
@@ -378,6 +390,55 @@ window.LocationAPI = class LocationAPI {
             selectElement.innerHTML = '<option value="other">Mi ciudad no está en la lista</option>';
             selectElement.disabled = false;
         }
+    }
+
+    /**
+     * Manejar selección de "Otro país"
+     */
+    handleOtherCountry(countrySelect) {
+        const otherCountryContainer = document.getElementById('otherCountryContainer');
+        
+        if (countrySelect.value === 'other') {
+            if (!otherCountryContainer) {
+                this.createOtherCountryInput(countrySelect);
+            } else {
+                otherCountryContainer.style.display = 'block';
+                otherCountryContainer.querySelector('input').required = true;
+            }
+            
+            // Limpiar selector de ciudades y mostrar opción "Otra ciudad"
+            const citySelect = document.querySelector('select[name="city"]');
+            if (citySelect) {
+                citySelect.innerHTML = '<option value="other">Mi ciudad no está en la lista</option>';
+                citySelect.disabled = false;
+            }
+        } else {
+            if (otherCountryContainer) {
+                otherCountryContainer.style.display = 'none';
+                otherCountryContainer.querySelector('input').required = false;
+            }
+        }
+    }
+
+    /**
+     * Crear input para "otro país"
+     */
+    createOtherCountryInput(countrySelect) {
+        const countryGroup = countrySelect.parentElement;
+        
+        const otherContainer = document.createElement('div');
+        otherContainer.id = 'otherCountryContainer';
+        otherContainer.className = 'form-group';
+        otherContainer.style.marginTop = '10px';
+        
+        otherContainer.innerHTML = `
+            <label for="otherCountry">Especifica tu país *</label>
+            <input type="text" id="otherCountry" name="otherCountry" 
+                   placeholder="Nombre de tu país" required>
+        `;
+        
+        countryGroup.insertAdjacentElement('afterend', otherContainer);
+        console.log('✅ Created other country input');
     }
 
     /**
