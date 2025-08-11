@@ -47,12 +47,14 @@ const t = translations as any; // Type casting para evitar errores de TypeScript
                     <a href="#alianzas" class="nav-link">{t.nav.alliances}</a>
                     <a href="#contacto" class="nav-link">{t.nav.contact}</a>
                 </div>
-                <LanguageSelector locale={locale} />                        
-                <button class="nav-toggle" id="navToggle" aria-label={t.nav.toggle_aria} aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <div class="nav-utilities">
+                    <LanguageSelector locale={locale} />
+                    <button class="nav-toggle" id="navToggle" aria-label={t.nav.toggle_aria} aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
         </nav>
     </header>
