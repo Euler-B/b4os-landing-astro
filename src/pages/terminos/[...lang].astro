@@ -7,7 +7,8 @@ import { getTranslation } from '../../i18n/utils.js';
 export async function getStaticPaths() {
   return [
     { params: { lang: undefined } },  
-    { params: { lang: 'en' } },      
+    { params: { lang: 'en' } },
+    { params: { lang: 'ca' } },       // Para /ca (catalán)
     { params: { lang: 'pt' } }        
   ];
 }

@@ -2,13 +2,14 @@
 import es from '../../i18n/es.json';
 import en from '../../i18n/en.json';
 import pt from '../../i18n/pt.json';
+import ca from '../../i18n/ca.json';
 
-const translations = { es, en, pt };
+const translations = { es, en, pt, ca };
 const defaultLocale = 'es';
 
 /**
  * Obtiene el objeto completo de traducciones para un idioma
- * @param {string} lang - Código del idioma (es, en, pt)
+ * @param {string} lang - Código del idioma (es, en, pt, ca)
  * @returns {object} Objeto con todas las traducciones
  */
 export function getTranslation(lang = defaultLocale) {
@@ -32,7 +33,8 @@ export function t(key, lang = defaultLocale) {
 export const locales = [
   { code: 'es', name: 'Español', flag: '🇪🇸' },
   { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'pt', name: 'Português', flag: '🇧🇷' }
+  { code: 'pt', name: 'Português', flag: '🇧🇷' },
+  { code: 'ca', name: 'Català', flag: '🇪🇸' } // Catalán, usando la bandera española por simplicidad
 ];
 
 /**
@@ -43,8 +45,8 @@ export const locales = [
  */
 export function getLocalizedPath(targetLocale, currentPath = '/') {
   // Remover prefijo de idioma actual si existe
-  const cleanPath = currentPath.replace(/^\/(en|pt)/, '') || '/';
-  
+  const cleanPath = currentPath.replace(/^\/(en|pt|ca)/, '') || '/';
+
   // Añadir prefijo del idioma destino (excepto español)
   if (targetLocale === 'es') {
     return cleanPath;
