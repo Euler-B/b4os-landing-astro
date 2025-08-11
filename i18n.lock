@@ -94,7 +94,7 @@ checksums:
     residencies/disclaimer: 61aaeeadf20d853d1851e0f622d49bbd
     timeline/title: 3d6faeeca3998f60ced28eaf939cb075
     timeline/subtitle: 8bc9de830a2411df415002d3c78e9567
-    timeline/registration/date: 039f3b77f111dc646d74c8d99b6793c9
+    timeline/registration/date: 81c826ecdf8088a9c58fe5a195a3a7d1
     timeline/registration/title: 38d54e5d817bfb14220015b0a2321392
     timeline/registration/description: 697109e39546fb1a07180f453a7f0a29
     timeline/challenges/date: aaa53765e1f2059a747986768c511d00
@@ -131,8 +131,9 @@ checksums:
     registration/requirements/interest: 61993f8e7b25f27e789be2a3069f5408
     registration/requirements/availability: 22282822e508ba49205af31ebfa408f6
     registration/requirements/resilience: af842891833dfaecd97efce630231b57
-    registration/period/label: 49c61a9c552c28165db60cba3b410ac9
-    registration/period/dates: 2070a3ed2a4c445754f22ec348506bec
+    registration/requirements/spanish: 05ce58363ab94ce4a4cab179dd42d486
+    registration/period/label: a0fc05149cd0b4a6f54b3dcec0e64977
+    registration/period/dates: b1e620898e0b2a50131e654b17e6f4d6
     registration/form/title: 0f9ffb9f14aebee4b018f2a97d1773d1
     registration/form/aria_label: a76b95e4cd0df4201c9aabe7e7ecbfb6
     registration/form/name/label: 385ede445a7d152a62c1b730233d3c0d

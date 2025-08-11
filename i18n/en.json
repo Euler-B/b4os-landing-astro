@@ -126,7 +126,7 @@
     "title": "B4OS Timeline",
     "subtitle": "Learn about the <strong>important dates</strong> of the B4OS 2025–2026 program",
     "registration": {
-      "date": "Aug 6 - Sept 15, 2025",
+      "date": "Aug 11 - Sept 15, 2025",
       "title": "Registration",
       "description": "Registration of participants for the B4OS 2025–2026 program."
     },
@@ -182,11 +182,12 @@
       "languages": "Solid knowledge in languages such as <strong>C++, Rust, Python or JavaScript</strong>",
       "interest": "Genuine interest in contributing to the <strong>Bitcoin open source ecosystem</strong>",
       "availability": "<strong>Availability</strong> to invest 5 to 10 hours weekly",
-      "resilience": "<strong>Resilience</strong> to complete the entire program"
+      "resilience": "<strong>Resilience</strong> to complete the entire program",
+      "spanish": "Proficiency in <strong>Spanish</strong> to actively participate in the program"
     },
     "period": {
-      "label": "Registration open",
-      "dates": "August 6-31, 2025"
+      "label": "Registration until",
+      "dates": "September 15, 2025"
     },
     "form": {
       "title": "B4OS 2025 registration form",
