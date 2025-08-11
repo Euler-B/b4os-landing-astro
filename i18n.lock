@@ -243,7 +243,7 @@ checksums:
     terms/header/intro_2: b65a7367f2b7b60141712e34f7a43bde
     terms/sections/about/title: a4128e1566dbc124f17e592bd52c3e1d
     terms/sections/about/content_1: b46e0410010ed39b058ef5c2508ea864
-    terms/sections/about/content_2: 551e29281a03b2b3d40d757f34f034d6
+    terms/sections/about/content_2: 7a90df45c59cd5e283d5bf5a6377d730
     terms/sections/eligibility/title: a6dbb32bd4de457632788d9a164a983f
     terms/sections/eligibility/process/title: 16601d63e0474c6e9ad5841a2f2db87b
     terms/sections/eligibility/process/content: a7444902b4f1391d5617fbfc36c3d97b
@@ -275,19 +275,18 @@ checksums:
     terms/sections/scholarships/title: 33ef90404613240fd3e380667727b8ed
     terms/sections/scholarships/expectations/title: de23e510dca3bb0f8fae6cabdf70f969
     terms/sections/scholarships/expectations/content: 3c294d00fde0e687324683dcf3983f10
-    terms/sections/scholarships/criteria: c2289017152c1cbb58a0a9538e03daa2
+    terms/sections/scholarships/criteria: 6acb9e56de72608a9abc066c16e29e22
     terms/sections/data/title: a6a51583ef6bad2013ea92a5c37884ef
-    terms/sections/data/content_1: 290347b4c53cb449de34e7bc591df049
+    terms/sections/data/content_1: c93d91b48956cc75928f4cb5e3c2cf8a
     terms/sections/data/content_2: 9478293e4fb7ac908722cf00d6ee7702
     terms/sections/communications/title: f7a06dde5fd0b26405f3d7e11a43f389
-    terms/sections/communications/content_1: ea49e32309e873e74d840c012199d2bc
+    terms/sections/communications/content_1: 0000437967569895ddc5656eff103df5
     terms/sections/communications/content_2: ed8307846c3010eea27c10e5b93fac71
     terms/sections/changes/title: 676f10e9072e83b4eed56f0ad3b2a619
-    terms/sections/changes/content_1: 531eaa8a74a7982d22bbf78d1c881e01
-    terms/sections/changes/content_2: 71bf907832597d309cee716e2aba4414
+    terms/sections/changes/content_1: f8c4b0a30a192080455ed239b34e07d1
     terms/sections/contact/title: 505d4c86e7ad3ce701487abb30b89614
     terms/sections/contact/content: e3b6f76a47876945da1dee813bed05d9
-    terms/sections/tldr/content: 963d863091b348c334f292d6f2f06211
+    terms/sections/tldr/content: bf0faa60277a90060a4474fbfd4b1e66
     terms/footer/last_updated: 3fcc2c6efd856d259c24a0b6975e03ad
     terms/footer/date: 0735926f0f70f5bcfbc5626684498739
     terms/footer/close_btn: 8d666219d7e38a8c12bd7acbdda8815f

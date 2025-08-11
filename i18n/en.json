@@ -397,7 +397,7 @@
       "about": {
         "title": "What this is about",
         "content_1": "B4OS is a program designed for experienced devs who want to contribute to the <strong>Bitcoin, Lightning and Nostr</strong> ecosystem.",
-        "content_2": "If you sign up, it means you agree with everything that follows."
+        "content_2": "If you register, it means you unconditionally accept everything that follows."
       },
       "eligibility": {
         "title": "Can I participate?",
@@ -461,29 +461,28 @@
           "title": "Realistic expectations:",
           "content": "The program does not guarantee scholarships or invitation to the residency. That depends on how you perform during the program."
         },
-        "criteria": "We work with clear criteria that we will communicate to you."
+        "criteria": "We work with clear criteria that we will communicate to you in a timely manner."
       },
       "data": {
         "title": "Your data",
-        "content_1": "We need your data to manage the program. We treat it according to our privacy policies and the law.",
+        "content_1": "We need your data to manage the program. We process it according to our good privacy policies and respective laws.",
         "content_2": "We never share it with third parties without your permission."
       },
       "communications": {
         "title": "Communications",
-        "content_1": "By joining, you agree to receive updates about the program and the B4OS ecosystem - event invitations, new programs, relevant news.",
+        "content_1": "By joining, you agree to receive updates about the program and the B4OS ecosystem: event invitations, new programs, relevant news.",
         "content_2": "You can cancel this anytime."
       },
       "changes": {
         "title": "Changes to these terms",
-        "content_1": "We may update these terms when necessary. Changes are published on the program website.",
-        "content_2": "It is your responsibility to stay up to date."
+        "content_1": "To improve or adapt the program, we may update these terms when necessary. Changes are published on the program website. It is your responsibility to keep them in mind and stay up to date."
       },
       "contact": {
         "title": "Questions?",
         "content": "Write to us at <a href=\"mailto:hola@libreriadesatoshi.com\">hola@libreriadesatoshi.com</a>"
       },
       "tldr": {
-        "content": "<em>TL;DR: This is a serious program for serious devs who want to contribute to the Bitcoin/Lightning/Nostr ecosystem. Be professional, contribute code, learn a lot. No guarantees of scholarships, but with great potential for growth. ✨</em>"
+        "content": "<em>TL;DR: This is a serious program for serious devs who want to contribute to the Bitcoin/Lightning/Nostr ecosystem. Be professional, contribute code, learn a ton. No scholarship guarantees, but lots of growth potential.</em>"
       }
     },
     "footer": {
