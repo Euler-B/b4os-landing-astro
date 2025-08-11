@@ -65,11 +65,12 @@ const ogLocaleMap = {
 const ogLocale = ogLocaleMap[locale] || 'es_ES';
 
 // URLs para hreflang
-const basePathClean = Astro.url.pathname.replace(/^\/(en|pt)/, '') || '/';
+const basePathClean = Astro.url.pathname.replace(/^\/(en|pt|ca)/, '') || '/';
 const hrefLangUrls = {
   es: `${siteUrl}${basePathClean}`,
   en: `${siteUrl}/en${basePathClean === '/' ? '' : basePathClean}`,
-  pt: `${siteUrl}/pt${basePathClean === '/' ? '' : basePathClean}`
+  pt: `${siteUrl}/pt${basePathClean === '/' ? '' : basePathClean}`,
+  ca: `${siteUrl}/ca${basePathClean === '/' ? '' : basePathClean}`
 };
 ---
 
