@@ -1,57 +1,102 @@
 # netlify.toml
 [build]
-  publish = "dist"
-  command = "npm run build"
-  functions = "netlify/functions"
+publish = "dist"
+command = "npm run build"
+functions = "netlify/functions"
 
 # Auditoría MÓVIL (Google mobile-first)
 [[plugins]]
-  package = "@netlify/plugin-lighthouse"
-  
-  [plugins.inputs]
-    # URL a auditar (reemplaza "urls")
-    audit_url = "/"
-    
-    # Directorio donde guardar reportes
-    output_path = "reports/lighthouse"
-    
-    # Auditorías específicas a ejecutar
-    audits = ["performance", "accessibility", "best-practices", "seo"]
-    
-    # Umbrales de puntuación (mantiene la misma estructura)
-    [plugins.inputs.thresholds]
-      performance = 80
-      accessibility = 90
-      best-practices = 85
-      seo = 90
+package = "@netlify/plugin-lighthouse"
+ [plugins.inputs]
+# URL a auditar (reemplaza "urls")
+audit_url = "/"
+# Directorio donde guardar reportes
+output_path = "reports/lighthouse"
+# Auditorías específicas a ejecutar
+audits = ["performance", "accessibility", "best-practices", "seo"]
+# Umbrales de puntuación (mantiene la misma estructura)
+ [plugins.inputs.thresholds]
+performance = 80
+accessibility = 90
+best-practices = 85
+seo = 90
 
-# Configuración de headers para archivos JavaScript
-[[headers]]
-  for = "*.js"
-  [headers.values]
-    Content-Type = "text/javascript"
+# ===== HEADERS DE COMPRESIÓN Y CACHE =====
 
+# Headers generales para todos los archivos
 [[headers]]
-  for = "/src/scripts/*.js"
-  [headers.values]
-    Content-Type = "text/javascript"
+for = "/*"
+ [headers.values]
+X-Frame-Options = "DENY"
+X-XSS-Protection = "1; mode=block"
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"
 
-# Configuración específica para archivos de módulos ES6
+# Compresión y cache para archivos JavaScript
 [[headers]]
-  for = "**/*.js"
-  [headers.values]
-    Content-Type = "text/javascript; charset=utf-8"
+for = "/*.js"
+ [headers.values]
+Content-Type = "text/javascript; charset=utf-8"
+Cache-Control = "public, max-age=31536000, immutable"
+Content-Encoding = "br, gzip"
 
-# Headers de seguridad adicionales
+# Compresión y cache para archivos CSS
 [[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
+for = "/*.css"
+ [headers.values]
+Content-Type = "text/css; charset=utf-8"
+Cache-Control = "public, max-age=31536000, immutable"
+Content-Encoding = "br, gzip"
+
+# Compresión para archivos HTML
+[[headers]]
+for = "/*.html"
+ [headers.values]
+Content-Type = "text/html; charset=utf-8"
+Cache-Control = "public, max-age=3600"
+Content-Encoding = "br, gzip"
+
+# Compresión para archivos JSON
+[[headers]]
+for = "/*.json"
+ [headers.values]
+Content-Type = "application/json; charset=utf-8"
+Cache-Control = "public, max-age=3600"
+Content-Encoding = "br, gzip"
+
+# Compresión para archivos SVG
+[[headers]]
+for = "/*.svg"
+ [headers.values]
+Content-Type = "image/svg+xml; charset=utf-8"
+Cache-Control = "public, max-age=31536000"
+Content-Encoding = "br, gzip"
+
+# Compresión para archivos XML
+[[headers]]
+for = "/*.xml"
+ [headers.values]
+Content-Type = "application/xml; charset=utf-8"
+Cache-Control = "public, max-age=3600"
+Content-Encoding = "br, gzip"
+
+# Headers específicos para archivos en carpetas de scripts
+[[headers]]
+for = "/src/scripts/*.js"
+ [headers.values]
+Content-Type = "text/javascript; charset=utf-8"
+Cache-Control = "public, max-age=31536000, immutable"
+Content-Encoding = "br, gzip"
+
+# Headers para assets generados por Astro
+[[headers]]
+for = "/assets/*"
+ [headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+Content-Encoding = "br, gzip"
 
 # Configuración de redirects - sintaxis corregida
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+from = "/*"
+to = "/index.html"
+status = 200
