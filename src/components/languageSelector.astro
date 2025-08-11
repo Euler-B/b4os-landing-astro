@@ -29,6 +29,12 @@ const languages = [
     name: 'Português', 
     region: '(Brasil)',
     fullName: 'Português (Brasil)'
+  },
+  {
+    code: 'ca',
+    name: 'Català', 
+    region: '(Espanya)',
+    fullName: 'Català (Espanya)'
   }
 ];
 
@@ -41,7 +47,7 @@ const currentLanguage = languages.find(lang => lang.code === locale) || language
   <!-- Botón principal que muestra el idioma actual -->
   <button class="lang-button" id="langButton" aria-label={`Cambiar idioma - ${currentLanguage.fullName}`} aria-expanded="false" aria-haspopup="true">
     <!-- Icono del globo -->
-    <Icon name="mdi:translate-variant" size={16} />
+    <Icon name="mdi:web" size={16} />
     
     <!-- Código del idioma actual -->
     <span class="lang-current-code">
@@ -69,7 +75,7 @@ const currentLanguage = languages.find(lang => lang.code === locale) || language
         >
           <span class="lang-text">
             <span class="lang-name">{lang.name}</span>
-            <span class="lang-region">{lang.region}</span>
+            <!-- <span class="lang-region">{lang.region}</span> -->
           </span>
           {isActive && <span class="lang-check">✓</span>}
         </a>

@@ -169,5 +169,5 @@ Thumbs.db
 
 *.trunk/
 
-reports
+reports/*
 i18n.cache
