@@ -39,14 +39,14 @@ const currentLanguage = languages.find(lang => lang.code === locale) || language
 <!-- Selector de idioma -->
 <div class="language-selector">
   <!-- Botón principal que muestra el idioma actual -->
-  <button class="lang-button" id="langButton" aria-label="Cambiar idioma" aria-expanded="false" aria-haspopup="true">
+  <button class="lang-button" id="langButton" aria-label={`Cambiar idioma - ${currentLanguage.fullName}`} aria-expanded="false" aria-haspopup="true">
     <!-- Icono del globo -->
     <Icon name="mdi:translate-variant" size={16} />
     
-    <!-- Texto del idioma actual
-    <span class="lang-current">
-      {currentLanguage.fullName}
-    </span>-->
+    <!-- Código del idioma actual -->
+    <span class="lang-current-code">
+      {currentLanguage.code.toUpperCase()}
+    </span>
     
     <!-- Icono de flecha -->
     <svg class="lang-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
