@@ -397,7 +397,7 @@
       "about": {
         "title": "De qué va esto",
         "content_1": "B4OS es un programa diseñado para devs con experiencia que quieren contribuir al ecosistema de <strong>Bitcoin, Lightning y Nostr</strong>.",
-        "content_2": "Si te inscribes, significa que estás de acuerdo con todo lo que viene a continuación."
+        "content_2": "Si te inscribes, significa que aceptas sin reservas todo lo que viene a continuación."
       },
       "eligibility": {
         "title": "¿Puedo participar?",
@@ -461,29 +461,28 @@
           "title": "Expectativas realistas:",
           "content": "El programa no garantiza becas ni invitación a la residencia. Eso depende de cómo lo hagas durante el programa."
         },
-        "criteria": "Trabajamos con criterios claros que te comunicaremos."
+        "criteria": "Trabajamos con criterios claros que te comunicaremos oportunamente."
       },
       "data": {
         "title": "Tus datos",
-        "content_1": "Necesitamos tus datos para gestionar el programa. Los tratamos según nuestras políticas de privacidad y la ley.",
+        "content_1": "Necesitamos tus datos para gestionar el programa. Los tratamos según nuestras buenas políticas de privacidad y las leyes respectivas.",
         "content_2": "Nunca los compartimos con terceros sin tu permiso."
       },
       "communications": {
         "title": "Comunicaciones",
-        "content_1": "Al unirte, aceptas recibir updates del programa y del ecosistema B4OS - invitaciones a eventos, nuevos programas, noticias relevantes.",
+        "content_1": "Al unirte, aceptas recibir actualizaciones del programa y del ecosistema B4OS: invitaciones a eventos, nuevos programas, noticias relevantes.",
         "content_2": "Puedes cancelar esto cuando quieras."
       },
       "changes": {
         "title": "Cambios en estos términos",
-        "content_1": "Podemos actualizar estos términos cuando sea necesario. Los cambios se publican en la web del programa.",
-        "content_2": "Es tu responsabilidad estar al día."
+        "content_1": "Para mejorar o adaptar el programa, podemos actualizar estos términos cuando sea necesario. Los cambios se publican en la web del programa. Es tu responsabilidad tenerlos presentes y estar al día."
       },
       "contact": {
         "title": "¿Dudas?",
         "content": "Escríbenos a <a href=\"mailto:hola@libreriadesatoshi.com\">hola@libreriadesatoshi.com</a>"
       },
       "tldr": {
-        "content": "<em>TL;DR: Es un programa serio para devs serios que quieren contribuir al ecosistema Bitcoin/Lightning/Nostr. Sé profesional, contribuye código, aprende un montón. Sin garantías de becas, pero con mucho potencial de crecimiento. ✨</em>"
+        "content": "<em>TL;DR: Es un programa serio para devs serios que quieren contribuir al ecosistema Bitcoin/Lightning/Nostr. Sé profesional, contribuye código, aprende un montón. Sin garantías de becas, pero con mucho potencial de crecimiento.</em>"
       }
     },
     "footer": {
