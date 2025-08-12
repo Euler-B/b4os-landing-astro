@@ -25,32 +25,43 @@
       best-practices = 85
       seo = 90
 
-# Configuración de headers para archivos JavaScript
+# Headers para assets de Astro (directorio estándar) - caché de 24 horas
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Headers para archivos JavaScript con caché de 24 horas
 [[headers]]
   for = "*.js"
   [headers.values]
-    Content-Type = "text/javascript"
-
-[[headers]]
-  for = "/src/scripts/*.js"
-  [headers.values]
-    Content-Type = "text/javascript"
-
-# Configuración específica para archivos de módulos ES6
-[[headers]]
-  for = "**/*.js"
-  [headers.values]
     Content-Type = "text/javascript; charset=utf-8"
+    Cache-Control = "public, max-age=86400"
 
-# Headers de seguridad adicionales
+# Headers para archivos CSS con caché de 24 horas
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Content-Type = "text/css; charset=utf-8"
+    Cache-Control = "public, max-age=86400"
+
+# Sin caché para HTML (garantiza contenido actualizado)
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Headers de seguridad mejorados
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
 
-# Configuración de redirects - sintaxis corregida
+# Configuración de redirects - SPA routing
 [[redirects]]
   from = "/*"
   to = "/index.html"
