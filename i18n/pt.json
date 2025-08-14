@@ -62,8 +62,8 @@
     "title": "B4OS 2024 FOI UM SUCESSO!",
     "stats_aria": "Estatísticas do programa",
     "stats": {
-      "registered": "Devs registrados",
-      "selected": "Selecionados para a residência",
+      "registered": "Devs selecionados",
+      "selected": "Convidados para a residência",
       "fulltime": "Full-time Grantees",
       "parttime": "Part-time ou Micro-grant Grantees"
     },

@@ -62,8 +62,8 @@
     "title": "B4OS 2024 VA SER UN ÈXIT!",
     "stats_aria": "Estadístiques del programa",
     "stats": {
-      "registered": "Devs registrats",
-      "selected": "Seleccionats per a la residència",
+      "registered": "Devs seleccionats",
+      "selected": "Convidats a la residència",
       "fulltime": "Full-time Grantees",
       "parttime": "Part-time o Micro-grant Grantees"
     },
