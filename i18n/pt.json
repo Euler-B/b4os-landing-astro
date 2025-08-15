@@ -34,6 +34,7 @@
     "register": "Registro",
     "benefits": "Benefícios",
     "alliances": "Alianças",
+    "careers": "Carreiras",
     "contact": "Contato"
   },
   "hero": {
@@ -487,13 +488,36 @@
     },
     "footer": {
       "last_updated": "Última atualização:",
-      "date": "Agosto 2025",
+      "date": "15 de janeiro, 2025",
       "close_btn": "Fechar",
-      "register_btn": "Ir para o registro",
+      "register_btn": "Registrar",
       "copyright": "&copy; 2025 <strong>B4OS (Bitcoin 4 Open Source)</strong>. Feito com <span class=\"heart\" aria-label=\"amor\">❤️</span> para a comunidade Bitcoin",
       "legal_links": {
-        "terms": "Termos de uso"
+        "terms": "Termos de Uso"
       }
+    }
+  },
+  "careers": {
+    "title": "Junte-se à Nossa Equipe",
+    "subtitle": "Estamos construindo o futuro da educação técnica de <strong>Bitcoin</strong>. <br>Buscamos pessoas apaixonadas que compartilhem nossa visão de formar a próxima geração de talentos no ecossistema Bitcoin: educação técnica e empreendedorismo especializado",
+    "highlights": {
+      "remote": {
+        "title": "100% Remoto",
+        "description": "Trabalhamos de qualquer lugar do mundo. A <strong>liberdade</strong> é parte dos nossos valores fundamentais."
+      },
+      "bitcoin": {
+        "title": "Impacto técnico real",
+        "description": "Você contribui para a formação de <strong>especialistas</strong> em desenvolvimento e educação técnica que impactam diretamente o <strong>ecossistema Bitcoin</strong>."
+      },
+      "mission": {
+        "title": "Crescimento acelerado",
+        "description": "Junte-se a uma empresa em <strong>expansão</strong> no setor mais inovador do momento."
+      }
+    },
+    "cta": {
+      "title": "Interessado em se juntar?",
+      "description": "Atualmente temos posições abertas. Confira nossas oportunidades disponíveis.",
+      "button": "Ver Oportunidades"
     }
   },
   "footer": {

@@ -46,6 +46,7 @@ const t = translations as any; // Type casting para evitar errores de TypeScript
                     <a href="#registro" class="nav-link">{t.nav.register}</a>
                     <a href="#beneficios" class="nav-link">{t.nav.benefits}</a>
                     <a href="#alianzas" class="nav-link">{t.nav.alliances}</a>
+                    <a href="#carreras" class="nav-link">{t.nav.careers}</a>
                     <a href="#contacto" class="nav-link">{t.nav.contact}</a>
                 </div>
                 <div class="nav-utilities">
@@ -676,6 +677,51 @@ const t = translations as any; // Type casting para evitar errores de TypeScript
         </div>
     </section>
 
+    <!-- Careers Section -->
+    <section id="carreras" class="careers-section">
+        <div class="container">
+            <header class="section-header">
+                <h2 class="section-title">{t.careers.title}</h2>
+                <p class="section-subtitle" set:html={t.careers.subtitle}></p>
+            </header>
+            
+            <div class="careers-highlights">
+                <div class="career-highlight">
+                    <div class="highlight-icon">
+                        <Icon name="mdi:earth" size={32} />
+                    </div>
+                    <h3>{t.careers.highlights.remote.title}</h3>
+                    <p set:html={t.careers.highlights.remote.description}></p>
+                </div>
+                <div class="career-highlight">
+                    <div class="highlight-icon">
+                        <Icon name="mdi:bitcoin" size={32} />
+                    </div>
+                    <h3>{t.careers.highlights.bitcoin.title}</h3>
+                    <p set:html={t.careers.highlights.bitcoin.description}></p>
+                </div>
+                <div class="career-highlight">
+                    <div class="highlight-icon">
+                        <Icon name="mdi:rocket" size={32} />
+                    </div>
+                    <h3>{t.careers.highlights.mission.title}</h3>
+                    <p set:html={t.careers.highlights.mission.description}></p>
+                </div>
+            </div>
+
+            <div class="careers-cta">
+                <h3>{t.careers.cta.title}</h3>
+                <p>{t.careers.cta.description}</p>
+                <div class="careers-actions">
+                    <a href="https://libreria-de-satoshi.breezy.hr/" class="btn btn-primary" target="_blank" rel="noopener">
+                        <Icon name="mdi:briefcase" size={20} />
+                        {t.careers.cta.button}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer id="contacto" class="footer" role="contentinfo">
         <div class="container">
@@ -694,6 +740,7 @@ const t = translations as any; // Type casting para evitar errores de TypeScript
                         <li><a href="#cronograma">{t.nav.schedule}</a></li>
                         <li><a href="#registro">{t.nav.register}</a></li>
                         <li><a href="#beneficios">{t.nav.benefits}</a></li>
+                        <li><a href="#carreras">{t.nav.careers}</a></li>
                     </ul>
                 </nav>
                 

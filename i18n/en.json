@@ -34,6 +34,7 @@
     "register": "Register",
     "benefits": "Benefits",
     "alliances": "Alliances",
+    "careers": "Careers",
     "contact": "Contact"
   },
   "hero": {
@@ -487,13 +488,36 @@
     },
     "footer": {
       "last_updated": "Last updated:",
-      "date": "August 2025",
+      "date": "January 15, 2025",
       "close_btn": "Close",
-      "register_btn": "Go to registration",
+      "register_btn": "Register",
       "copyright": "&copy; 2025 <strong>B4OS (Bitcoin 4 Open Source)</strong>. Made with <span class=\"heart\" aria-label=\"love\">❤️</span> for the Bitcoin community",
       "legal_links": {
-        "terms": "Terms of use"
+        "terms": "Terms of Use"
       }
+    }
+  },
+  "careers": {
+    "title": "Join our team",
+    "subtitle": "We are building the future of <strong>Bitcoin</strong> technical education. <br>We are looking for passionate people who share our vision of training the next generation of talent in the Bitcoin ecosystem: technical education and specialized entrepreneurship",
+    "highlights": {
+      "remote": {
+        "title": "100% remote",
+        "description": "We work from anywhere in the world. <strong>Freedom</strong> is part of our core values."
+      },
+      "bitcoin": {
+        "title": "Real technical impact",
+        "description": "You contribute to the training of <strong>specialists</strong> in development and technical education who directly impact the <strong>Bitcoin ecosystem</strong>."
+      },
+      "mission": {
+        "title": "Accelerated growth",
+        "description": "Join a company in <strong>expansion</strong> in the most innovative sector of the moment."
+      }
+    },
+    "cta": {
+      "title": "Interested in joining?",
+      "description": "We currently have open positions. Check out our available opportunities.",
+      "button": "View opportunities"
     }
   },
   "footer": {
