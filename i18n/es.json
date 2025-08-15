@@ -485,6 +485,16 @@
       "tldr": {
         "content": "<em>TL;DR: Es un programa serio para devs serios que quieren contribuir al ecosistema Bitcoin/Lightning/Nostr. Sé profesional, contribuye código, aprende un montón. Sin garantías de becas, pero con mucho potencial de crecimiento.</em>"
       }
+    },
+    "footer": {
+      "last_updated": "Última actualización:",
+      "date": "15 de enero, 2025",
+      "close_btn": "Cerrar",
+      "register_btn": "Registrarme",
+      "copyright": "&copy; 2025 <strong>B4OS (Bitcoin 4 Open Source)</strong>. Hecho con <span class=\"heart\" aria-label=\"amor\">❤️</span> para la comunidad Bitcoin",
+      "legal_links": {
+        "terms": "Términos de Uso"
+      }
     }
   },
   "careers": {
