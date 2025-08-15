@@ -31,6 +31,7 @@ checksums:
     nav/register: 38d54e5d817bfb14220015b0a2321392
     nav/benefits: 06c41028c3d7025fafb2b36af0176b52
     nav/alliances: a63917828ffc6b3be5ebdc4b66cb5dcb
+    nav/careers: 2f97859b508c2045beac448aac3f9776
     nav/contact: e1caf5cc16c5a4e4dc9d509ff567c9ce
     hero/title_main: d357bcab918a542f1b992170c43d9438
     hero/title_sub: 73fa961ee3ac2b346727f8ee530c1936
@@ -287,12 +288,17 @@ checksums:
     terms/sections/contact/title: 505d4c86e7ad3ce701487abb30b89614
     terms/sections/contact/content: e3b6f76a47876945da1dee813bed05d9
     terms/sections/tldr/content: bf0faa60277a90060a4474fbfd4b1e66
-    terms/footer/last_updated: 3fcc2c6efd856d259c24a0b6975e03ad
-    terms/footer/date: 0735926f0f70f5bcfbc5626684498739
-    terms/footer/close_btn: 8d666219d7e38a8c12bd7acbdda8815f
-    terms/footer/register_btn: 49b0c89bcb861273d570a1c631b0b9ab
-    terms/footer/copyright: 699de6a9fd134a83ef785668886d8449
-    terms/footer/legal_links/terms: 5f760af55361ecf8f54a168491c41eb7
+    careers/title: e61f2df41d9c041d3794311f3d04ce10
+    careers/subtitle: 9e1ec6cdfb7b5835625272f276cccec8
+    careers/highlights/remote/title: a38f4d75910f4dc6b7ed1d242ab85e99
+    careers/highlights/remote/description: 62a0d83508ad36d932636802ad493e02
+    careers/highlights/bitcoin/title: ec8b86eb972472be6485baf651a7722b
+    careers/highlights/bitcoin/description: 5552852bf29979872a3d54c1a207004b
+    careers/highlights/mission/title: 60b91fc59e68bf5394157b6a6bd017ee
+    careers/highlights/mission/description: 51094ed52789211c2a7f9638b03a3b84
+    careers/cta/title: 96a0c61bfe3ed13eeaa51d6ccfcd2d19
+    careers/cta/description: 2d64139be4e4ff7a9c5fa873d122593f
+    careers/cta/button: a3b8e96141d5a66de99eea63ec27f305
     footer/logo_alt: e632f62da421be89d63f013eff260f59
     footer/description: 53ba421f4c640bb2b5d33095a6653e57
     footer/quick_links/title: 7261cfd749bf1f4d43928835586012e5

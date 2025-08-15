@@ -1402,6 +1402,137 @@ a:hover .sponsor-highlight {
     transform: scale(1.15);
 }
 
+/* Careers Section */
+.careers-section {
+    background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);
+    padding: var(--spacing-4xl) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.careers-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 15% 25%, rgba(247, 147, 26, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 85% 75%, rgba(33, 212, 253, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.careers-section .section-title {
+    margin-top: var(--spacing-lg);
+}
+
+.careers-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+    margin: var(--spacing-2xl) 0;
+}
+
+.career-highlight {
+    background: white;
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+    position: relative;
+}
+
+.career-highlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.career-highlight:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-color);
+}
+
+.career-highlight:hover::before {
+    transform: scaleX(1);
+}
+
+.highlight-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--spacing-md);
+    background: rgba(247, 147, 26, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.career-highlight:hover .highlight-icon {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.career-highlight h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-dark);
+}
+
+.career-highlight p {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: var(--font-size-sm);
+}
+
+.careers-cta {
+    text-align: center;
+    margin-top: var(--spacing-3xl);
+    padding: var(--spacing-2xl);
+    background: rgba(247, 147, 26, 0.05);
+    border-radius: var(--border-radius-xl);
+    border: 1px solid rgba(247, 147, 26, 0.1);
+}
+
+.careers-cta h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.careers-cta p {
+    font-size: var(--font-size-lg);
+    color: var(--text-light);
+    margin-bottom: var(--spacing-xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.careers-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 /* Floating Animation for Cards */
 @keyframes floatCard {
     0%, 100% {
@@ -1800,6 +1931,20 @@ a:hover .sponsor-highlight {
         height: 70px;
         max-width: 140px;
     }
+    
+    .careers-highlights {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .careers-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .careers-actions .btn {
+        min-width: 200px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1875,6 +2020,23 @@ a:hover .sponsor-highlight {
     .community-logo {
         height: 90px;
         max-width: 100px;
+    }
+    
+    .career-highlight {
+        padding: var(--spacing-lg);
+    }
+    
+    .careers-cta {
+        padding: var(--spacing-xl);
+    }
+    
+    .careers-cta h3 {
+        font-size: var(--font-size-xl);
+    }
+    
+    .highlight-icon {
+        width: 56px;
+        height: 56px;
     }
 }
 
