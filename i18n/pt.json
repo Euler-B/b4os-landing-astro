@@ -497,6 +497,69 @@
       }
     }
   },
+  "conduct": {
+    "page_title": "Código de Conduta - B4OS",
+    "page_description": "Código de conduta para a comunidade B4OS",
+    "nav": {
+      "logo_alt": "B4OS - Bitcoin 4 Open Source Logo",
+      "back_home_aria": "Voltar ao início do B4OS",
+      "close_btn": "✕ Fechar"
+    },
+    "header": {
+      "title": "Código de Conduta do Contribuinte",
+      "intro": "Na B4OS nos comprometemos a manter um ambiente de aprendizagem inclusivo, respeitoso e profissional para todos os participantes em nosso programa."
+    },
+    "sections": {
+      "commitment": {
+        "title": "Nosso compromisso, seu compromisso",
+        "content": "Com o interesse de fomentar um ambiente de abertura e respeito, nos comprometemos a fazer da participação em nossa comunidade uma experiência inclusiva para todos, independentemente de idade, tamanho corporal, deficiência, etnia, identidade e expressão de gênero, nível de experiência, nacionalidade, aparência pessoal, raça, religião, identidade e orientação sexual."
+      },
+      "standards": {
+        "title": "Comportamento esperado",
+        "positive": {
+          "items": [
+            "Ser gentil e empático",
+            "Escutar antes de falar e ceder a palavra",
+            "Aceitar graciosamente críticas construtivas",
+            "Ajudar, sem ser condescendente. Usar linguagem respeitosa, gentil e inclusiva em todas as interações",
+            "Respeitar as opiniões e experiências que diferem das nossas",
+            "Dar aos outros comentários práticos e construtivos quando solicitados",
+            "Chamar as pessoas pelos seus nomes, apelidos e pronomes preferidos",
+            "Assumir as melhores intenções dos outros e nos aproximar com humildade"
+          ]
+        },
+        "unacceptable": {
+          "title": "Comportamento inaceitável",
+          "items": [
+            "Assédio",
+            "Pedir informações privadas",
+            "Pedir dinheiro, Bitcoin / sats sem aprovação da Biblioteca de Satoshi",
+            "Pedir investimentos, seed words ou palavras sementes",
+            "Usar um nome que não seja o seu tentando personificar outra pessoa. Ex: Craig personifica Satoshi sem ser Satoshi",
+            "Conduta ou discurso que possa ser considerado sexista, racista, machista, homofóbico, transfóbico, ou de outra forma discriminatório ou ofensivo por natureza",
+            "Mostrar falta de respeito para com os outros (piadas, rir ou zombar, insinuações, atitudes desdenhosas)",
+            "Utilizar apelidos ou termos indesejados, sugestivos, depreciativos ou inapropriados",
+            "Comportamento antagonista, sempre querer brigar ou dizer o contrário para causar polêmica",
+            "Spam ou autopromoção em canais inapropriados"
+          ]
+        }
+      },
+      "sanctions": {
+        "title": "Sanções e expulsões",
+        "content": "Toda pessoa que tiver um comportamento inaceitável perderá toda oportunidade de fazer parte da equipe da Biblioteca de Satoshi ou Líder de Educação. Perderá toda oportunidade de obter os certificados de conclusão de qualquer atividade. Perderá toda oportunidade de obter bolsas. Pode ser sancionado e banido da comunidade por \"x\" quantidade de tempo. Pode ser expulso indefinidamente."
+      }
+    },
+    "footer": {
+      "last_updated": "Última atualização:",
+      "date": "15 de janeiro, 2025",
+      "close_btn": "Fechar",
+      "register_btn": "Registrar",
+      "copyright": "&copy; 2025 <strong>B4OS (Bitcoin 4 Open Source)</strong>. Feito com <span class=\"heart\" aria-label=\"amor\">❤️</span> para a comunidade Bitcoin",
+      "legal_links": {
+        "terms": "Termos de Uso"
+      }
+    }
+  },
   "careers": {
     "title": "Junte-se à Nossa Equipe",
     "subtitle": "Estamos construindo o futuro da educação técnica de <strong>Bitcoin</strong>. <br>Buscamos pessoas apaixonadas que compartilhem nossa visão de formar a próxima geração de talentos no ecossistema Bitcoin: educação técnica e empreendedorismo especializado",

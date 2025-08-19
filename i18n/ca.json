@@ -497,6 +497,69 @@
       }
     }
   },
+  "conduct": {
+    "page_title": "Codi de Conducta - B4OS",
+    "page_description": "Codi de conducta per a la comunitat B4OS",
+    "nav": {
+      "logo_alt": "B4OS - Bitcoin 4 Open Source Logo",
+      "back_home_aria": "Tornar a l'inici de B4OS",
+      "close_btn": "✕ Tancar"
+    },
+    "header": {
+      "title": "Codi de Conducta del Contribuent",
+      "intro": "A B4OS ens comprometem a mantenir un ambient d'aprenentatge inclusiu, respectuós i professional per a tots els participants en el nostre programa."
+    },
+    "sections": {
+      "commitment": {
+        "title": "El nostre compromís, el teu compromís",
+        "content": "Amb l'interès de fomentar un ambient d'obertura i respecte, ens comprometem a fer de la participació en la nostra comunitat una experiència inclusiva per a tothom, independentment de la seva edat, mida corporal, discapacitat, ètnia, identitat i expressió de gènere, nivell d'experiència, nacionalitat, aparença personal, raça, religió, identitat i orientació sexual."
+      },
+      "standards": {
+        "title": "Comportament esperat",
+        "positive": {
+          "items": [
+            "Ser amable i empàtic",
+            "Escoltar abans de parlar i cedir la paraula",
+            "Acceptar amb elegància la crítica constructiva",
+            "Ajudar, sense ser condescendent. Utilitzar un llenguatge respectuós, amable i inclusiu en totes les interaccions",
+            "Respectar les opinions i experiències que difereixen de les nostres",
+            "Donar als altres comentaris pràctics i constructius quan se'ls sol·liciti",
+            "Anomenar les persones pels seus noms, sobrenoms i pronoms preferits",
+            "Assumir les millors intencions dels altres i apropar-nos amb humilitat"
+          ]
+        },
+        "unacceptable": {
+          "title": "Comportament inacceptable",
+          "items": [
+            "Assetjament",
+            "Demanar informació privada",
+            "Demanar diners, Bitcoin / sats sense aprovació de la Llibreria de Satoshi",
+            "Demanar inversions, seed words o paraules llavor",
+            "Utilitzar un nom que no sigui el teu intentant personificar algú altre. Ex: Craig personifica a Satoshi sense ser Satoshi",
+            "Conducta o discurs que pugui ser considerat sexista, racista, masclista, homofòbic, transfòbic, o d'altra manera discriminatori o ofensiu per naturalesa",
+            "Mostrar falta de respecte cap als altres (bromes, riure's o burlar-se, insinuacions, actituds desdenyoses)",
+            "Utilitzar sobrenoms o termes indesitjats, suggerents, despectius o inapropiats",
+            "Comportament antagonista, voler sempre barallar-se o dir el contrari per causar polèmica",
+            "Spamming o autopromoció en canals inapropiats"
+          ]
+        }
+      },
+      "sanctions": {
+        "title": "Sancions i expulsions",
+        "content": "Tota persona que tingui un comportament inacceptable perdrà tota oportunitat de ser part de l'equip de la Biblioteca de Satoshi o Líder d'Educació. Perdrà tota oportunitat d'obtenir els certificats de culminació de qualsevol activitat. Perdrà tota oportunitat d'obtenir beques. Pot ser sancionat i banejat de la comunitat per \"x\" quantitat de temps. Pot ser expulsat indefinidament."
+      }
+    },
+    "footer": {
+      "last_updated": "Última actualització:",
+      "date": "15 de gener, 2025",
+      "close_btn": "Tancar",
+      "register_btn": "Registrar-me",
+      "copyright": "&copy; 2025 <strong>B4OS (Bitcoin 4 Open Source)</strong>. Fet amb <span class=\"heart\" aria-label=\"amor\">❤️</span> per a la comunitat Bitcoin",
+      "legal_links": {
+        "terms": "Termes d'Ús"
+      }
+    }
+  },
   "careers": {
     "title": "Uneix-te al nostre equip",
     "subtitle": "Estem construint el futur de l'educació tècnica de <strong>Bitcoin</strong>. <br>Busquem persones apassionades que comparteixin la nostra visió de formar la propera generació de talent en l'ecosistema Bitcoin: educació tècnica i emprenedoria especialitzada",

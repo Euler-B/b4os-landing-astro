@@ -497,7 +497,70 @@
       }
     }
   },
-  "careers": {
+  "conduct": {
+      "page_title": "Código de Conducta - B4OS",
+      "page_description": "Código de conducta para la comunidad B4OS",
+      "nav": {
+        "logo_alt": "B4OS - Bitcoin 4 Open Source Logo",
+        "back_home_aria": "Volver al inicio de B4OS",
+        "close_btn": "✕ Cerrar"
+      },
+      "header": {
+        "title": "Código de Conducta del Contribuyente",
+        "intro": "En B4OS nos comprometemos a mantener un ambiente de aprendizaje inclusivo, respetuoso y profesional para todos los participantes en nuestro programa."
+      },
+      "sections": {
+        "commitment": {
+          "title": "Nuestro compromiso, tu compromiso",
+          "content": "Con el interés de fomentar un ambiente de apertura y respeto, nos comprometemos a hacer de la participación en nuestra comunidad una experiencia inclusiva para todos, independientemente de su edad, tamaño corporal, discapacidad, etnia, identidad y expresión de género, nivel de experiencia, nacionalidad, apariencia personal, raza, religión, identidad y orientación sexual."
+        },
+        "standards": {
+          "title": "Comportamiento esperado",
+          "positive": {
+            "items": [
+              "Ser amable y empático",
+              "Escuchar antes de hablar y ceder la palabra",
+              "Aceptar graciosamente crítica constructiva",
+              "Ayudar, sin ser condescendiente. Usar un lenguaje respetuoso, amable e inclusivo en todas las interacciones",
+              "Respetar las opiniones y experiencias que difieren de las nuestras",
+              "Dar a los demás comentarios prácticos y constructivos cuando se les solicite",
+              "Llamar a las personas por sus nombres, nick names y pronombres preferidos",
+              "Asumir las mejores intenciones de los demás y acercarnos con humildad"
+            ]
+          },
+          "unacceptable": {
+            "title": "Comportamiento inaceptable",
+            "items": [
+              "Acoso",
+              "Pedir información privada",
+              "Pedir dinero, Bitcoin / sats sin aprobación de la Librería de Satoshi",
+              "Pedir inversiones, seed words o palabras semillas",
+              "Usar un nombre que no sea el tuyo tratando de personificar a alguien más. Ej: Craig personifica a Satoshi sin ser Satoshi",
+              "Conducta o discurso que pueda ser considerado sexista, racista, machista, homofóbico, transfóbico, o de otro modo discriminatorio u ofensivo por naturaleza",
+              "Mostrar falta de respeto hacia los demás (bromas, reírte o burlarte, insinuaciones, actitudes desdeñosas)",
+              "Utilizar apodos o términos indeseados, sugerentes, despectivos o inapropiados",
+              "Comportamiento antagonista, siempre querer pelear o decir lo contrario para causar polémica",
+              "Spamming o autopromoción en canales inapropiados"
+            ]
+          }
+        },
+        "sanctions": {
+          "title": "Sanciones y expulsiones",
+          "content": "Todo persona que tenga un comportamiento inaceptable perderá toda oportunidad de ser parte del equipo de la Librería de Satoshi o Líder de Educación. Perderá toda oportunidad de obtener los certificados de culminación de cualquier actividad. Perderá toda oportunidad de obtener becas. Puede ser sancionado y baneado de la comunidad por \"x\" cantidad de tiempo. Puede ser expulsado indefinidamente."
+        }
+      },
+      "footer": {
+        "last_updated": "Última actualización:",
+        "date": "15 de enero, 2025",
+        "close_btn": "Cerrar",
+        "register_btn": "Registrarme",
+        "copyright": "&copy; 2025 <strong>B4OS (Bitcoin 4 Open Source)</strong>. Hecho con <span class=\"heart\" aria-label=\"amor\">❤️</span> para la comunidad Bitcoin",
+        "legal_links": {
+          "terms": "Términos de Uso"
+        }
+      }
+    },
+    "careers": {
       "title": "Únete a Nuestro Equipo",
       "subtitle": "Estamos construyendo el futuro de la educación técnica de <strong>Bitcoin</strong>. <br>Buscamos personas apasionadas que compartan nuestra visión de formar la próxima generación de talento en el ecosistema Bitcoin: educación técnica y emprendimiento especializado",
       "highlights": {

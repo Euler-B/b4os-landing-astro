@@ -497,6 +497,69 @@
       }
     }
   },
+  "conduct": {
+    "page_title": "Code of Conduct - B4OS",
+    "page_description": "Code of conduct for the B4OS community",
+    "nav": {
+      "logo_alt": "B4OS - Bitcoin 4 Open Source Logo",
+      "back_home_aria": "Return to B4OS home",
+      "close_btn": "✕ Close"
+    },
+    "header": {
+      "title": "Contributor Code of Conduct",
+      "intro": "At B4OS we are committed to maintaining an inclusive, respectful, and professional learning environment for all participants in our program."
+    },
+    "sections": {
+      "commitment": {
+        "title": "Our commitment, your commitment",
+        "content": "In the interest of fostering an open and respectful environment, we commit to making participation in our community an inclusive experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation."
+      },
+      "standards": {
+        "title": "Expected behavior",
+        "positive": {
+          "items": [
+            "Be kind and empathetic",
+            "Listen before speaking and yield the floor",
+            "Gracefully accept constructive criticism",
+            "Help without being condescending. Use respectful, kind, and inclusive language in all interactions",
+            "Respect opinions and experiences that differ from our own",
+            "Give others practical and constructive feedback when requested",
+            "Call people by their preferred names, nicknames, and pronouns",
+            "Assume the best intentions of others and approach with humility"
+          ]
+        },
+        "unacceptable": {
+          "title": "Unacceptable behavior",
+          "items": [
+            "Harassment",
+            "Asking for private information",
+            "Asking for money, Bitcoin / sats without approval from the Satoshi Library",
+            "Asking for investments, seed words or seed phrases",
+            "Using a name that is not yours trying to impersonate someone else. Ex: Craig impersonates Satoshi without being Satoshi",
+            "Conduct or speech that could be considered sexist, racist, misogynistic, homophobic, transphobic, or otherwise discriminatory or offensive in nature",
+            "Showing disrespect towards others (jokes, laughing at or mocking, insinuations, dismissive attitudes)",
+            "Using unwanted, suggestive, derogatory or inappropriate nicknames or terms",
+            "Antagonistic behavior, always wanting to fight or contradict to cause controversy",
+            "Spamming or self-promotion in inappropriate channels"
+          ]
+        }
+      },
+      "sanctions": {
+        "title": "Sanctions and expulsions",
+        "content": "Any person who exhibits unacceptable behavior will lose all opportunity to be part of the Satoshi Library team or Education Leader. They will lose all opportunity to obtain completion certificates for any activity. They will lose all opportunity to obtain scholarships. They may be sanctioned and banned from the community for \"x\" amount of time. They may be expelled indefinitely."
+      }
+    },
+    "footer": {
+      "last_updated": "Last updated:",
+      "date": "January 15, 2025",
+      "close_btn": "Close",
+      "register_btn": "Register",
+      "copyright": "&copy; 2025 <strong>B4OS (Bitcoin 4 Open Source)</strong>. Made with <span class=\"heart\" aria-label=\"love\">❤️</span> for the Bitcoin community",
+      "legal_links": {
+        "terms": "Terms of Use"
+      }
+    }
+  },
   "careers": {
     "title": "Join our team",
     "subtitle": "We are building the future of <strong>Bitcoin</strong> technical education. <br>We are looking for passionate people who share our vision of training the next generation of talent in the Bitcoin ecosystem: technical education and specialized entrepreneurship",
