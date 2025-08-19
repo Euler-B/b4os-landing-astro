@@ -288,6 +288,49 @@ checksums:
     terms/sections/contact/title: 505d4c86e7ad3ce701487abb30b89614
     terms/sections/contact/content: e3b6f76a47876945da1dee813bed05d9
     terms/sections/tldr/content: bf0faa60277a90060a4474fbfd4b1e66
+    terms/footer/last_updated: 3fcc2c6efd856d259c24a0b6975e03ad
+    terms/footer/date: 231bafe3d6a2eb14e60046c6dcd3dd85
+    terms/footer/close_btn: 8d666219d7e38a8c12bd7acbdda8815f
+    terms/footer/register_btn: 60ecdaaf64a3c123dc464c4c15a37e6d
+    terms/footer/copyright: 699de6a9fd134a83ef785668886d8449
+    terms/footer/legal_links/terms: 5f760af55361ecf8f54a168491c41eb7
+    conduct/page_title: 292e865d06c04218b13402395389b5de
+    conduct/page_description: aaeb9bc1ff76196a6016baa667af0e28
+    conduct/nav/logo_alt: e632f62da421be89d63f013eff260f59
+    conduct/nav/back_home_aria: 4a412d1ab6aaf6ca34ecf0664129e368
+    conduct/nav/close_btn: 349e0d61f4dd47e93b505a133bb21d9a
+    conduct/header/title: 52dbb86cb3b63b24affc3ad50f26d1f9
+    conduct/header/intro: db3191291ca1395f4dc26d37ced7d47e
+    conduct/sections/commitment/title: 106abf612c560dbac79adb3e82b20f7b
+    conduct/sections/commitment/content: 4e93a21aacb7fa2bacfa0a61a4e84b8b
+    conduct/sections/standards/title: 78628d4f77f607dda8b78851e3380859
+    conduct/sections/standards/positive/items/0: 79b52bbc0f2e28fcb0a01404bc4a7e65
+    conduct/sections/standards/positive/items/1: bdbca051e72eac82658b1ba2b6521d42
+    conduct/sections/standards/positive/items/2: 46d546143a326733ace628ed2beb8d5d
+    conduct/sections/standards/positive/items/3: 4a457cbecb5bc31a51ed7a80903f5f21
+    conduct/sections/standards/positive/items/4: 397d876b7a74d81826bd85a3e34e40d8
+    conduct/sections/standards/positive/items/5: 7ce5f7e17e3c6d23c3dc1d2f34c42985
+    conduct/sections/standards/positive/items/6: 8090c92e65557228ac18f6c91bd306b4
+    conduct/sections/standards/positive/items/7: 3c6bcdcf6aca61b1b75c56415da7776d
+    conduct/sections/standards/unacceptable/title: 3642a6660f229474c38572eb7c4ab55e
+    conduct/sections/standards/unacceptable/items/0: 6801959b7ba27a3cf85fb680b022a880
+    conduct/sections/standards/unacceptable/items/1: 493794d539e7301087c5062f9d625bed
+    conduct/sections/standards/unacceptable/items/2: d739caceec722d6b69c64ab058244f97
+    conduct/sections/standards/unacceptable/items/3: c4f33881e9a4bc7d214d23ffc18cff18
+    conduct/sections/standards/unacceptable/items/4: bf1c4ebd266c7b1c1f2d55281ec5da80
+    conduct/sections/standards/unacceptable/items/5: 23339c0b786d766ad3e345bec98d5716
+    conduct/sections/standards/unacceptable/items/6: eeef1cc6b03c9005fc7ef47b9db684bf
+    conduct/sections/standards/unacceptable/items/7: 8184f9af7b6a0e693a586d0926dd9f7e
+    conduct/sections/standards/unacceptable/items/8: a7083d1a3f588716a24f81da75de3f82
+    conduct/sections/standards/unacceptable/items/9: ee27008cff4a46c8b9d56b3a44d28e1b
+    conduct/sections/sanctions/title: bc93966aa0cfe0211e727d7775e66fa1
+    conduct/sections/sanctions/content: e1d9be2c32843acc869da27999dd6be7
+    conduct/footer/last_updated: 3fcc2c6efd856d259c24a0b6975e03ad
+    conduct/footer/date: 231bafe3d6a2eb14e60046c6dcd3dd85
+    conduct/footer/close_btn: 8d666219d7e38a8c12bd7acbdda8815f
+    conduct/footer/register_btn: 60ecdaaf64a3c123dc464c4c15a37e6d
+    conduct/footer/copyright: 699de6a9fd134a83ef785668886d8449
+    conduct/footer/legal_links/terms: 5f760af55361ecf8f54a168491c41eb7
     careers/title: e61f2df41d9c041d3794311f3d04ce10
     careers/subtitle: 9e1ec6cdfb7b5835625272f276cccec8
     careers/highlights/remote/title: a38f4d75910f4dc6b7ed1d242ab85e99

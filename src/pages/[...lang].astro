@@ -795,7 +795,7 @@ const t = translations as any; // Type casting para evitar errores de TypeScript
                     </div>
                     <nav class="footer-legal" aria-label={t.footer.legal_aria}>
                         <a href={getLocalizedPageUrl('terminos', locale)} rel="nofollow">{t.footer.legal.terms}</a>
-                        <a href="/codigo-conducta" rel="nofollow">{t.footer.legal.conduct}</a>
+                        <a href={getLocalizedPageUrl('codigo-conducta', locale)} rel="nofollow">{t.footer.legal.conduct}</a>
                     </nav>
                 </div>
             </div>

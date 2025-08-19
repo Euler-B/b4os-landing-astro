@@ -1,0 +1,277 @@
+/* Estilos específicos para la página de código de conducta */
+.terms-page {
+    min-height: calc(100vh - 200px);
+    padding: var(--spacing-4xl) 0 var(--spacing-2xl);
+    background: var(--bg-light);
+}
+
+.nav-close-btn {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    padding: var(--spacing-sm) 0;
+    transition: var(--transition);
+}
+
+.nav-close-btn:hover {
+    color: var(--primary-color);
+}
+
+.terms-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-lg);
+    padding: var(--spacing-3xl);
+}
+
+.terms-header {
+    text-align: center;
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.terms-header h1 {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.terms-intro {
+    font-size: var(--font-size-lg);
+    color: var(--text-light);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.terms-section h2 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--primary-color);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.terms-section { 
+    padding: var(--spacing-sm); 
+}
+
+.terms-section p, 
+.terms-section li {
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: var(--font-size-base);
+}
+
+/* Cajas específicas para código de conducta siguiendo el patrón de terms.css */
+.info-box {
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.info-box h3 {
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+}
+
+.warning-box {
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.warning-box h3 {
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+}
+
+.conduct-box {
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.conduct-box h3 {
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+}
+
+.important-box {
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.important-box p {
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Listas dentro de las cajas - siguiendo el patrón de phase-box */
+.info-box ul,
+.warning-box ul,
+.conduct-box ul,
+.important-box ul {
+    margin-left: var(--spacing-lg);
+    margin-top: var(--spacing-sm);
+}
+
+.info-box li,
+.warning-box li,
+.conduct-box li,
+.important-box li {
+    margin-bottom: var(--spacing-sm);
+    position: relative;
+    padding-left: var(--spacing-sm);
+}
+
+/* Sección TL;DR siguiendo el patrón minimalista */
+.tldr-section {
+    margin-top: var(--spacing-2xl);
+    padding-top: var(--spacing-xl);
+    border-top: 2px solid var(--border-color);
+}
+
+.tldr-box {
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+}
+
+.tldr-box p {
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: var(--font-size-base);
+    margin: 0;
+}
+
+/* Sección de contacto */
+.terms-contact {
+    background: var(--bg-light);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.terms-contact h2 {
+    font-size: var(--font-size-lg);
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-sm);
+    border: none;
+}
+
+.terms-contact a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.terms-contact a:hover {
+    color: var(--primary-dark);
+}
+
+/* Footer de términos */
+.terms-footer {
+    text-align: center;
+    padding-top: var(--spacing-xl);
+    border-top: 2px solid var(--border-color);
+}
+
+.terms-footer p {
+    color: var(--text-light);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.terms-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .terms-page {
+        padding: var(--spacing-2xl) 0;
+    }
+    
+    .terms-content {
+        margin: 0 var(--spacing-md);
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+    
+    .terms-header h1 {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .terms-intro {
+        font-size: var(--font-size-base);
+    }
+    
+    .terms-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .terms-actions .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    /* Ajustar padding de las cajas en móvil */
+    .info-box,
+    .warning-box,
+    .conduct-box,
+    .important-box,
+    .tldr-box {
+        padding: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .terms-content {
+        margin: 0 var(--spacing-sm);
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+    
+    .terms-header h1 {
+        font-size: var(--font-size-xl);
+    }
+    
+    .info-box,
+    .warning-box,
+    .conduct-box,
+    .important-box,
+    .tldr-box {
+        padding: var(--spacing-xs);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .info-box h3,
+    .warning-box h3,
+    .conduct-box h3 {
+        font-size: var(--font-size-base);
+    }
+}

@@ -2,7 +2,7 @@
 // src/pages/terminos/[...lang].astro - Términos dinámicos multiidioma
 import Layout from '../../layouts/Layout.astro';
 import '../../styles/terms.css';
-import { getTranslation } from '../../i18n/utils.js';
+import { getTranslation, getLocalizedPageUrl } from '../../i18n/utils.js';
 
 export async function getStaticPaths() {
   return [
@@ -182,8 +182,7 @@ const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
                     </div>
                     <nav class="footer-legal" aria-label="Enlaces legales">
                         <a href={locale === 'es' ? '/terminos' : `/terminos/${locale}`} rel="nofollow">{t.terms.footer.legal_links.terms}</a>
-                         <a href="/privacidad" rel="nofollow">Política de Privacidad</a>
-                        <a href="/codigo-conducta" rel="nofollow">Código de Conducta</a>
+                        <a href={getLocalizedPageUrl('codigo-conducta', locale)} rel="nofollow">{t.footer.legal.conduct}</a>
                     </nav>
                 </div>
             </div>
