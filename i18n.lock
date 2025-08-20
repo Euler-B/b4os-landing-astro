@@ -205,27 +205,31 @@ checksums:
     faq/questions/2/question: 955d89392ebd97bca2827c1a3a5e6a20
     faq/questions/2/answer: 245127212941d5cf32714aa4a482196b
     faq/questions/3/question: f62c7c523f9181d17f962f2d02ff531e
-    faq/questions/3/answer: 50a5c8f7512c6b854cb03b1adc2413f5
+    faq/questions/3/answer: 66b640cc6fca1ea020d2ba8e6e5c5bd7
     faq/questions/4/question: 0a4bcddb26e2cd5cbd77f28c9273f2b2
-    faq/questions/4/answer: 814ac0c6286a886694cad2e69e8525f6
-    faq/questions/5/question: 3a973c5130f83c2af3feeef529fa8bff
-    faq/questions/5/answer: 822422b275d6a635aac60d938b93ab59
-    faq/questions/6/question: b232316b05d1098f148c51c2cc9c0024
-    faq/questions/6/answer: baeb5d398b036f5f2a50a6395d426824
-    faq/questions/7/question: 8686a52fe7d4bf15ae75a72110b2b694
-    faq/questions/7/answer: 3611c52d475682235f2c25fba27a5eeb
-    faq/questions/8/question: 3610d067a0bef57470a5319987105c51
-    faq/questions/8/answer: b5a14390d09634289ed8a812a11da4e3
-    faq/questions/9/question: 68dc6901103d24739214a2a0c28c3dbe
-    faq/questions/9/answer: 9f152ef6e65497c28c791c2acbf669e0
-    faq/questions/10/question: dbecf496bca85676a1b78fd365ec077a
-    faq/questions/10/answer: 1f068a282cd0cd7e9d15dd7b89965f6f
-    faq/questions/11/question: 7046e5930542a5700a697a8de4ad2d7c
-    faq/questions/11/answer: 7282d3ee79a910ef5910dd7316623fbf
-    faq/questions/12/question: 046e0faa52c3665d19b3be36a6fc8c43
-    faq/questions/12/answer: b97e3eef03af7caf208503fc2e094c2a
-    faq/questions/13/question: c0784a4dc31b9c50344e6478fd485149
-    faq/questions/13/answer: fe9cf5a85fff94c3510b50a5b1b2080e
+    faq/questions/4/answer: ffc7e678b8dd59a88abd488531d84abf
+    faq/questions/5/question: 2e23d2c1f8f724a192bbf45ebb56b715
+    faq/questions/5/answer: 338ec63798fcadead85bfaaeaa635d2b
+    faq/questions/6/question: 3a973c5130f83c2af3feeef529fa8bff
+    faq/questions/6/answer: e38f73175d877a79c76486739e43c5f4
+    faq/questions/7/question: 765a137f61403344c7c457aed4dbe266
+    faq/questions/7/answer: 4ca8c11f4272a06e7665169034c0159c
+    faq/questions/8/question: b232316b05d1098f148c51c2cc9c0024
+    faq/questions/8/answer: 80ed2d79b70b0179088c82a426cf7e1a
+    faq/questions/9/question: 3bb257584315a122c6272ccacc29d4dd
+    faq/questions/9/answer: f0077aa7e6e98c81b13ee1dc9892811c
+    faq/questions/10/question: 3610d067a0bef57470a5319987105c51
+    faq/questions/10/answer: b5a14390d09634289ed8a812a11da4e3
+    faq/questions/11/question: 68dc6901103d24739214a2a0c28c3dbe
+    faq/questions/11/answer: ce5579026b83a112e4fd6489c30b1558
+    faq/questions/12/question: dbecf496bca85676a1b78fd365ec077a
+    faq/questions/12/answer: 1f068a282cd0cd7e9d15dd7b89965f6f
+    faq/questions/13/question: 7046e5930542a5700a697a8de4ad2d7c
+    faq/questions/13/answer: 7282d3ee79a910ef5910dd7316623fbf
+    faq/questions/14/question: 046e0faa52c3665d19b3be36a6fc8c43
+    faq/questions/14/answer: b97e3eef03af7caf208503fc2e094c2a
+    faq/questions/15/question: c0784a4dc31b9c50344e6478fd485149
+    faq/questions/15/answer: fe9cf5a85fff94c3510b50a5b1b2080e
     partnerships/title: a63917828ffc6b3be5ebdc4b66cb5dcb
     partnerships/subtitle: 6a15c8e75506cc52bed44a5a25e10434
     partnerships/main_sponsor/text: 105a02523665c94f0aa781e25ed28817
