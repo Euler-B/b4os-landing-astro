@@ -317,45 +317,53 @@
       },
       "3": {
         "question": "Quines tecnologies de Bitcoin s'ensenyen?",
-        "answer": "<strong>B4OS se centra en desenvolupament de Bitcoin Core i Lightning Network.</strong> Aprendràs C++, arquitectura P2P, validació de transaccions, payment channels, i contribuiràs a projectes reals. No cobrim altres criptomonedes - només Bitcoin i el seu ecosistema."
+        "answer": "<strong>B4OS se centra en el desenvolupament de Bitcoin Core i Lightning Network.</strong> Aprendràs arquitectura P2P, validació de transaccions, payment channels, i contribuiràs a projectes reals. Només cobrim Bitcoin i el seu ecosistema."
       },
       "4": {
         "question": "Necessito experiència prèvia programant Bitcoin?",
-        "answer": "<strong>No necessites experiència en Bitcoin, però sí coneixements bàsics de programació.</strong> Has de tenir experiència amb almenys un llenguatge (Python, C++, JavaScript), Git, i línia de comandaments. T'ensenyarem tot l'específic de Bitcoin des de zero."
+        "answer": "<strong>No necessites experiència en Bitcoin, però sí coneixements sòlids en programació.</strong> Has de tenir experiència amb almenys un llenguatge (Python, C++, Rust, JavaScript), Git, i línia de comandes. T'ensenyarem tot l'específic de Bitcoin des de zero."
       },
       "5": {
-        "question": "Quant de temps he de dedicar al programa setmanalment?",
-        "answer": "<strong>Recomanem 8-10 hores setmanals</strong> durant les 24 setmanes del programa. Això inclou 3 hores de seminaris socràtics setmanals, 2-3 hores de lectura preparatòria, i 3-4 hores de pràctica de codi i projectes."
+        "question": "És obligatori assistir a la residència?",
+        "answer": "<strong>No, no és obligatori assistir a la residència.</strong> Si hi assisteixes, tindràs l'oportunitat de conèixer en persona la resta de participants i mentors, treballar en equip i aprendre d'ells/es."
       },
       "6": {
-        "question": "Puc triar la meva ruta d'aprenentatge?",
-        "answer": "<strong>Sí, després de les primeres 8 setmanes</strong> pots especialitzar-te triant entre: Desenvolupament de Protocol Bitcoin Core, Desenvolupament de Lightning Network, o Desenvolupament d'Aplicacions. El teu mentor t'ajudarà a triar segons els teus interessos professionals."
+        "question": "Quant de temps he de dedicar al programa setmanalment?",
+        "answer": "<strong>Recomanem 5-10 hores setmanals</strong> durant les setmanes de durada del programa. Això es distribuirà en temps per a seminaris socràtics, lectures preparatòries, challenges i hores de pràctica de desenvolupament."
       },
       "7": {
-        "question": "Com funcionen els seminaris socràtics?",
-        "answer": "<strong>Són sessions interactives de 3 hores</strong> on explorem conceptes Bitcoin mitjançant preguntes i discussió grupal. No són classes magistrals - inclouen preparació prèvia, discussió oberta, codi en viu i aplicació pràctica immediata."
+        "question": "Hi ha coses a tenir en compte per a l'especialització?",
+        "answer": "<strong>Sempre hi haurà tasques individuals durant el programa, ja sigui treball de recerca, desenvolupament o lliurament de code challenges. Si activament treballes en un projecte específic, tindràs la llibertat d'especialitzar-te, però no tindràs la llibertat de no treballar en un projecte."
       },
       "8": {
+        "question": "Puc triar la meva ruta d'aprenentatge?",
+        "answer": "<strong>Sí, després de les primeres 5 setmanes</strong> pots especialitzar-te triant entre: Desenvolupament de Protocol Bitcoin Core, Desenvolupament de Lightning Network, o Desenvolupament d'Aplicacions. El teu mentor t'ajudarà a triar segons els teus interessos professionals."
+      },
+      "9": {
+        "question": "Les activitats i challenges es realitzen en grup o individualment?",
+        "answer": "<strong>Les activitats i challenges es realitzen principalment de manera individual</strong>, però hi ha ocasions en què es realitzaran en grup. Si tens dubtes, pots contactar amb el teu mentor o amb la comunitat al canal de Discord."
+      },
+      "10": {
         "question": "Hi ha enregistraments de les sessions disponibles?",
         "answer": "<strong>No enregistrem els seminaris</strong> per mantenir un ambient segur i privat d'aprenentatge. En lloc d'això, proporcionem resums detallats post-sessió, materials d'estudi complementaris i sessions de recuperació per a casos especials."
       },
-      "9": {
+      "11": {
         "question": "Quines eines tècniques necessito instal·lar?",
-        "answer": "<strong>Configurarem les eines junts durant la primera setmana:</strong> Git, Bitcoin Core, editor de codi (VS Code/CLion), compiladors GCC/Clang, i Python 3.8+. Requisits mínims: 8GB RAM, 500GB d'emmagatzematge disponible."
+        "answer": "<strong>Facilitarem els entorns necessaris per poder treballar en els diferents projectes que es desenvoluparan durant el programa.</strong> Si necessites instal·lar alguna eina en local, ho farem conjuntament."
       },
-      "10": {
+      "12": {
         "question": "Quins resultats puc esperar en finalitzar?",
         "answer": "<strong>Assoliments tangibles i verificables:</strong> Mínim 3 contribucions acceptades a Bitcoin Core o Lightning Network, un projecte personal funcional, connexions directes amb desenvolupadors Bitcoin sènior, i certificat verificable amb les teves contribucions específiques."
       },
-      "11": {
+      "13": {
         "question": "Com em connecta B4OS amb oportunitats laborals?",
-        "answer": "<strong>Partnerships directes amb empreses Bitcoin:</strong> Entrevistes garantides per al top 20% de graduats, tauler d'ocupació exclusiu per a alumnes, referències personals de mentors, i esdeveniments de networking amb recruiters Bitcoin."
+        "answer": "<strong>Partnerships directes amb empreses Bitcoin:</strong> Entrevistes garantides per al top 20% de graduats, tauler d'ocupació exclusiu per a alumnes, referències personals de mentors, i esdeveniments networking amb recruiters Bitcoin."
       },
-      "12": {
+      "14": {
         "question": "Hi ha restriccions geogràfiques o d'edat?",
         "answer": "<strong>No hi ha restriccions geogràfiques.</strong> B4OS està obert per a desenvolupadors de qualsevol país que parlin espanyol. Edat mínima: 18 anys. Els horaris es coordinen considerant la diversitat de zones horàries dels participants."
       },
-      "13": {
+      "15": {
         "question": "On puc enviar comentaris o reportar problemes?",
         "answer": "<strong>Múltiples canals disponibles:</strong> Email principal <a href=\"mailto:hola@b4os.dev\">hola@b4os.dev</a>, comunitat Discord per a xat directe, GitHub Issues per a informes tècnics, i sessions de feedback regulars durant el programa."
       }

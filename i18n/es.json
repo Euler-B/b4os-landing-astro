@@ -317,45 +317,53 @@
       },
       "3": {
         "question": "¿Qué tecnologías de Bitcoin se enseñan?",
-        "answer": "<strong>B4OS se enfoca en desarrollo de Bitcoin Core y Lightning Network.</strong> Aprenderás C++, arquitectura P2P, validación de transacciones, payment channels, y contribuirás a proyectos reales. No cubrimos otras criptomonedas - solo Bitcoin y su ecosistema."
+        "answer": "<strong>B4OS se enfoca en desarrollo de Bitcoin Core y Lightning Network.</strong> Aprenderás arquitectura P2P, validación de transacciones, payment channels, y contribuirás a proyectos reales. Solo cubrimos Bitcoin y su ecosistema."
       },
       "4": {
         "question": "¿Necesito experiencia previa programando Bitcoin?",
-        "answer": "<strong>No necesitas experiencia en Bitcoin, pero sí conocimientos básicos de programación.</strong> Debes tener experiencia con al menos un lenguaje (Python, C++, JavaScript), Git, y línea de comandos. Te enseñaremos todo lo específico de Bitcoin desde cero."
+        "answer": "<strong>No necesitas experiencia en Bitcoin, pero sí conocimientos sólidos en programación.</strong> Debes tener experiencia con al menos un lenguaje (Python, C++, Rust, JavaScript), Git, y línea de comandos. Te enseñaremos todo lo específico de Bitcoin desde cero."
       },
       "5": {
-        "question": "¿Cuánto tiempo debo dedicar al programa semanalmente?",
-        "answer": "<strong>Recomendamos 8-10 horas semanales</strong> durante las 24 semanas del programa. Esto incluye 3 horas de seminarios socráticos semanales, 2-3 horas de lectura preparatoria, y 3-4 horas de práctica de código y proyectos."
+        "question": "¿Es obligatorio asistir a la residencia?",
+        "answer": "<strong>No, no es obligatorio asistir a la residencia.</strong> Si asistes, tendrás la oportunidad de conocer en persona al resto de participantes y mentores, trabajar en equipo y aprender de ellos/as."
       },
       "6": {
-        "question": "¿Puedo elegir mi ruta de aprendizaje?",
-        "answer": "<strong>Sí, después de las primeras 8 semanas</strong> puedes especializarte eligiendo entre: Desarrollo de Protocolo Bitcoin Core, Desarrollo de Lightning Network, o Desarrollo de Aplicaciones. Tu mentor te ayudará a elegir según tus intereses profesionales."
+        "question": "¿Cuánto tiempo debo dedicar al programa semanalmente?",
+        "answer": "<strong>Recomendamos 5-10 horas semanales</strong> durante las semanas de duración del programa. Esto se distribuirá en tiempos para seminarios socráticos, lecturas preparatoria, challenges y horas de práctica de desarrollo."
       },
       "7": {
-        "question": "¿Cómo funcionan los seminarios socráticos?",
-        "answer": "<strong>Son sesiones interactivas de 3 horas</strong> donde exploramos conceptos Bitcoin mediante preguntas y discusión grupal. No son clases magistrales - incluyen preparación previa, discusión abierta, código en vivo y aplicación práctica inmediata."
+        "question": "¿Hay cosas a tener en cuenta para la especialización?",
+        "answer": "<strong>Siempre habrá tareas individuales durante el programa, ya sea trabajo de investigación, desarrollo o entrega de code challenges. Si activamente trabajas en un proyecto específico, tendrás la libertad de especializarte, pero no tendrás la libertad de no trabajar en un proyecto."
       },
       "8": {
+        "question": "¿Puedo elegir mi ruta de aprendizaje?",
+        "answer": "<strong>Sí, después de las primeras 5 semanas</strong> puedes especializarte eligiendo entre: Desarrollo de Protocolo Bitcoin Core, Desarrollo de Lightning Network, o Desarrollo de Aplicaciones. Tu mentor te ayudará a elegir según tus intereses profesionales."
+      },
+      "9": {
+        "question": "¿Las actividades y challenges se realizan en grupo o individualmente?",
+        "answer": "<strong>Las actividades y challenges se realizan principalmente de manera individual</strong>, pero hay ocasiones en las que se realizarán en grupo. Si tienes dudas, puedes contactar a tu mentor o a la comunidad en el canal de Discord."
+      },
+      "10": {
         "question": "¿Hay grabaciones de las sesiones disponibles?",
         "answer": "<strong>No grabamos los seminarios</strong> para mantener un ambiente seguro y privado de aprendizaje. En su lugar, proporcionamos resúmenes detallados post-sesión, materiales de estudio complementarios y sesiones de recuperación para casos especiales."
       },
-      "9": {
+      "11": {
         "question": "¿Qué herramientas técnicas necesito instalar?",
-        "answer": "<strong>Configuraremos las herramientas juntos en la primera semana:</strong> Git, Bitcoin Core, editor de código (VS Code/CLion), compiladores GCC/Clang, y Python 3.8+. Requisitos mínimos: 8GB RAM, 500GB almacenamiento disponible."
+        "answer": "<strong>Facilitaremos los entornos necesarios para poder trabajar en los distintos proyectos que se desarrollarán durante el programa.</strong> Si necesitas instalar alguna herramienta en local, lo haremos en conjunto."
       },
-      "10": {
+      "12": {
         "question": "¿Qué resultados puedo esperar al finalizar?",
         "answer": "<strong>Logros tangibles y verificables:</strong> Mínimo 3 contribuciones aceptadas en Bitcoin Core o Lightning Network, un proyecto personal funcional, conexiones directas con desarrolladores Bitcoin senior, y certificado verificable con tus contribuciones específicas."
       },
-      "11": {
+      "13": {
         "question": "¿Cómo me conecta B4OS con oportunidades laborales?",
         "answer": "<strong>Partnerships directos con empresas Bitcoin:</strong> Entrevistas garantizadas para el top 20% de graduados, tablero de empleos exclusivo para alumnos, referencias personales de mentores, y eventos networking con recruiters Bitcoin."
       },
-      "12": {
+      "14": {
         "question": "¿Hay restricciones geográficas o de edad?",
         "answer": "<strong>No hay restricciones geográficas.</strong> B4OS está abierto para desarrolladores de cualquier país que hablen español. Edad mínima: 18 años. Los horarios se coordinan considerando la diversidad de zonas horarias de los participantes."
       },
-      "13": {
+      "15": {
         "question": "¿Dónde puedo enviar comentarios o reportar problemas?",
         "answer": "<strong>Múltiples canales disponibles:</strong> Email principal <a href=\"mailto:hola@b4os.dev\">hola@b4os.dev</a>, comunidad Discord para chat directo, GitHub Issues para reportes técnicos, y sesiones de feedback regulares durante el programa."
       }
