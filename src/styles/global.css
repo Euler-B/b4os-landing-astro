@@ -94,11 +94,12 @@ body {
 
 .nav-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 var(--spacing-md);
+    gap: var(--spacing-2xl);
 }
 
 .nav-utilities {
@@ -128,6 +129,7 @@ body {
 .nav-menu {
     display: flex;
     gap: var(--spacing-lg);
+    margin-left: auto;
 }
 
 .nav-link {
