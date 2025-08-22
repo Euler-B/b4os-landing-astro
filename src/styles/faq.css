@@ -22,8 +22,9 @@
   }
 
   .faq-item {
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-dark);
       margin-bottom: 0.5rem;
+      color: var(--text-white)
   }
 
   .faq-item:last-child {
@@ -39,9 +40,8 @@
       padding: 1.5rem 1rem;
       background: none;
       border: none;
-      color: var(--text-light);
+      color: var(--text-white);
       font-size: 1.1rem;
-      font-weight: 500;
       cursor: pointer;
       transition: none;
       text-align: left;
@@ -50,24 +50,11 @@
       margin: 0.5rem 0;
   }
 
-  .faq-question::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 0;
-      background: linear-gradient(90deg, var(--primary-color), transparent);
-      transition: width 0.2s ease, opacity 0.2s ease;
-      opacity: 0.1;
-      border-radius: 8px 0 0 8px;
-  }
-
   .faq-question:hover::before {
       width: 4px;
   }
 
-  .faq-question:hover {
+  .faq-question:hover svg {
       color: var(--primary-color);
   }
 
@@ -82,11 +69,6 @@
       flex-shrink: 0;
       margin-left: 1rem;
       color: var(--text-muted);
-  }
-
-  .faq-question[aria-expanded="true"] {
-      color: var(--primary-color);
-      font-weight: 600;
   }
 
   .faq-question[aria-expanded="true"] .faq-icon {
@@ -114,13 +96,8 @@
   .faq-answer p {
       margin: 0;
       line-height: 1.7;
-      color: var(--text-muted);
       font-size: 1rem;
       padding-top: 0.5rem;
-  }
-
-  .faq-answer strong {
-      color: var(--text-light);
   }
 
   .faq-answer a {
