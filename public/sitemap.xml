@@ -1,35 +1,190 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Home page in all languages -->
   <url>
     <loc>https://b4os.dev/</loc>
-    <lastmod>2025-07-30</lastmod>
+    <lastmod>2025-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://b4os.dev/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://b4os.dev/en" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://b4os.dev/ca" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://b4os.dev/pt" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://b4os.dev/" />
   </url>
   <url>
+    <loc>https://b4os.dev/en</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://b4os.dev/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://b4os.dev/en" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://b4os.dev/ca" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://b4os.dev/pt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://b4os.dev/" />
+  </url>
+  <url>
+    <loc>https://b4os.dev/ca</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://b4os.dev/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://b4os.dev/en" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://b4os.dev/ca" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://b4os.dev/pt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://b4os.dev/" />
+  </url>
+  <url>
+    <loc>https://b4os.dev/pt</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://b4os.dev/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://b4os.dev/en" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://b4os.dev/ca" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://b4os.dev/pt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://b4os.dev/" />
+  </url>
+
+  <!-- Terms pages in all languages -->
+  <url>
+    <loc>https://b4os.dev/terminos</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://b4os.dev/terminos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://b4os.dev/terminos/en" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://b4os.dev/terminos/ca" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://b4os.dev/terminos/pt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://b4os.dev/terminos" />
+  </url>
+  <url>
+    <loc>https://b4os.dev/terminos/en</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://b4os.dev/terminos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://b4os.dev/terminos/en" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://b4os.dev/terminos/ca" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://b4os.dev/terminos/pt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://b4os.dev/terminos" />
+  </url>
+  <url>
+    <loc>https://b4os.dev/terminos/ca</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://b4os.dev/terminos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://b4os.dev/terminos/en" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://b4os.dev/terminos/ca" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://b4os.dev/terminos/pt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://b4os.dev/terminos" />
+  </url>
+  <url>
+    <loc>https://b4os.dev/terminos/pt</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://b4os.dev/terminos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://b4os.dev/terminos/en" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://b4os.dev/terminos/ca" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://b4os.dev/terminos/pt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://b4os.dev/terminos" />
+  </url>
+
+  <!-- Code of conduct pages in all languages -->
+  <url>
+    <loc>https://b4os.dev/codigo-conducta</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://b4os.dev/codigo-conducta" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://b4os.dev/codigo-conducta/en" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://b4os.dev/codigo-conducta/ca" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://b4os.dev/codigo-conducta/pt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://b4os.dev/codigo-conducta" />
+  </url>
+  <url>
+    <loc>https://b4os.dev/codigo-conducta/en</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://b4os.dev/codigo-conducta" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://b4os.dev/codigo-conducta/en" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://b4os.dev/codigo-conducta/ca" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://b4os.dev/codigo-conducta/pt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://b4os.dev/codigo-conducta" />
+  </url>
+  <url>
+    <loc>https://b4os.dev/codigo-conducta/ca</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://b4os.dev/codigo-conducta" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://b4os.dev/codigo-conducta/en" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://b4os.dev/codigo-conducta/ca" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://b4os.dev/codigo-conducta/pt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://b4os.dev/codigo-conducta" />
+  </url>
+  <url>
+    <loc>https://b4os.dev/codigo-conducta/pt</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://b4os.dev/codigo-conducta" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://b4os.dev/codigo-conducta/en" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://b4os.dev/codigo-conducta/ca" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://b4os.dev/codigo-conducta/pt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://b4os.dev/codigo-conducta" />
+  </url>
+
+  <!-- Section anchors from home page -->
+  <url>
     <loc>https://b4os.dev/#residencias</loc>
-    <lastmod>2025-07-30</lastmod>
+    <lastmod>2025-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://b4os.dev/#cronograma</loc>
-    <lastmod>2025-07-30</lastmod>
+    <lastmod>2025-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://b4os.dev/#registro</loc>
-    <lastmod>2025-07-30</lastmod>
+    <lastmod>2025-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://b4os.dev/#beneficios</loc>
-    <lastmod>2025-07-30</lastmod>
+    <lastmod>2025-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b4os.dev/#alumni</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b4os.dev/#alianzas</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b4os.dev/#carreras</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://b4os.dev/#contacto</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
