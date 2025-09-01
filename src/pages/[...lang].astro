@@ -602,6 +602,24 @@ const t = translations as any; // Type casting para evitar errores de TypeScript
     <section id="alianzas" class="partnerships">
         <div class="container">
             <div class="partnerships-content">
+                <!-- Partnerships Section -->
+                <section id="powered-by" class="powered-by">
+                    <div class="container">
+                        <div class="powered-by-content">
+                            <header class="section-header">
+                                <h2 class="section-title">Powered by</h2>
+                            </header>
+                
+                            <div class="powered-by-logo">
+                                <a href="https://libreriadesatoshi.com" target="_blank" rel="noopener">
+                                    <img src="/Libreriadesatoshi.png" alt="Librería de Satoshi" class="powered-by-image" loading="lazy">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="powered-by-divider"></div>
+                </section>
+
                 <header class="section-header">
                     <h2 class="section-title">{t.partnerships.title}</h2>
                     <p class="section-subtitle" set:html={t.partnerships.subtitle}></p>
