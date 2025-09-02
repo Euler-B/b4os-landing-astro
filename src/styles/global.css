@@ -982,6 +982,10 @@ a:hover .sponsor-highlight {
     margin-bottom: var(--spacing-3xl);
 }
 
+.partner-card:nth-child(4) {
+    grid-column: 2;
+}
+
 .partner-card {
     background: rgb(53, 52, 52);
     padding: var(--spacing-lg);
@@ -1536,14 +1540,14 @@ a:hover .sponsor-highlight {
 }
 
 /* Floating Animation for Cards */
-@keyframes floatCard {
+/* @keyframes floatCard {
     0%, 100% {
         transform: translateY(0px);
     }
     50% {
         transform: translateY(-10px);
     }
-}
+} */
 
 .partner-card:nth-child(odd) {
     animation: floatCard 6s ease-in-out infinite;
@@ -1927,6 +1931,10 @@ a:hover .sponsor-highlight {
     .partners-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
+    }
+    
+    .partner-card:nth-child(4) {
+        grid-column: 1;
     }
     
     .partner-card {
