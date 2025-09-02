@@ -288,7 +288,7 @@
       },
       "7": {
         "icon": "mdi:school",
-        "title": "Formació en AI i Idiomes",
+        "title": "Formació en IA i Idiomes",
         "description": "Classes d'anglès i formació en intel·ligència artificial per a grantees."
       },
       "8": {
@@ -333,7 +333,7 @@
       },
       "7": {
         "question": "Hi ha coses a tenir en compte per a l'especialització?",
-        "answer": "<strong>Sempre hi haurà tasques individuals durant el programa</strong>, ja sigui treball de recerca, desenvolupament o lliurament de code challenges. Si activament treballes en un projecte específic, tindràs la llibertat d'especialitzar-te, però no tindràs la llibertat de no treballar en un projecte."
+        "answer": "<strong>Sempre hi haurà tasques individuals durant el programa</strong>, ja sigui treball de recerca, desenvolupament o lliurament de code challenges. Si treballes activament en un projecte específic, tindràs la llibertat d'especialitzar-te, però no tindràs la llibertat de no treballar en un projecte."
       },
       "8": {
         "question": "Puc triar la meva ruta d'aprenentatge?",
@@ -378,6 +378,9 @@
     "strategic": {
       "title": "Aliats Estratègics"
     },
+    "physical_spaces": {
+      "title": "Espais físics que ens donen suport"
+    },
     "conferences": {
       "title": "Conferències que ens donen suport"
     },
@@ -386,7 +389,9 @@
     },
     "partner_descriptions": {
       "bitcoin_argentina": "Organització referent de Bitcoin a Argentina.",
-      "chaincode": "Lab d'R+D enfocat en Bitcoin Core i Lightning."
+      "chaincode": "Lab d'R+D enfocat en Bitcoin Core i Lightning.",
+      "ongbtcchile": "Comunitat Bitcoin Xile.",
+      "blockchain_colombia": "Comunitat Bitcoin Colòmbia."
     }
   },
   "terms": {
