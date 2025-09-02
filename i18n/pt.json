@@ -288,7 +288,7 @@
       },
       "7": {
         "icon": "mdi:school",
-        "title": "Formação em AI e Idiomas",
+        "title": "Formação em IA e Idiomas",
         "description": "Aulas de inglês e formação em inteligência artificial para bolsistas."
       },
       "8": {
@@ -333,7 +333,7 @@
       },
       "7": {
         "question": "Há coisas a considerar para a especialização?",
-        "answer": "<strong>Sempre haverá tarefas individuais durante o programa</strong>, seja trabalho de pesquisa, desenvolvimento ou entrega de desafios de código. Se você trabalha ativamente em um projeto específico, terá a liberdade de se especializar, mas não terá a liberdade de não trabalhar em um projeto."
+        "answer": "<strong>Sempre haverá tarefas individuais durante o programa</strong>, seja trabalho de pesquisa, desenvolvimento ou entrega de code challenges. Se você trabalha ativamente em um projeto específico, terá a liberdade de se especializar, mas não terá a liberdade de não trabalhar em um projeto."
       },
       "8": {
         "question": "Posso escolher minha rota de aprendizagem?",
@@ -378,6 +378,9 @@
     "strategic": {
       "title": "Aliados estratégicos"
     },
+    "physical_spaces": {
+      "title": "Espaços físicos que nos apoiam"
+    },
     "conferences": {
       "title": "Conferências que nos apoiam"
     },
@@ -386,7 +389,9 @@
     },
     "partner_descriptions": {
       "bitcoin_argentina": "Organização referência de Bitcoin na Argentina.",
-      "chaincode": "Laboratório de P&D focado em Bitcoin Core e Lightning."
+      "chaincode": "Laboratório de P&D focado em Bitcoin Core e Lightning.",
+      "ongbtcchile": "Comunidade Bitcoin Chile.",
+      "blockchain_colombia": "Comunidade Bitcoin Colômbia."
     }
   },
   "terms": {

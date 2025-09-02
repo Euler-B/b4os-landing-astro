@@ -190,8 +190,8 @@ checksums:
     benefits/cards/6/title: 9eacc8bfcfc94d696bb0d6a671b60122
     benefits/cards/6/description: 35a54f668179eb582994a1d29c5b031c
     benefits/cards/7/icon: 4832e87e795b14db09341ece374943d2
-    benefits/cards/7/title: 060075687be7151c584b2a3ff37351cf
-    benefits/cards/7/description: b7557315f7db9797abbc5816512edfa0
+    benefits/cards/7/title: 0baec17f851e20e3a51f3f7bcdd6545c
+    benefits/cards/7/description: 5ca2d50bf559a46cd79c0bdaca2e6e5e
     benefits/cards/8/icon: d770da332c2057341738d1933c1a920e
     benefits/cards/8/title: 8f3b6d87bf73d3eb6e22ffc235f5cbdc
     benefits/cards/8/description: 10b07c9b5763dd821f0dae77b5cb64f2
@@ -213,7 +213,7 @@ checksums:
     faq/questions/6/question: 3a973c5130f83c2af3feeef529fa8bff
     faq/questions/6/answer: e38f73175d877a79c76486739e43c5f4
     faq/questions/7/question: 765a137f61403344c7c457aed4dbe266
-    faq/questions/7/answer: 4ca8c11f4272a06e7665169034c0159c
+    faq/questions/7/answer: ee48d924a7b9fa239e7aa5a6b8e46312
     faq/questions/8/question: b232316b05d1098f148c51c2cc9c0024
     faq/questions/8/answer: 80ed2d79b70b0179088c82a426cf7e1a
     faq/questions/9/question: 3bb257584315a122c6272ccacc29d4dd
@@ -234,10 +234,13 @@ checksums:
     partnerships/subtitle: 6a15c8e75506cc52bed44a5a25e10434
     partnerships/main_sponsor/text: 105a02523665c94f0aa781e25ed28817
     partnerships/strategic/title: e594d93111a5495dfb7165cf4fd04c2c
+    partnerships/physical_spaces/title: 10328636f19574ae63bbf07040e9646c
     partnerships/conferences/title: 2f672e900439541ff5989781d542c18c
     partnerships/communities/title: f977ba571f8e87fa28f6bf90c465b2b1
     partnerships/partner_descriptions/bitcoin_argentina: f87f663aa6888de735f9378ffa5a15f5
     partnerships/partner_descriptions/chaincode: a8a56e85a7249a72eab8ad46ce7d1f4a
+    partnerships/partner_descriptions/ongbtcchile: 3d0ad0425904cd5d302fc3a728a6020a
+    partnerships/partner_descriptions/blockchain_colombia: 2030ff32b2279268b4703ed5f0fc44c3
     terms/page_title: 4808b7f51ec0965fe366d804f9f5ab8c
     terms/page_description: 61f6b4af64fb28f9da8b92d52a5d81ea
     terms/nav/logo_alt: e632f62da421be89d63f013eff260f59

@@ -333,7 +333,7 @@
       },
       "7": {
         "question": "Are there things to consider for specialization?",
-        "answer": "<strong>There will always be individual tasks during the program</strong>, whether research work, development, or code challenge submissions. If you're actively working on a specific project, you'll have the freedom to specialize, but you won't have the freedom to not work on a project."
+        "answer": "<strong>There will always be individual tasks during the program</strong>, whether it's research work, development, or delivering code challenges. If you're actively working on a specific project, you'll have the freedom to specialize, but you won't have the freedom to not work on a project."
       },
       "8": {
         "question": "Can I choose my learning path?",
@@ -378,6 +378,9 @@
     "strategic": {
       "title": "Strategic allies"
     },
+    "physical_spaces": {
+      "title": "Physical spaces that support us"
+    },
     "conferences": {
       "title": "Supporting conferences"
     },
@@ -386,7 +389,9 @@
     },
     "partner_descriptions": {
       "bitcoin_argentina": "Leading Bitcoin organization in Argentina.",
-      "chaincode": "R&D lab focused on Bitcoin Core and Lightning."
+      "chaincode": "R&D lab focused on Bitcoin Core and Lightning.",
+      "ongbtcchile": "Bitcoin Chile Community.",
+      "blockchain_colombia": "Bitcoin Colombia Community."
     }
   },
   "terms": {

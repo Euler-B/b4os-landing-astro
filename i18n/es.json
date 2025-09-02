@@ -378,6 +378,9 @@
     "strategic": {
       "title": "Aliados Estratégicos"
     },
+    "physical_spaces": {
+      "title": "Espacios físicos que nos apoyan"
+    },
     "conferences": {
       "title": "Conferencias que nos apoyan"
     },
@@ -386,7 +389,9 @@
     },
     "partner_descriptions": {
       "bitcoin_argentina": "Organización referente de Bitcoin en Argentina.",
-      "chaincode": "Lab de i+d enfocado en Bitcoin Core y Lightning."
+      "chaincode": "Lab de i+d enfocado en Bitcoin Core y Lightning.",
+      "ongbtcchile": "Comunidad Bitcoin Chile.",
+      "blockchain_colombia": "Comunidad Bitcoin Colombia."
     }
   },
   "terms": {
