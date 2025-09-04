@@ -82,7 +82,7 @@
   },
   "residencies": {
     "title": "Residencias B4OS",
-    "subtitle": "B4OS te ofrece <strong>residencias especializadas en Bitcoin</strong>, para a desarrolladores de América Latina, el Caribe y España. <strong>Despliega todo tu potencial con B4OS</strong>: los mejores devs son seleccionados para asistir a residencias con mentorías y master classes con gastos cubiertos. Para participar, es indispensable registrarse y completar los retos de programación (PoW).",
+    "subtitle": "B4OS te ofrece <strong>residencias especializadas en Bitcoin</strong>, para a desarrolladores de América Latina, el Caribe y España. <br>Los mejores devs son seleccionados para asistir a residencias con mentorías y master classes con gastos cubiertos. <br>Las residencias son opcionales y no mandatorias. <br>Para participar en las residencias, es indispensable registrarse y completar los retos de programación (PoW).",
     "duration_label": "Duración",
     "start_label": "Inicio",
     "location_label": "Ubicación",
