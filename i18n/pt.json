@@ -127,30 +127,30 @@
     "title": "Cronograma B4OS",
     "subtitle": "Conheça as <strong>datas importantes</strong> do programa B4OS 2025–2026",
     "registration": {
-      "date": "11 Ago. - 15 Set. 2025",
-      "title": "Registro",
+      "date": "11 Ago. - 15 Out. 2025",
+      "title": "Registro Aberto",
       "description": "Registro de participantes para o programa B4OS 2025–2026."
     },
     "challenges": {
-      "date": "15 SET 2025",
-      "title": "B4OS Challenges",
+      "date": "15 Set. 2025",
+      "title": "Começam os Code Challenges",
       "description": "Vamos ver qual é o seu nível de programação e conhecimento de Bitcoin. Esta etapa é uma fase assíncrona no Discord sem aulas ou mentorias, mas com apoio da comunidade.",
       "highlight": "🏆 <strong>Os melhores desenvolvedores passam para a próxima etapa.</strong><br><strong>Prêmio para novato:</strong> $300 USD para o melhor código de desenvolvedores novos que nunca participaram do B4OS, BOSS ou outros programas."
     },
     "review": {
-      "date": "10 OUT 2025",
-      "title": "Revisão de candidaturas",
+      "date": "20 Out. 2025",
+      "title": "Finaliza Primeira Fase de Code Challenges",
       "description": "Seleção de desenvolvedores."
     },
     "guadalajara_selection": {
-      "date": "12 OUT 2025",
+      "date": "30 Out. 2025",
       "title": "Seleção Guadalajara, México",
-      "description": "Seleção de 3 desenvolvedores júnior para o programa em Guadalajara, México."
+      "description": "Seleção de 2 developers junior para o programa em Guadalajara, México."
     },
     "division": {
-      "date": "15 OUT 2025",
+      "date": "30 Out. 2025",
       "title": "Divisão em Rotas",
-      "description": "De <strong>15 de outubro de 2025</strong> a <strong>fevereiro de 2026</strong>: construção de portfólio e contribuição FOSS. Seminários, grupos de trabalho, bitdevs e meetups (5 meses online).",
+      "description": "De <strong>30 de outubro 2025</strong> a <strong>fevereiro 2026</strong>: construção de portfólio e contribuição FOSS. Seminários, grupos de trabalho, bitdevs e meetups (5 meses online).",
       "routes": {
         "core": "Bitcoin Core Protocol Developer",
         "lightning": "Lightning Network Protocol Developer",
@@ -158,20 +158,20 @@
       }
     },
     "southamerica_selection": {
-      "date": "DEZ 2025",
+      "date": "Dez. 2025",
       "title": "Seleção Residência América do Sul",
       "description": "Avaliação baseada em <strong>Proof of Work</strong> em projetos Open Source e participação em cursos. Ambas as rotas se unem e continuam trabalhando em projetos.",
       "note": "Em casos excepcionais, desenvolvedores também poderão ser escolhidos em janeiro."
     },
     "residency": {
-      "date": "FEV-MAR 2026",
+      "date": "Fev.-Mar. 2026",
       "title": "Residência Presencial América do Sul",
       "description": "Experiência imersiva de 2 semanas em <strong>Florianópolis, Brasil</strong>. Trabalho direto com mentores e pares em projetos de alto impacto."
     },
     "grantees": {
-      "date": "ABR 2026",
+      "date": "Abr. 2026",
       "title": "Atribuição de Novos Bolsistas",
-      "description": "Processo de seleção e atribuição de financiamento para novos beneficiários do programa."
+      "description": "Atribuição de financiamento para novos beneficiários do programa. Em casos excepcionais, poderiam ser concedidas bolsas em qualquer momento antes de Abril 2026."
     }
   },
   "registration": {
@@ -188,7 +188,7 @@
     },
     "period": {
       "label": "Registro até",
-      "dates": "15 de Setembro 2025"
+      "dates": "15 de Outubro 2025"
     },
     "form": {
       "title": "Formulário de Inscrição B4OS 2025",

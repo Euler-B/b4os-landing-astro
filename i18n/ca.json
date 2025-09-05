@@ -127,30 +127,30 @@
     "title": "B4OS Timeline",
     "subtitle": "Coneix les <strong>dates importants</strong> del programa B4OS 2025–2026",
     "registration": {
-      "date": "11 Ag. - 15 Set. 2025",
-      "title": "Registre",
+      "date": "11 Ag. - 15 Oct. 2025",
+      "title": "Registre Obert",
       "description": "Registre de participants per al programa B4OS 2025–2026."
     },
     "challenges": {
-      "date": "15 SET 2025",
-      "title": "B4OS Challenges",
+      "date": "15 Set. 2025",
+      "title": "Comencen Code Challenges",
       "description": "Vegem quin és el teu nivell de programació i de coneixements de Bitcoin. Aquesta etapa és una fase asíncrona a Discord sense classes ni mentories, però amb suport de la comunitat.",
       "highlight": "🏆 <strong>Els millors desenvolupadors passen a la següent etapa.</strong><br><strong>Premi al novell:</strong> $300 USD al millor codi per a desenvolupadors nous que mai hagin participat a B4OS, BOSS o altres programes."
     },
     "review": {
-      "date": "10 OCT 2025",
-      "title": "Revisió de candidatures",
+      "date": "20 Oct. 2025",
+      "title": "Finalitza Primera Fase de Code Challenges",
       "description": "Selecció de developers."
     },
     "guadalajara_selection": {
-      "date": "12 OCT 2025",
+      "date": "30 Oct. 2025",
       "title": "Selecció Guadalajara, Mèxic",
-      "description": "Selecció de 3 developers junior per al programa a Guadalajara, Mèxic."
+      "description": "Selecció de 2 developers junior per al programa a Guadalajara, Mèxic."
     },
     "division": {
-      "date": "15 OCT 2025",
+      "date": "30 Oct. 2025",
       "title": "Divisió en Rutes",
-      "description": "Del <strong>15 d'octubre 2025</strong> a <strong>febrer 2026</strong>: construcció de portafoli i contribució FOSS. Seminaris, grups de treball, bitdevs i meetups (5 mesos online).",
+      "description": "Del <strong>30 d'octubre 2025</strong> a <strong>febrer 2026</strong>: construcció de portafoli i contribució FOSS. Seminaris, grups de treball, bitdevs i meetups (5 mesos en línia).",
       "routes": {
         "core": "Bitcoin Core Protocol Developer",
         "lightning": "Lightning Network Protocol Developer",
@@ -158,20 +158,20 @@
       }
     },
     "southamerica_selection": {
-      "date": "DES 2025",
+      "date": "Des. 2025",
       "title": "Selecció Residència Sud-amèrica",
       "description": "Avaluació basada en <strong>Proof of Work</strong> en projectes Open Source i participació en cursos. Ambdues rutes s'uneixen i continuen treballant en projectes.",
       "note": "En casos excepcionals, es podran triar developers també al gener."
     },
     "residency": {
-      "date": "FEB-MAR 2026",
+      "date": "Feb.-Març 2026",
       "title": "Residència Presencial Sud-amèrica",
       "description": "Experiència immersiva de 2 setmanes a <strong>Florianópolis, Brasil</strong>. Treball directe amb mentors i companys en projectes d'alt impacte."
     },
     "grantees": {
-      "date": "ABR 2026",
+      "date": "Abr. 2026",
       "title": "Assignació de Nous Grantees",
-      "description": "Procés de selecció i assignació de finançament per a nous beneficiaris del programa."
+      "description": "Assignació de finançament per a nous beneficiaris del programa. En casos excepcionals, es podrien atorgar grants en qualsevol moment abans d'Abril 2026."
     }
   },
   "registration": {
@@ -188,7 +188,7 @@
     },
     "period": {
       "label": "Registre fins a",
-      "dates": "15 de Setembre 2025"
+      "dates": "15 d'Octubre 2025"
     },
     "form": {
       "title": "Formulari de Registre B4OS 2025",

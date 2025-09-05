@@ -95,35 +95,35 @@ checksums:
     residencies/disclaimer: 61aaeeadf20d853d1851e0f622d49bbd
     timeline/title: 3d6faeeca3998f60ced28eaf939cb075
     timeline/subtitle: 8bc9de830a2411df415002d3c78e9567
-    timeline/registration/date: 81c826ecdf8088a9c58fe5a195a3a7d1
-    timeline/registration/title: 38d54e5d817bfb14220015b0a2321392
+    timeline/registration/date: bb885362a4a43e095ebd7edc3dbfbc79
+    timeline/registration/title: b96ec69801c2d6c025432bcfd031d426
     timeline/registration/description: 697109e39546fb1a07180f453a7f0a29
-    timeline/challenges/date: aaa53765e1f2059a747986768c511d00
-    timeline/challenges/title: f64d08aa61da7c83aa3fec7164c24da3
+    timeline/challenges/date: 9f62ad379d2945d4b689cfbce3648da1
+    timeline/challenges/title: 9e764a0b2ea3f4af41fac9f1682194d0
     timeline/challenges/description: eccf7dfdc302bbfb40fcb4bca8ccb489
     timeline/challenges/highlight: 98b593f09a4ae39bc0b60e6c0891b790
-    timeline/review/date: 54b30e9eae8bc403f96c94ff5a8f7f03
-    timeline/review/title: a51d6f6b37630f3433ca4fe8b6ab9832
+    timeline/review/date: a41c1ab9b68c8700e8e3bcf2c7b57be9
+    timeline/review/title: 3f18e9ce61c2740d9e6a9a6450a3bc4f
     timeline/review/description: 91663e945facf02c3d5da7843c83ceba
-    timeline/guadalajara_selection/date: 35787aba16d4792473e786e15fe40aa4
+    timeline/guadalajara_selection/date: f0a094f3fdccb110107fefd08ad7ee24
     timeline/guadalajara_selection/title: ccc2ef4320e71f7ba3680444fbded307
-    timeline/guadalajara_selection/description: 38799346862aefcf9f99a3dede5bfc4a
-    timeline/division/date: e1417a9a2baa77b0fdb3b236c6f4e04d
+    timeline/guadalajara_selection/description: e72ccd867eb4fd94d37d9e62dc918218
+    timeline/division/date: f0a094f3fdccb110107fefd08ad7ee24
     timeline/division/title: bfaf109736a26b342125db8a619216cf
-    timeline/division/description: 76f2cd20495a6a07002dd1f76858b58c
+    timeline/division/description: 860495dd3c36194c1c17f60a90b4bf18
     timeline/division/routes/core: 05d6785c89849c3e62501575e679053a
     timeline/division/routes/lightning: 76514d83815699c9d2d1e9b1b61e19c7
     timeline/division/routes/application: 73cf50989ccdd3f6075c45d001ca960d
-    timeline/southamerica_selection/date: 227026dc0894ff4fd727f6c8cd1590a7
+    timeline/southamerica_selection/date: 5685f6c4c8ab6badb256df410ca53949
     timeline/southamerica_selection/title: 72b4650b9a19150b22e0817b836d09ec
     timeline/southamerica_selection/description: 9a6f05712c174de5645d9eeb051eda06
     timeline/southamerica_selection/note: f19f138a6da75d57a7884a08ff14718e
-    timeline/residency/date: fb8b38ff38b6b14555ec9677bfeb306e
+    timeline/residency/date: 84d37bf08815d374e43fab8ca8fcce2c
     timeline/residency/title: 9c35850e79c313dec9374b38d5a30da1
     timeline/residency/description: c06ac0fbb6fe40e4bf9df8f3d42c07a1
-    timeline/grantees/date: 032decca3037a8f932e98d8804a73df9
+    timeline/grantees/date: 696f11c2714ce2690a5f3bb86a0fc6a8
     timeline/grantees/title: 1313f186af9483111f7423b174108ffe
-    timeline/grantees/description: c97ee5d9fc2791fa13d2704e2cc121f5
+    timeline/grantees/description: 767ff5b1c386279eb0a48b17ebc4bacf
     registration/title: e3b1c17babb334dc9d69bf0a31c3c151
     registration/description: 5b1a6f71c749193082cf4a32e29bca5e
     registration/requirements/title: 43c63ede04bfaba99f416d3384350b78
@@ -134,7 +134,7 @@ checksums:
     registration/requirements/resilience: af842891833dfaecd97efce630231b57
     registration/requirements/spanish: 05ce58363ab94ce4a4cab179dd42d486
     registration/period/label: a0fc05149cd0b4a6f54b3dcec0e64977
-    registration/period/dates: b1e620898e0b2a50131e654b17e6f4d6
+    registration/period/dates: 29260387043f912620a28a36ae4c2959
     registration/form/title: 0f9ffb9f14aebee4b018f2a97d1773d1
     registration/form/aria_label: a76b95e4cd0df4201c9aabe7e7ecbfb6
     registration/form/name/label: 385ede445a7d152a62c1b730233d3c0d
