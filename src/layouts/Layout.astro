@@ -54,7 +54,7 @@ if (canonicalURL) {
 }
 
 // Generar URL completa para Open Graph images
-const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl.replace(/\/$/, '')}${ogImage.startsWith('/') ? ogImage : '/' + ogImage}`;
 
 // Mapear locales a códigos de Open Graph
 const ogLocaleMap = {
