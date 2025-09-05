@@ -57,6 +57,18 @@ exports.handler = async (event, context) => {
       };
     }
 
+    // Validar perfil de GitHub si se proporciona
+    if (formData.github) {
+      const githubValidation = await validateGitHubProfile(formData.github);
+      if (!githubValidation.isValid) {
+        return {
+          statusCode: 400,
+          headers,
+          body: JSON.stringify({ error: githubValidation.message })
+        };
+      }
+    }
+
     // Obtener claves de Customer.io desde variables de entorno
     const customerIOSiteId = process.env.CUSTOMERIO_SITE_ID;
     const customerIOApiKey = process.env.CUSTOMERIO_TRACK_API_KEY;
@@ -264,4 +276,53 @@ function extractPrimaryTechnology(technologies) {
   // Si no detecta nada específico, tomar la primera palabra
   const words = technologies.split(/[,\s]+/);
   return words[0]?.toLowerCase() || 'other';
+}
+
+// Validar perfil de GitHub
+async function validateGitHubProfile(url) {
+  try {
+    // Extraer username de la URL
+    const githubRegex = /^https:\/\/github\.com\/([a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?)$/;
+    const match = url.match(githubRegex);
+    
+    if (!match) {
+      return { 
+        isValid: false, 
+        message: 'La URL debe tener el formato https://github.com/username' 
+      };
+    }
+    
+    const username = match[1];
+    
+    // Validar que el perfil existe usando GitHub API
+    const response = await fetch(`https://api.github.com/users/${username}`, {
+      headers: {
+        'Accept': 'application/vnd.github.v3+json',
+        'User-Agent': 'B4OS-Application-Form'
+      }
+    });
+    
+    if (response.status === 404) {
+      return { 
+        isValid: false, 
+        message: 'No pudimos encontrar este usuario de GitHub. Revisa el nombre o <a href="https://github.com" target="_blank" rel="noopener noreferrer">crea una cuenta en GitHub</a>.' 
+      };
+    }
+    
+    if (!response.ok) {
+      console.warn('GitHub API error, validating format only:', response.status);
+      return { isValid: true }; // En caso de error de API, permitir el formato válido
+    }
+    
+    return { isValid: true };
+    
+  } catch (error) {
+    console.warn('Error validating GitHub profile:', error);
+    // En caso de error, solo validamos el formato básico
+    const basicFormat = /^https:\/\/github\.com\/[a-zA-Z0-9-]+$/;
+    return { 
+      isValid: basicFormat.test(url),
+      message: basicFormat.test(url) ? '' : 'Formato de URL de GitHub inválido'
+    };
+  }
 }
