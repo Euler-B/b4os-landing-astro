@@ -70,8 +70,8 @@ window.FormHandler = class FormHandler {
         const inputs = this.form.querySelectorAll('input, select, textarea');
         
         inputs.forEach(input => {
-            input.addEventListener('blur', () => {
-                this.validateField(input);
+            input.addEventListener('blur', async () => {
+                await this.validateField(input);
             });
 
             input.addEventListener('input', () => {
@@ -96,28 +96,35 @@ window.FormHandler = class FormHandler {
     /**
      * Validar campo individual
      */
-    validateField(field) {
+    async validateField(field) {
         const value = field.value.trim();
         let isValid = true;
         let message = '';
 
         this.clearFieldError(field);
 
-        switch (field.type) {
-            case 'email':
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (value && !emailRegex.test(value)) {
-                    isValid = false;
-                    message = 'Por favor ingresa un email válido';
-                }
-                break;
-                
-            case 'url':
-                if (value && !this.isValidURL(value)) {
-                    isValid = false;
-                    message = 'Por favor ingresa una URL válida';
-                }
-                break;
+        // Validación especial para GitHub
+        if (field.name === 'github' && value) {
+            const validation = await this.validateGitHubProfile(value);
+            isValid = validation.isValid;
+            message = validation.message || '';
+        } else {
+            switch (field.type) {
+                case 'email':
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (value && !emailRegex.test(value)) {
+                        isValid = false;
+                        message = 'Por favor ingresa un email válido';
+                    }
+                    break;
+                    
+                case 'url':
+                    if (value && !this.isValidURL(value)) {
+                        isValid = false;
+                        message = 'Por favor ingresa una URL válida';
+                    }
+                    break;
+            }
         }
 
         if (field.required && !value) {
@@ -125,7 +132,7 @@ window.FormHandler = class FormHandler {
             message = 'Este campo es requerido';
         }
 
-        if (!isValid) {
+        if (!isValid && message) {
             this.showFieldError(field, message);
         }
 
@@ -145,6 +152,57 @@ window.FormHandler = class FormHandler {
     }
 
     /**
+     * Validar perfil en GitHub
+     */
+    async validateGitHubProfile(url) {
+        try {
+            // Extraer username de la URL
+            const githubRegex = /^https:\/\/github\.com\/([a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?)$/;
+            const match = url.match(githubRegex);
+            
+            if (!match) {
+                return { 
+                    isValid: false, 
+                    message: 'Formato incorrecto. Usa: <code>https://github.com/tu-usuario</code>' 
+                };
+            }
+            
+            const username = match[1];
+            
+            // Validar que el perfil existe con GitHub API
+            const response = await fetch(`https://api.github.com/users/${username}`, {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json'
+                }
+            });
+            
+            if (response.status === 404) {
+                return { 
+                    isValid: false, 
+                    message: 'No pudimos encontrar este usuario de GitHub. Revisa el nombre o <a href="https://github.com" target="_blank" rel="noopener noreferrer">crea una cuenta en GitHub</a>.' 
+                };
+            }
+            
+            if (!response.ok) {
+                // Si hay error en la API, solo validamos el formato
+                console.warn('GitHub API error, validating format only');
+                return { isValid: true };
+            }
+            
+            return { isValid: true };
+            
+        } catch (error) {
+            console.warn('Error validating GitHub profile:', error);
+            // En caso de error, solo validamos el formato básico
+            const basicFormat = /^https:\/\/github\.com\/[a-zA-Z0-9-]+$/;
+            return { 
+                isValid: basicFormat.test(url),
+                message: basicFormat.test(url) ? '' : 'Formato de URL de GitHub inválido'
+            };
+        }
+    }
+
+    /**
      * Mostrar error en campo
      */
     showFieldError(field, message) {
@@ -157,7 +215,7 @@ window.FormHandler = class FormHandler {
 
         const errorDiv = document.createElement('div');
         errorDiv.className = 'error-message';
-        errorDiv.textContent = message;
+        errorDiv.innerHTML = message;
         errorDiv.style.cssText = 'color: var(--error-color); font-size: var(--font-size-sm); margin-top: 4px;';
         
         field.parentElement.appendChild(errorDiv);
@@ -237,7 +295,7 @@ window.FormHandler = class FormHandler {
             errors.push('Debes aceptar los términos y condiciones');
         }
 
-        // Validar URL de GitHub
+        // Validar URL de GitHub (validación básica aquí, la validación completa se hace en validateField)
         const github = formData.get('github');
         if (github && !this.isValidURL(github)) {
             errors.push('Por favor ingresa una URL de GitHub válida');
