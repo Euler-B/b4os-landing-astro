@@ -223,6 +223,15 @@ const hrefLangUrls = {
         respect_dnq: true
       });
     </script>
+
+    <!-- Twitter conversion tracking base code -->
+    <script is:inline>
+    !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+    },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+    a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+    twq('config','o3yxg');
+    </script>
+    <!-- End Twitter conversion tracking base code -->
 </head>
 <body>
     <slot />
@@ -270,6 +279,18 @@ const hrefLangUrls = {
                 await loadScript('/js/nav.js', () => typeof window.NavigationHandler !== 'undefined');
                 await loadScript('/js/carousel.js', () => typeof window.HeroCarousel !== 'undefined');
                 await loadScript('/js/language-selector.js', () => typeof window.initLanguageSelector === 'function');
+                await loadScript('/js/twitter-tracking.js', () => typeof window.TwitterSectionTracker !== 'undefined');
+
+                // Cargar tracking específico para páginas legales
+                const isLegalPage = window.location.pathname.includes('terminos') ||
+                                   window.location.pathname.includes('terms') ||
+                                   window.location.pathname.includes('codigo-conducta') ||
+                                   window.location.pathname.includes('conduct');
+
+                if (isLegalPage) {
+                    await loadScript('/js/legal-pages-tracking.js', () => typeof window.LegalPagesTracker !== 'undefined');
+                }
+
                 await loadScript('/js/main.js', () => true);
                 
                 // Inicializar carousel si está en la página principal
@@ -298,7 +319,19 @@ const hrefLangUrls = {
                 console.error('Error initializing B4OS:', error);
                 
                 // Fallback silencioso
-                const scripts = ['/js/location-api.js', '/js/form-handler.js', '/js/nav.js', '/js/carousel.js', '/js/language-selector.js', '/js/main.js'];
+                let scripts = ['/js/location-api.js', '/js/form-handler.js', '/js/nav.js', '/js/carousel.js', '/js/language-selector.js', '/js/twitter-tracking.js'];
+
+                // Agregar script de páginas legales si es necesario
+                const isLegalPage = window.location.pathname.includes('terminos') ||
+                                   window.location.pathname.includes('terms') ||
+                                   window.location.pathname.includes('codigo-conducta') ||
+                                   window.location.pathname.includes('conduct');
+
+                if (isLegalPage) {
+                    scripts.push('/js/legal-pages-tracking.js');
+                }
+
+                scripts.push('/js/main.js');
                 scripts.forEach(src => {
                     const script = document.createElement('script');
                     script.src = src;
