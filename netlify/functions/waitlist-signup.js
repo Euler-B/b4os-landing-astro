@@ -5,7 +5,7 @@ const { CioApiClient } = require('customerio-node');
 
 // Inicializar Customer.io
 const cio = new CioApiClient(
-    process.env.CUSTOMERIO_API_KEY,
+    process.env.CUSTOMERIO_TRACK_API_KEY,
     { region: process.env.CUSTOMERIO_REGION || 'us' }
 );
 
