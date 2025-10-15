@@ -276,6 +276,7 @@ const hrefLangUrls = {
                 // Cargar scripts en orden
                 await loadScript('/js/location-api.js', () => typeof window.LocationAPI !== 'undefined');
                 await loadScript('/js/form-handler.js', () => typeof window.FormHandler !== 'undefined');
+                await loadScript('/js/waitlist-handler.js', () => true); // Waitlist handler (auto-ejecutable)
                 await loadScript('/js/nav.js', () => typeof window.NavigationHandler !== 'undefined');
                 await loadScript('/js/carousel.js', () => typeof window.HeroCarousel !== 'undefined');
                 await loadScript('/js/language-selector.js', () => typeof window.initLanguageSelector === 'function');
@@ -319,7 +320,7 @@ const hrefLangUrls = {
                 console.error('Error initializing B4OS:', error);
                 
                 // Fallback silencioso
-                let scripts = ['/js/location-api.js', '/js/form-handler.js', '/js/nav.js', '/js/carousel.js', '/js/language-selector.js', '/js/twitter-tracking.js'];
+                let scripts = ['/js/location-api.js', '/js/form-handler.js', '/js/waitlist-handler.js', '/js/nav.js', '/js/carousel.js', '/js/language-selector.js', '/js/twitter-tracking.js'];
 
                 // Agregar script de páginas legales si es necesario
                 const isLegalPage = window.location.pathname.includes('terminos') ||
