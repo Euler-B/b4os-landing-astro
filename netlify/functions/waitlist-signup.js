@@ -1,10 +1,10 @@
 // Función para registrar usuarios en la waitlist
 // Guarda en Customer.io con tracking del journey completo
 
-const { CioApiClient } = require('customerio-node');
+const CustomerIO = require('customerio-node');
 
 // Inicializar Customer.io
-const cio = new CioApiClient(
+const cio = new CustomerIO(
     process.env.CUSTOMERIO_TRACK_API_KEY,
     { region: process.env.CUSTOMERIO_REGION || 'us' }
 );
