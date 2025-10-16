@@ -36,14 +36,16 @@
 
     // Función para mostrar estado de éxito en el formulario
     function showSuccessState(form) {
+        const translations = window.waitlistTranslations || {};
+        
         form.innerHTML = `
             <div class="success-state">
                 <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="12" r="10"></circle>
                     <path d="M9 12l2 2 4-4"></path>
                 </svg>
-                <h4>¡Listo!</h4>
-                <p>Te avisaremos cuando abramos inscripciones</p>
+                <h4>${translations.success_title || '¡Listo!'}</h4>
+                <p>${translations.success_message || 'Te avisaremos cuando abramos inscripciones'}</p>
             </div>
         `;
     }
@@ -58,7 +60,8 @@
 
         // Validación básica
         if (!email) {
-            showNotification('Por favor ingresa tu email', 'error');
+            const translations = window.waitlistTranslations || {};
+            showNotification(translations.email_required || 'Por favor ingresa tu email', 'error');
             return;
         }
 
@@ -97,7 +100,8 @@
 
         } catch (error) {
             console.error('Error:', error);
-            showNotification('Hubo un problema. Por favor intenta nuevamente', 'error');
+            const translations = window.waitlistTranslations || {};
+            showNotification(translations.error_message || 'Hubo un problema. Por favor intenta nuevamente', 'error');
 
             // Rehabilitar formulario
             submitButton.disabled = false;

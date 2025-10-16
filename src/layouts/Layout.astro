@@ -224,6 +224,16 @@ const hrefLangUrls = {
       });
     </script>
 
+    <!-- Waitlist translations -->
+    <script is:inline>
+      window.waitlistTranslations = {
+        success_title: '${t.registration.closed?.success_title || '¡Perfecto!'}',
+        success_message: '${t.registration.closed?.success_message || 'Te avisaremos cuando abramos inscripciones'}',
+        error_message: '${t.registration.closed?.error_message || 'Hubo un problema. Por favor intenta nuevamente'}',
+        email_required: '${t.registration.closed?.email_required || 'Por favor ingresa tu email'}'
+      };
+    </script>
+
     <!-- Twitter conversion tracking base code -->
     <script is:inline>
     !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);

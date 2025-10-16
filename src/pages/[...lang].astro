@@ -506,7 +506,7 @@ const reopenDate = import.meta.env.PUBLIC_REGISTRATION_REOPEN_DATE || '2025-10-2
                                         name="email"
                                         placeholder={t.registration.closed?.email_placeholder || 'tu@email.com'}
                                         required
-                                        aria-label="Email para lista de espera"
+                                        aria-label={t.registration.closed?.email_aria_label || 'Email para lista de espera'}
                                     />
                                     <button type="submit" class="btn btn-primary">
                                         <Icon name="heroicons:bell-alert" size={20} />

@@ -190,6 +190,19 @@
       "label": "Registre fins a",
       "dates": "15 d'Octubre 2025"
     },
+    "closed": {
+      "badge_label": "Estat",
+      "badge_text": "Registre Tancat",
+      "title": "Registre temporalment tancat",
+      "subtitle": "Aviat obrirem noves inscripcions. Sigues dels primers a saber-ho:",
+      "email_placeholder": "el@teu.email",
+      "email_aria_label": "Email per a la llista d'espera",
+      "cta": "Notifica'm",
+      "success_title": "Perfecte!",
+      "success_message": "T'avisarem quan obrim inscripcions",
+      "error_message": "Hi ha hagut un problema. Si us plau, torna-ho a intentar",
+      "email_required": "Si us plau, introdueix el teu email"
+    },
     "form": {
       "title": "Formulari de Registre B4OS 2025",
       "aria_label": "Formulari de registre B4OS 2025",

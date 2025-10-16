@@ -190,6 +190,19 @@
       "label": "Registro hasta",
       "dates": "15 de Octubre 2025"
     },
+    "closed": {
+      "badge_label": "Estado",
+      "badge_text": "Registro Cerrado",
+      "title": "Registro temporalmente cerrado",
+      "subtitle": "Pronto abriremos nuevas inscripciones. Sé de los primeros en saberlo:",
+      "email_placeholder": "tu@email.com",
+      "email_aria_label": "Email para lista de espera",
+      "cta": "Notificarme",
+      "success_title": "¡Perfecto!",
+      "success_message": "Te avisaremos cuando abramos inscripciones",
+      "error_message": "Hubo un problema. Por favor intenta nuevamente",
+      "email_required": "Por favor ingresa tu email"
+    },
     "form": {
       "title": "Formulario de Registro B4OS 2025",
       "aria_label": "Formulario de registro B4OS 2025",
