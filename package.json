@@ -22,7 +22,8 @@
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/simple-icons": "^1.2.45",
     "aos": "^2.3.4",
-    "astro": "^5.12.3"
+    "astro": "^5.12.3",
+    "customerio-node": "^0.1.0"
   },
   "devDependencies": {
     "@netlify/plugin-lighthouse": "^3.0.0",

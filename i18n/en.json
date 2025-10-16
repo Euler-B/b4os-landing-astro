@@ -190,6 +190,19 @@
       "label": "Registration until",
       "dates": "October 15, 2025"
     },
+    "closed": {
+      "badge_label": "Status",
+      "badge_text": "Registration Closed",
+      "title": "Registration temporarily closed",
+      "subtitle": "We'll open new registrations soon. Be among the first to know:",
+      "email_placeholder": "your@email.com",
+      "email_aria_label": "Email for waitlist",
+      "cta": "Notify me",
+      "success_title": "Perfect!",
+      "success_message": "We'll notify you when we open registrations",
+      "error_message": "There was a problem. Please try again",
+      "email_required": "Please enter your email"
+    },
     "form": {
       "title": "B4OS 2025 registration form",
       "aria_label": "B4OS 2025 registration form",
