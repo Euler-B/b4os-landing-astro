@@ -1,15 +1,15 @@
 // Función para registrar usuarios en la waitlist
 // Guarda en Customer.io con tracking del journey completo
 
-const CustomerIO = require('customerio-node');
+import CustomerIO from 'customerio-node';
 
 // Inicializar Customer.io
 const cio = new CustomerIO(
-    process.env.CUSTOMERIO_TRACK_API_KEY,
-    { region: process.env.CUSTOMERIO_REGION || 'us' }
+    process.env.CUSTOMERIO_SITE_ID,
+    process.env.CUSTOMERIO_TRACK_API_KEY
 );
 
-exports.handler = async (event) => {
+export const handler = async (event) => {
     // Solo permitir POST
     if (event.httpMethod !== 'POST') {
         return {
