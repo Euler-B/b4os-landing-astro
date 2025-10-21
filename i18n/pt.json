@@ -254,8 +254,15 @@
       },
       "how_heard": {
         "label": "Por qual meio você ficou sabendo do B4OS? *",
-        "placeholder": "Exemplo: Redes sociais, amigos, eventos...",
-        "help": "Conte-nos através de quem nos conheceu ou por qual meio chegou até nós"
+        "help": "Selecione uma opção",
+        "options": {
+          "libreria": "x-Libreria",
+          "bitcoinong_argentina": "x-BitcoinONG Argentina",
+          "world_liberty_congress": "World Liberty Congress",
+          "chaincode": "Chaincode",
+          "others": "Outros"
+        },
+        "others_placeholder": "Especifique outros meios..."
       },
       "terms": {
         "label": "Aceito os {link} do programa",
