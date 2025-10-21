@@ -23,6 +23,7 @@ window.FormHandler = class FormHandler {
         await this.setupLocationSelectors();
         this.setupFormValidation();
         this.setupFormSubmission();
+        this.setupHowHeardCheckboxes();
         
         console.log('Form handler initialized');
     }
@@ -90,6 +91,46 @@ window.FormHandler = class FormHandler {
             if (this.isSubmitting) return;
             
             await this.handleSubmit();
+        });
+    }
+
+    /**
+     * Configurar radio buttons de how_heard
+     */
+    setupHowHeardCheckboxes() {
+        const othersRadio = document.getElementById('how-heard-others');
+        const othersInputContainer = document.getElementById('others-input-container');
+        const othersTextInput = document.getElementById('how-heard-others-text');
+        
+        if (!othersRadio || !othersInputContainer || !othersTextInput) {
+            console.warn('How heard radio buttons not found', {
+                othersRadio: !!othersRadio,
+                othersInputContainer: !!othersInputContainer,
+                othersTextInput: !!othersTextInput
+            });
+            return;
+        }
+        
+        // Función para manejar el cambio de radio buttons
+        const handleRadioChange = (e) => {
+            if (e.target.value === 'others') {
+                othersInputContainer.style.display = 'block';
+                othersTextInput.required = true;
+                othersTextInput.focus();
+            } else {
+                othersInputContainer.style.display = 'none';
+                othersTextInput.required = false;
+                othersTextInput.value = '';
+            }
+        };
+        
+        const allRadioButtons = document.querySelectorAll('input[name="how-heard"]');
+        allRadioButtons.forEach(radio => {
+            radio.addEventListener('change', handleRadioChange);
+        });
+        
+        othersTextInput.addEventListener('input', () => {
+            this.clearFieldError(othersTextInput);
         });
     }
 
@@ -262,7 +303,6 @@ window.FormHandler = class FormHandler {
             { name: 'city', label: 'Ciudad' },
             { name: 'experience', label: 'Años de experiencia' },
             { name: 'dev-language', label: 'Lenguaje de programación principal' },
-            { name: 'how-heard', label: 'Cómo te enteraste de B4OS' },
             { name: 'technologies', label: 'Tecnologías principales' },
             { name: 'github', label: 'Perfil de GitHub' },
             { name: 'motivation', label: 'Motivación' }
@@ -307,10 +347,14 @@ window.FormHandler = class FormHandler {
             errors.push('La motivación debe tener al menos 20 caracteres');
         }
 
-        // Validar how-heard
-        const howHeard = formData.get('how-heard');
-        if (howHeard && howHeard.length < 1) {
-            errors.push('Indica cómo te enteraste de B4OS');
+        // Validar how-heard (radio buttons)
+        const howHeardSelected = formData.get('how-heard');
+        const howHeardOthers = formData.get('how-heard-others-text');
+        
+        if (!howHeardSelected) {
+            errors.push('Selecciona una opción de cómo te enteraste de B4OS');
+        } else if (howHeardSelected === 'others' && (!howHeardOthers || howHeardOthers.trim() === '')) {
+            errors.push('Si seleccionaste "Otros", especifica los medios');
         }
 
         return {
@@ -370,13 +414,22 @@ window.FormHandler = class FormHandler {
             const locationData = this.getLocationData(formData);
             
             // Preparar datos para envío
+            const howHeardSelected = formData.get('how-heard');
+            const howHeardOthers = formData.get('how-heard-others-text');
+            
+            // Procesar datos de how_heard
+            let howHeardData = {
+                selected: howHeardSelected,
+                others_text: howHeardOthers || null
+            };
+            
             const submissionData = {
                 name: formData.get('name'),
                 email: formData.get('email'),
                 location: locationData,
                 experience: formData.get('experience'),
                 devLanguage: formData.get('dev-language'),
-                howHeard: formData.get('how-heard'),
+                howHeard: howHeardData,
                 technologies: formData.get('technologies'),
                 github: formData.get('github'),
                 motivation: formData.get('motivation'),
