@@ -805,21 +805,67 @@ section {
 
 .checkbox-group {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
     gap: var(--spacing-sm);
 }
 
 .checkbox-label {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--spacing-sm);
     cursor: pointer;
     font-weight: normal !important;
+    margin-bottom: var(--spacing-xs);
 }
 
 .checkbox-label input[type="checkbox"] {
     width: auto;
     margin: 0;
+    flex-shrink: 0;
+}
+
+.checkbox-label span {
+    line-height: 1.4;
+}
+
+/* Radio button styles */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    cursor: pointer;
+    font-weight: normal !important;
+    margin-bottom: var(--spacing-xs);
+}
+
+.radio-label input[type="radio"] {
+    width: auto;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.radio-label span {
+    line-height: 1.4;
+}
+
+/* Fieldset styling for how_heard */
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+legend {
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-dark);
+    font-size: var(--font-size-base);
 }
 
 /* Partnerships Section */

@@ -608,9 +608,34 @@ const reopenDate = import.meta.env.PUBLIC_REGISTRATION_REOPEN_DATE || '2025-10-2
                         </div>
 
                         <div class="form-group">
-                            <label for="how-heard">{t.registration.form.how_heard.label}</label>
-                            <input id="how-heard" name="how-heard" placeholder={t.registration.form.how_heard.placeholder} required aria-describedby="how-heard-help">
-                            <small id="how-heard-help">{t.registration.form.how_heard.help}</small>
+                            <fieldset>
+                                <legend>{t.registration.form.how_heard.label}</legend>
+                                <div class="radio-group">
+                                    {Object.entries(t.registration.form.how_heard.options).map(([key, value]) => (
+                                        <label class="radio-label" for={`how-heard-${key}`}>
+                                            <input 
+                                                type="radio" 
+                                                id={`how-heard-${key}`} 
+                                                name="how-heard" 
+                                                value={key}
+                                                aria-describedby="how-heard-help"
+                                            >
+                                            <span>{value}</span>
+                                        </label>
+                                    ))}
+                                </div>
+                                <div id="others-input-container" style="display: none; margin-top: 15px;">
+                                    <input 
+                                        type="text" 
+                                        id="how-heard-others-text" 
+                                        name="how-heard-others-text" 
+                                        placeholder={t.registration.form.how_heard.others_placeholder}
+                                        aria-describedby="how-heard-help"
+                                        style="width: 100%; padding: var(--spacing-md); border: 2px solid var(--border-color); border-radius: var(--border-radius-md); font-size: var(--font-size-base);"
+                                    >
+                                </div>
+                                <small id="how-heard-help">{t.registration.form.how_heard.help}</small>
+                            </fieldset>
                         </div>
                         
                         <div class="form-group checkbox-group">
