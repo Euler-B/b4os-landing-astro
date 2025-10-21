@@ -256,8 +256,8 @@
         "label": "Por qual meio você ficou sabendo do B4OS? *",
         "help": "Selecione uma opção",
         "options": {
-          "libreria": "x-Libreria",
-          "bitcoinong_argentina": "x-BitcoinONG Argentina",
+          "libreria": "Librería de Satoshi (X/Twitter)",
+          "bitcoinong_argentina": "Bitcoin ONG Argentina (X/Twitter)",
           "world_liberty_congress": "World Liberty Congress",
           "chaincode": "Chaincode",
           "others": "Outros"
