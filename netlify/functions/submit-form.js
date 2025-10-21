@@ -103,14 +103,15 @@ exports.handler = async (event, context) => {
             // Experiencia profesional
             experience: formData.experience,
             dev_language: formData.devLanguage || '',
-            how_heard: formData.howHeard || '',
+            how_heard: formData.howHeard?.selected || '',
+            how_heard_other_text: formData.howHeard?.others_text || null,
             technologies: formData.technologies,
             github: formData.github || '',
             motivation: formData.motivation,
             
             // Metadatos del formulario
             source: 'b4os-website',
-            form_version: '2025-v1',
+            form_version: '2025-v2',
             application_timestamp: new Date().toISOString(),
             created_at: Math.floor(Date.now() / 1000),
             
@@ -157,12 +158,13 @@ exports.handler = async (event, context) => {
                 form_motivation_length: formData.motivation?.length || 0,
                 form_has_github: !!(formData.github && formData.github.trim()),
                 form_dev_language: formData.devLanguage || '',
-                form_how_heard: formData.howHeard || '',
+                form_how_heard: formData.howHeard?.selected || '',
+                form_how_heard_other_text: formData.howHeard?.others_text || null,
                 
                 // Metadatos del evento
                 event_timestamp: new Date().toISOString(),
                 event_source: 'b4os-website',
-                event_version: '2025-v1'
+                event_version: '2025-v2'
               }
             })
           });
@@ -202,7 +204,8 @@ exports.handler = async (event, context) => {
       city: formData.location?.city,
       experience: formData.experience,
       devLanguage: formData.devLanguage,
-      howHeard: formData.howHeard,
+      howHeard: formData.howHeard?.selected,
+      howHeardOtherText: formData.howHeard?.others_text,
       technologies: formData.technologies,
       customerIOStatus: customerIOSuccess ? 'success' : 'failed',
       timestamp: new Date().toISOString()
