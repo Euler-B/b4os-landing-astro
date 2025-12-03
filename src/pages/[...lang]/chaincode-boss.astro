@@ -60,18 +60,20 @@ const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
         </nav>
     </header>
 
-    <!-- Partner Header Section -->
-    <section class="partner-header">
-        <div class="container">
-            <div class="partner-content">
-                <div class="partner-logos">
-                    <img src="/b4os.png" alt="B4OS Logo" class="partner-logo-img" width="80" height="80">
-                    <span class="partner-separator">+</span>
-                    <img src="/chaincode.png" alt="Chaincode Labs Logo" class="partner-logo-img" width="200" height="80">
+    <!-- Partner Header Section (Hero) -->
+    <section id="inicio" class="hero-section partner-header">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title-main">{t.hero.title_main}</h1>
+                <h2 class="hero-title">
+                    <span class="hero-title-sub">{t.hero.title_sub}</span>
+                </h2>
+                <div class="hero-actions">
+                    <a href="#registro" class="btn btn-primary" rel="nofollow">{t.hero.cta_primary}</a>
+                    <a href={`${backHomeUrl}#residencias`} class="btn btn-secondary">{t.hero.cta_secondary}</a>
                 </div>
-                <h1 class="partner-title">B4OS x Chaincode</h1>
-                <p class="partner-subtitle" set:html={t.registration.description}></p>
             </div>
+            <div class="hero-background" aria-hidden="true"></div>
         </div>
     </section>
 
@@ -361,72 +363,5 @@ const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
         height: 56px;
         width: auto;
         object-fit: contain;
-    }
-
-    .partner-header {
-        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-        padding: var(--spacing-3xl) 0;
-        text-align: center;
-        color: white;
-    }
-
-    .partner-content {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .partner-logos {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: var(--spacing-xl);
-        margin-bottom: var(--spacing-xl);
-        flex-wrap: wrap;
-    }
-
-    .partner-logo-img {
-        height: 80px;
-        width: auto;
-        object-fit: contain;
-        filter: brightness(0) invert(1);
-    }
-
-    .partner-separator {
-        font-size: 2rem;
-        font-weight: bold;
-        color: white;
-    }
-
-    .partner-title {
-        font-size: var(--font-size-3xl);
-        font-weight: 700;
-        margin-bottom: var(--spacing-md);
-        color: white;
-    }
-
-    .partner-subtitle {
-        font-size: var(--font-size-lg);
-        opacity: 0.9;
-        max-width: 600px;
-        margin: 0 auto;
-        color: white;
-    }
-
-    @media (max-width: 768px) {
-        .partner-logos {
-            gap: var(--spacing-md);
-        }
-
-        .partner-logo-img {
-            height: 60px;
-        }
-
-        .partner-title {
-            font-size: var(--font-size-2xl);
-        }
-
-        .partner-subtitle {
-            font-size: var(--font-size-base);
-        }
     }
 </style>
