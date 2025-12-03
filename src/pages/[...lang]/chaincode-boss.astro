@@ -43,6 +43,7 @@ const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
                     <a href={backHomeUrl} class="nav-link" aria-label={t.nav.brand_link_aria}>
                         <img src="/b4os.png" alt={t.nav.logo_alt} class="logo" width="64" height="64">
                     </a>
+                    <img src="/boss-challenge.png" alt="BOSS Challenge" class="boss-challenge-logo" width="91" height="39">
                 </div>
                 <div class="nav-menu" id="navMenu">
                     <a href={backHomeUrl} class="nav-link">{t.nav.b4os_program}</a>
@@ -350,6 +351,18 @@ const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
 </Layout>
 
 <style>
+    .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+    }
+
+    .boss-challenge-logo {
+        height: 39px;
+        width: auto;
+        object-fit: contain;
+    }
+
     .partner-header {
         background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
         padding: var(--spacing-3xl) 0;
