@@ -22,21 +22,22 @@
     "course_europe_name": "Residencia Europa",
     "course_europe_description": "Residencia intensiva de 2 semanas en Valencia (España)"
   },
-  "nav": {
-    "logo_alt": "B4OS - Bitcoin 4 Open Source Logo",
-    "menu_aria": "Navegación principal",
-    "brand_link_aria": "Ir al inicio de B4OS",
-    "toggle_aria": "Abrir menú de navegación",
-    "objectives": "Objetivos",
-    "alumni": "Alumnos",
-    "residences": "Residencias",
-    "schedule": "Cronograma",
-    "register": "Registro",
-    "benefits": "Beneficios",
-    "alliances": "Alianzas",
-    "careers": "Carreras",
-    "contact": "Contacto"
-  },
+    "nav": {
+      "logo_alt": "B4OS - Bitcoin 4 Open Source Logo",
+      "menu_aria": "Navegación principal",
+      "brand_link_aria": "Ir al inicio de B4OS",
+      "toggle_aria": "Abrir menú de navegación",
+      "objectives": "Objetivos",
+      "alumni": "Alumnos",
+      "residences": "Residencias",
+      "schedule": "Cronograma",
+      "register": "Registro",
+      "benefits": "Beneficios",
+      "alliances": "Alianzas",
+      "careers": "Carreras",
+      "contact": "Contacto",
+      "b4os_program": "Programa B4OS"
+    },
   "hero": {
     "title_main": "Bitcoin 4 Open Source",
     "title_sub": "Programa gratuito de entrenamiento técnico en Bitcoin para desarrolladores",
