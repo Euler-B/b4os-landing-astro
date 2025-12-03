@@ -1,8 +1,9 @@
 ---
-// src/pages/chaincode-boss/[...lang].astro - Página de registro específica para Chaincode
+// src/pages/[...lang]/chaincode-boss.astro - Página de registro específica para Chaincode
 import Layout from '../../layouts/Layout.astro';
 import { Icon } from 'astro-icon/components'
 import { getTranslation, getLocalizedPageUrl } from '../../i18n/utils.js';
+import LanguageSelector from '../../components/languageSelector.astro';
 
 // Generar rutas estáticas para todos los idiomas
 export async function getStaticPaths() {
@@ -40,7 +41,19 @@ const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
                     </a>
                 </div>
                 <div class="nav-menu" id="navMenu">
-                    <a href={backHomeUrl} class="nav-link">{t.nav.objectives}</a>
+                    <a href={`${backHomeUrl}#alumni`} class="nav-link">{t.nav.alumni}</a>
+                    <a href={`${backHomeUrl}#residencias`} class="nav-link">{t.nav.residences}</a>
+                    <a href={`${backHomeUrl}#cronograma`} class="nav-link">{t.nav.schedule}</a>
+                    <a href="#registro" class="nav-link">{t.nav.register}</a>
+                    <a href={`${backHomeUrl}#beneficios`} class="nav-link">{t.nav.benefits}</a>
+                </div>
+                <div class="nav-utilities">
+                    <LanguageSelector locale={locale} />
+                    <button class="nav-toggle" id="navToggle" aria-label={t.nav.toggle_aria} aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </nav>
@@ -56,7 +69,7 @@ const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
                     <img src="/chaincode.png" alt="Chaincode Labs Logo" class="partner-logo-img" width="200" height="80">
                 </div>
                 <h1 class="partner-title">B4OS x Chaincode</h1>
-                <p class="partner-subtitle">{t.registration.description}</p>
+                <p class="partner-subtitle" set:html={t.registration.description}></p>
             </div>
         </div>
     </section>
