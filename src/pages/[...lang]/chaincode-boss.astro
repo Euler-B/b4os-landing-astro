@@ -23,9 +23,13 @@ const locale = lang || 'es';
 const translations = getTranslation(locale);
 const t = translations as any; // Type casting para evitar errores de TypeScript
 
-// Feature flag para el formulario de registro
-const isFormOpen = import.meta.env.PUBLIC_REGISTRATION_OPEN === 'true';
-const reopenDate = import.meta.env.PUBLIC_REGISTRATION_REOPEN_DATE || '2025-10-22';
+// Feature flag para el formulario de registro de Chaincode
+// Usa PUBLIC_CHAINCODE_REGISTRATION_OPEN si está definido, sino usa PUBLIC_REGISTRATION_OPEN como fallback
+const chaincodeRegistrationFlag = import.meta.env.PUBLIC_CHAINCODE_REGISTRATION_OPEN;
+const isFormOpen = chaincodeRegistrationFlag !== undefined 
+    ? chaincodeRegistrationFlag === 'true'
+    : import.meta.env.PUBLIC_REGISTRATION_OPEN === 'true';
+const reopenDate = import.meta.env.PUBLIC_CHAINCODE_REGISTRATION_REOPEN_DATE || import.meta.env.PUBLIC_REGISTRATION_REOPEN_DATE || '2025-10-22';
 
 const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
 ---
