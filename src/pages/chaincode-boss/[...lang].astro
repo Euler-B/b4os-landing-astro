@@ -1,0 +1,406 @@
+---
+// src/pages/chaincode-boss/[...lang].astro - Página de registro específica para Chaincode
+import Layout from '../../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components'
+import { getTranslation, getLocalizedPageUrl } from '../../i18n/utils.js';
+
+// Generar rutas estáticas para todos los idiomas
+export async function getStaticPaths() {
+  return [
+    { params: { lang: undefined } },  // Para la ruta raíz / (español)
+    { params: { lang: 'en' } },       // Para /en (inglés)
+    { params: { lang: 'ca' } },       // Para /ca (catalán)
+    { params: { lang: 'pt' } }        // Para /pt (portugués)
+  ];
+}
+
+// Obtener el parámetro de idioma
+const { lang } = Astro.params;
+
+// Determinar locale: si no hay lang, es español
+const locale = lang || 'es';
+const translations = getTranslation(locale);
+const t = translations as any; // Type casting para evitar errores de TypeScript
+
+// Feature flag para el formulario de registro
+const isFormOpen = import.meta.env.PUBLIC_REGISTRATION_OPEN === 'true';
+const reopenDate = import.meta.env.PUBLIC_REGISTRATION_REOPEN_DATE || '2025-10-22';
+
+const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
+---
+
+<Layout locale={locale}>
+    <!-- Header / Navigation -->
+    <header class="header" role="banner">
+        <nav class="nav" role="navigation" aria-label={t.nav.menu_aria}>
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href={backHomeUrl} class="nav-link" aria-label={t.nav.brand_link_aria}>
+                        <img src="/b4os.png" alt={t.nav.logo_alt} class="logo" width="64" height="64">
+                    </a>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href={backHomeUrl} class="nav-link">{t.nav.objectives}</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Partner Header Section -->
+    <section class="partner-header">
+        <div class="container">
+            <div class="partner-content">
+                <div class="partner-logos">
+                    <img src="/b4os.png" alt="B4OS Logo" class="partner-logo-img" width="80" height="80">
+                    <span class="partner-separator">+</span>
+                    <img src="/chaincode.png" alt="Chaincode Labs Logo" class="partner-logo-img" width="200" height="80">
+                </div>
+                <h1 class="partner-title">B4OS x Chaincode</h1>
+                <p class="partner-subtitle">{t.registration.description}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registro" class="registration">
+        <div class="container">
+            <div class="registration-content">
+                <div class="registration-info">
+                    <h2>{t.registration.title}</h2>
+                    <p set:html={t.registration.description}></p>
+                    
+                    <div class="requirements">
+                        <h3>{t.registration.requirements.title}</h3>
+                        <ul>
+                            <li set:html={t.registration.requirements.experience}></li>
+                            <li set:html={t.registration.requirements.languages}></li>
+                            <li set:html={t.registration.requirements.interest}></li>
+                            <li set:html={t.registration.requirements.availability}></li>
+                            <li set:html={t.registration.requirements.resilience}></li>
+                            <li set:html={t.registration.requirements.spanish}></li>
+                        </ul>
+                    </div>
+                    <div class="registration-period">
+                        {isFormOpen ? (
+                            <div class="period-badge">
+                                <span><strong>{t.registration.period.label}:</strong> {t.registration.period.dates}</span>
+                            </div>
+                        ) : (
+                            <div class="period-badge period-badge-closed">
+                                <span><strong>{t.registration.closed?.badge_label || 'Estado'}:</strong> {t.registration.closed?.badge_text || 'Registro Cerrado'}</span>
+                            </div>
+                        )}
+                    </div>
+                </div>
+                <div class:list={["registration-form-container", { 'form-closed': !isFormOpen }]}>
+
+                    {/* Overlay de waitlist cuando el formulario está cerrado */}
+                    {!isFormOpen && (
+                        <div class="form-overlay">
+                            <div class="waitlist-box">
+                                <div class="waitlist-icon">
+                                    <Icon name="heroicons:clock" size={56} />
+                                </div>
+                                <h3 class="waitlist-title">{t.registration.closed?.title || 'Registro temporalmente cerrado'}</h3>
+                                <p class="waitlist-subtitle">{t.registration.closed?.subtitle || 'Pronto abriremos nuevas inscripciones. Sé de los primeros en saberlo:'}</p>
+
+                                <form class="waitlist-form" id="waitlistForm">
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        placeholder={t.registration.closed?.email_placeholder || 'tu@email.com'}
+                                        required
+                                        aria-label={t.registration.closed?.email_aria_label || 'Email para lista de espera'}
+                                    />
+                                    <button type="submit" class="btn btn-primary">
+                                        <Icon name="heroicons:bell-alert" size={20} />
+                                        {t.registration.closed?.cta || 'Notificarme'}
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    )}
+
+                    <form class="registration-form" id="registrationForm" role="form" aria-label={t.registration.form.aria_label}>
+                        <h3>{t.registration.form.title}</h3>
+                        
+                        <div class="form-group">
+                            <label for="name">{t.registration.form.name.label}</label>
+                            <input type="text" id="name" name="name" required aria-describedby="name-help">
+                            <small id="name-help">{t.registration.form.name.help}</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">{t.registration.form.email.label}</label>
+                            <input type="email" id="email" name="email" required aria-describedby="email-help">
+                            <small id="email-help">{t.registration.form.email.help}</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="country">{t.registration.form.country.label}</label>
+                            <select id="country" name="country" required aria-describedby="country-help">
+                                <option value="">{t.registration.form.country.placeholder}</option>
+                            </select>
+                            <small id="country-help">{t.registration.form.country.help}</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="city">{t.registration.form.city.label}</label>
+                            <select id="city" name="city" required disabled aria-describedby="city-help">
+                                <option value="">{t.registration.form.city.placeholder}</option>
+                            </select>
+                            <small id="city-help">{t.registration.form.city.help}</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="experience">{t.registration.form.experience.label}</label>
+                            <select id="experience" name="experience" required>
+                                <option value="">{t.registration.form.experience.placeholder}</option>
+                                <option value="2-5">{t.registration.form.experience.options['2-5']}</option>
+                                <option value="5-10">{t.registration.form.experience.options['5-10']}</option>
+                                <option value="10+">{t.registration.form.experience.options['10+']}</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dev-language">{t.registration.form.dev_language.label}</label>
+                            <select id="dev-language" name="dev-language" required aria-describedby="dev-language-help">
+                                <option value="">{t.registration.form.dev_language.placeholder}</option>
+                                <option value="javascript">JavaScript</option>
+                                <option value="python">Python</option>
+                                <option value="java">Java</option>
+                                <option value="typescript">TypeScript</option>
+                                <option value="csharp">C#</option>
+                                <option value="cpp">C++</option>
+                                <option value="php">PHP</option>
+                                <option value="go">Go</option>
+                                <option value="rust">Rust</option>
+                                <option value="swift">Swift</option>
+                                <option value="kotlin">Kotlin</option>
+                                <option value="ruby">Ruby</option>
+                                <option value="scala">Scala</option>
+                                <option value="dart">Dart</option>
+                                <option value="c">C</option>
+                                <option value="r">R</option>
+                                <option value="matlab">MATLAB</option>
+                                <option value="perl">Perl</option>
+                                <option value="lua">Lua</option>
+                                <option value="haskell">Haskell</option>
+                                <option value="elixir">Elixir</option>
+                                <option value="clojure">Clojure</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                            <small id="dev-language-help">{t.registration.form.dev_language.help}</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="technologies">{t.registration.form.technologies.label}</label>
+                            <textarea id="technologies" name="technologies" placeholder={t.registration.form.technologies.placeholder} required aria-describedby="tech-help"></textarea>
+                            <small id="tech-help">{t.registration.form.technologies.help}</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="github">{t.registration.form.github.label}</label>
+                            <input type="url" id="github" name="github" placeholder={t.registration.form.github.placeholder} aria-describedby="github-help" required>
+                            <small id="github-help">{t.registration.form.github.help}</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="motivation">{t.registration.form.motivation.label}</label>
+                            <textarea id="motivation" name="motivation" required aria-describedby="motivation-help"></textarea>
+                            <small id="motivation-help">{t.registration.form.motivation.help}</small>
+                        </div>
+
+                        <div class="form-group">
+                            <fieldset>
+                                <legend>{t.registration.form.how_heard.label}</legend>
+                                <div class="radio-group">
+                                    {Object.entries(t.registration.form.how_heard.options).map(([key, value]) => (
+                                        <label class="radio-label" for={`how-heard-${key}`}>
+                                            <input 
+                                                type="radio" 
+                                                id={`how-heard-${key}`} 
+                                                name="how-heard" 
+                                                value={key}
+                                                aria-describedby="how-heard-help"
+                                            >
+                                            <span>{value}</span>
+                                        </label>
+                                    ))}
+                                </div>
+                                <div id="others-input-container" style="display: none; margin-top: 15px;">
+                                    <input 
+                                        type="text" 
+                                        id="how-heard-others-text" 
+                                        name="how-heard-others-text" 
+                                        placeholder={t.registration.form.how_heard.others_placeholder}
+                                        aria-describedby="how-heard-help"
+                                        style="width: 100%; padding: var(--spacing-md); border: 2px solid var(--border-color); border-radius: var(--border-radius-md); font-size: var(--font-size-base);"
+                                    >
+                                </div>
+                                <small id="how-heard-help">{t.registration.form.how_heard.help}</small>
+                            </fieldset>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="terms" required aria-describedby="terms-help">
+                                <span set:html={t.registration.form.terms.label.replace('{link}', `<a href="${getLocalizedPageUrl('terminos', locale)}" target="_blank" rel="noopener">${t.registration.form.terms.link_text}</a>`)}></span>
+                            </label>
+                            <small id="terms-help">{t.registration.form.terms.help}</small>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            {t.registration.form.submit}
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content"> 
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="/b4os.png" alt={t.footer.logo_alt} class="footer-logo" width="32" height="32">
+                    </div>
+                    <p set:html={t.footer.description}></p>
+                </div>
+                
+                <nav class="footer-section" aria-label={t.footer.quick_links_aria}>
+                    <h4>{t.footer.quick_links.title}</h4>
+                    <ul class="footer-links">
+                        <li><a href={backHomeUrl}>{t.nav.objectives}</a></li>
+                        <li><a href={`${backHomeUrl}#residencias`}>{t.nav.residences}</a></li>
+                        <li><a href={`${backHomeUrl}#cronograma`}>{t.nav.schedule}</a></li>
+                        <li><a href={`${backHomeUrl}#beneficios`}>{t.nav.benefits}</a></li>
+                    </ul>
+                </nav>
+                
+                <nav class="footer-section" aria-label={t.footer.resources_aria}>
+                    <h4>{t.footer.resources.title}</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.libreriadesatoshi.com/" target="_blank" rel="noopener">{t.footer.resources.library}</a></li>
+                        <li><a href="https://www.libreriadesatoshi.com/#courses" target="_blank" rel="noopener">{t.footer.resources.courses}</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="footer-section">
+                    <h4>{t.footer.contact.title}</h4>
+                    <div class="contact-info">
+                        <p>
+                            <Icon name="heroicons:envelope-solid" size={24} />
+                            <a href="mailto:hola@b4os.dev">hola@b4os.dev</a>
+                        </p>
+                        <div class="footer-social">
+                            <a href="https://www.facebook.com/libsatoshi" aria-label={t.footer.social_aria.facebook} target="_blank" rel="noopener">
+                                <Icon name="mdi:facebook" size={24} />
+                            </a>
+                            <a href="https://www.linkedin.com/company/libdesatoshi/" aria-label={t.footer.social_aria.linkedin} target="_blank" rel="noopener">
+                                <Icon name="mdi:linkedin" size={24} />
+                            </a>
+                            <a href="https://x.com/libdesatoshi" aria-label={t.footer.social_aria.twitter} target="_blank" rel="noopener">
+                                <Icon name="mdi:twitter" size={24} />
+                            </a>
+                            <a href="https://github.com/LibreriadeSatoshi" aria-label={t.footer.social_aria.github} target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                            <a href="https://discord.gg/MSrtGYf4Jh" aria-label={t.footer.social_aria.discord} target="_blank" rel="noopener">
+                                <Icon name="mdi:discord" size={24} />
+                            </a>                           
+                            <a href="https://primal.net/p/nprofile1qqsgkt24wdkaksa8exnxgy6tmzs42tra8g30mvplcmk3eqar0z30rxggvqeay" aria-label={t.footer.social_aria.nostr} target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" width="32" height="32" aria-hidden="true"><path d="M210.8 199.4c0 3.1-2.5 5.7-5.7 5.7h-68c-3.1 0-5.7-2.5-5.7-5.7v-15.5c.3-19 2.3-37.2 6.5-45.5 2.5-5 6.7-7.7 11.5-9.1 9.1-2.7 24.9-.9 31.7-1.2 0 0 20.4.8 20.4-10.7s-9.1-8.6-9.1-8.6c-10 .3-17.7-.4-22.6-2.4-8.3-3.3-8.6-9.2-8.6-11.2-.4-23.1-34.5-25.9-64.5-20.1-32.8 6.2.4 53.3.4 116.1v8.4c0 3.1-2.6 5.6-5.7 5.6H57.7c-3.1 0-5.7-2.5-5.7-5.7v-144c0-3.1 2.5-5.7 5.7-5.7h31.7c3.1 0 5.7 2.5 5.7 5.7 0 4.7 5.2 7.2 9 4.5 11.4-8.2 26-12.5 42.4-12.5 36.6 0 64.4 21.4 64.4 68.7v83.2ZM150 99.3c0-6.7-5.4-12.1-12.1-12.1s-12.1 5.4-12.1 12.1 5.4 12.1 12.1 12.1S150 106 150 99.3Z"/></svg>
+                            </a>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div>
+                        <p set:html={t.footer.copyright}></p>
+                    </div>
+                    <nav class="footer-legal" aria-label={t.footer.legal_aria}>
+                        <a href={getLocalizedPageUrl('terminos', locale)} rel="nofollow">{t.footer.legal.terms}</a>
+                        <a href={getLocalizedPageUrl('codigo-conducta', locale)} rel="nofollow">{t.footer.legal.conduct}</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+</Layout>
+
+<style>
+    .partner-header {
+        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+        padding: var(--spacing-3xl) 0;
+        text-align: center;
+        color: white;
+    }
+
+    .partner-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .partner-logos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-xl);
+        margin-bottom: var(--spacing-xl);
+        flex-wrap: wrap;
+    }
+
+    .partner-logo-img {
+        height: 80px;
+        width: auto;
+        object-fit: contain;
+        filter: brightness(0) invert(1);
+    }
+
+    .partner-separator {
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+    }
+
+    .partner-title {
+        font-size: var(--font-size-3xl);
+        font-weight: 700;
+        margin-bottom: var(--spacing-md);
+        color: white;
+    }
+
+    .partner-subtitle {
+        font-size: var(--font-size-lg);
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
+        color: white;
+    }
+
+    @media (max-width: 768px) {
+        .partner-logos {
+            gap: var(--spacing-md);
+        }
+
+        .partner-logo-img {
+            height: 60px;
+        }
+
+        .partner-title {
+            font-size: var(--font-size-2xl);
+        }
+
+        .partner-subtitle {
+            font-size: var(--font-size-base);
+        }
+    }
+</style>
