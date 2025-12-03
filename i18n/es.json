@@ -38,13 +38,18 @@
       "contact": "Contacto",
       "b4os_program": "Programa B4OS"
     },
-  "hero": {
-    "title_main": "Bitcoin 4 Open Source",
-    "title_sub": "Programa gratuito de entrenamiento técnico en Bitcoin para desarrolladores",
-    "cta_primary": "Aceptar el Reto",
-    "cta_secondary": "Conocer las Residencias"
-  },
-  "objectives": {
+    "hero": {
+      "title_main": "Bitcoin 4 Open Source",
+      "title_sub": "Programa gratuito de entrenamiento técnico en Bitcoin para desarrolladores",
+      "cta_primary": "Aceptar el Reto",
+      "cta_secondary": "Conocer las Residencias"
+    },
+    "chaincode_boss": {
+      "hero_title": "₿OSS (Bitcoin Open-Source Software)",
+      "hero_subtitle": "Iniciativa de Chaincode Labs para desarrolladores que se toman en serio comenzar una carrera en software open-source de Bitcoin.",
+      "cta_primary": "Aceptar el Reto"
+    },
+    "objectives": {
     "image_alt": "Desarrolladora trabajando en Bitcoin",
     "title": "B4OS ofrece rutas de aprendizaje especializadas, permitiendo a los devs enfocarse en las áreas de mayor demanda",
     "potential": {

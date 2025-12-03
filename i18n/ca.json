@@ -38,13 +38,18 @@
       "contact": "Contacte",
       "b4os_program": "Programa B4OS"
     },
-  "hero": {
-    "title_main": "Bitcoin 4 Open Source",
-    "title_sub": "Programa gratuït d'entrenament tècnic en Bitcoin per a desenvolupadors",
-    "cta_primary": "Acceptar el Repte",
-    "cta_secondary": "Conèixer les Residències"
-  },
-  "objectives": {
+    "hero": {
+      "title_main": "Bitcoin 4 Open Source",
+      "title_sub": "Programa gratuït d'entrenament tècnic en Bitcoin per a desenvolupadors",
+      "cta_primary": "Acceptar el Repte",
+      "cta_secondary": "Conèixer les Residències"
+    },
+    "chaincode_boss": {
+      "hero_title": "₿OSS (Bitcoin Open-Source Software)",
+      "hero_subtitle": "Iniciativa de Chaincode Labs per a desenvolupadors seriosos sobre començar una carrera en programari open-source de bitcoin.",
+      "cta_primary": "Acceptar el Repte"
+    },
+    "objectives": {
     "image_alt": "Desenvolupadora treballant en Bitcoin",
     "title": "B4OS ofereix rutes d'aprenentatge especialitzades, permetent als devs enfocar-se en les àrees de major demanda",
     "potential": {

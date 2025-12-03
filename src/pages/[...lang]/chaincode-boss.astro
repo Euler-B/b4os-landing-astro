@@ -64,16 +64,15 @@ const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
     <section id="inicio" class="hero-section partner-header">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title-main">{t.hero.title_main}</h1>
+                <h1 class="hero-title-main">{t.chaincode_boss.hero_title}</h1>
                 <h2 class="hero-title">
-                    <span class="hero-title-sub">{t.hero.title_sub}</span>
+                    <span class="hero-title-sub chaincode-subtitle">{t.chaincode_boss.hero_subtitle}</span>
                 </h2>
                 <div class="hero-actions">
-                    <a href="#registro" class="btn btn-primary" rel="nofollow">{t.hero.cta_primary}</a>
-                    <a href={`${backHomeUrl}#residencias`} class="btn btn-secondary">{t.hero.cta_secondary}</a>
+                    <a href="#registro" class="btn btn-primary chaincode-btn" rel="nofollow">{t.chaincode_boss.cta_primary}</a>
                 </div>
             </div>
-            <div class="hero-background" aria-hidden="true"></div>
+            <div class="hero-background chaincode-background" aria-hidden="true"></div>
         </div>
     </section>
 
@@ -363,5 +362,48 @@ const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
         height: 56px;
         width: auto;
         object-fit: contain;
+    }
+
+    .chaincode-background {
+        background: 
+            linear-gradient(to right, 
+                transparent 0%,
+                transparent 40%,
+                rgba(0, 0, 0, 0.3) 60%,
+                rgba(0, 0, 0, 0.7) 80%,
+                rgba(0, 0, 0, 0.9) 100%
+            ),
+            url('/boss_latam.png') no-repeat center center !important;
+        background-size: cover !important;
+    }
+
+    .chaincode-subtitle {
+        color: #ef4444 !important;
+    }
+
+    .chaincode-btn {
+        background: #ef4444 !important;
+        border-color: #ef4444 !important;
+        color: #000 !important;
+    }
+
+    .chaincode-btn:hover {
+        background: #dc2626 !important;
+        border-color: #dc2626 !important;
+        color: #000 !important;
+    }
+
+    @media (max-width: 768px) {
+        .chaincode-background {
+            background: 
+                linear-gradient(to bottom, 
+                    rgba(0, 0, 0, 0.8) 0%,
+                    rgba(0, 0, 0, 0.6) 50%,
+                    rgba(0, 0, 0, 0.3) 70%,
+                    transparent 100%
+                ),
+                url('/boss_latam.png') no-repeat center center !important;
+            background-size: cover !important;
+        }
     }
 </style>
