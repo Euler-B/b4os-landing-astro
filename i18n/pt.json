@@ -47,7 +47,24 @@
     "chaincode_boss": {
       "hero_title": "₿OSS (Bitcoin Open-Source Software)",
       "hero_subtitle": "Iniciativa da Chaincode Labs para programadores sérios sobre iniciar uma carreira em software open-source de bitcoin.",
-      "cta_primary": "Aceitar o Desafio"
+      "cta_primary": "Aceitar o Desafio",
+      "registration": {
+        "title": "Pronto para se juntar ao BOSS Challenge 2026?",
+        "description": "O BOSS Challenge 2026 está aberto para desenvolvedores que sonham em trabalhar com Bitcoin open source. O processo de inscrição é completamente gratuito.",
+        "career": {
+          "title": "Mude sua carreira em 2026",
+          "body": "Escreva código que irá perdurar por gerações. Alcance a liberdade profissional. Trabalhe com as mentes mais brilhantes para resolver os problemas de engenharia e design mais interessantes."
+        },
+        "path": {
+          "title": "O caminho não é reto",
+          "body": "É longo, sinuoso e diferente para cada pessoa. O BOSS Challenge apoia você nessa jornada enquanto incentiva o espírito proativo e autodidata que o open source exige."
+        },
+        "closing": "Junte-se ao BOSS Challenge hoje e descubra até onde você pode chegar.",
+        "period": {
+          "label": "Inscrições até",
+          "dates": "22 de novembro de 2026"
+        }
+      }
     },
     "objectives": {
     "image_alt": "Desenvolvedora trabalhando em Bitcoin",

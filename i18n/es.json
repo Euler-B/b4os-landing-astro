@@ -44,11 +44,28 @@
       "cta_primary": "Aceptar el Reto",
       "cta_secondary": "Conocer las Residencias"
     },
-    "chaincode_boss": {
-      "hero_title": "₿OSS (Bitcoin Open-Source Software)",
-      "hero_subtitle": "Iniciativa de Chaincode Labs para desarrolladores que se toman en serio comenzar una carrera en software open-source de Bitcoin.",
-      "cta_primary": "Aceptar el Reto"
-    },
+        "chaincode_boss": {
+          "hero_title": "₿OSS (Bitcoin Open-Source Software)",
+          "hero_subtitle": "Iniciativa de Chaincode Labs para desarrolladores que se toman en serio comenzar una carrera en software open-source de Bitcoin.",
+          "cta_primary": "Aceptar el Reto",
+          "registration": {
+            "title": "¿Listo para unirte al BOSS Challenge 2026?",
+            "description": "El BOSS Challenge 2026 está abierto para desarrolladores que sueñan con trabajar en Bitcoin open source. El proceso de registro es completamente gratuito.",
+            "career": {
+              "title": "Cambia tu carrera en 2026",
+              "body": "Escribe código que perdurará generaciones. Alcanza la libertad profesional. Trabaja con las mentes más brillantes para resolver los problemas de ingeniería y diseño más interesantes."
+            },
+            "path": {
+              "title": "El camino no es recto",
+              "body": "Es largo, sinuoso y diferente para cada persona. El BOSS Challenge te apoya en el viaje mientras fomenta el espíritu proactivo y autodidacta que requiere el open source."
+            },
+            "closing": "Únete al BOSS Challenge hoy y descubre hasta dónde puedes llegar.",
+            "period": {
+              "label": "Registro hasta",
+              "dates": "22 de noviembre 2026"
+            }
+          }
+        },
     "objectives": {
     "image_alt": "Desarrolladora trabajando en Bitcoin",
     "title": "B4OS ofrece rutas de aprendizaje especializadas, permitiendo a los devs enfocarse en las áreas de mayor demanda",
