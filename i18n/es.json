@@ -62,7 +62,7 @@
             "closing": "Únete al ₿OSS Challenge hoy y descubre hasta dónde puedes llegar.",
             "period": {
               "label": "Registro hasta",
-              "dates": "22 de noviembre 2026"
+              "dates": "31 de diciembre 2025"
             }
           }
         },
@@ -204,6 +204,7 @@
       "title": "Requisitos para Aplicar:",
       "experience": "<strong>Experiencia en desarrollo</strong> de software (2+ años)",
       "languages": "Conocimientos sólidos en lenguajes como <strong>C++, Rust, Python o JavaScript</strong>",
+      "savingSatoshi": "Completar Saving Satoshi es una tarea que se debe realizar para poder aplicar al programa BOSS",
       "interest": "Interés genuino en contribuir al <strong>ecosistema open source de Bitcoin</strong>",
       "availability": "<strong>Disponibilidad</strong> para invertir de 5 a 10 horas semanales",
       "resilience": "<strong>Resiliencia</strong> para completar el programa en su totalidad",
@@ -227,8 +228,8 @@
       "email_required": "Por favor ingresa tu email"
     },
     "form": {
-      "title": "Formulario de Registro B4OS 2025",
-      "aria_label": "Formulario de registro B4OS 2025",
+      "title": "Formulario de Registro",
+      "aria_label": "Formulario de registro",
       "name": {
         "label": "Nombre o pseudónimo *",
         "help": "Puedes usar tu nombre real o un pseudónimo"
@@ -292,7 +293,7 @@
         "help": "Debes aceptar los términos para continuar",
         "link_text": "términos y condiciones"
       },
-      "submit": "Enviar Aplicación a B4OS 2025"
+      "submit": "Enviar Aplicación"
     }
   },
   "benefits": {
