@@ -46,24 +46,40 @@
     "cta_secondary": "Conhecer as Residências"
   },
   "chaincode_boss": {
-    "hero_title": "₿OSS (Bitcoin Open-Source Software)",
-    "hero_subtitle": "Iniciativa da Chaincode Labs para desenvolvedores que buscam começar sua carreira como open-source Bitcoin developers.",
-    "cta_primary": "Aceitar o Desafio",
+    "hero_title": "₿OSS Challenge",
+    "hero_subtitle": "Desafio de programação para devs que se atrevem a dar o salto para o Bitcoin Open-Source.",
+    "cta_primary": "Aceito o Desafio",
     "registration": {
-      "title": "Pronto para se juntar ao ₿OSS Challenge 2026?",
-      "description": "O ₿OSS Challenge 2026 está aberto para desenvolvedores que sonham em trabalhar com Bitcoin open source. O processo de inscrição é completamente gratuito.",
+      "title": "Você se junta ao desafio?",
+      "description": "₿OSS Challenge está aberto e é gratuito. Apenas ao se registrar com B4OS você obtém os seguintes benefícios exclusivos:",
       "career": {
-        "title": "Mude sua carreira em 2026",
-        "body": "Escreva código que irá perdurar por gerações. Alcance a liberdade profissional. Trabalhe com as mentes mais brilhantes para resolver os problemas de engenharia e design mais interessantes."
+        "title": "Benefícios B4OS:",
+        "body": "<ul><li>Junte-se à nossa comunidade no Discord desde o primeiro dia</li><li>Grupos de estudos</li><li>Mentorias e Networking com os Grantees do B4OS</li></ul>"
       },
       "path": {
-        "title": "O caminho não é reto",
-        "body": "É longo, sinuoso e diferente para cada pessoa. O ₿OSS Challenge apoia você nessa jornada enquanto incentiva o espírito proativo e autodidata que o open source exige."
+        "title": "Para os melhores devs:",
+        "body": "<ul><li>Residências em Florianópolis (Brasil), Valência (Espanha) e Guadalajara (México)</li><li>Patrocínio para participar de conferências em todo o mundo</li><li>Aulas de inglês e português</li></ul>"
       },
       "closing": "Junte-se ao ₿OSS Challenge hoje e descubra até onde você pode chegar.",
       "period": {
         "label": "Inscrições até",
         "dates": "22 de novembro de 2026"
+      }
+    },
+    "how_it_works": {
+      "title": "Como funciona o ₿OSS Challenge?",
+      "subtitle": "Um programa de 3 meses projetado para levá-lo do aprendizado à contribuição real no Bitcoin",
+      "month1": {
+        "title": "Mês 1: Desafios",
+        "description": "Divirta-se com os desafios de programação e aprenda Bitcoin codificando."
+      },
+      "month2": {
+        "title": "Mês 2: Forks e Paths",
+        "description": "Nos dividimos em dois paths, alguns começam a contribuir para o BOSS, enquanto outros participam de cursos e grupos de estudo. Os melhores devs de ambos os paths são selecionados para receber grants e micro-grants. Além da oportunidade de participar de residências."
+      },
+      "month3": {
+        "title": "Mês 3: Grants, Mentorias e Projetos",
+        "description": "Com base no PoW (Proof of Work), os devs são conectados com mentores e projetos de maior interesse dentro do ecossistema."
       }
     }
   },
@@ -205,7 +221,6 @@
       "title": "Requisitos para se candidatar:",
       "experience": "<strong>Experiência em desenvolvimento</strong> de software (2+ anos)",
       "languages": "Conhecimentos sólidos em linguagens como <strong>C++, Rust, Python ou JavaScript</strong>",
-      "savingSatoshi": "Completar <a href=\"https://savingsatoshi.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Saving Satoshi</a> é uma tarefa que deve ser realizada para poder se candidatar ao programa BOSS",
       "interest": "Interesse genuíno em contribuir para o <strong>ecossistema open source do Bitcoin</strong>",
       "availability": "<strong>Disponibilidade</strong> para investir de 5 a 10 horas semanais",
       "resilience": "<strong>Resiliência</strong> para completar o programa na sua totalidade",
@@ -272,6 +287,11 @@
         "label": "GitHub / Portfólio *",
         "placeholder": "https://github.com/tu-usuario",
         "help": "Compartilhe seu perfil do GitHub ou portfólio"
+      },
+      "linkedin": {
+        "label": "LinkedIn",
+        "placeholder": "https://linkedin.com/in/tu-perfil",
+        "help": "Compartilhe seu perfil do LinkedIn"
       },
       "motivation": {
         "label": "O que lhe interessa no ecossistema Bitcoin e nas tecnologias \"freedom tech\"? *",

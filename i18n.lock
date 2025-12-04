@@ -34,22 +34,31 @@ checksums:
     nav/careers: 2f97859b508c2045beac448aac3f9776
     nav/contact: e1caf5cc16c5a4e4dc9d509ff567c9ce
     nav/b4os_program: c0b36acf265fe4a461a2a9f44942cd4e
+    nav/chaincode_cta: 62c0e07761f676e6b359e5d78eda0499
     hero/title_main: d357bcab918a542f1b992170c43d9438
     hero/title_sub: 73fa961ee3ac2b346727f8ee530c1936
     hero/cta_primary: d12e831895b832e68cc8f5e06e496d72
     hero/cta_secondary: 44eaaf6dc7a23bc57d85735be6249b86
-    chaincode_boss/hero_title: 684b71b7dc6d379ff9d7333dac037bcd
-    chaincode_boss/hero_subtitle: 888927c73f1cdf191d1e45e10c3bedde
-    chaincode_boss/cta_primary: d12e831895b832e68cc8f5e06e496d72
-    chaincode_boss/registration/title: 559c6eff260f32f7d8e167348376e86d
-    chaincode_boss/registration/description: c91a5d02780febf549da200d6ffb154a
-    chaincode_boss/registration/career/title: d618eb5bd2ac7657927267d86b43d573
-    chaincode_boss/registration/career/body: e6bb61c671fafd4d424b6a3624e7b97d
-    chaincode_boss/registration/path/title: 492139a1267a243950469ccbe5514bcb
-    chaincode_boss/registration/path/body: 7ffca07b61f0510413017b72796b19a8
+    chaincode_boss/hero_title: 0c5341d0d6f4c02f126f66acc88ce3cd
+    chaincode_boss/hero_subtitle: 552a45a1a7811b526d830c5ab1bc858d
+    chaincode_boss/cta_primary: c2b8ac2a63ca93fe34cbd8279c52e28c
+    chaincode_boss/registration/title: 44e28b04b6c141eeaea405ac1f10534e
+    chaincode_boss/registration/description: 7219ffa3729f1887aeb90106ab9c917f
+    chaincode_boss/registration/career/title: 660181300043f4415a1621fd5d6374d7
+    chaincode_boss/registration/career/body: 1780e7431fca361215caf970e020ea19
+    chaincode_boss/registration/path/title: a2aac1ae120b42d260bc230c796644c1
+    chaincode_boss/registration/path/body: c70aee7ab5d104ed62933ac9e986cbc8
     chaincode_boss/registration/closing: 51a5cc314703811b9b04401e55bec8c6
     chaincode_boss/registration/period/label: a0fc05149cd0b4a6f54b3dcec0e64977
     chaincode_boss/registration/period/dates: 392ed471524278ce26ebc4f1a26134f5
+    chaincode_boss/how_it_works/title: 9b5c964ae3dacf1733d4eb449d165331
+    chaincode_boss/how_it_works/subtitle: 11358d1ac7d427fdaa5e266fe581e543
+    chaincode_boss/how_it_works/month1/title: ce743313d54294a4407c5e2c07e1384e
+    chaincode_boss/how_it_works/month1/description: 0cac63a54cd4b42e0a3133a46e5d5971
+    chaincode_boss/how_it_works/month2/title: 5925a2c8b72b5310e2a2be7429bf1d76
+    chaincode_boss/how_it_works/month2/description: e7f05f7c80ef2a948c39788746954a24
+    chaincode_boss/how_it_works/month3/title: ff1cbf36ff73a30b247d0ec06baf651f
+    chaincode_boss/how_it_works/month3/description: 15644f15c37027c02ddb9da0ff288a12
     objectives/image_alt: 3eb458de67a25c6c28db306eb0da208c
     objectives/title: e9cb045faa42500d2dbb37816053474e
     objectives/potential/title: 501d5e532bc0bf445c235bb9b429f532
@@ -142,11 +151,10 @@ checksums:
     registration/requirements/title: 43c63ede04bfaba99f416d3384350b78
     registration/requirements/experience: 86dcc468e2caa8970720ef967c46efae
     registration/requirements/languages: 9d944ebb37f1c1ff5cdb73d9f4d81ee5
-    registration/requirements/savingSatoshi: 0a1d83d34953bbeb5711bfb6ebf46ef8
     registration/requirements/interest: 61993f8e7b25f27e789be2a3069f5408
     registration/requirements/availability: 22282822e508ba49205af31ebfa408f6
     registration/requirements/resilience: af842891833dfaecd97efce630231b57
-    registration/requirements/spanish: 05ce58363ab94ce4a4cab179dd42d486
+    registration/requirements/spanish: 1f264a9cd0135f42f8851afdfd72dca5
     registration/period/label: a0fc05149cd0b4a6f54b3dcec0e64977
     registration/period/dates: 3f0fa05d7639b0697b05b6ba32ffd677
     registration/closed/badge_label: 24698bc46c4189b249e14857ce1c9fa4
@@ -185,6 +193,8 @@ checksums:
     registration/form/technologies/help: 25a3fa1c9bbf44df718f905433e78e7c
     registration/form/github/label: 7c2f2fc8a08ddffc4a6cd2119808b685
     registration/form/github/help: aef57102e34a6dda4a4864b5864a4538
+    registration/form/linkedin/label: f29b78f253094277c2e9ef79d10b5e4f
+    registration/form/linkedin/help: f15019ce86236b18097e479789dbb43c
     registration/form/motivation/label: 12e0131ba483308676eb7de102c99df8
     registration/form/motivation/help: 0fb81784a05760db599594914fcdfacb
     registration/form/how_heard/label: d69d324c9005a19980e6cb02b03c2bc5
