@@ -22,51 +22,52 @@
     "course_europe_name": "Residência Europa",
     "course_europe_description": "Residência intensiva de 2 semanas em Valência (Espanha)"
   },
-    "nav": {
-      "logo_alt": "B4OS - Bitcoin 4 Open Source Logo",
-      "menu_aria": "Navegação principal",
-      "brand_link_aria": "Ir para o início do B4OS",
-      "toggle_aria": "Abrir menu de navegação",
-      "objectives": "Objetivos",
-      "alumni": "Alunos",
-      "residences": "Residências",
-      "schedule": "Cronograma",
-      "register": "Registro",
-      "benefits": "Benefícios",
-      "alliances": "Alianças",
-      "careers": "Carreiras",
-      "contact": "Contato",
-      "b4os_program": "Programa B4OS"
-    },
-    "hero": {
-      "title_main": "Bitcoin 4 Open Source",
-      "title_sub": "Programa gratuito de treinamento técnico em Bitcoin para desenvolvedores",
-      "cta_primary": "Aceitar o Desafio",
-      "cta_secondary": "Conhecer as Residências"
-    },
-    "chaincode_boss": {
-      "hero_title": "₿OSS (Bitcoin Open-Source Software)",
-      "hero_subtitle": "Iniciativa da Chaincode Labs para desenvolvedores que buscam começar sua carreira como open-source Bitcoin developers.",
-      "cta_primary": "Aceitar o Desafio",
-      "registration": {
-                "title": "Pronto para se juntar ao ₿OSS Challenge 2026?",
-                "description": "O ₿OSS Challenge 2026 está aberto para desenvolvedores que sonham em trabalhar com Bitcoin open source. O processo de inscrição é completamente gratuito.",
-        "career": {
-          "title": "Mude sua carreira em 2026",
-          "body": "Escreva código que irá perdurar por gerações. Alcance a liberdade profissional. Trabalhe com as mentes mais brilhantes para resolver os problemas de engenharia e design mais interessantes."
-        },
-        "path": {
-          "title": "O caminho não é reto",
-          "body": "É longo, sinuoso e diferente para cada pessoa. O ₿OSS Challenge apoia você nessa jornada enquanto incentiva o espírito proativo e autodidata que o open source exige."
-        },
-        "closing": "Junte-se ao ₿OSS Challenge hoje e descubra até onde você pode chegar.",
-        "period": {
-          "label": "Inscrições até",
-          "dates": "22 de novembro de 2026"
-        }
+  "nav": {
+    "logo_alt": "B4OS - Bitcoin 4 Open Source Logo",
+    "menu_aria": "Navegação principal",
+    "brand_link_aria": "Ir para o início do B4OS",
+    "toggle_aria": "Abrir menu de navegação",
+    "objectives": "Objetivos",
+    "alumni": "Alunos",
+    "residences": "Residências",
+    "schedule": "Cronograma",
+    "register": "Registro",
+    "benefits": "Benefícios",
+    "alliances": "Alianças",
+    "careers": "Carreiras",
+    "contact": "Contato",
+    "b4os_program": "Programa B4OS",
+    "chaincode_cta": "Registro Chaincode BOSS"
+  },
+  "hero": {
+    "title_main": "Bitcoin 4 Open Source",
+    "title_sub": "Programa gratuito de treinamento técnico em Bitcoin para desenvolvedores",
+    "cta_primary": "Aceitar o Desafio",
+    "cta_secondary": "Conhecer as Residências"
+  },
+  "chaincode_boss": {
+    "hero_title": "₿OSS (Bitcoin Open-Source Software)",
+    "hero_subtitle": "Iniciativa da Chaincode Labs para desenvolvedores que buscam começar sua carreira como open-source Bitcoin developers.",
+    "cta_primary": "Aceitar o Desafio",
+    "registration": {
+      "title": "Pronto para se juntar ao ₿OSS Challenge 2026?",
+      "description": "O ₿OSS Challenge 2026 está aberto para desenvolvedores que sonham em trabalhar com Bitcoin open source. O processo de inscrição é completamente gratuito.",
+      "career": {
+        "title": "Mude sua carreira em 2026",
+        "body": "Escreva código que irá perdurar por gerações. Alcance a liberdade profissional. Trabalhe com as mentes mais brilhantes para resolver os problemas de engenharia e design mais interessantes."
+      },
+      "path": {
+        "title": "O caminho não é reto",
+        "body": "É longo, sinuoso e diferente para cada pessoa. O ₿OSS Challenge apoia você nessa jornada enquanto incentiva o espírito proativo e autodidata que o open source exige."
+      },
+      "closing": "Junte-se ao ₿OSS Challenge hoje e descubra até onde você pode chegar.",
+      "period": {
+        "label": "Inscrições até",
+        "dates": "22 de novembro de 2026"
       }
-    },
-    "objectives": {
+    }
+  },
+  "objectives": {
     "image_alt": "Desenvolvedora trabalhando em Bitcoin",
     "title": "B4OS oferece rotas de aprendizagem especializadas, permitindo que os devs se concentrem nas áreas de maior demanda",
     "potential": {
@@ -96,7 +97,7 @@
     "linkedin_aria": "LinkedIn de {name}",
     "twitter_aria": "Twitter de {name}",
     "grantee_b4os": "Grantee do B4OS",
-    "grantee_b4os_localhost": "Bolsista do B4OS",
+    "grantee_b4os_localhost": "Grantee do B4OS",
     "grantee_spiral": "Grantee do Spiral",
     "grantee_bdk": "Grantee da BDK Foundation",
     "grantee_whitenoise_b4os": "Grantee do White Noise - B4OS",
@@ -204,6 +205,7 @@
       "title": "Requisitos para se candidatar:",
       "experience": "<strong>Experiência em desenvolvimento</strong> de software (2+ anos)",
       "languages": "Conhecimentos sólidos em linguagens como <strong>C++, Rust, Python ou JavaScript</strong>",
+      "savingSatoshi": "Completar <a href=\"https://savingsatoshi.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Saving Satoshi</a> é uma tarefa que deve ser realizada para poder se candidatar ao programa BOSS",
       "interest": "Interesse genuíno em contribuir para o <strong>ecossistema open source do Bitcoin</strong>",
       "availability": "<strong>Disponibilidade</strong> para investir de 5 a 10 horas semanais",
       "resilience": "<strong>Resiliência</strong> para completar o programa na sua totalidade",
@@ -211,7 +213,7 @@
     },
     "period": {
       "label": "Registro até",
-      "dates": "22 de novembro de 2025"
+      "dates": "22 de novembro 2025"
     },
     "closed": {
       "badge_label": "Status",
@@ -227,8 +229,8 @@
       "email_required": "Por favor, insira seu email"
     },
     "form": {
-      "title": "Formulário de Inscrição B4OS 2025",
-      "aria_label": "Formulário de inscrição B4OS 2025",
+      "title": "Formulário de registro",
+      "aria_label": "Formulário de registro",
       "name": {
         "label": "Nome ou pseudônimo *",
         "help": "Você pode usar seu nome real ou um pseudônimo"
@@ -292,7 +294,7 @@
         "help": "Você deve aceitar os termos para continuar",
         "link_text": "termos e condições"
       },
-      "submit": "Enviar aplicação para B4OS 2025"
+      "submit": "Enviar candidatura"
     }
   },
   "benefits": {

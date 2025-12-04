@@ -33,10 +33,23 @@ checksums:
     nav/alliances: a63917828ffc6b3be5ebdc4b66cb5dcb
     nav/careers: 2f97859b508c2045beac448aac3f9776
     nav/contact: e1caf5cc16c5a4e4dc9d509ff567c9ce
+    nav/b4os_program: c0b36acf265fe4a461a2a9f44942cd4e
     hero/title_main: d357bcab918a542f1b992170c43d9438
     hero/title_sub: 73fa961ee3ac2b346727f8ee530c1936
     hero/cta_primary: d12e831895b832e68cc8f5e06e496d72
     hero/cta_secondary: 44eaaf6dc7a23bc57d85735be6249b86
+    chaincode_boss/hero_title: 684b71b7dc6d379ff9d7333dac037bcd
+    chaincode_boss/hero_subtitle: 888927c73f1cdf191d1e45e10c3bedde
+    chaincode_boss/cta_primary: d12e831895b832e68cc8f5e06e496d72
+    chaincode_boss/registration/title: 559c6eff260f32f7d8e167348376e86d
+    chaincode_boss/registration/description: c91a5d02780febf549da200d6ffb154a
+    chaincode_boss/registration/career/title: d618eb5bd2ac7657927267d86b43d573
+    chaincode_boss/registration/career/body: e6bb61c671fafd4d424b6a3624e7b97d
+    chaincode_boss/registration/path/title: 492139a1267a243950469ccbe5514bcb
+    chaincode_boss/registration/path/body: 7ffca07b61f0510413017b72796b19a8
+    chaincode_boss/registration/closing: 51a5cc314703811b9b04401e55bec8c6
+    chaincode_boss/registration/period/label: a0fc05149cd0b4a6f54b3dcec0e64977
+    chaincode_boss/registration/period/dates: 392ed471524278ce26ebc4f1a26134f5
     objectives/image_alt: 3eb458de67a25c6c28db306eb0da208c
     objectives/title: e9cb045faa42500d2dbb37816053474e
     objectives/potential/title: 501d5e532bc0bf445c235bb9b429f532
@@ -56,7 +69,7 @@ checksums:
     alumni/linkedin_aria: 53598a231e5a2aeff0bec269f1415385
     alumni/twitter_aria: cab8c32e3aff53697c0ab04f33fbd7fd
     alumni/grantee_b4os: 4563f41ecc19e723fe0c42103c8c1503
-    alumni/grantee_b4os_localhost: b0aa51549af8f54257ede1b73d961780
+    alumni/grantee_b4os_localhost: 4563f41ecc19e723fe0c42103c8c1503
     alumni/grantee_spiral: d3e2fbf46b6532e7d236d6c553763086
     alumni/grantee_bdk: 4a7fb6eb68fbfb96a037091c56489c13
     alumni/grantee_whitenoise_b4os: 0c8d16504ed43db91ff842b706997bfc
@@ -129,14 +142,26 @@ checksums:
     registration/requirements/title: 43c63ede04bfaba99f416d3384350b78
     registration/requirements/experience: 86dcc468e2caa8970720ef967c46efae
     registration/requirements/languages: 9d944ebb37f1c1ff5cdb73d9f4d81ee5
+    registration/requirements/savingSatoshi: 0a1d83d34953bbeb5711bfb6ebf46ef8
     registration/requirements/interest: 61993f8e7b25f27e789be2a3069f5408
     registration/requirements/availability: 22282822e508ba49205af31ebfa408f6
     registration/requirements/resilience: af842891833dfaecd97efce630231b57
     registration/requirements/spanish: 05ce58363ab94ce4a4cab179dd42d486
     registration/period/label: a0fc05149cd0b4a6f54b3dcec0e64977
-    registration/period/dates: 29260387043f912620a28a36ae4c2959
-    registration/form/title: 0f9ffb9f14aebee4b018f2a97d1773d1
-    registration/form/aria_label: a76b95e4cd0df4201c9aabe7e7ecbfb6
+    registration/period/dates: 3f0fa05d7639b0697b05b6ba32ffd677
+    registration/closed/badge_label: 24698bc46c4189b249e14857ce1c9fa4
+    registration/closed/badge_text: b136760fab817be6d6dfde717e98c0e7
+    registration/closed/title: b672bf2ae1d8c6e3114af354eebf43d9
+    registration/closed/subtitle: 0d90f6146b1da7edfb29f7a6e5dd3101
+    registration/closed/email_placeholder: feb99686688405b7ac395410a45e7a75
+    registration/closed/email_aria_label: f42ab75dac3cb47ec436f2b726287447
+    registration/closed/cta: f49497661d0ca437906fc64eeb504831
+    registration/closed/success_title: 65fcae716f89b85850c0bf697bf39af5
+    registration/closed/success_message: 99b9605785f6ff86225a446ab4d5f124
+    registration/closed/error_message: 77d6920b15218358157e499c0a7a7dd2
+    registration/closed/email_required: 6abd1c9ff3f5587bbcc046c18945c5db
+    registration/form/title: 8faf82c1156edef49d343c24eecfcce6
+    registration/form/aria_label: e1d5c036345a0a8b2591493c942796e6
     registration/form/name/label: 385ede445a7d152a62c1b730233d3c0d
     registration/form/name/help: b49f3a83174de845923bedde40ad575b
     registration/form/email/label: 00f48db7b8177806d7bdec49f5fe3a31
@@ -163,12 +188,17 @@ checksums:
     registration/form/motivation/label: 12e0131ba483308676eb7de102c99df8
     registration/form/motivation/help: 0fb81784a05760db599594914fcdfacb
     registration/form/how_heard/label: d69d324c9005a19980e6cb02b03c2bc5
-    registration/form/how_heard/placeholder: 8d56132fd38786e73143f84b536a770d
-    registration/form/how_heard/help: 7cc7ace2e4d238db7d4d829b4abdd808
+    registration/form/how_heard/help: a390ef0ff2c71e18b5eb2d19a7674b65
+    registration/form/how_heard/options/libreria: 1d6e8378485eb5612af9cefe0ac3be51
+    registration/form/how_heard/options/bitcoinong_argentina: 1d6ac9ec6e4f1fd68c9021dfe5538948
+    registration/form/how_heard/options/world_liberty_congress: 37bdd1d91df3296c8fcc32187c99daf5
+    registration/form/how_heard/options/chaincode: 44f7ac8e0fa83cbb3b698f38fc61c262
+    registration/form/how_heard/options/others: 116cb394a03546d174e496132ca9ed61
+    registration/form/how_heard/others_placeholder: 8d702f5d4679aaed246bb47846f6ab38
     registration/form/terms/label: 97b8cabca25fb92b63f40b194af2db88
     registration/form/terms/help: cd2c58a137a3e88e874361f169a37055
     registration/form/terms/link_text: cc2cc10744634ecf4496c25a7abefb06
-    registration/form/submit: 651d82ce59130a6a35ebe01477cd74b7
+    registration/form/submit: 461d1231e42e0c06976e5f23e305705b
     benefits/title: 69654c89b9ae675f51ea24b2c9436630
     benefits/subtitle: d93ff44d0521b34f75baad0b68de2f96
     benefits/cards/1/icon: 27bf3b5690ae43df216547bad109bfed

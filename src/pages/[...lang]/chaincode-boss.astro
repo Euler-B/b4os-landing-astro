@@ -99,6 +99,7 @@ const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
                         <ul>
                             <li set:html={t.registration.requirements.experience}></li>
                             <li set:html={t.registration.requirements.languages}></li>
+                            <li set:html={t.registration.requirements.savingSatoshi}></li>
                             <li set:html={t.registration.requirements.interest}></li>
                             <li set:html={t.registration.requirements.availability}></li>
                             <li set:html={t.registration.requirements.resilience}></li>
@@ -239,36 +240,8 @@ const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
                             <small id="motivation-help">{t.registration.form.motivation.help}</small>
                         </div>
 
-                        <div class="form-group">
-                            <fieldset>
-                                <legend>{t.registration.form.how_heard.label}</legend>
-                                <div class="radio-group">
-                                    {Object.entries(t.registration.form.how_heard.options).map(([key, value]) => (
-                                        <label class="radio-label" for={`how-heard-${key}`}>
-                                            <input 
-                                                type="radio" 
-                                                id={`how-heard-${key}`} 
-                                                name="how-heard" 
-                                                value={key}
-                                                aria-describedby="how-heard-help"
-                                            >
-                                            <span>{value}</span>
-                                        </label>
-                                    ))}
-                                </div>
-                                <div id="others-input-container" style="display: none; margin-top: 15px;">
-                                    <input 
-                                        type="text" 
-                                        id="how-heard-others-text" 
-                                        name="how-heard-others-text" 
-                                        placeholder={t.registration.form.how_heard.others_placeholder}
-                                        aria-describedby="how-heard-help"
-                                        style="width: 100%; padding: var(--spacing-md); border: 2px solid var(--border-color); border-radius: var(--border-radius-md); font-size: var(--font-size-base);"
-                                    >
-                                </div>
-                                <small id="how-heard-help">{t.registration.form.how_heard.help}</small>
-                            </fieldset>
-                        </div>
+                        {/* Campo oculto para rastrear que el registro viene de Chaincode */}
+                        <input type="hidden" name="how-heard" value="chaincode">
                         
                         <div class="form-group checkbox-group">
                             <label class="checkbox-label">
@@ -467,3 +440,35 @@ const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
         }
     }
 </style>
+
+<script>
+    // Sobrescribir el método setupHowHeardCheckboxes del FormHandler
+    // porque en la página de Chaincode usamos un campo oculto en lugar del selector
+    if (typeof window.FormHandler !== 'undefined') {
+        const originalSetupHowHeardCheckboxes = window.FormHandler.prototype.setupHowHeardCheckboxes;
+
+        window.FormHandler.prototype.setupHowHeardCheckboxes = function() {
+            // En la página de Chaincode, el campo how-heard es oculto con valor fijo
+            // No necesitamos configurar listeners
+            // console.log('✓ Campo how-heard configurado como oculto con valor "chaincode"');
+        };
+
+        // También sobrescribir la validación del campo how-heard
+        const originalValidateForm = window.FormHandler.prototype.validateForm;
+
+        window.FormHandler.prototype.validateForm = function() {
+            const result = originalValidateForm.call(this);
+
+            // Filtrar errores relacionados con how-heard ya que es un campo oculto
+            if (result.errors) {
+                result.errors = result.errors.filter(error =>
+                    !error.includes('cómo te enteraste de B4OS') &&
+                    !error.includes('Otros')
+                );
+                result.isValid = result.errors.length === 0;
+            }
+
+            return result;
+        };
+    }
+</script>

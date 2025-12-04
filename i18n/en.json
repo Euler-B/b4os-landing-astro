@@ -22,51 +22,52 @@
     "course_europe_name": "Europe Residency",
     "course_europe_description": "Intensive 2-week residency in Valencia (Spain)"
   },
-    "nav": {
-      "logo_alt": "B4OS - Bitcoin 4 Open Source Logo",
-      "menu_aria": "Main navigation",
-      "brand_link_aria": "Go to B4OS home",
-      "toggle_aria": "Open navigation menu",
-      "objectives": "Objectives",
-      "alumni": "Alumni",
-      "residences": "Residencies",
-      "schedule": "Schedule",
-      "register": "Register",
-      "benefits": "Benefits",
-      "alliances": "Alliances",
-      "careers": "Careers",
-      "contact": "Contact",
-      "b4os_program": "B4OS Program"
-    },
-    "hero": {
-      "title_main": "Bitcoin 4 Open Source",
-      "title_sub": "Free technical Bitcoin training program for developers",
-      "cta_primary": "Accept the challenge",
-      "cta_secondary": "Learn about the residencies"
-    },
-    "chaincode_boss": {
-      "hero_title": "₿OSS (Bitcoin Open-Source Software)",
-      "hero_subtitle": "Chaincode Labs initiative for developers looking to start their career as open-source Bitcoin developers.",
-      "cta_primary": "Accept the challenge",
-      "registration": {
-                "title": "Ready to join the ₿OSS Challenge 2026?",
-                "description": "The ₿OSS Challenge 2026 is open to developers who dream of working on Bitcoin open source. The registration process is completely free.",
-        "career": {
-          "title": "Change your career in 2026",
-          "body": "Write code that will outlive generations. Achieve professional freedom. Work with some of the brightest minds to solve the most interesting engineering and design problems."
-        },
-        "path": {
-          "title": "The path is not straight",
-          "body": "It is long, winding, and different for everyone. The ₿OSS Challenge supports you along the way while encouraging the proactive, self-taught spirit that open source requires."
-        },
-        "closing": "Join the ₿OSS Challenge today and discover how far you can go.",
-        "period": {
-          "label": "Registration until",
-          "dates": "November 22, 2026"
-        }
+  "nav": {
+    "logo_alt": "B4OS - Bitcoin 4 Open Source Logo",
+    "menu_aria": "Main navigation",
+    "brand_link_aria": "Go to B4OS home",
+    "toggle_aria": "Open navigation menu",
+    "objectives": "Objectives",
+    "alumni": "Alumni",
+    "residences": "Residencies",
+    "schedule": "Schedule",
+    "register": "Register",
+    "benefits": "Benefits",
+    "alliances": "Alliances",
+    "careers": "Careers",
+    "contact": "Contact",
+    "b4os_program": "B4OS Program",
+    "chaincode_cta": "Chaincode Registration BOSS"
+  },
+  "hero": {
+    "title_main": "Bitcoin 4 Open Source",
+    "title_sub": "Free technical Bitcoin training program for developers",
+    "cta_primary": "Accept the challenge",
+    "cta_secondary": "Learn about the residencies"
+  },
+  "chaincode_boss": {
+    "hero_title": "₿OSS (Bitcoin Open-Source Software)",
+    "hero_subtitle": "Chaincode Labs initiative for developers looking to start their career as open-source Bitcoin developers.",
+    "cta_primary": "Accept the challenge",
+    "registration": {
+      "title": "Ready to join the ₿OSS Challenge 2026?",
+      "description": "The ₿OSS Challenge 2026 is open to developers who dream of working on Bitcoin open source. The registration process is completely free.",
+      "career": {
+        "title": "Change your career in 2026",
+        "body": "Write code that will outlive generations. Achieve professional freedom. Work with some of the brightest minds to solve the most interesting engineering and design problems."
+      },
+      "path": {
+        "title": "The path is not straight",
+        "body": "It is long, winding, and different for everyone. The ₿OSS Challenge supports you along the way while encouraging the proactive, self-taught spirit that open source requires."
+      },
+      "closing": "Join the ₿OSS Challenge today and discover how far you can go.",
+      "period": {
+        "label": "Registration until",
+        "dates": "November 22, 2026"
       }
-    },
-    "objectives": {
+    }
+  },
+  "objectives": {
     "image_alt": "Developer working on Bitcoin",
     "title": "B4OS offers specialized learning paths, allowing devs to focus on the areas of highest demand",
     "potential": {
@@ -96,7 +97,7 @@
     "linkedin_aria": "LinkedIn of {name}",
     "twitter_aria": "Twitter of {name}",
     "grantee_b4os": "B4OS grantee",
-    "grantee_b4os_localhost": "B4OS Grantee",
+    "grantee_b4os_localhost": "B4OS grantee",
     "grantee_spiral": "Spiral grantee",
     "grantee_bdk": "BDK Foundation grantee",
     "grantee_whitenoise_b4os": "White Noise - B4OS grantee",
@@ -204,6 +205,7 @@
       "title": "Application requirements:",
       "experience": "<strong>Software development experience</strong> (2+ years)",
       "languages": "Solid knowledge in languages such as <strong>C++, Rust, Python or JavaScript</strong>",
+      "savingSatoshi": "Completing <a href=\"https://savingsatoshi.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Saving Satoshi</a> is a task that must be done to apply to the BOSS program",
       "interest": "Genuine interest in contributing to the <strong>Bitcoin open source ecosystem</strong>",
       "availability": "<strong>Availability</strong> to invest 5 to 10 hours weekly",
       "resilience": "<strong>Resilience</strong> to complete the entire program",
@@ -227,8 +229,8 @@
       "email_required": "Please enter your email"
     },
     "form": {
-      "title": "B4OS 2025 registration form",
-      "aria_label": "B4OS 2025 registration form",
+      "title": "Registration form",
+      "aria_label": "Registration form",
       "name": {
         "label": "Name or pseudonym *",
         "help": "You can use your real name or a pseudonym"
@@ -277,7 +279,7 @@
       },
       "how_heard": {
         "label": "How did you hear about B4OS? *",
-        "help": "Select one option",
+        "help": "Select an option",
         "options": {
           "libreria": "Librería de Satoshi (X/Twitter)",
           "bitcoinong_argentina": "Bitcoin ONG Argentina (X/Twitter)",
@@ -292,7 +294,7 @@
         "help": "You must accept the terms to continue",
         "link_text": "terms and conditions"
       },
-      "submit": "Submit application to B4OS 2025"
+      "submit": "Submit application"
     }
   },
   "benefits": {
