@@ -47,10 +47,10 @@ window.CustomerIOIntegration = class CustomerIOIntegration {
             script.src = 'https://assets.customer.io/assets/track.js';
             
             firstScript.parentNode.insertBefore(script, firstScript);
-            
+
             this.initialized = true;
-            console.log('✅ Customer.io tracking inicializado');
-            
+            // console.log('✅ Customer.io tracking inicializado');
+
             // Identificar página actual
             this.trackPageView();
             
@@ -69,13 +69,13 @@ window.CustomerIOIntegration = class CustomerIOIntegration {
         }
 
         try {
-            console.log('🔥 IDENTIFICANDO USUARIO:', userId, attributes);
-            
+            // console.log('🔥 IDENTIFICANDO USUARIO:', userId, attributes);
+
             window._cio.identify({
                 id: userId,
                 ...attributes
             });
-            console.log('✅ Usuario identificado en Customer.io:', userId);
+            // console.log('✅ Usuario identificado en Customer.io:', userId);
         } catch (error) {
             console.error('Error identificando usuario:', error);
         }
@@ -91,10 +91,10 @@ window.CustomerIOIntegration = class CustomerIOIntegration {
         }
 
         try {
-            console.log('🔥 TRACKEANDO EVENTO:', eventName, eventData);
-            
+            // console.log('🔥 TRACKEANDO EVENTO:', eventName, eventData);
+
             window._cio.track(eventName, eventData);
-            console.log('✅ Evento trackeado:', eventName, eventData);
+            // console.log('✅ Evento trackeado:', eventName, eventData);
         } catch (error) {
             console.error('Error trackeando evento:', error);
         }
@@ -108,7 +108,7 @@ window.CustomerIOIntegration = class CustomerIOIntegration {
 
         try {
             window._cio.page();
-            console.log('📄 Page view trackeada');
+            // console.log('📄 Page view trackeada');
         } catch (error) {
             console.error('Error trackeando page view:', error);
         }
@@ -155,10 +155,9 @@ window.CustomerIOIntegration = class CustomerIOIntegration {
                 program_year: '2025'
             };
 
-            console.log('🚀 IDENTIFICANDO CON TODOS LOS DATOS:', userAttributes);
+            // console.log('🚀 IDENTIFICANDO CON TODOS LOS DATOS:', userAttributes);
             this.identify(userId, userAttributes);
 
-            // 2. TRACKEAR EVENTO CON DATOS COMPLETOS
             const eventData = {
                 form_name: 'registrationForm',
                 source: 'landing_page',
@@ -191,10 +190,10 @@ window.CustomerIOIntegration = class CustomerIOIntegration {
                 program_year: '2025'
             };
 
-            console.log('🚀 TRACKEANDO CON TODOS LOS DATOS:', eventData);
+            // console.log('🚀 TRACKEANDO CON TODOS LOS DATOS:', eventData);
             this.track('registration_completed', eventData);
 
-            console.log('✅ Formulario procesado con Customer.io JavaScript');
+            // console.log('✅ Formulario procesado con Customer.io JavaScript');
             return Promise.resolve({ success: true });
 
         } catch (error) {
@@ -322,7 +321,7 @@ window.CustomerIOIntegration = class CustomerIOIntegration {
                 throw new Error(`Error enviando evento: ${eventResponse.status}`);
             }
 
-            console.log('✅ Datos enviados directamente a Customer.io');
+            // console.log('✅ Datos enviados directamente a Customer.io');
             return { success: true };
 
         } catch (error) {

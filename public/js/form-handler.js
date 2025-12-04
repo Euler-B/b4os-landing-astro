@@ -15,17 +15,17 @@ window.FormHandler = class FormHandler {
         this.form = document.getElementById('registrationForm');
         
         if (!this.form) {
-            console.log('Formulario no encontrado en esta página');
+            // console.log('Formulario no encontrado en esta página');
             return;
         }
 
-        console.log('Inicializando formulario...');
+        // console.log('Inicializando formulario...');
         await this.setupLocationSelectors();
         this.setupFormValidation();
         this.setupFormSubmission();
         this.setupHowHeardCheckboxes();
-        
-        console.log('Form handler initialized');
+
+        // console.log('Form handler initialized');
     }
 
     /**
@@ -101,13 +101,13 @@ window.FormHandler = class FormHandler {
         const othersRadio = document.getElementById('how-heard-others');
         const othersInputContainer = document.getElementById('others-input-container');
         const othersTextInput = document.getElementById('how-heard-others-text');
-        
+
         if (!othersRadio || !othersInputContainer || !othersTextInput) {
-            console.warn('How heard radio buttons not found', {
-                othersRadio: !!othersRadio,
-                othersInputContainer: !!othersInputContainer,
-                othersTextInput: !!othersTextInput
-            });
+            // console.warn('How heard radio buttons not found', {
+            //     othersRadio: !!othersRadio,
+            //     othersInputContainer: !!othersInputContainer,
+            //     othersTextInput: !!othersTextInput
+            // });
             return;
         }
         
@@ -223,17 +223,18 @@ window.FormHandler = class FormHandler {
                     message: 'No pudimos encontrar este usuario de GitHub. Revisa el nombre o <a href="https://github.com" target="_blank" rel="noopener noreferrer">crea una cuenta en GitHub</a>.' 
                 };
             }
-            
+
+
             if (!response.ok) {
                 // Si hay error en la API, solo validamos el formato
-                console.warn('GitHub API error, validating format only');
+                // console.warn('GitHub API error, validating format only');
                 return { isValid: true };
             }
             
             return { isValid: true };
-            
+
         } catch (error) {
-            console.warn('Error validating GitHub profile:', error);
+            // console.warn('Error validating GitHub profile:', error);
             // En caso de error, solo validamos el formato básico
             const basicFormat = /^https:\/\/github\.com\/[a-zA-Z0-9-]+$/;
             return { 
@@ -439,7 +440,7 @@ window.FormHandler = class FormHandler {
                 referrer: document.referrer
             };
 
-            console.log('📤 Enviando datos a Netlify Function:', submissionData);
+            // console.log('📤 Enviando datos a Netlify Function:', submissionData);
 
             // Enviar a Netlify Function (o simular en desarrollo)
             const result = await this.submitToNetlifyFunction(submissionData);
@@ -486,8 +487,8 @@ window.FormHandler = class FormHandler {
     async submitToNetlifyFunction(data) {
         // En desarrollo local, simular envío exitoso
         if (this.isLocalDevelopment()) {
-            console.log('🔧 MODO DESARROLLO - Simulando envío:', data);
-            
+            // console.log('🔧 MODO DESARROLLO - Simulando envío:', data);
+
             // Simular delay de red
             await new Promise(resolve => setTimeout(resolve, 1500));
             
@@ -501,8 +502,8 @@ window.FormHandler = class FormHandler {
                 timestamp: new Date().toISOString(),
                 note: 'En desarrollo local - no se envían datos reales'
             };
-            
-            console.log('🔧 MODO DESARROLLO - Respuesta simulada:', simulatedResponse);
+
+            // console.log('🔧 MODO DESARROLLO - Respuesta simulada:', simulatedResponse);
             return simulatedResponse;
         }
 
@@ -524,18 +525,18 @@ window.FormHandler = class FormHandler {
                     errorMessage = errorData.message || errorData.error || errorMessage;
                 } catch (jsonError) {
                     // Si no puede parsear JSON, usar mensaje genérico
-                    console.warn('Could not parse error response as JSON');
+                    // console.warn('Could not parse error response as JSON');
                 }
                 
                 throw new Error(errorMessage);
             }
 
             const responseData = await response.json();
-            console.log('✅ PRODUCCIÓN - Netlify Function response:', responseData);
+            // console.log('✅ PRODUCCIÓN - Netlify Function response:', responseData);
             return responseData;
-            
+
         } catch (error) {
-            console.error('❌ PRODUCCIÓN - Netlify Function error:', error);
+            // console.error('❌ PRODUCCIÓN - Netlify Function error:', error);
             throw error;
         }
     }

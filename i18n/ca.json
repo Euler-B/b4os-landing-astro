@@ -35,13 +35,37 @@
     "benefits": "Beneficis",
     "alliances": "Aliances",
     "careers": "Carreres",
-    "contact": "Contacte"
+    "contact": "Contacte",
+    "b4os_program": "Programa B4OS",
+    "chaincode_cta": "Registre Chaincode BOSS"
   },
   "hero": {
     "title_main": "Bitcoin 4 Open Source",
     "title_sub": "Programa gratuït d'entrenament tècnic en Bitcoin per a desenvolupadors",
     "cta_primary": "Acceptar el Repte",
     "cta_secondary": "Conèixer les Residències"
+  },
+  "chaincode_boss": {
+    "hero_title": "₿OSS (Bitcoin Open-Source Software)",
+    "hero_subtitle": "Iniciativa de Chaincode Labs per a desenvolupadors que busquen començar la seva carrera com a open-source Bitcoin developers.",
+    "cta_primary": "Acceptar el Repte",
+    "registration": {
+      "title": "Preparat per unir-te al ₿OSS Challenge 2026?",
+      "description": "El ₿OSS Challenge 2026 està obert a desenvolupadors que somien treballar en Bitcoin open source. El procés de registre és completament gratuït.",
+      "career": {
+        "title": "Canvia la teva carrera el 2026",
+        "body": "Escriu codi que perdurarà generacions. Aconsegueix la llibertat professional. Treballa amb les ments més brillants per resoldre els problemes d'enginyeria i disseny més interessants."
+      },
+      "path": {
+        "title": "El camí no és recte",
+        "body": "És llarg, sinuós i diferent per a cada persona. El ₿OSS Challenge t'acompanya en el viatge mentre fomenta l'esperit proactiu i autodidacte que requereix l'open source."
+      },
+      "closing": "Uneix-te al ₿OSS Challenge avui i descobreix fins on pots arribar.",
+      "period": {
+        "label": "Registre fins al",
+        "dates": "22 de novembre de 2026"
+      }
+    }
   },
   "objectives": {
     "image_alt": "Desenvolupadora treballant en Bitcoin",
@@ -181,14 +205,15 @@
       "title": "Requisits per aplicar:",
       "experience": "<strong>Experiència en desenvolupament</strong> de programari (2+ anys)",
       "languages": "Coneixements sòlids en llenguatges com <strong>C++, Rust, Python o JavaScript</strong>",
+      "savingSatoshi": "Completar <a href=\"https://savingsatoshi.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Saving Satoshi</a> és una tasca que s'ha de realitzar per poder aplicar al programa BOSS",
       "interest": "Interès genuí en contribuir a l'<strong>ecosistema open source de Bitcoin</strong>",
       "availability": "<strong>Disponibilitat</strong> per invertir de 5 a 10 hores setmanals",
       "resilience": "<strong>Resiliència</strong> per completar el programa en la seva totalitat",
-      "spanish": "Domini del <strong>espanyol</strong> per participar activament en el programa"
+      "spanish": "Domini de l'<strong>anglès</strong> per participar activament en el programa"
     },
     "period": {
       "label": "Registre fins a",
-      "dates": "22 de novembre de 2025"
+      "dates": "22 de novembre 2025"
     },
     "closed": {
       "badge_label": "Estat",
@@ -204,8 +229,8 @@
       "email_required": "Si us plau, introdueix el teu email"
     },
     "form": {
-      "title": "Formulari de Registre B4OS 2025",
-      "aria_label": "Formulari de registre B4OS 2025",
+      "title": "Formulari de registre",
+      "aria_label": "Formulari de registre",
       "name": {
         "label": "Nom o pseudònim *",
         "help": "Pots fer servir el teu nom real o un pseudònim"
@@ -269,7 +294,7 @@
         "help": "Has d'acceptar els termes per continuar",
         "link_text": "termes i condicions"
       },
-      "submit": "Enviar aplicació a B4OS 2025"
+      "submit": "Enviar sol·licitud"
     }
   },
   "benefits": {

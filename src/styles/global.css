@@ -176,6 +176,60 @@ body {
     transition: var(--transition);
 }
 
+/* Chaincode CTA Button in Navbar */
+.nav-cta {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chaincode-nav-btn {
+    background: linear-gradient(135deg, #eb5234, #d4472b);
+    color: var(--text-white);
+    box-shadow: var(--shadow-md);
+    border: none;
+}
+
+.chaincode-nav-btn:hover {
+    background: linear-gradient(135deg, #d4472b, #c03e24);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+    color: var(--text-white);
+}
+
+/* Chaincode CTA in Mobile Menu */
+.nav-cta-mobile {
+    margin-top: var(--spacing-md);
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    display: none; /* Oculto por defecto */
+}
+
+@media (max-width: 768px) {
+    .nav-cta {
+        display: none !important; /* Ocultar botón desktop en móvil */
+    }
+    
+    .nav-cta-mobile {
+        display: inline-flex !important; /* Mostrar botón móvil */
+    }
+}
+
+@media (min-width: 769px) {
+    .nav-cta {
+        display: inline-flex; /* Mostrar botón desktop */
+    }
+    
+    .nav-cta-mobile {
+        display: none !important; /* Ocultar botón móvil en desktop */
+    }
+}
+
 /* objectives Section */
 .objectives {
     position: relative;
