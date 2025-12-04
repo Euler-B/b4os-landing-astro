@@ -49,17 +49,17 @@
       "hero_subtitle": "Iniciativa de Chaincode Labs per a desenvolupadors que busquen començar la seva carrera com a open-source Bitcoin developers.",
       "cta_primary": "Acceptar el Repte",
       "registration": {
-        "title": "Preparat per unir-te al BOSS Challenge 2026?",
-        "description": "El BOSS Challenge 2026 està obert a desenvolupadors que somien treballar en Bitcoin open source. El procés de registre és completament gratuït.",
+                "title": "Preparat per unir-te al ₿OSS Challenge 2026?",
+                "description": "El ₿OSS Challenge 2026 està obert a desenvolupadors que somien treballar en Bitcoin open source. El procés de registre és completament gratuït.",
         "career": {
           "title": "Canvia la teva carrera el 2026",
           "body": "Escriu codi que perdurarà generacions. Aconsegueix la llibertat professional. Treballa amb les ments més brillants per resoldre els problemes d'enginyeria i disseny més interessants."
         },
         "path": {
           "title": "El camí no és recte",
-          "body": "És llarg, sinuós i diferent per a cada persona. El BOSS Challenge t'acompanya en el viatge mentre fomenta l'esperit proactiu i autodidacte que requereix l'open source."
+          "body": "És llarg, sinuós i diferent per a cada persona. El ₿OSS Challenge t'acompanya en el viatge mentre fomenta l'esperit proactiu i autodidacte que requereix l'open source."
         },
-        "closing": "Uneix-te al BOSS Challenge avui i descobreix fins on pots arribar.",
+        "closing": "Uneix-te al ₿OSS Challenge avui i descobreix fins on pots arribar.",
         "period": {
           "label": "Registre fins al",
           "dates": "22 de novembre de 2026"
