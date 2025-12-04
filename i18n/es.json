@@ -46,7 +46,7 @@
     },
         "chaincode_boss": {
           "hero_title": "₿OSS (Bitcoin Open-Source Software)",
-          "hero_subtitle": "Iniciativa de Chaincode Labs para desarrolladores que buscan comenzar su carrera como open-source Bitcoin developers.",
+          "hero_subtitle": "Iniciativa de Chaincode Labs para desarrolladores que buscan comenzar su carrera en Bitcoin open-source.",
           "cta_primary": "Aceptar el Reto",
           "registration": {
                         "title": "¿Listo para unirte al ₿OSS Challenge 2026?",
@@ -204,7 +204,7 @@
       "title": "Requisitos para Aplicar:",
       "experience": "<strong>Experiencia en desarrollo</strong> de software (2+ años)",
       "languages": "Conocimientos sólidos en lenguajes como <strong>C++, Rust, Python o JavaScript</strong>",
-      "savingSatoshi": "Completar Saving Satoshi es una tarea que se debe realizar para poder aplicar al programa BOSS",
+      "savingSatoshi": "Completar <a href=\"https://savingsatoshi.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Saving Satoshi</a> es una tarea que se debe realizar para poder aplicar al programa BOSS",
       "interest": "Interés genuino en contribuir al <strong>ecosistema open source de Bitcoin</strong>",
       "availability": "<strong>Disponibilidad</strong> para invertir de 5 a 10 horas semanales",
       "resilience": "<strong>Resiliencia</strong> para completar el programa en su totalidad",
