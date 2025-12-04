@@ -46,24 +46,40 @@
     "cta_secondary": "Learn about the residencies"
   },
   "chaincode_boss": {
-    "hero_title": "₿OSS (Bitcoin Open-Source Software)",
-    "hero_subtitle": "Chaincode Labs initiative for developers looking to start their career as open-source Bitcoin developers.",
-    "cta_primary": "Accept the challenge",
+    "hero_title": "₿OSS Challenge",
+    "hero_subtitle": "Programming challenge for devs who dare to make the leap to Bitcoin Open-Source.",
+    "cta_primary": "I accept the challenge",
     "registration": {
-      "title": "Ready to join the ₿OSS Challenge 2026?",
-      "description": "The ₿OSS Challenge 2026 is open to developers who dream of working on Bitcoin open source. The registration process is completely free.",
+      "title": "Are you joining the challenge?",
+      "description": "₿OSS Challenge is open and free. Just by registering with B4OS you get the following exclusive benefits:",
       "career": {
-        "title": "Change your career in 2026",
-        "body": "Write code that will outlive generations. Achieve professional freedom. Work with some of the brightest minds to solve the most interesting engineering and design problems."
+        "title": "B4OS benefits:",
+        "body": "<ul><li>Join our Discord community from day one</li><li>Study groups</li><li>Mentoring and networking with B4OS grantees</li></ul>"
       },
       "path": {
-        "title": "The path is not straight",
-        "body": "It is long, winding, and different for everyone. The ₿OSS Challenge supports you along the way while encouraging the proactive, self-taught spirit that open source requires."
+        "title": "For the best devs:",
+        "body": "<ul><li>Residencies in Florianópolis (Brazil), Valencia (Spain) and Guadalajara (Mexico)</li><li>Sponsorship to attend conferences worldwide</li><li>English and Portuguese classes</li></ul>"
       },
       "closing": "Join the ₿OSS Challenge today and discover how far you can go.",
       "period": {
         "label": "Registration until",
         "dates": "November 22, 2026"
+      }
+    },
+    "how_it_works": {
+      "title": "How does the ₿OSS Challenge work?",
+      "subtitle": "A 3-month program designed to take you from learning to real contribution in Bitcoin",
+      "month1": {
+        "title": "Month 1: Challenges",
+        "description": "Have fun with programming challenges and learn Bitcoin by coding."
+      },
+      "month2": {
+        "title": "Month 2: Forks and paths",
+        "description": "We split into two paths, some start contributing to BOSS, while others take courses and study groups. The best devs from both paths are selected to receive grants and micro-grants. Plus the opportunity to attend residencies."
+      },
+      "month3": {
+        "title": "Month 3: Grants, mentoring and projects",
+        "description": "Based on PoW (Proof of Work), devs are connected with mentors and projects of greater interest within the ecosystem."
       }
     }
   },
@@ -205,7 +221,6 @@
       "title": "Application requirements:",
       "experience": "<strong>Software development experience</strong> (2+ years)",
       "languages": "Solid knowledge in languages such as <strong>C++, Rust, Python or JavaScript</strong>",
-      "savingSatoshi": "Completing <a href=\"https://savingsatoshi.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Saving Satoshi</a> is a task that must be done to apply to the BOSS program",
       "interest": "Genuine interest in contributing to the <strong>Bitcoin open source ecosystem</strong>",
       "availability": "<strong>Availability</strong> to invest 5 to 10 hours weekly",
       "resilience": "<strong>Resilience</strong> to complete the entire program",
@@ -272,6 +287,11 @@
         "label": "GitHub / Portfolio *",
         "placeholder": "https://github.com/tu-usuario",
         "help": "Share your GitHub profile or portfolio"
+      },
+      "linkedin": {
+        "label": "LinkedIn",
+        "placeholder": "https://linkedin.com/in/tu-perfil",
+        "help": "Share your LinkedIn profile"
       },
       "motivation": {
         "label": "What interests you about the Bitcoin ecosystem and \"freedom tech\" technologies? *",
