@@ -30,6 +30,9 @@ const t = translations as any; // Type casting para evitar errores de TypeScript
 // Feature flag para el formulario de registro
 const isFormOpen = import.meta.env.PUBLIC_REGISTRATION_OPEN === 'true';
 const reopenDate = import.meta.env.PUBLIC_REGISTRATION_REOPEN_DATE || '2025-10-22';
+
+// URL para la página de Chaincode según el idioma
+const chaincodeUrl = locale === 'es' ? '/chaincode-boss' : `/${locale}/chaincode-boss`;
 ---
 
 <Layout locale={locale}>
@@ -52,8 +55,14 @@ const reopenDate = import.meta.env.PUBLIC_REGISTRATION_REOPEN_DATE || '2025-10-2
                     <!-- <a href="#alianzas" class="nav-link">{t.nav.alliances}</a>
                     <a href="#carreras" class="nav-link">{t.nav.careers}</a>
                     <a href="#contacto" class="nav-link">{t.nav.contact}</a> -->
+                    <a href={chaincodeUrl} class="nav-cta-mobile btn btn-primary chaincode-nav-btn">
+                        {t.nav.chaincode_cta}
+                    </a>
                 </div>
                 <div class="nav-utilities">
+                    <a href={chaincodeUrl} class="nav-cta btn btn-primary chaincode-nav-btn">
+                        {t.nav.chaincode_cta}
+                    </a>
                     <LanguageSelector locale={locale} />
                     <button class="nav-toggle" id="navToggle" aria-label={t.nav.toggle_aria} aria-expanded="false">
                         <span></span>

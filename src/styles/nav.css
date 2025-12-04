@@ -98,6 +98,11 @@
     .nav-menu .nav-link:hover::after {
         width: 100%;
     }
+    
+    /* Ocultar botón Chaincode móvil en desktop */
+    .nav-menu .nav-cta-mobile {
+        display: none !important;
+    }
 }
 
 /* ============================================

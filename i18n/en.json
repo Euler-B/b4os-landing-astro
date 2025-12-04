@@ -36,7 +36,8 @@
     "alliances": "Alliances",
     "careers": "Careers",
     "contact": "Contact",
-    "b4os_program": "B4OS Program"
+    "b4os_program": "B4OS Program",
+    "chaincode_cta": "Chaincode Registration"
   },
   "hero": {
     "title_main": "Bitcoin 4 Open Source",
