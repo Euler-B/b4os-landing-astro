@@ -284,9 +284,9 @@
         "help": "Indique quais outras linguagens e tecnologias domina"
       },
       "github": {
-        "label": "GitHub / Portfólio *",
+        "label": "GitHub *",
         "placeholder": "https://github.com/tu-usuario",
-        "help": "Compartilhe seu perfil do GitHub ou portfólio"
+        "help": "Compartilhe seu perfil do GitHub"
       },
       "linkedin": {
         "label": "LinkedIn",

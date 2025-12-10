@@ -284,9 +284,9 @@
         "help": "Indicate what other languages and technologies you master"
       },
       "github": {
-        "label": "GitHub / Portfolio *",
+        "label": "GitHub *",
         "placeholder": "https://github.com/tu-usuario",
-        "help": "Share your GitHub profile or portfolio"
+        "help": "Share your GitHub profile"
       },
       "linkedin": {
         "label": "LinkedIn",
