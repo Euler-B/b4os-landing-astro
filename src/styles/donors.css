@@ -24,92 +24,54 @@
     z-index: 2;
 }
 
-/* Donors Cards */
-.donors-cards {
+/* Platinum Donors Section */
+.platinum-section {
+    margin-bottom: var(--spacing-4xl);
+    text-align: center;
+}
+
+.platinum-header {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.platinum-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.platinum-description {
+    font-size: var(--font-size-lg);
+    color: var(--text-light);
+}
+
+.platinum-donors-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-4xl);
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.donor-card {
+.platinum-donor-card {
     background: white;
     border-radius: var(--border-radius-xl);
     padding: var(--spacing-3xl) var(--spacing-2xl);
     box-shadow: var(--shadow-md);
-    border: 2px solid var(--border-color);
+    border: 2px solid rgba(184, 184, 184, 0.3);
     position: relative;
     overflow: hidden;
     text-align: center;
     transition: var(--transition);
-    min-height: 200px;
+    min-height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
 }
 
-.donor-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
-
-.donor-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
-    border-color: var(--primary-color);
-}
-
-.donor-card:hover::before {
-    transform: scaleX(1);
-}
-
-.donor-card-logo {
-    max-width: 250px;
-    height: auto;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
-    transition: transform 0.3s ease;
-}
-
-.donor-card-logo:hover {
-    transform: scale(1.05);
-}
-
-.donor-card-placeholder {
-    background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);
-    border-style: dashed;
-}
-
-.donor-placeholder-text {
-    font-size: var(--font-size-xl);
-    color: var(--text-light);
-    font-style: italic;
-}
-
-/* Sponsor Highlight */
-.sponsor-highlight {
-    margin-bottom: var(--spacing-4xl);
-}
-
-.sponsor-highlight-card {
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-    border-radius: var(--border-radius-xl);
-    padding: var(--spacing-3xl) var(--spacing-2xl);
-    box-shadow: var(--shadow-xl);
-    border: 2px solid rgba(184, 184, 184, 0.2);
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-}
-
-.sponsor-highlight-card::before {
+.platinum-donor-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -126,90 +88,41 @@
     50% { background-position: 100% 50%; }
 }
 
-.sponsor-highlight-header {
-    margin-bottom: var(--spacing-2xl);
+.platinum-donor-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
 }
 
-.sponsor-highlight-logo {
-    max-width: 280px;
+.platinum-donor-logo {
+    max-width: 220px;
     height: auto;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
     transition: transform 0.3s ease;
 }
 
-.sponsor-highlight-logo:hover {
+.platinum-donor-card:hover .platinum-donor-logo {
     transform: scale(1.05);
 }
 
-.sponsor-highlight-content {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.sponsor-testimonial {
-    font-size: var(--font-size-lg);
-    line-height: 1.7;
-    color: var(--text-dark);
-    font-style: italic;
-    position: relative;
-    padding: var(--spacing-lg) 0;
-}
-
-.sponsor-testimonial::before {
-    content: '"';
-    font-size: 4rem;
-    color: var(--primary-color);
-    opacity: 0.2;
-    position: absolute;
-    top: -20px;
-    left: -10px;
-    font-family: Georgia, serif;
-}
-
-/* Ways to Support */
-.ways-to-support {
-    margin-bottom: var(--spacing-4xl);
-}
-
-.support-header {
-    text-align: center;
-    margin-bottom: var(--spacing-3xl);
-}
-
-.support-header h3 {
-    font-size: var(--font-size-3xl);
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: var(--spacing-md);
-}
-
-.support-header p {
-    font-size: var(--font-size-lg);
-    color: var(--text-light);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.support-options-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-xl);
-}
-
-.support-option-card {
-    background: white;
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius-xl);
-    box-shadow: var(--shadow-md);
-    text-align: center;
-    transition: var(--transition);
-    border: 2px solid var(--border-color);
-    position: relative;
+/* Funds by Category */
+.funds-by-category {
     display: flex;
     flex-direction: column;
+    gap: var(--spacing-3xl);
 }
 
-.support-option-card::before {
+.fund-section {
+    background: white;
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-2xl);
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.fund-section::before {
     content: '';
     position: absolute;
     top: 0;
@@ -220,23 +133,28 @@
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
-    border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
 }
 
-.support-option-card:hover {
-    transform: translateY(-8px);
+.fund-section:hover {
     box-shadow: var(--shadow-xl);
     border-color: var(--primary-color);
 }
 
-.support-option-card:hover::before {
+.fund-section:hover::before {
     transform: scaleX(1);
 }
 
-.support-option-icon {
+.fund-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.fund-icon {
     width: 60px;
     height: 60px;
-    margin: 0 auto var(--spacing-md);
+    flex-shrink: 0;
     background: rgba(247, 147, 26, 0.1);
     border-radius: 50%;
     display: flex;
@@ -246,134 +164,105 @@
     transition: var(--transition);
 }
 
-.support-option-card:hover .support-option-icon {
+.fund-section:hover .fund-icon {
     background: var(--primary-color);
     color: white;
     transform: scale(1.1);
 }
 
-.support-option-card h4 {
-    font-size: var(--font-size-lg);
+.fund-title-group {
+    flex: 1;
+}
+
+.fund-title {
+    font-size: var(--font-size-xl);
     font-weight: 600;
-    margin-bottom: var(--spacing-sm);
     color: var(--text-dark);
+    margin-bottom: var(--spacing-sm);
 }
 
-.support-option-description {
-    color: var(--text-light);
+.fund-description {
     font-size: var(--font-size-sm);
+    color: var(--text-light);
     line-height: 1.6;
-    margin-bottom: var(--spacing-md);
-    flex-grow: 1;
 }
 
-.support-option-impact {
+.fund-donors {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
     background: rgba(247, 147, 26, 0.05);
-    padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--border-radius-md);
     border-left: 3px solid var(--primary-color);
-    text-align: left;
-    margin-bottom: var(--spacing-md);
 }
 
-.impact-label {
+.fund-donors-label {
+    font-size: var(--font-size-sm);
     font-weight: 600;
     color: var(--primary-color);
-    font-size: var(--font-size-sm);
-    display: block;
-    margin-bottom: var(--spacing-xs);
-}
-
-.impact-text {
-    color: var(--text-dark);
-    font-size: var(--font-size-sm);
-    display: block;
-}
-
-.btn-fund {
-    width: 100%;
-    margin-top: auto;
-}
-
-/* Donors CTA */
-.donors-cta {
-    text-align: center;
-    padding: var(--spacing-3xl) var(--spacing-2xl);
-    background: rgba(247, 147, 26, 0.05);
-    border-radius: var(--border-radius-xl);
-    border: 2px solid rgba(247, 147, 26, 0.2);
-}
-
-.donors-cta h3 {
-    font-size: var(--font-size-2xl);
-    font-weight: 700;
-    color: var(--text-dark);
     margin-bottom: var(--spacing-md);
 }
 
-.donors-cta p {
-    font-size: var(--font-size-lg);
-    color: var(--text-light);
-    margin-bottom: var(--spacing-xl);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+.fund-donors-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    align-items: center;
 }
 
-.donors-cta-actions {
-    display: flex;
-    gap: var(--spacing-md);
+.fund-donor-logo {
+    max-width: 120px;
+    height: auto;
+    filter: grayscale(30%);
+    transition: var(--transition);
+}
+
+.fund-donor-logo:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.fund-donor-placeholder {
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: rgba(0, 0, 0, 0.05);
+    border: 2px dashed var(--border-color);
+    border-radius: var(--border-radius-md);
+    color: var(--text-light);
+    font-size: var(--font-size-sm);
+    font-style: italic;
+}
+
+.btn-fund-section {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    gap: var(--spacing-sm);
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-    .support-options-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-lg);
-    }
-}
-
 @media (max-width: 768px) {
-    .donors-cards {
+    .platinum-donors-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
     }
 
-    .donor-card {
+    .platinum-donor-card {
         padding: var(--spacing-2xl) var(--spacing-lg);
         min-height: 150px;
     }
 
-    .donor-card-logo {
+    .platinum-donor-logo {
         max-width: 180px;
     }
 
-    .support-options-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
+    .fund-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
-    .sponsor-highlight-card {
-        padding: var(--spacing-2xl) var(--spacing-lg);
-    }
-
-    .sponsor-highlight-logo {
-        max-width: 200px;
-    }
-
-    .sponsor-testimonial {
-        font-size: var(--font-size-base);
-    }
-
-    .support-header h3 {
-        font-size: var(--font-size-2xl);
-    }
-
-    .support-option-icon {
-        width: 64px;
-        height: 64px;
+    .fund-icon {
+        width: 56px;
+        height: 56px;
     }
 }
 
@@ -382,27 +271,19 @@
         padding: var(--spacing-2xl) 0;
     }
 
-    .donor-card {
+    .platinum-donor-card {
         padding: var(--spacing-xl) var(--spacing-md);
     }
 
-    .donor-card-logo {
+    .platinum-donor-logo {
         max-width: 150px;
     }
 
-    .sponsor-highlight-card {
-        padding: var(--spacing-xl) var(--spacing-md);
-    }
-
-    .support-option-card {
+    .fund-section {
         padding: var(--spacing-lg);
     }
 
-    .donors-cta {
-        padding: var(--spacing-xl) var(--spacing-lg);
-    }
-
-    .donors-cta h3 {
-        font-size: var(--font-size-xl);
+    .fund-donors-logos {
+        justify-content: center;
     }
 }

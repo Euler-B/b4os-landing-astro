@@ -641,7 +641,32 @@
   },
   "donors": {
     "title": "Our Donors",
-    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "platinumTitle": "Platinum Donors",
+    "platinumDescription": "These donors support all funds",
+    "donorsLabel": "Donors:",
+    "funds": {
+      "education": {
+        "title": "Education Fund",
+        "description": "Technical Bitcoin training for developers.",
+        "donateButton": "Donate to Education Fund"
+      },
+      "grant": {
+        "title": "Grant Fund",
+        "description": "Funding for Bitcoin Open Source contributors.",
+        "donateButton": "Donate to Grant Fund"
+      },
+      "operation": {
+        "title": "Operation Budget",
+        "description": "Operational sustainability of the B4OS program.",
+        "donateButton": "Donate to Operation Budget"
+      },
+      "residency": {
+        "title": "Residency Budget",
+        "description": "Immersive experiences for program grantees.",
+        "donateButton": "Donate to Residency Budget"
+      }
+    }
   },
   "careers": {
     "title": "Join our team",

@@ -641,7 +641,32 @@
   },
   "donors": {
     "title": "Nossos Doadores",
-    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "platinumTitle": "Doadores Platina",
+    "platinumDescription": "Estes doadores apoiam todos os fundos",
+    "donorsLabel": "Doadores:",
+    "funds": {
+      "education": {
+        "title": "Fundo de Educação",
+        "description": "Formação técnica em Bitcoin para desenvolvedores.",
+        "donateButton": "Doar ao Fundo de Educação"
+      },
+      "grant": {
+        "title": "Fundo de Grants",
+        "description": "Financiamento para contribuidores de Bitcoin Open Source.",
+        "donateButton": "Doar ao Fundo de Grants"
+      },
+      "operation": {
+        "title": "Orçamento de Operação",
+        "description": "Sustentabilidade operacional do programa B4OS.",
+        "donateButton": "Doar ao Orçamento de Operação"
+      },
+      "residency": {
+        "title": "Orçamento de Residências",
+        "description": "Experiências imersivas para grantees do programa.",
+        "donateButton": "Doar ao Orçamento de Residências"
+      }
+    }
   },
   "careers": {
     "title": "Junte-se à Nossa Equipe",

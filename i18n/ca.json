@@ -641,7 +641,32 @@
   },
   "donors": {
     "title": "Els Nostres Donants",
-    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "platinumTitle": "Donants Platí",
+    "platinumDescription": "Aquests donants donen suport a tots els fons",
+    "donorsLabel": "Donants:",
+    "funds": {
+      "education": {
+        "title": "Fons d'Educació",
+        "description": "Formació tècnica en Bitcoin per a desenvolupadors.",
+        "donateButton": "Donar al Fons d'Educació"
+      },
+      "grant": {
+        "title": "Fons de Grants",
+        "description": "Finançament per a contribuïdors de Bitcoin Open Source.",
+        "donateButton": "Donar al Fons de Grants"
+      },
+      "operation": {
+        "title": "Pressupost d'Operació",
+        "description": "Sostenibilitat operativa del programa B4OS.",
+        "donateButton": "Donar al Pressupost d'Operació"
+      },
+      "residency": {
+        "title": "Pressupost de Residències",
+        "description": "Experiències immersives per a grantees del programa.",
+        "donateButton": "Donar al Pressupost de Residències"
+      }
+    }
   },
   "careers": {
     "title": "Uneix-te al nostre equip",
