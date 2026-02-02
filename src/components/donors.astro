@@ -1,0 +1,85 @@
+---
+import '../styles/donors.css';
+import { Icon } from 'astro-icon/components';
+import { getTranslation } from '../i18n/utils.js';
+
+const { locale = 'es' } = Astro.props;
+const translations = getTranslation(locale);
+const t = translations as any;
+---
+
+<!-- Donors Section -->
+<section id="donantes" class="donors">
+    <div class="container">
+        <header class="section-header">
+            <h2 class="section-title">{t.donors.title}</h2>
+            <p class="section-subtitle">{t.donors.subtitle}</p>
+        </header>
+
+        <!-- Donors Cards -->
+        <div class="donors-cards">
+            <article class="donor-card">
+                <a href="https://www.btrust.tech/" target="_blank" rel="noopener">
+                    <img src="/btrust-black.png" alt="B-TRUST" class="donor-card-logo" loading="lazy">
+                </a>
+            </article>
+
+            <article class="donor-card donor-card-placeholder">
+                <p class="donor-placeholder-text">Lorem Ipsum</p>
+            </article>
+        </div>
+
+        <!-- Ways to Support -->
+        <div class="ways-to-support">
+            <div class="support-options-grid">
+                <!-- Grant Fund -->
+                <article class="support-option-card">
+                    <div class="support-option-icon" aria-hidden="true">
+                        <Icon name="mdi:hand-coin" size={48} />
+                    </div>
+                    <h4>Grant Fund</h4>
+                    <p class="support-option-description">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor</p>
+                    <a href="mailto:hola@b4os.dev?subject=Donar - Grant Fund" class="btn btn-primary btn-fund">
+                        Donar
+                    </a>
+                </article>
+
+                <!-- Education Fund -->
+                <article class="support-option-card">
+                    <div class="support-option-icon" aria-hidden="true">
+                        <Icon name="mdi:school" size={48} />
+                    </div>
+                    <h4>Education Fund</h4>
+                    <p class="support-option-description">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor</p>
+                    <a href="mailto:hola@b4os.dev?subject=Donar - Education Fund" class="btn btn-primary btn-fund">
+                        Donar
+                    </a>
+                </article>
+
+                <!-- Operation Budget -->
+                <article class="support-option-card">
+                    <div class="support-option-icon" aria-hidden="true">
+                        <Icon name="mdi:cog" size={48} />
+                    </div>
+                    <h4>Operation Budget</h4>
+                    <p class="support-option-description">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor</p>
+                    <a href="mailto:hola@b4os.dev?subject=Donar - Operation Budget" class="btn btn-primary btn-fund">
+                        Donar
+                    </a>
+                </article>
+
+                <!-- Residency Budget -->
+                <article class="support-option-card">
+                    <div class="support-option-icon" aria-hidden="true">
+                        <Icon name="mdi:home-group" size={48} />
+                    </div>
+                    <h4>Residency Budget</h4>
+                    <p class="support-option-description">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor</p>
+                    <a href="mailto:hola@b4os.dev?subject=Donar - Residency Budget" class="btn btn-primary btn-fund">
+                        Donar
+                    </a>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>

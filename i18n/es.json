@@ -33,6 +33,7 @@
       "schedule": "Cronograma",
       "register": "Registro",
       "benefits": "Beneficios",
+      "donors": "Donantes",
       "alliances": "Alianzas",
       "careers": "Carreras",
       "contact": "Contacto",
@@ -637,6 +638,10 @@
         "terms": "Términos de Uso"
       }
     }
+  },
+  "donors": {
+    "title": "Nuestros Donantes",
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   "careers": {
     "title": "Únete a Nuestro Equipo",

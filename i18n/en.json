@@ -33,6 +33,7 @@
     "schedule": "Schedule",
     "register": "Register",
     "benefits": "Benefits",
+    "donors": "Donors",
     "alliances": "Alliances",
     "careers": "Careers",
     "contact": "Contact",
@@ -637,6 +638,10 @@
         "terms": "Terms of Use"
       }
     }
+  },
+  "donors": {
+    "title": "Our Donors",
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   "careers": {
     "title": "Join our team",
