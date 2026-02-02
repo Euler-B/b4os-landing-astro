@@ -645,6 +645,7 @@
     "platinumTitle": "Platinum Donors",
     "platinumDescription": "These donors support all funds",
     "donorsLabel": "Donors:",
+    "emptyStateCta": "Your donation can be the first",
     "funds": {
       "education": {
         "title": "Education Fund",

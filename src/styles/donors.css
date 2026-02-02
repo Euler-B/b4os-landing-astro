@@ -231,6 +231,19 @@
     font-style: italic;
 }
 
+.fund-donor-empty-state {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: rgba(247, 147, 26, 0.06);
+    border: 2px dashed rgba(247, 147, 26, 0.3);
+    border-radius: var(--border-radius-md);
+    color: var(--primary-color);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
 .btn-fund-section {
     display: inline-flex;
     align-items: center;

@@ -645,6 +645,7 @@
     "platinumTitle": "Doadores Platina",
     "platinumDescription": "Estes doadores apoiam todos os fundos",
     "donorsLabel": "Doadores:",
+    "emptyStateCta": "Sua doação pode ser a primeira",
     "funds": {
       "education": {
         "title": "Fundo de Educação",

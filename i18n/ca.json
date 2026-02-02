@@ -645,6 +645,7 @@
     "platinumTitle": "Donants Platí",
     "platinumDescription": "Aquests donants donen suport a tots els fons",
     "donorsLabel": "Donants:",
+    "emptyStateCta": "La teva donació pot ser la primera",
     "funds": {
       "education": {
         "title": "Fons d'Educació",

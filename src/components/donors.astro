@@ -119,8 +119,10 @@ const t = translations as any;
                 <div class="fund-donors">
                     <p class="fund-donors-label">{t.donors.donorsLabel}</p>
                     <div class="fund-donors-logos">
-                        <img src="/btrust-black.png" alt="B-TRUST" class="fund-donor-logo" loading="lazy">
-                        <img src="/fundacionbitcoiniberoamerica.png" alt="Fundación Bitcoin Iberoamericana" class="fund-donor-logo" loading="lazy">
+                        <div class="fund-donor-empty-state">
+                            <Icon name="mdi:heart-outline" size={32} aria-hidden="true" />
+                            <span>{t.donors.emptyStateCta}</span>
+                        </div>
                     </div>
                 </div>
                 <a href={`mailto:hola@b4os.dev?subject=${encodeURIComponent(t.donors.funds.residency.donateButton)}`} class="btn btn-primary btn-fund-section">
