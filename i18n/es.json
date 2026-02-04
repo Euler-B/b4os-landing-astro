@@ -641,7 +641,7 @@
   },
   "donors": {
     "title": "Nuestros Donadores",
-    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "subtitle": "Organizaciones que apoyan la educación, los grants y el desarrollo del ecosistema Bitcoin de código abierto.",
     "platinumTitle": "Donadores Platino",
     "platinumDescription": "Estos donadores apoyan a todos los fondos",
     "donorsLabel": "Donadores:",
