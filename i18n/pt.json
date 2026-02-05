@@ -667,6 +667,21 @@
         "description": "Experiências imersivas para grantees do programa.",
         "donateButton": "Doar ao Orçamento de Residências"
       }
+    },
+    "donateModal": {
+      "taxDeductible": "Deseja que sua doação seja dedutível de impostos?",
+      "yes": "Sim",
+      "no": "Não",
+      "name": "Nome (opcional)",
+      "namePlaceholder": "Satoshi Nakamoto",
+      "email": "Email (opcional)",
+      "emailPlaceholder": "satoshi@donante.com",
+      "howMuch": "Quanto gostaria de doar?",
+      "customAmountPlaceholder": "Ou insira um valor personalizado",
+      "donateWithBitcoin": "Doar com Bitcoin",
+      "close": "Fechar modal",
+      "nameRequired": "Nome *",
+      "emailRequired": "Email *"
     }
   },
   "careers": {

@@ -667,6 +667,21 @@
         "description": "Experiències immersives per a grantees del programa.",
         "donateButton": "Donar al Pressupost de Residències"
       }
+    },
+    "donateModal": {
+      "taxDeductible": "Voleu que la vostra donació sigui deductible d'imposts?",
+      "yes": "Sí",
+      "no": "No",
+      "name": "Nom (opcional)",
+      "namePlaceholder": "Satoshi Nakamoto",
+      "email": "Email (opcional)",
+      "emailPlaceholder": "satoshi@donant.com",
+      "howMuch": "Quant voleu donar?",
+      "customAmountPlaceholder": "O introduiu un import personalitzat",
+      "donateWithBitcoin": "Donar amb Bitcoin",
+      "close": "Tancar modal",
+      "nameRequired": "Nom *",
+      "emailRequired": "Email *"
     }
   },
   "careers": {

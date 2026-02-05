@@ -667,6 +667,21 @@
         "description": "Immersive experiences for program grantees.",
         "donateButton": "Donate to Residency Budget"
       }
+    },
+    "donateModal": {
+      "taxDeductible": "Do you want this donation to be tax deductible?",
+      "yes": "Yes",
+      "no": "No",
+      "name": "Name (optional)",
+      "namePlaceholder": "Satoshi Nakamoto",
+      "email": "Email (optional)",
+      "emailPlaceholder": "satoshi@donante.com",
+      "howMuch": "How much would you like to donate?",
+      "customAmountPlaceholder": "Or enter custom amount",
+      "donateWithBitcoin": "Donate with Bitcoin",
+      "close": "Close modal",
+      "nameRequired": "Name *",
+      "emailRequired": "Email *"
     }
   },
   "careers": {

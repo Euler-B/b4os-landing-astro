@@ -667,6 +667,21 @@
         "description": "Experiencias inmersivas para grantees del programa.",
         "donateButton": "Donar al Presupuesto de Residencias"
       }
+    },
+    "donateModal": {
+      "taxDeductible": "¿Deseas que tu donación sea deducible de impuestos?",
+      "yes": "Sí",
+      "no": "No",
+      "name": "Nombre (opcional)",
+      "namePlaceholder": "Satoshi Nakamoto",
+      "email": "Email (opcional)",
+      "emailPlaceholder": "satoshi@donante.com",
+      "howMuch": "¿Cuánto te gustaría donar?",
+      "customAmountPlaceholder": "O ingresa un monto personalizado",
+      "donateWithBitcoin": "Donar con Bitcoin",
+      "close": "Cerrar modal",
+      "nameRequired": "Nombre *",
+      "emailRequired": "Email *"
     }
   },
   "careers": {
