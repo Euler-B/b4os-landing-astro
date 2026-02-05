@@ -171,3 +171,6 @@ Thumbs.db
 
 reports/*
 i18n.cache
+
+# Local Netlify folder
+.netlify

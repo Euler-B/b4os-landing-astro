@@ -33,6 +33,7 @@
     "schedule": "Schedule",
     "register": "Register",
     "benefits": "Benefits",
+    "donors": "Donors",
     "alliances": "Alliances",
     "careers": "Careers",
     "contact": "Contact",
@@ -636,6 +637,51 @@
       "legal_links": {
         "terms": "Terms of Use"
       }
+    }
+  },
+  "donors": {
+    "title": "Our Donors",
+    "subtitle": "Organizations supporting education, grants, and Bitcoin open source ecosystem development.",
+    "platinumTitle": "Platinum Donors",
+    "platinumDescription": "These donors support all funds",
+    "donorsLabel": "Donors:",
+    "emptyStateCta": "Your donation can be the first",
+    "funds": {
+      "education": {
+        "title": "Education Fund",
+        "description": "Technical Bitcoin training for developers.",
+        "donateButton": "Donate to Education Fund"
+      },
+      "grant": {
+        "title": "Grant Fund",
+        "description": "Funding for Bitcoin Open Source contributors.",
+        "donateButton": "Donate to Grant Fund"
+      },
+      "operation": {
+        "title": "Operation Budget",
+        "description": "Operational sustainability of the B4OS program.",
+        "donateButton": "Donate to Operation Budget"
+      },
+      "residency": {
+        "title": "Residency Budget",
+        "description": "Immersive experiences for program grantees.",
+        "donateButton": "Donate to Residency Budget"
+      }
+    },
+    "donateModal": {
+      "taxDeductible": "Do you want this donation to be tax deductible?",
+      "yes": "Yes",
+      "no": "No",
+      "name": "Name (optional)",
+      "namePlaceholder": "Satoshi Nakamoto",
+      "email": "Email (optional)",
+      "emailPlaceholder": "satoshi@donante.com",
+      "howMuch": "How much would you like to donate?",
+      "customAmountPlaceholder": "Or enter custom amount",
+      "donateWithBitcoin": "Donate with Bitcoin",
+      "close": "Close modal",
+      "nameRequired": "Name *",
+      "emailRequired": "Email *"
     }
   },
   "careers": {

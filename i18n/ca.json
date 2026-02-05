@@ -33,6 +33,7 @@
     "schedule": "Cronograma",
     "register": "Registre",
     "benefits": "Beneficis",
+    "donors": "Donants",
     "alliances": "Aliances",
     "careers": "Carreres",
     "contact": "Contacte",
@@ -636,6 +637,51 @@
       "legal_links": {
         "terms": "Termes d'Ús"
       }
+    }
+  },
+  "donors": {
+    "title": "Els Nostres Donants",
+    "subtitle": "Organitzacions que donen suport a l'educació, els grants i el desenvolupament de l'ecosistema Bitcoin de codi obert.",
+    "platinumTitle": "Donants Platí",
+    "platinumDescription": "Aquests donants donen suport a tots els fons",
+    "donorsLabel": "Donants:",
+    "emptyStateCta": "La teva donació pot ser la primera",
+    "funds": {
+      "education": {
+        "title": "Fons d'Educació",
+        "description": "Formació tècnica en Bitcoin per a desenvolupadors.",
+        "donateButton": "Donar al Fons d'Educació"
+      },
+      "grant": {
+        "title": "Fons de Grants",
+        "description": "Finançament per a contribuïdors de Bitcoin Open Source.",
+        "donateButton": "Donar al Fons de Grants"
+      },
+      "operation": {
+        "title": "Pressupost d'Operació",
+        "description": "Sostenibilitat operativa del programa B4OS.",
+        "donateButton": "Donar al Pressupost d'Operació"
+      },
+      "residency": {
+        "title": "Pressupost de Residències",
+        "description": "Experiències immersives per a grantees del programa.",
+        "donateButton": "Donar al Pressupost de Residències"
+      }
+    },
+    "donateModal": {
+      "taxDeductible": "Voleu que la vostra donació sigui deductible d'imposts?",
+      "yes": "Sí",
+      "no": "No",
+      "name": "Nom (opcional)",
+      "namePlaceholder": "Satoshi Nakamoto",
+      "email": "Email (opcional)",
+      "emailPlaceholder": "satoshi@donant.com",
+      "howMuch": "Quant voleu donar?",
+      "customAmountPlaceholder": "O introduiu un import personalitzat",
+      "donateWithBitcoin": "Donar amb Bitcoin",
+      "close": "Tancar modal",
+      "nameRequired": "Nom *",
+      "emailRequired": "Email *"
     }
   },
   "careers": {

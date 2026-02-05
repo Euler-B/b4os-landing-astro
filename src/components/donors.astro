@@ -1,0 +1,299 @@
+---
+import '../styles/donors.css';
+import { Icon } from 'astro-icon/components';
+import { getTranslation } from '../i18n/utils.js';
+
+const { locale = 'es' } = Astro.props;
+const translations = getTranslation(locale);
+const t = translations as any;
+---
+
+<!-- Donors Section -->
+<section id="donantes" class="donors">
+    <div class="container">
+        <header class="section-header">
+            <h2 class="section-title">{t.donors.title}</h2>
+            <p class="section-subtitle">{t.donors.subtitle}</p>
+        </header>
+
+        <!-- Platinum Donors -->
+        <div class="platinum-section">
+            <div class="platinum-header">
+                <h3 class="platinum-title">{t.donors.platinumTitle}</h3>
+                <p class="platinum-description">{t.donors.platinumDescription}</p>
+            </div>
+            <div class="platinum-donors-grid">
+                <a href="https://www.btrust.tech/" target="_blank" rel="noopener" class="platinum-donor-card">
+                    <img src="/btrust-black.png" alt="B-TRUST" class="platinum-donor-logo" loading="lazy">
+                </a>
+                <div class="platinum-donor-card">
+                    <img src="/fundacionbitcoiniberoamerica.png" alt="Fundación Bitcoin Iberoamericana" class="platinum-donor-logo" loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <!-- Funds by Category -->
+        <div class="funds-by-category">
+
+            <!-- Education Fund -->
+            <article class="fund-section">
+                <div class="fund-header">
+                    <div class="fund-icon" aria-hidden="true">
+                        <Icon name="mdi:school" size={48} />
+                    </div>
+                    <div class="fund-title-group">
+                        <h3 class="fund-title">{t.donors.funds.education.title}</h3>
+                        <p class="fund-description">{t.donors.funds.education.description}</p>
+                    </div>
+                </div>
+                <div class="fund-donors">
+                    <p class="fund-donors-label">{t.donors.donorsLabel}</p>
+                    <div class="fund-donors-logos">
+                        <img src="/btrust-black.png" alt="B-TRUST" class="fund-donor-logo" loading="lazy">
+                        <img src="/fundacionbitcoiniberoamerica.png" alt="Fundación Bitcoin Iberoamericana" class="fund-donor-logo" loading="lazy">
+                        <img src="/opensats.png" alt="OpenSats" class="fund-donor-logo" loading="lazy">
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-fund-section btn-open-donate" data-fund-name={t.donors.funds.education.donateButton}>
+                    {t.donors.funds.education.donateButton}
+                </button>
+            </article>
+
+            <!-- Grant Fund -->
+            <article class="fund-section">
+                <div class="fund-header">
+                    <div class="fund-icon" aria-hidden="true">
+                        <Icon name="mdi:hand-coin" size={48} />
+                    </div>
+                    <div class="fund-title-group">
+                        <h3 class="fund-title">{t.donors.funds.grant.title}</h3>
+                        <p class="fund-description">{t.donors.funds.grant.description}</p>
+                    </div>
+                </div>
+                <div class="fund-donors">
+                    <p class="fund-donors-label">{t.donors.donorsLabel}</p>
+                    <div class="fund-donors-logos">
+                        <img src="/btrust-black.png" alt="B-TRUST" class="fund-donor-logo" loading="lazy">
+                        <img src="/fundacionbitcoiniberoamerica.png" alt="Fundación Bitcoin Iberoamericana" class="fund-donor-logo" loading="lazy">
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-fund-section btn-open-donate" data-fund-name={t.donors.funds.grant.donateButton}>
+                    {t.donors.funds.grant.donateButton}
+                </button>
+            </article>
+
+            <!-- Operation Budget -->
+            <article class="fund-section">
+                <div class="fund-header">
+                    <div class="fund-icon" aria-hidden="true">
+                        <Icon name="mdi:cog" size={48} />
+                    </div>
+                    <div class="fund-title-group">
+                        <h3 class="fund-title">{t.donors.funds.operation.title}</h3>
+                        <p class="fund-description">{t.donors.funds.operation.description}</p>
+                    </div>
+                </div>
+                <div class="fund-donors">
+                    <p class="fund-donors-label">{t.donors.donorsLabel}</p>
+                    <div class="fund-donors-logos">
+                        <img src="/btrust-black.png" alt="B-TRUST" class="fund-donor-logo" loading="lazy">
+                        <img src="/fundacionbitcoiniberoamerica.png" alt="Fundación Bitcoin Iberoamericana" class="fund-donor-logo" loading="lazy">
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-fund-section btn-open-donate" data-fund-name={t.donors.funds.operation.donateButton}>
+                    {t.donors.funds.operation.donateButton}
+                </button>
+            </article>
+
+            <!-- Residency Budget -->
+            <article class="fund-section">
+                <div class="fund-header">
+                    <div class="fund-icon" aria-hidden="true">
+                        <Icon name="mdi:home-group" size={48} />
+                    </div>
+                    <div class="fund-title-group">
+                        <h3 class="fund-title">{t.donors.funds.residency.title}</h3>
+                        <p class="fund-description">{t.donors.funds.residency.description}</p>
+                    </div>
+                </div>
+                <div class="fund-donors">
+                    <p class="fund-donors-label">{t.donors.donorsLabel}</p>
+                    <div class="fund-donors-logos">
+                        <div class="fund-donor-empty-state">
+                            <Icon name="mdi:heart-outline" size={32} aria-hidden="true" />
+                            <span>{t.donors.emptyStateCta}</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-fund-section btn-open-donate" data-fund-name={t.donors.funds.residency.donateButton}>
+                    {t.donors.funds.residency.donateButton}
+                </button>
+            </article>
+
+        </div>
+    </div>
+
+    <!-- Donate Modal -->
+    <div id="donate-modal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <button class="modal-close" aria-label={t.donors.donateModal.close}>&times;</button>
+            <h3 class="modal-title" id="modal-fund-title"></h3>
+
+            <div class="modal-field">
+                <p class="modal-label">{t.donors.donateModal.taxDeductible}</p>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="tax-deductible" value="yes"> {t.donors.donateModal.yes}</label>
+                    <label class="radio-option"><input type="radio" name="tax-deductible" value="no" checked> {t.donors.donateModal.no}</label>
+                </div>
+            </div>
+
+            <div class="modal-field">
+                <label class="modal-label" id="label-name" data-optional={t.donors.donateModal.name} data-required={t.donors.donateModal.nameRequired}>{t.donors.donateModal.name}</label>
+                <input type="text" class="modal-input" id="input-name" placeholder={t.donors.donateModal.namePlaceholder}>
+            </div>
+
+            <div class="modal-field">
+                <label class="modal-label" id="label-email" data-optional={t.donors.donateModal.email} data-required={t.donors.donateModal.emailRequired}>{t.donors.donateModal.email}</label>
+                <input type="email" class="modal-input" id="input-email" placeholder={t.donors.donateModal.emailPlaceholder}>
+            </div>
+
+            <div class="modal-field">
+                <label class="modal-label">{t.donors.donateModal.howMuch}</label>
+                <div class="amount-options">
+                    <button class="amount-preset" data-amount="50">$50</button>
+                    <button class="amount-preset" data-amount="100">$100</button>
+                    <button class="amount-preset" data-amount="250">$250</button>
+                    <button class="amount-preset" data-amount="500">$500</button>
+                    <div class="amount-custom-wrapper">
+                        <span class="amount-currency">$</span>
+                        <input type="number" class="amount-custom" id="custom-amount" placeholder={t.donors.donateModal.customAmountPlaceholder} min="1">
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn-donate-bitcoin" id="btn-donate-bitcoin">
+                <Icon name="mdi:bitcoin" size={24} />
+                {t.donors.donateModal.donateWithBitcoin}
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+    function initDonorsModal() {
+        const modal = document.getElementById('donate-modal');
+        const modalTitle = document.getElementById('modal-fund-title');
+        if (!modal || !modalTitle) return;
+
+        const closeBtn = modal.querySelector('.modal-close');
+        const customInput = document.getElementById('custom-amount');
+        const presets = document.querySelectorAll('.amount-preset');
+        const taxRadios = document.querySelectorAll('input[name="tax-deductible"]');
+        const nameLabel = document.getElementById('label-name');
+        const emailLabel = document.getElementById('label-email');
+        const nameInput = document.getElementById('input-name');
+        const emailInput = document.getElementById('input-email');
+        const donateBtn = document.getElementById('btn-donate-bitcoin');
+
+        if (!closeBtn || !customInput || !nameInput || !emailInput || !donateBtn) return;
+
+        function openModal(fundName: string) {
+            modalTitle!.textContent = fundName;
+            modal!.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            validateDonateButton();
+        }
+
+        function closeModal() {
+            modal!.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function validateDonateButton() {
+            const checked = document.querySelector<HTMLInputElement>('input[name="tax-deductible"]:checked');
+            const isTaxDeductible = checked ? checked.value === 'yes' : false;
+            (donateBtn as HTMLButtonElement).disabled = isTaxDeductible && (!(nameInput as HTMLInputElement).value.trim() || !(emailInput as HTMLInputElement).value.trim());
+        }
+
+        document.querySelectorAll('.btn-open-donate').forEach(btn => {
+            btn.addEventListener('click', () => openModal((btn as HTMLElement).dataset.fundName ?? ''));
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+
+        modal!.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal!.classList.contains('active')) closeModal();
+        });
+
+        presets.forEach(btn => {
+            btn.addEventListener('click', () => {
+                presets.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                (customInput as HTMLInputElement).value = (btn as HTMLButtonElement).dataset.amount ?? '';
+            });
+        });
+
+        customInput.addEventListener('input', () => {
+            presets.forEach(b => b.classList.remove('active'));
+        });
+
+        taxRadios.forEach(radio => {
+            (radio as HTMLInputElement).addEventListener('change', () => {
+                const isRequired = (radio as HTMLInputElement).value === 'yes';
+                if (nameLabel) nameLabel.textContent = isRequired ? (nameLabel.dataset.required ?? '') : (nameLabel.dataset.optional ?? '');
+                if (emailLabel) emailLabel.textContent = isRequired ? (emailLabel.dataset.required ?? '') : (emailLabel.dataset.optional ?? '');
+                (nameInput as HTMLInputElement).required = isRequired;
+                (emailInput as HTMLInputElement).required = isRequired;
+                validateDonateButton();
+            });
+        });
+
+        nameInput.addEventListener('input', validateDonateButton);
+        emailInput.addEventListener('input', validateDonateButton);
+
+        donateBtn.addEventListener('click', async () => {
+            const amount = (customInput as HTMLInputElement).value;
+            if (!amount || Number(amount) <= 0) return;
+
+            (donateBtn as HTMLButtonElement).disabled = true;
+
+            try {
+                const checked = document.querySelector<HTMLInputElement>('input[name="tax-deductible"]:checked');
+                const res = await fetch('/.netlify/functions/create-invoice', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        amount,
+                        fundName: modalTitle.textContent,
+                        donorName: (nameInput as HTMLInputElement).value,
+                        donorEmail: (emailInput as HTMLInputElement).value,
+                        taxDeductible: checked ? checked.value : 'no',
+                    }),
+                });
+
+                const data = await res.json();
+
+                if (data.checkoutLink) {
+                    window.location.href = data.checkoutLink;
+                } else {
+                    throw new Error(data.error || 'Error desconocido');
+                }
+            } catch (err) {
+                console.error('Error al crear factura:', err);
+                validateDonateButton();
+            }
+        });
+
+        validateDonateButton();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initDonorsModal);
+    } else {
+        initDonorsModal();
+    }
+</script>

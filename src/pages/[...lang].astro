@@ -7,6 +7,7 @@ import { getTranslation, getLocalizedPageUrl } from '../i18n/utils.js';
 // Importar componentes
 import FAQ from '../components/FAQ.astro';
 import Benefits from '../components/benefits.astro';
+import Donors from '../components/donors.astro';
 import LanguageSelector from '../components/languageSelector.astro';
 
 // Generar rutas estáticas para todos los idiomas
@@ -55,6 +56,7 @@ const isChaincodeFormOpen = chaincodeRegistrationFlag !== undefined
                     <a href="#cronograma" class="nav-link">{t.nav.schedule}</a>
                     <a href="#registro" class="nav-link">{t.nav.register}</a>
                     <a href="#beneficios" class="nav-link">{t.nav.benefits}</a>
+                    <a href="#donantes" class="nav-link">{t.nav.donors}</a>
                     <!-- <a href="#alianzas" class="nav-link">{t.nav.alliances}</a>
                     <a href="#carreras" class="nav-link">{t.nav.careers}</a>
                     <a href="#contacto" class="nav-link">{t.nav.contact}</a> -->
@@ -676,6 +678,9 @@ const isChaincodeFormOpen = chaincodeRegistrationFlag !== undefined
     
     <!-- FAQ Section -->
     <FAQ locale={locale} />
+
+    <!-- Donors Section -->
+    <Donors locale={locale} />
 
     <!-- Partnerships Section -->
     <section id="alianzas" class="partnerships">

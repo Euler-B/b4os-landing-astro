@@ -33,6 +33,7 @@
       "schedule": "Cronograma",
       "register": "Registro",
       "benefits": "Beneficios",
+      "donors": "Donantes",
       "alliances": "Alianzas",
       "careers": "Carreras",
       "contact": "Contacto",
@@ -636,6 +637,51 @@
       "legal_links": {
         "terms": "Términos de Uso"
       }
+    }
+  },
+  "donors": {
+    "title": "Nuestros Donadores",
+    "subtitle": "Organizaciones que apoyan la educación, los grants y el desarrollo del ecosistema Bitcoin de código abierto.",
+    "platinumTitle": "Donadores Platino",
+    "platinumDescription": "Estos donadores apoyan a todos los fondos",
+    "donorsLabel": "Donadores:",
+    "emptyStateCta": "Tu donación puede ser la primera",
+    "funds": {
+      "education": {
+        "title": "Fondo de Educación",
+        "description": "Formación técnica en Bitcoin para desarrolladores.",
+        "donateButton": "Donar al Fondo de Educación"
+      },
+      "grant": {
+        "title": "Fondo de Grants",
+        "description": "Financiamiento para contribuidores de Bitcoin Open Source.",
+        "donateButton": "Donar al Fondo de Grants"
+      },
+      "operation": {
+        "title": "Presupuesto de Operación",
+        "description": "Sostenibilidad operativa del programa B4OS.",
+        "donateButton": "Donar al Presupuesto de Operación"
+      },
+      "residency": {
+        "title": "Presupuesto de Residencias",
+        "description": "Experiencias inmersivas para grantees del programa.",
+        "donateButton": "Donar al Presupuesto de Residencias"
+      }
+    },
+    "donateModal": {
+      "taxDeductible": "¿Deseas que tu donación sea deducible de impuestos?",
+      "yes": "Sí",
+      "no": "No",
+      "name": "Nombre (opcional)",
+      "namePlaceholder": "Satoshi Nakamoto",
+      "email": "Email (opcional)",
+      "emailPlaceholder": "satoshi@donante.com",
+      "howMuch": "¿Cuánto te gustaría donar?",
+      "customAmountPlaceholder": "O ingresa un monto personalizado",
+      "donateWithBitcoin": "Donar con Bitcoin",
+      "close": "Cerrar modal",
+      "nameRequired": "Nombre *",
+      "emailRequired": "Email *"
     }
   },
   "careers": {
