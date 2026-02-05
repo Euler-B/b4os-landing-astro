@@ -249,6 +249,239 @@
     align-items: center;
     justify-content: center;
     gap: var(--spacing-sm);
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: white;
+}
+
+/* Donate Modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md);
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-2xl);
+    width: 100%;
+    max-width: 560px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: var(--shadow-xl);
+}
+
+.modal-close {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--text-light);
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition);
+}
+
+.modal-close:hover {
+    color: var(--text-dark);
+    background: var(--bg-light);
+}
+
+.modal-title {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-xl);
+}
+
+.modal-field {
+    margin-bottom: var(--spacing-lg);
+}
+
+.modal-label {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.modal-input {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-base);
+    font-family: var(--font-family);
+    color: var(--text-dark);
+    background: white;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal-input::placeholder {
+    color: var(--text-light);
+}
+
+.modal-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(247, 147, 26, 0.15);
+}
+
+/* Radio Group */
+.radio-group {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-base);
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+.radio-option input[type="radio"] {
+    accent-color: #3b82f6;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* Amount Options */
+.amount-options {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.amount-preset {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    background: white;
+    color: var(--text-dark);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    font-family: var(--font-family);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.amount-preset:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.amount-preset.active {
+    border-color: var(--text-dark);
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.amount-custom-wrapper {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 180px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.amount-custom-wrapper:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(247, 147, 26, 0.15);
+}
+
+.amount-currency {
+    padding: var(--spacing-sm);
+    background: var(--bg-light);
+    color: var(--text-light);
+    font-size: var(--font-size-sm);
+    border-right: 1px solid var(--border-color);
+}
+
+.amount-custom {
+    flex: 1;
+    padding: var(--spacing-sm);
+    border: none;
+    font-size: var(--font-size-sm);
+    font-family: var(--font-family);
+    color: var(--text-dark);
+    outline: none;
+    -moz-appearance: textfield;
+}
+
+.amount-custom::placeholder {
+    color: var(--text-light);
+}
+
+.amount-custom::-webkit-outer-spin-button,
+.amount-custom::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Donate with Bitcoin button */
+.btn-donate-bitcoin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius-lg);
+    color: var(--primary-color);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    font-family: var(--font-family);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-donate-bitcoin:hover:not(:disabled) {
+    background: rgba(247, 147, 26, 0.08);
+}
+
+.btn-donate-bitcoin:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.btn-donate-bitcoin svg {
+    color: var(--primary-color);
+    width: 24px;
+    height: 24px;
 }
 
 /* Responsive Design */
@@ -298,5 +531,18 @@
 
     .fund-donors-logos {
         justify-content: center;
+    }
+
+    .modal-content {
+        padding: var(--spacing-lg);
+    }
+
+    .amount-options {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .amount-custom-wrapper {
+        min-width: unset;
     }
 }
