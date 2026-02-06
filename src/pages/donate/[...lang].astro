@@ -35,10 +35,6 @@ const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
     <nav class="nav" role="navigation" aria-label={t.nav?.menu_aria || 'Navegación principal'}>
       <div class="nav-container">
         <div class="nav-brand nav-brand-dual">
-          <a href="https://libreriadesatoshi.com" target="_blank" rel="noopener" class="nav-link nav-logo-libreria" aria-label="Librería de Satoshi">
-            <img src="/libreria.png" alt="Librería de Satoshi" class="logo logo-libreria" width="140" height="40" loading="eager">
-          </a>
-          <span class="nav-brand-sep" aria-hidden="true">·</span>
           <a href={backHomeUrl} class="nav-link" aria-label={t.nav?.brand_link_aria || 'Ir al inicio'}>
             <img src="/b4os.png" alt="B4OS" class="logo logo-b4os" width="64" height="64">
           </a>
@@ -55,6 +51,11 @@ const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
     <section id="donate" class="donors">
       <div class="container">
         <header class="section-header">
+          <div class="donors-libreria-logo">
+            <a href="https://libreriadesatoshi.com" target="_blank" rel="noopener" aria-label="Librería de Satoshi">
+              <img src="/libreria.png" alt="Librería de Satoshi" width="200" height="56" loading="eager">
+            </a>
+          </div>
           <h1 class="section-title">{t.donors.title}</h1>
           <p class="section-subtitle">{t.donors.subtitle}</p>
         </header>
