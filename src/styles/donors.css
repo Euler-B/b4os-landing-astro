@@ -1,3 +1,42 @@
+/* Donors page: dual branding (B4OS + Librería de Satoshi) in header */
+.nav-brand-dual {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.nav-brand-dual .logo-b4os {
+  flex-shrink: 0;
+}
+
+.nav-brand-sep {
+  color: var(--text-light);
+  font-weight: 300;
+  user-select: none;
+  font-size: 1.25rem;
+}
+
+.nav-logo-libreria {
+  display: flex;
+  align-items: center;
+}
+
+.nav-brand-dual .logo-libreria {
+  height: 32px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
+}
+
+@media (min-width: 769px) {
+  .nav-brand-dual .logo-libreria {
+    height: 40px;
+    max-width: 180px;
+  }
+}
+
 /* Donors Section */
 .donors {
     background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);
