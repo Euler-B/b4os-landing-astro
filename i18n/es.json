@@ -26,6 +26,7 @@
       "logo_alt": "B4OS - Bitcoin 4 Open Source Logo",
       "menu_aria": "Navegación principal",
       "brand_link_aria": "Ir al inicio de B4OS",
+      "back_to_home": "Inicio",
       "toggle_aria": "Abrir menú de navegación",
       "objectives": "Objetivos",
       "alumni": "Alumnos",
@@ -640,11 +641,11 @@
     }
   },
   "donors": {
-    "title": "Nuestros Donadores",
+    "title": "Nuestros Donantes",
     "subtitle": "Organizaciones que apoyan la educación, los grants y el desarrollo del ecosistema Bitcoin de código abierto.",
-    "platinumTitle": "Donadores Platino",
-    "platinumDescription": "Estos donadores apoyan a todos los fondos",
-    "donorsLabel": "Donadores:",
+    "platinumTitle": "Donantes Platino",
+    "platinumDescription": "Estos donantes apoyan a todos los fondos",
+    "donorsLabel": "Donantes:",
     "emptyStateCta": "Tu donación puede ser la primera",
     "funds": {
       "education": {
