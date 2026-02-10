@@ -311,6 +311,18 @@
         },
         "others_placeholder": "Especifique outros meios..."
       },
+      "gender": {
+        "label": "Gênero",
+        "help": "Opcional. Selecione uma opção ou prefira não dizer.",
+        "options": {
+          "woman": "Mulher",
+          "man": "Homem",
+          "non_binary": "Não-binário",
+          "self_describe": "Prefiro me autodefinir",
+          "prefer_not_to_say": "Prefiro não dizer"
+        },
+        "self_describe_placeholder": "Descreva aqui..."
+      },
       "terms": {
         "label": "Aceito os {link} do programa",
         "help": "Você deve aceitar os termos para continuar",
