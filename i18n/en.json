@@ -103,6 +103,8 @@
   },
   "alumni": {
     "title": "B4OS 2024 WAS A SUCCESS!",
+    "cohort": "Cohort",
+    "coming_soon": "Coming soon",
     "stats_aria": "Program statistics",
     "stats": {
       "registered": "Selected devs",
@@ -128,6 +130,10 @@
     "duration_label": "Duration",
     "start_label": "Start",
     "location_label": "Location",
+    "status_confirmed": "Confirmed",
+    "status_pending": "To be confirmed",
+    "status_completed": "Completed",
+    "status_cancelled": "Cancelled",
     "southamerica": {
       "title": "South America",
       "duration": "2 weeks",
@@ -152,14 +158,14 @@
     "northamerica1": {
       "title": "North America I",
       "duration": "8 weeks",
-      "start": "15 Oct. - Dec. 2025",
+      "start": "Date to be defined",
       "location": "Guadalajara, Mexico",
       "description": "Internship for developers at the Bitcoin House Guadalajara."
     },
     "northamerica2": {
       "title": "North America II",
       "duration": "6 weeks",
-      "start": "Oct 15 - Nov 2026",
+      "start": "Date to be defined",
       "location": "Mexico City",
       "description": "Exclusive for <strong>program grantees</strong>, focused on advanced projects and specialized mentoring."
     },
@@ -217,8 +223,8 @@
     }
   },
   "registration": {
-    "title": "Ready to join B4OS 2025?",
-    "description": "The <strong>B4OS 2025</strong> program is open to senior developers from Latin America, the Caribbean, and Spain. The <em>registration process is completely free</em>.",
+    "title": "Ready to join B4OS 2026?",
+    "description": "The <strong>B4OS 2026</strong> program is open to senior developers from Latin America, the Caribbean, and Spain. The <em>registration process is completely free</em>.",
     "requirements": {
       "title": "Application requirements:",
       "experience": "<strong>Software development experience</strong> (2+ years)",
