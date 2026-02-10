@@ -1,0 +1,254 @@
+---
+import { Icon } from 'astro-icon/components';
+import alumniData from '../data/alumni.json';
+
+interface Props {
+    locale: string;
+    t: any;
+}
+
+const { locale, t } = Astro.props;
+
+// Obtener años disponibles (ordenados de más antiguo a más reciente)
+const years = Object.keys(alumniData).sort((a, b) => Number(a) - Number(b));
+// El año por defecto es el más reciente que tenga miembros
+const defaultYear = years.find(year => (alumniData as any)[year].members.length > 0) || years[0];
+---
+
+<section id="alumni" class="alumni">
+    <div class="container">
+        <header class="section-header">
+            <h2 class="section-title">{t.alumni.title}</h2>
+
+            <!-- Tabs de años -->
+            <div class="alumni-tabs" role="tablist" aria-label="Cohortes de alumni">
+                {years.map((year, index) => {
+                    const cohort = (alumniData as any)[year];
+                    const isEmpty = cohort.members.length === 0;
+                    return (
+                        <button
+                            role="tab"
+                            class={`alumni-tab ${year === defaultYear ? 'active' : ''} ${isEmpty ? 'disabled' : ''}`}
+                            data-year={year}
+                            aria-selected={year === defaultYear ? 'true' : 'false'}
+                            aria-controls={`alumni-panel-${year}`}
+                            id={`alumni-tab-${year}`}
+                            disabled={isEmpty}
+                        >
+                            {t.alumni.cohort || 'Cohorte'} {year}
+                        </button>
+                    );
+                })}
+            </div>
+        </header>
+
+        <!-- Paneles de contenido por año -->
+        {years.map((year) => {
+            const cohort = (alumniData as any)[year];
+            const isDefault = year === defaultYear;
+
+            return (
+                <div
+                    role="tabpanel"
+                    class={`alumni-panel ${isDefault ? 'active' : ''}`}
+                    id={`alumni-panel-${year}`}
+                    aria-labelledby={`alumni-tab-${year}`}
+                    hidden={!isDefault}
+                >
+                    <!-- Stats -->
+                    <div class="objectives-stats" role="complementary" aria-label={t.alumni.stats_aria}>
+                        <div class="stat">
+                            <span class="stat-number">{cohort.stats.registered}</span>
+                            <span class="stat-label">{t.alumni.stats.registered}</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">{cohort.stats.selected}</span>
+                            <span class="stat-label">{t.alumni.stats.selected}</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">{cohort.stats.fulltime}</span>
+                            <span class="stat-label">{t.alumni.stats.fulltime}</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">{cohort.stats.parttime}</span>
+                            <span class="stat-label">{t.alumni.stats.parttime}</span>
+                        </div>
+                    </div>
+
+                    <p class="section-subtitle" set:html={t.alumni.subtitle}></p>
+
+                    <!-- Alumni Grid -->
+                    {cohort.members.length > 0 ? (
+                        <div class="alumni-grid">
+                            {cohort.members.map((member: any) => (
+                                <article class="alumni-card">
+                                    <div class="alumni-avatar">
+                                        <img src={member.image} alt={member.name} loading="lazy" />
+                                        <div class="alumni-icons">
+                                            {member.github && (
+                                                <a href={member.github} aria-label={t.alumni.github_aria?.replace('{name}', member.name.split(' ')[0])} target="_blank" rel="noopener">
+                                                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+                                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                                    </svg>
+                                                </a>
+                                            )}
+                                            {member.linkedin && (
+                                                <a href={member.linkedin} aria-label={t.alumni.linkedin_aria?.replace('{name}', member.name.split(' ')[0])} target="_blank" rel="noopener">
+                                                    <Icon name="mdi:linkedin" size={24} />
+                                                </a>
+                                            )}
+                                            {member.twitter && (
+                                                <a href={member.twitter} aria-label={t.alumni.twitter_aria?.replace('{name}', member.name.split(' ')[0])} target="_blank" rel="noopener">
+                                                    <Icon name="mdi:twitter" size={24} />
+                                                </a>
+                                            )}
+                                        </div>
+                                    </div>
+                                    <h3 class="alumni-name">{member.name}</h3>
+                                    <p class="alumni-description">
+                                        {member.projects.map((project: string, i: number) => (
+                                            <>
+                                                <span class="project-highlight">{project}</span>
+                                                {i < member.projects.length - 1 && ' & '}
+                                            </>
+                                        ))}
+                                        {member.role && ` ${(t.alumni as any)[member.role] || member.role}`}
+                                        {member.grant && (
+                                            member.grantLink ? (
+                                                <a href={member.grantLink} target="_blank" rel="noopener">
+                                                    <span class="sponsor-highlight" set:html={(t.alumni as any)[member.grant] || member.grant}></span>
+                                                </a>
+                                            ) : (
+                                                <span class="sponsor-highlight">{(t.alumni as any)[member.grant] || member.grant}</span>
+                                            )
+                                        )}
+                                    </p>
+                                </article>
+                            ))}
+                        </div>
+                    ) : (
+                        <div class="alumni-empty">
+                            <Icon name="mdi:account-group" size={64} />
+                            <p>{t.alumni.coming_soon || 'Próximamente'}</p>
+                        </div>
+                    )}
+                </div>
+            );
+        })}
+    </div>
+</section>
+
+<style>
+    /* Tabs */
+    .alumni-tabs {
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-sm, 0.5rem);
+        margin: var(--spacing-xl, 2rem) 0;
+    }
+
+    .alumni-tab {
+        padding: var(--spacing-sm, 0.5rem) var(--spacing-xl, 2rem);
+        border: 2px solid var(--primary-color, #f7931a);
+        background: transparent;
+        color: var(--primary-color, #f7931a);
+        font-size: var(--font-size-base, 1rem);
+        font-weight: 600;
+        border-radius: var(--border-radius-lg, 0.75rem);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .alumni-tab:hover {
+        background: rgba(247, 147, 26, 0.1);
+    }
+
+    .alumni-tab.active {
+        background: var(--primary-color, #f7931a);
+        color: white;
+    }
+
+    .alumni-tab.disabled,
+    .alumni-tab:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        border-style: dashed;
+    }
+
+    .alumni-tab.disabled:hover,
+    .alumni-tab:disabled:hover {
+        background: transparent;
+    }
+
+    /* Panels */
+    .alumni-panel {
+        display: none;
+    }
+
+    .alumni-panel.active {
+        display: block;
+        animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Empty state */
+    .alumni-empty {
+        text-align: center;
+        padding: var(--spacing-4xl, 6rem) var(--spacing-xl, 2rem);
+        color: var(--text-light, #6b7280);
+    }
+
+    .alumni-empty p {
+        margin-top: var(--spacing-lg, 1.5rem);
+        font-size: var(--font-size-lg, 1.125rem);
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+        .alumni-tabs {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .alumni-tab {
+            text-align: center;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabs = document.querySelectorAll('.alumni-tab');
+        const panels = document.querySelectorAll('.alumni-panel');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const year = tab.getAttribute('data-year');
+
+                // Update tabs
+                tabs.forEach(t => {
+                    t.classList.remove('active');
+                    t.setAttribute('aria-selected', 'false');
+                });
+                tab.classList.add('active');
+                tab.setAttribute('aria-selected', 'true');
+
+                // Update panels
+                panels.forEach(panel => {
+                    const panelYear = panel.id.replace('alumni-panel-', '');
+                    if (panelYear === year) {
+                        panel.classList.add('active');
+                        panel.removeAttribute('hidden');
+                    } else {
+                        panel.classList.remove('active');
+                        panel.setAttribute('hidden', '');
+                    }
+                });
+            });
+        });
+    });
+</script>
