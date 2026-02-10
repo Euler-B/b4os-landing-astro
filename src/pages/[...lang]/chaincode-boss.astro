@@ -230,6 +230,37 @@ const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
                     </div>
 
                     <div class="form-group">
+                        <fieldset>
+                            <legend>{t.registration.form.gender.label}</legend>
+                            <div class="radio-group">
+                                {Object.entries(t.registration.form.gender.options).map(([key, value]) => (
+                                    <label class="radio-label" for={`gender-${key}`}>
+                                        <input 
+                                            type="radio" 
+                                            id={`gender-${key}`} 
+                                            name="gender" 
+                                            value={key}
+                                            aria-describedby="gender-help"
+                                        >
+                                        <span>{value}</span>
+                                    </label>
+                                ))}
+                            </div>
+                            <div id="gender-self-describe-container" style="display: none; margin-top: 15px;">
+                                <input 
+                                    type="text" 
+                                    id="gender-self-describe-text" 
+                                    name="gender-self-describe-text" 
+                                    placeholder={t.registration.form.gender.self_describe_placeholder}
+                                    aria-describedby="gender-help"
+                                    style="width: 100%; padding: var(--spacing-md); border: 2px solid var(--border-color); border-radius: var(--border-radius-md); font-size: var(--font-size-base);"
+                                >
+                            </div>
+                            <small id="gender-help">{t.registration.form.gender.help}</small>
+                        </fieldset>
+                    </div>
+
+                    <div class="form-group">
                         <label for="experience">{t.registration.form.experience.label}</label>
                         <select id="experience" name="experience" required>
                             <option value="">{t.registration.form.experience.placeholder}</option>

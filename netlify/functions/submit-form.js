@@ -103,6 +103,8 @@ exports.handler = async (event, context) => {
             // Experiencia profesional
             experience: formData.experience,
             dev_language: formData.devLanguage || '',
+            gender: formData.gender?.selected || null,
+            gender_self_describe: formData.gender?.self_describe_text || null,
             how_heard: formData.howHeard?.selected || '',
             how_heard_other_text: formData.howHeard?.others_text || null,
             technologies: formData.technologies,
@@ -160,7 +162,9 @@ exports.handler = async (event, context) => {
                 form_dev_language: formData.devLanguage || '',
                 form_how_heard: formData.howHeard?.selected || '',
                 form_how_heard_other_text: formData.howHeard?.others_text || null,
-                
+                form_gender: formData.gender?.selected || null,
+                form_gender_self_describe: formData.gender?.self_describe_text || null,
+
                 // Metadatos del evento
                 event_timestamp: new Date().toISOString(),
                 event_source: 'b4os-website',
@@ -204,6 +208,8 @@ exports.handler = async (event, context) => {
       city: formData.location?.city,
       experience: formData.experience,
       devLanguage: formData.devLanguage,
+      gender: formData.gender?.selected,
+      genderSelfDescribe: formData.gender?.self_describe_text,
       howHeard: formData.howHeard?.selected,
       howHeardOtherText: formData.howHeard?.others_text,
       technologies: formData.technologies,

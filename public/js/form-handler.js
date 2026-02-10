@@ -24,6 +24,7 @@ window.FormHandler = class FormHandler {
         this.setupFormValidation();
         this.setupFormSubmission();
         this.setupHowHeardCheckboxes();
+        this.setupGenderRadios();
 
         // console.log('Form handler initialized');
     }
@@ -131,6 +132,40 @@ window.FormHandler = class FormHandler {
         
         othersTextInput.addEventListener('input', () => {
             this.clearFieldError(othersTextInput);
+        });
+    }
+
+    /**
+     * Configurar radio buttons de gender y mostrar/ocultar input "self-describe"
+     */
+    setupGenderRadios() {
+        const selfDescribeRadio = document.getElementById('gender-self_describe');
+        const selfDescribeContainer = document.getElementById('gender-self-describe-container');
+        const selfDescribeTextInput = document.getElementById('gender-self-describe-text');
+
+        if (!selfDescribeRadio || !selfDescribeContainer || !selfDescribeTextInput) {
+            return;
+        }
+
+        const handleGenderChange = (e) => {
+            if (e.target.value === 'self_describe') {
+                selfDescribeContainer.style.display = 'block';
+                selfDescribeTextInput.required = true;
+                selfDescribeTextInput.focus();
+            } else {
+                selfDescribeContainer.style.display = 'none';
+                selfDescribeTextInput.required = false;
+                selfDescribeTextInput.value = '';
+            }
+        };
+
+        const genderRadios = document.querySelectorAll('input[name="gender"]');
+        genderRadios.forEach(radio => {
+            radio.addEventListener('change', handleGenderChange);
+        });
+
+        selfDescribeTextInput.addEventListener('input', () => {
+            this.clearFieldError(selfDescribeTextInput);
         });
     }
 
@@ -358,6 +393,13 @@ window.FormHandler = class FormHandler {
             errors.push('Si seleccionaste "Otros", especifica los medios');
         }
 
+        // Validar gender: si eligió "self_describe", el texto es obligatorio
+        const genderSelected = formData.get('gender');
+        const genderSelfDescribe = formData.get('gender-self-describe-text');
+        if (genderSelected === 'self_describe' && (!genderSelfDescribe || genderSelfDescribe.trim() === '')) {
+            errors.push('Si elegiste "Prefiero autodefinirme", escribe tu respuesta');
+        }
+
         return {
             isValid: errors.length === 0,
             errors
@@ -423,6 +465,12 @@ window.FormHandler = class FormHandler {
                 selected: howHeardSelected,
                 others_text: howHeardOthers || null
             };
+
+            const genderSelected = formData.get('gender');
+            const genderSelfDescribe = formData.get('gender-self-describe-text');
+            const genderData = genderSelected
+                ? { selected: genderSelected, self_describe_text: (genderSelected === 'self_describe' ? (genderSelfDescribe || null) : null) }
+                : null;
             
             const submissionData = {
                 name: formData.get('name'),
@@ -430,6 +478,7 @@ window.FormHandler = class FormHandler {
                 location: locationData,
                 experience: formData.get('experience'),
                 devLanguage: formData.get('dev-language'),
+                gender: genderData,
                 howHeard: howHeardData,
                 technologies: formData.get('technologies'),
                 github: formData.get('github'),
@@ -557,6 +606,14 @@ window.FormHandler = class FormHandler {
         }
         
         this.hideOtherCityInput();
+
+        const genderSelfDescribeContainer = document.getElementById('gender-self-describe-container');
+        const genderSelfDescribeInput = document.getElementById('gender-self-describe-text');
+        if (genderSelfDescribeContainer) genderSelfDescribeContainer.style.display = 'none';
+        if (genderSelfDescribeInput) {
+            genderSelfDescribeInput.required = false;
+            genderSelfDescribeInput.value = '';
+        }
         
         // Limpiar errores
         const errorMessages = this.form.querySelectorAll('.error-message');
