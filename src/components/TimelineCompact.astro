@@ -1,0 +1,377 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+    locale: string;
+    t: any;
+}
+
+const { locale, t } = Astro.props;
+
+// Definición de items del timeline con iconos y fechas (mes/año)
+// Formato de fechas: [mes_inicio, año_inicio, mes_fin, año_fin] (meses 1-12)
+// skipped: true para etapas que no se realizaron
+const timelineItems = [
+    { key: 'registration', icon: 'mdi:clipboard-text', start: [8, 2025], end: [10, 2025] },        // Ago - Oct 2025
+    { key: 'challenges', icon: 'mdi:code-braces', start: [9, 2025], end: [10, 2025] },             // Sep - Oct 2025
+    { key: 'review', icon: 'mdi:magnify', start: [10, 2025], end: [10, 2025] },                    // Oct 2025
+    { key: 'guadalajara_selection', icon: 'mdi:account-group', start: [10, 2025], end: [10, 2025], skipped: true }, // No realizado
+    { key: 'division', icon: 'mdi:source-fork', start: [10, 2025], end: [2, 2026] },               // Oct 2025 - Feb 2026
+    { key: 'southamerica_selection', icon: 'mdi:trophy', start: [1, 2026], end: [1, 2026] },       // Ene 2026
+    { key: 'residency', icon: 'mdi:home', start: [2, 2026], end: [3, 2026] },                      // Feb - Mar 2026
+    { key: 'grantees', icon: 'mdi:cash-multiple', start: [3, 2026], end: [12, 2026] }              // Mar 2026 en adelante
+];
+
+// Determinar el item activo basado en fecha actual
+const now = new Date();
+const currentMonth = now.getMonth() + 1; // getMonth() retorna 0-11
+const currentYear = now.getFullYear();
+
+const getItemStatus = (item: typeof timelineItems[0]): 'completed' | 'active' | 'upcoming' | 'skipped' => {
+    // Si está marcado como skipped, retornar ese estado (sin color)
+    if ('skipped' in item && item.skipped) return 'skipped';
+
+    const [startMonth, startYear] = item.start;
+    const [endMonth, endYear] = item.end;
+
+    // Convertir a número comparable (año * 12 + mes)
+    const current = currentYear * 12 + currentMonth;
+    const start = startYear * 12 + startMonth;
+    const end = endYear * 12 + endMonth;
+
+    // Completado si ya pasamos el mes de fin
+    if (current >= end) return 'completed';
+    // Activo si estamos dentro del rango (antes de terminar)
+    if (current >= start && current < end) return 'active';
+    return 'upcoming';
+};
+---
+
+<section id="cronograma" class="timeline-section">
+    <div class="container">
+        <header class="section-header">
+            <h2 class="section-title">{t.timeline.title}</h2>
+            <p class="section-subtitle" set:html={t.timeline.subtitle}></p>
+            <p class="section-subtitle" set:html={t.timeline.subtitle_description}></p>
+        </header>
+
+        <div class="timeline-container-new">
+            {timelineItems.map((item, index) => {
+                const itemData = t.timeline[item.key];
+                const status = getItemStatus(item);
+                const isLast = index === timelineItems.length - 1;
+
+                return (
+                    <article class={`timeline-item-new ${status}`} data-expanded="false">
+                        <div class="timeline-line-wrapper">
+                            <div class="timeline-marker-new">
+                                <Icon name={item.icon} size={20} />
+                            </div>
+                            {!isLast && <div class="timeline-line"></div>}
+                        </div>
+
+                        <div class="timeline-content-new">
+                            <div class="timeline-header-new" role="button" tabindex="0" aria-expanded="false">
+                                <div class="timeline-summary-new">
+                                    <span class="timeline-date-new">{itemData.date}</span>
+                                    <h3 class="timeline-title-new">{itemData.title}</h3>
+                                </div>
+                                <button class="timeline-toggle-new" aria-label="Expandir detalles" type="button">
+                                    <Icon name="mdi:chevron-down" size={20} />
+                                </button>
+                            </div>
+                            <div class="timeline-details-new" aria-hidden="true">
+                                {item.key === 'division' ? (
+                                    <div class="timeline-details-inner">
+                                        <ul class="timeline-routes">
+                                            <li>{itemData.routes?.core}</li>
+                                            <li>{itemData.routes?.lightning}</li>
+                                            <li>{itemData.routes?.application}</li>
+                                        </ul>
+                                        <p set:html={itemData.description}></p>
+                                    </div>
+                                ) : (
+                                    <div class="timeline-details-inner">
+                                        <p set:html={itemData.description}></p>
+                                        {itemData.highlight && (
+                                            <div class="timeline-highlight-box" set:html={itemData.highlight}></div>
+                                        )}
+                                        {itemData.note && (
+                                            <p class="timeline-note">{itemData.note}</p>
+                                        )}
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </article>
+                );
+            })}
+        </div>
+    </div>
+</section>
+
+<style>
+    .timeline-section {
+        padding: var(--spacing-4xl, 6rem) 0;
+        background: var(--bg-dark, #111827);
+        color: var(--text-white, white);
+    }
+
+    .timeline-container-new {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    /* Cada item del timeline */
+    .timeline-item-new {
+        display: flex;
+        gap: var(--spacing-lg, 1.5rem);
+        position: relative;
+    }
+
+    /* Columna izquierda: marcador + línea */
+    .timeline-line-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-shrink: 0;
+        width: 44px;
+    }
+
+    /* Marcador circular */
+    .timeline-marker-new {
+        width: 44px;
+        height: 44px;
+        background: var(--bg-dark, #111827);
+        border: 3px solid var(--primary-color, #f7931a);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-color, #f7931a);
+        flex-shrink: 0;
+        z-index: 2;
+        transition: all 0.3s ease;
+    }
+
+    .timeline-item-new:hover .timeline-marker-new {
+        background: var(--primary-color, #f7931a);
+        color: white;
+    }
+
+    .timeline-item-new.active .timeline-marker-new {
+        background: var(--primary-color, #f7931a);
+        color: white;
+        box-shadow: 0 0 0 4px rgba(247, 147, 26, 0.3);
+    }
+
+    .timeline-item-new.completed .timeline-marker-new {
+        background: var(--success-color, #10b981);
+        border-color: var(--success-color, #10b981);
+        color: white;
+    }
+
+    .timeline-item-new.completed .timeline-date-new {
+        color: var(--success-color, #10b981);
+    }
+
+    .timeline-item-new.completed .timeline-line {
+        background: var(--success-color, #10b981);
+    }
+
+    .timeline-item-new.upcoming .timeline-marker-new {
+        opacity: 0.7;
+    }
+
+    /* Estado skipped - igual que upcoming (sin color) */
+    .timeline-item-new.skipped .timeline-marker-new {
+        opacity: 0.7;
+    }
+
+    .timeline-item-new.skipped .timeline-line {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .timeline-line {
+        width: 3px;
+        flex: 1;
+        background: linear-gradient(to bottom, var(--primary-color, #f7931a), rgba(247, 147, 26, 0.3));
+        min-height: 20px;
+    }
+
+    .timeline-content-new {
+        flex: 1;
+        padding-bottom: var(--spacing-xl, 2rem);
+        min-width: 0;
+    }
+
+    .timeline-header-new {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: var(--spacing-md, 1rem);
+        cursor: pointer;
+        user-select: none;
+        padding: var(--spacing-sm, 0.5rem);
+        margin: -0.5rem;
+        border-radius: var(--border-radius-md, 0.5rem);
+        transition: background 0.2s ease;
+    }
+
+    .timeline-header-new:hover {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .timeline-header-new:focus {
+        outline: 2px solid var(--primary-color, #f7931a);
+        outline-offset: 2px;
+    }
+
+    .timeline-summary-new {
+        flex: 1;
+    }
+
+    .timeline-date-new {
+        font-size: var(--font-size-xs, 0.75rem);
+        color: var(--primary-color, #f7931a);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    .timeline-title-new {
+        font-size: var(--font-size-lg, 1.125rem);
+        font-weight: 600;
+        margin: 0;
+        color: var(--text-white, white);
+        line-height: 1.3;
+    }
+
+    .timeline-toggle-new {
+        background: none;
+        border: none;
+        color: var(--text-light, #6b7280);
+        cursor: pointer;
+        padding: var(--spacing-xs, 0.25rem);
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .timeline-toggle-new:hover {
+        color: var(--primary-color, #f7931a);
+    }
+
+    .timeline-item-new[data-expanded="true"] .timeline-toggle-new {
+        transform: rotate(180deg);
+        color: var(--primary-color, #f7931a);
+    }
+
+    .timeline-details-new {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .timeline-item-new[data-expanded="true"] .timeline-details-new {
+        max-height: 500px;
+    }
+
+    .timeline-details-inner {
+        padding-top: var(--spacing-md, 1rem);
+        color: rgba(255, 255, 255, 0.8);
+        font-size: var(--font-size-sm, 0.875rem);
+        line-height: 1.7;
+    }
+
+    .timeline-details-inner p {
+        margin: 0 0 var(--spacing-sm, 0.5rem);
+    }
+
+    .timeline-routes {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 var(--spacing-md, 1rem);
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-sm, 0.5rem);
+    }
+
+    .timeline-routes li {
+        background: rgba(247, 147, 26, 0.15);
+        color: var(--primary-color, #f7931a);
+        padding: var(--spacing-xs, 0.25rem) var(--spacing-sm, 0.5rem);
+        border-radius: var(--border-radius-sm, 0.375rem);
+        font-size: var(--font-size-xs, 0.75rem);
+        font-weight: 600;
+    }
+
+    .timeline-highlight-box {
+        background: rgba(247, 147, 26, 0.1);
+        border-left: 3px solid var(--primary-color, #f7931a);
+        padding: var(--spacing-md, 1rem);
+        border-radius: var(--border-radius-md, 0.5rem);
+        margin-top: var(--spacing-md, 1rem);
+    }
+
+    .timeline-note {
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.6);
+        margin-top: var(--spacing-sm, 0.5rem);
+    }
+
+    @media (max-width: 768px) {
+        .timeline-item-new {
+            gap: var(--spacing-md, 1rem);
+        }
+
+        .timeline-line-wrapper {
+            width: 36px;
+        }
+
+        .timeline-marker-new {
+            width: 36px;
+            height: 36px;
+        }
+
+        .timeline-title-new {
+            font-size: var(--font-size-base, 1rem);
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const timelineHeaders = document.querySelectorAll('.timeline-header-new');
+
+        timelineHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = (header as Element).closest('.timeline-item-new') as HTMLElement | null;
+                if (!item) return;
+
+                const isExpanded = item.dataset.expanded === 'true';
+                const details = item.querySelector('.timeline-details-new');
+
+                item.dataset.expanded = !isExpanded ? 'true' : 'false';
+                (header as HTMLElement).setAttribute('aria-expanded', !isExpanded ? 'true' : 'false');
+                if (details) {
+                    details.setAttribute('aria-hidden', isExpanded ? 'true' : 'false');
+                }
+            });
+
+            header.addEventListener('keydown', (e: Event) => {
+                const ke = e as KeyboardEvent;
+                if (ke.key === 'Enter' || ke.key === ' ') {
+                    e.preventDefault();
+                    (header as HTMLElement).click();
+                }
+            });
+        });
+    });
+</script>

@@ -96,6 +96,29 @@
     justify-content: flex-end; /* CAMBIO: Alinear botones a la derecha */
 }
 
+/* CTA secundario como link de texto */
+.hero-secondary {
+    margin-top: var(--spacing-md, 1rem);
+    text-align: right;
+}
+
+.hero-secondary-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-weight: 500;
+    font-size: var(--font-size-sm, 0.875rem);
+    transition: var(--transition, all 0.3s ease);
+    background: none;
+    border: none;
+    padding: var(--spacing-xs, 0.25rem) 0;
+}
+
+.hero-secondary-link:hover {
+    color: var(--primary-color, #f7931a);
+    text-decoration-color: var(--primary-color, #f7931a);
+}
+
 /* Responsive Design - MODIFICACIONES */
 @media (max-width: 768px) {
     .hero-container {
@@ -135,6 +158,10 @@
 
     .hero-actions {
         justify-content: center; /* En móvil centrar botones */
+    }
+
+    .hero-secondary {
+        text-align: center;
     }
 }
 

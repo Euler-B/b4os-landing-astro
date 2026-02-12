@@ -1,6 +1,16 @@
 /* Benefits Section */
 .benefits {
     background: var(--bg-light);
+    padding: var(--spacing-4xl) 0;
+}
+
+.benefits .section-title {
+    color: var(--text-dark);
+    margin-top: 0;
+}
+
+.benefits .section-header {
+    margin-bottom: var(--spacing-xl);
 }
 
 .benefits-grid {

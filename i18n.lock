@@ -23,6 +23,7 @@ checksums:
     nav/logo_alt: e632f62da421be89d63f013eff260f59
     nav/menu_aria: a5eb95a4e0c3065c2403c666291f9def
     nav/brand_link_aria: 1ff69604e5a63db38d6416153c6bdb6b
+    nav/back_to_home: ffa9f8025a6493b16c10aea45f35bd59
     nav/toggle_aria: 26e805d75af8e200036e1c77b1afd69d
     nav/objectives: d0b42acde0aeb40836582b3d87dfa7d3
     nav/alumni: c077d2d6841f500330f079ab00c70f1b
@@ -30,6 +31,7 @@ checksums:
     nav/schedule: c74c748c799dc9516937b8471bfc2e18
     nav/register: 38d54e5d817bfb14220015b0a2321392
     nav/benefits: 06c41028c3d7025fafb2b36af0176b52
+    nav/donors: da4effdd867964d12d11afe2e943cd6d
     nav/alliances: a63917828ffc6b3be5ebdc4b66cb5dcb
     nav/careers: 2f97859b508c2045beac448aac3f9776
     nav/contact: e1caf5cc16c5a4e4dc9d509ff567c9ce
@@ -68,6 +70,8 @@ checksums:
     objectives/networking/title: cd9ac4809535775494f5184c32b7b766
     objectives/networking/description: e336714bd701ddeaeed2fd6c502e1795
     alumni/title: 450c2a6b435f1c364f6a18cc2bebc4c3
+    alumni/cohort: 7d2c04ee5ff951ffec5e42b270050415
+    alumni/coming_soon: 7cca32946f9b763e9c6f4b2eae3b2d26
     alumni/stats_aria: 31901b82c080087eeb7770e94869b086
     alumni/stats/registered: f309d7efbc4138452eda365d72efd14e
     alumni/stats/selected: 328c7c7f40baa2f1222eebaeb16f6a48
@@ -89,6 +93,10 @@ checksums:
     residencies/duration_label: af8c4a8bd427b341e6fc280b30e3b00a
     residencies/start_label: ffa9f8025a6493b16c10aea45f35bd59
     residencies/location_label: 10a575fcb323cc2558cdd16b3a33f53c
+    residencies/status_confirmed: 71e2828624ed89df35031be981c50eb9
+    residencies/status_pending: fb72c3e134c3ff7623c1067618e7c96f
+    residencies/status_completed: ac2b10b3fcfbef15cafca7b59b61fbb8
+    residencies/status_cancelled: 1745ee0d36230c1f58c4dbf57b49c3b1
     residencies/southamerica/title: 833ea565cdbd0556bddf7ee6805e93f1
     residencies/southamerica/duration: 7966095b37ab8218e4670a16b78fc97c
     residencies/southamerica/start: dc3d8a52d047ef56509364b224c7c67c
@@ -106,12 +114,12 @@ checksums:
     residencies/centralamerica/description: 0527720c46cc0dec121ccdb74d02af55
     residencies/northamerica1/title: 03bee3d053c7de4178a21f8c5a8e19c4
     residencies/northamerica1/duration: ff1567373d384be4c3f8dc4c657dd2e4
-    residencies/northamerica1/start: 9c948c7086b5fc046998bbef35da1767
+    residencies/northamerica1/start: c2611b29b07673bd7e72578a76ba3a03
     residencies/northamerica1/location: d4181caefe7c71f44ade790c1afad103
     residencies/northamerica1/description: 30431eecb1bf443f17216587476ba3ec
     residencies/northamerica2/title: 00b360ebec517fec4dff54aef2f4ca81
     residencies/northamerica2/duration: 5b29f1709a795f9637cad5c65b93b11d
-    residencies/northamerica2/start: 02e07a236f4dbd24dd3785b12d7e68f8
+    residencies/northamerica2/start: c2611b29b07673bd7e72578a76ba3a03
     residencies/northamerica2/location: d8aa33740dad28a7a415a118766cfcb7
     residencies/northamerica2/description: c54a1bcef47eac7b6c891bd475647706
     residencies/disclaimer: 61aaeeadf20d853d1851e0f622d49bbd
@@ -146,8 +154,8 @@ checksums:
     timeline/grantees/date: 696f11c2714ce2690a5f3bb86a0fc6a8
     timeline/grantees/title: 1313f186af9483111f7423b174108ffe
     timeline/grantees/description: 767ff5b1c386279eb0a48b17ebc4bacf
-    registration/title: e3b1c17babb334dc9d69bf0a31c3c151
-    registration/description: 5b1a6f71c749193082cf4a32e29bca5e
+    registration/title: 4c6597eec12866bd6fcb14591ad706ac
+    registration/description: 590d6184db14064b0211fc029c71eee1
     registration/requirements/title: 43c63ede04bfaba99f416d3384350b78
     registration/requirements/experience: 86dcc468e2caa8970720ef967c46efae
     registration/requirements/languages: 9d944ebb37f1c1ff5cdb73d9f4d81ee5
@@ -191,8 +199,8 @@ checksums:
     registration/form/technologies/label: 3684f9f0c1155d0caef239d7595ee25e
     registration/form/technologies/placeholder: 29f4c71145d1929bff432d9501a9eb39
     registration/form/technologies/help: 25a3fa1c9bbf44df718f905433e78e7c
-    registration/form/github/label: 7c2f2fc8a08ddffc4a6cd2119808b685
-    registration/form/github/help: aef57102e34a6dda4a4864b5864a4538
+    registration/form/github/label: f69b1a09fd0745275fa8acb2aeeb9676
+    registration/form/github/help: cc5787971fd97b97d471897998b88ca9
     registration/form/linkedin/label: f29b78f253094277c2e9ef79d10b5e4f
     registration/form/linkedin/help: f15019ce86236b18097e479789dbb43c
     registration/form/motivation/label: 12e0131ba483308676eb7de102c99df8
@@ -205,6 +213,14 @@ checksums:
     registration/form/how_heard/options/chaincode: 44f7ac8e0fa83cbb3b698f38fc61c262
     registration/form/how_heard/options/others: 116cb394a03546d174e496132ca9ed61
     registration/form/how_heard/others_placeholder: 8d702f5d4679aaed246bb47846f6ab38
+    registration/form/gender/label: b4985e4b83a483e011bbe4e110ce2843
+    registration/form/gender/help: 09c97bc1db3b9f53e55d173ed6b26f09
+    registration/form/gender/options/woman: 2c14cadf628e327368d4048f773dd545
+    registration/form/gender/options/man: fe4b74bf0fa7074581db9e5c89a3ef0d
+    registration/form/gender/options/non_binary: 8f8c41d9d9e119c7be0444c11a46fc89
+    registration/form/gender/options/self_describe: ace1e8e63860d4a768bec7d4656d55e7
+    registration/form/gender/options/prefer_not_to_say: df4874519c18a0ff7121edd730e349f3
+    registration/form/gender/self_describe_placeholder: bae7fb3babf2ffba3f4b029e06bbc8aa
     registration/form/terms/label: 97b8cabca25fb92b63f40b194af2db88
     registration/form/terms/help: cd2c58a137a3e88e874361f169a37055
     registration/form/terms/link_text: cc2cc10744634ecf4496c25a7abefb06
@@ -378,6 +394,37 @@ checksums:
     conduct/footer/register_btn: 60ecdaaf64a3c123dc464c4c15a37e6d
     conduct/footer/copyright: 699de6a9fd134a83ef785668886d8449
     conduct/footer/legal_links/terms: 5f760af55361ecf8f54a168491c41eb7
+    donors/title: 0d708d9c5f0766d8c6553b0ebcb37481
+    donors/subtitle: def46c327926384c3a87c0981bcea28c
+    donors/platinumTitle: 6c07cd494a7c042b4bb007b20eb04f85
+    donors/platinumDescription: 30fa6961f6881c2d3bd689a5f31bcda4
+    donors/donorsLabel: 7d68620606bde36ce4811f378fcb023f
+    donors/emptyStateCta: b63af12a150c55c0b5f51e6552006c91
+    donors/funds/education/title: 0dcbfd7a480f908b2250c7f349159fbf
+    donors/funds/education/description: 34963a72411f498dc74acbf0eb8ae5cc
+    donors/funds/education/donateButton: 887c630b1e42bb2c6795fc042f83e8b6
+    donors/funds/grant/title: 41358f3df2393be873a2c83e0c0cf347
+    donors/funds/grant/description: 5e35fb2116b1e1cf221163827ad15b7a
+    donors/funds/grant/donateButton: 42b258d1fa315eab3f08b1d5353f252b
+    donors/funds/operation/title: ea7a8927e206d7a7b0457d0254279ad0
+    donors/funds/operation/description: 508a0519781dfa6712e8a1a7063655c0
+    donors/funds/operation/donateButton: 5ab6c04d17b3a35923a15a46ed3cd25d
+    donors/funds/residency/title: 63ef462e4deb98ad1c02cace4db3ab08
+    donors/funds/residency/description: b5159d2268eaf28034d2357abdbab2ec
+    donors/funds/residency/donateButton: a3aebc750ca3d02de887120334262e94
+    donors/donateModal/taxDeductible: ca38d63ec32e8d8d37d6f25067024f6f
+    donors/donateModal/yes: d6b55e896010c3e1892a77baf7a7a645
+    donors/donateModal/no: 8c708225830b06df2d1141c536f2a0d6
+    donors/donateModal/name: 2fc1ffed427fb397d02e7a2bd3698fe5
+    donors/donateModal/namePlaceholder: 6d8a66544fefbb9d470cc44c9dc5d91b
+    donors/donateModal/email: 848dbde3908d3466520d5fbc2fa23030
+    donors/donateModal/emailPlaceholder: fd5162c6f8ece05efa9603a9eea5697e
+    donors/donateModal/howMuch: abcbfd3afa101b9799694e3ca6dc6064
+    donors/donateModal/customAmountPlaceholder: 537f57b1796c6839ee0e694b26b0fa15
+    donors/donateModal/donateWithBitcoin: 3a59874c7da18b4dd75535bec8b0a8f1
+    donors/donateModal/close: e50a462f691a2f46609bebfad93e0c63
+    donors/donateModal/nameRequired: 4822bb3a84d70a8f8ccc6bceede9e3ce
+    donors/donateModal/emailRequired: 00f48db7b8177806d7bdec49f5fe3a31
     careers/title: e61f2df41d9c041d3794311f3d04ce10
     careers/subtitle: 9e1ec6cdfb7b5835625272f276cccec8
     careers/highlights/remote/title: a38f4d75910f4dc6b7ed1d242ab85e99

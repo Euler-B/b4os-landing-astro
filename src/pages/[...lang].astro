@@ -8,6 +8,11 @@ import { getTranslation, getLocalizedPageUrl } from '../i18n/utils.js';
 import FAQ from '../components/FAQ.astro';
 import Benefits from '../components/benefits.astro';
 import LanguageSelector from '../components/languageSelector.astro';
+import TimelineCompact from '../components/TimelineCompact.astro';
+import AlumniTabs from '../components/AlumniTabs.astro';
+
+// Importar datos centralizados
+import residenciesStatus from '../data/residencies-status.json';
 
 // Generar rutas estáticas para todos los idiomas
 export async function getStaticPaths() {
@@ -33,9 +38,40 @@ const reopenDate = import.meta.env.PUBLIC_REGISTRATION_REOPEN_DATE || '2025-10-2
 
 // Feature flag para el formulario de Chaincode-BOSS
 const chaincodeRegistrationFlag = import.meta.env.PUBLIC_CHAINCODE_REGISTRATION_OPEN;
-const isChaincodeFormOpen = chaincodeRegistrationFlag !== undefined 
+const isChaincodeFormOpen = chaincodeRegistrationFlag !== undefined
     ? chaincodeRegistrationFlag === 'true'
     : import.meta.env.PUBLIC_REGISTRATION_OPEN === 'true';
+
+// Helper para determinar estado de residencias
+// Estados: confirmed, pending, completed, cancelled
+type ResidencyStatus = 'confirmed' | 'pending' | 'completed' | 'cancelled';
+
+const getResidencyStatus = (residencyKey: string): ResidencyStatus => {
+    // Leer desde archivo centralizado
+    const status = (residenciesStatus as Record<string, string>)[residencyKey];
+    if (status) return status as ResidencyStatus;
+    return 'pending'; // fallback
+};
+
+const getResidencyBadgeClass = (status: ResidencyStatus): string => {
+    const classes: Record<ResidencyStatus, string> = {
+        confirmed: 'badge-confirmed',
+        pending: 'badge-pending',
+        completed: 'badge-completed',
+        cancelled: 'badge-cancelled'
+    };
+    return classes[status] || 'badge-pending';
+};
+
+const getResidencyBadgeLabel = (status: ResidencyStatus, t: any): string => {
+    const labels: Record<ResidencyStatus, string> = {
+        confirmed: t.residencies.status_confirmed || 'Confirmada',
+        pending: t.residencies.status_pending || 'Por confirmar',
+        completed: t.residencies.status_completed || 'Completada',
+        cancelled: t.residencies.status_cancelled || 'Cancelada'
+    };
+    return labels[status] || labels.pending;
+};
 ---
 
 <Layout locale={locale}>
@@ -91,8 +127,10 @@ const isChaincodeFormOpen = chaincodeRegistrationFlag !== undefined
                     <span class="hero-title-sub">{t.hero.title_sub}</span>
                 </h2>
                 <div class="hero-actions">
-                    <a href="#registro" class="btn btn-primary" rel="nofollow">{t.hero.cta_primary}</a>
-                    <a href="#residencias" class="btn btn-secondary">{t.hero.cta_secondary}</a>
+                    <a href="#registro" class="btn btn-primary btn-lg" rel="nofollow">{t.hero.cta_primary}</a>
+                </div>
+                <div class="hero-secondary">
+                    <a href="#residencias" class="hero-secondary-link">{t.hero.cta_secondary}</a>
                 </div>
             </div>
             <div class="hero-background" aria-hidden="true"></div>
@@ -144,169 +182,7 @@ const isChaincodeFormOpen = chaincodeRegistrationFlag !== undefined
     </section>
 
     <!-- Alumni Section -->
-    <section id="alumni" class="alumni">
-        <div class="container">
-            <header class="section-header">
-                <h2 class="section-title">{t.alumni.title}</h2>
-                <div class="objectives-stats" role="complementary" aria-label={t.alumni.stats_aria}>
-                    <div class="stat">
-                        <span class="stat-number">120</span>
-                        <span class="stat-label">{t.alumni.stats.registered}</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">21</span>
-                        <span class="stat-label">{t.alumni.stats.selected}</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">7</span>
-                        <span class="stat-label">{t.alumni.stats.fulltime}</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">8</span>
-                        <span class="stat-label">{t.alumni.stats.parttime}</span>
-                    </div>
-                </div>
-                <p class="section-subtitle" set:html={t.alumni.subtitle}></p>
-            </header>
-           
-            <div class="alumni-grid">
-                <!-- Alumni Card 1 -->
-                <article class="alumni-card">
-                    <div class="alumni-avatar">
-                        <img src="/fledesma.webp" alt="Fernando Ledesma" loading="lazy">
-                        <div class="alumni-icons">
-                            <a href="https://github.com/f3r10" aria-label={t.alumni.github_aria.replace('{name}', 'Fernando')} target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </a>
-                            <a href="https://www.linkedin.com/in/fernando-ledesma-ec" aria-label={t.alumni.linkedin_aria.replace('{name}', 'Fernando')} target="_blank" rel="noopener">
-                                <Icon name="mdi:linkedin" size={24} />
-                            </a>
-                        </div>
-                    </div>
-                    <h3 class="alumni-name">Fernando Ledesma</h3>
-                    <p class="alumni-description">
-                        <span class="project-highlight">SimLN</span> & <span class="project-highlight">LNDK</span>
-                        <span class="sponsor-highlight">{t.alumni.grantee_b4os}</span>
-                    </p>
-                </article>
-
-                <!-- Alumni Card 2 -->
-                <article class="alumni-card">
-                    <div class="alumni-avatar">
-                        <img src="/sliv3r.jpg" alt="Pol Espinasa" loading="lazy">
-                        <div class="alumni-icons">
-                            <a href="https://github.com/polespinasa" aria-label={t.alumni.github_aria.replace('{name}', 'Pol')} target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </a>
-                            <a href="https://x.com/sliv3r__" aria-label={t.alumni.twitter_aria.replace('{name}', 'Pol')} target="_blank" rel="noopener">
-                                <Icon name="mdi:twitter" size={24} />
-                            </a>
-                        </div>
-                    </div>
-                    <h3 class="alumni-name">Pol Espinasa</h3>
-                    <p class="alumni-description">
-                        <span class="project-highlight">Bitcoin Core</span>
-                        <a href="https://lclhost.org/" target="_blank" rel="noopener">
-                            <span class="sponsor-highlight" set:html={t.alumni.grantee_b4os_localhost}></span>
-                        </a> 
-                    </p>
-                </article>                
-                
-                <!-- Alumni Card 3 -->
-                <article class="alumni-card">
-                    <div class="alumni-avatar">
-                        <img src="/maurice.jpg" alt="Maurice Poirrier" loading="lazy">
-                        <div class="alumni-icons">
-                            <a href="http://github.com/a-mpch" aria-label={t.alumni.github_aria.replace('{name}', 'Maurice')} target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </a>
-                            <a href="https://www.linkedin.com/in/maurice-poirrier/" aria-label={t.alumni.linkedin_aria.replace('{name}', 'Maurice')} target="_blank" rel="noopener">
-                                <Icon name="mdi:linkedin" size={24} />
-                            </a>
-                            <a href="https://x.com/mauricepoirrier" aria-label={t.alumni.twitter_aria.replace('{name}', 'Maurice')} target="_blank" rel="noopener">
-                                <Icon name="mdi:twitter" size={24} />
-                            </a>
-                        </div>
-                    </div>
-                    <h3 class="alumni-name">Maurice Poirrier</h3>
-                    <p class="alumni-description">
-                        <span class="project-highlight">LNDK</span> {t.alumni.main_maintainer}
-                        <a href="https://spiral.xyz" target="_blank" rel="noopener"><span class="sponsor-highlight">{t.alumni.grantee_spiral}</span></a>
-                    </p>
-                </article>
-
-                <!-- Alumni Card 4 -->
-                <article class="alumni-card">
-                    <div class="alumni-avatar">
-                        <img src="/nymius.jpeg" alt="Nymius" loading="lazy">
-                        <div class="alumni-icons">
-                            <a href="https://github.com/nymius" aria-label={t.alumni.github_aria.replace('{name}', 'Nymius')} target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <h3 class="alumni-name">Nymius</h3>
-                    <p class="alumni-description">
-                        BDK<span class="project-highlight">(Silent Payments - BIP 352)</span>
-                        <a href="https://bitcoindevkit.org/" target="_blank" rel="noopener">
-                            <span class="sponsor-highlight">{t.alumni.grantee_bdk}</span></a>
-                    </p>
-                </article>
-
-                <!-- Alumni Card 5 -->
-                <article class="alumni-card">
-                    <div class="alumni-avatar">
-                        <img src="/josefinalliende.webp" alt="Josefina Alliende" loading="lazy">
-                        <div class="alumni-icons">
-                            <a href="https://github.com/josefinalliende" aria-label={t.alumni.github_aria.replace('{name}', 'Josefina')} target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </a>
-                            <a href="https://www.linkedin.com/in/mar%C3%ADa-josefina-alliende/" aria-label={t.alumni.linkedin_aria.replace('{name}', 'Josefina')} target="_blank" rel="noopener">
-                                <Icon name="mdi:linkedin" size={24} />
-                            </a>
-                        </div>
-                    </div>
-                    <h3 class="alumni-name">Josefina Alliende</h3>
-                    <p class="alumni-description">
-                        <span class="project-highlight">White Noise</span>
-                        <a href="https://github.com/parres-hq/whitenoise" target="_blank" rel="noopener"><span class="sponsor-highlight">{t.alumni.grantee_whitenoise_b4os}</span></a>
-                    </p>
-                </article>                                   
-
-                <!-- Alumni Card 6 -->
-                <article class="alumni-card">
-                    <div class="alumni-avatar">
-                        <img src="/jmontoya.jpg" alt="Javier Montoya" loading="lazy">
-                        <div class="alumni-icons">
-                            <a href="https://github.com/jgmontoya" aria-label={t.alumni.github_aria.replace('{name}', 'Javier')} target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </a>
-                            <a href="https://www.linkedin.com/in/jgmontoya/" aria-label={t.alumni.linkedin_aria.replace('{name}', 'Javier')} target="_blank" rel="noopener">
-                                <Icon name="mdi:linkedin" size={24} />
-                            </a>
-                        </div>
-                    </div>
-                    <h3 class="alumni-name">Javier Montoya</h3>
-                    <p class="alumni-description">
-                        <span class="project-highlight">White Noise</span>
-                        <a href="https://github.com/parres-hq/whitenoise" target="_blank" rel="noopener"><span class="sponsor-highlight">{t.alumni.grantee_whitenoise_b4os}</span></a>
-                    </p>
-                </article>                                   
-            </div>
-        </div>
-    </section>
+    <AlumniTabs locale={locale} t={t} />
 
     <!-- Residencies Section -->
     <section id="residencias" class="program-overview">
@@ -316,65 +192,110 @@ const isChaincodeFormOpen = chaincodeRegistrationFlag !== undefined
                 <p class="section-subtitle" set:html={t.residencies.subtitle}></p>
             </header>
             <div class="program-grid">
-                <article class="program-card">
-                    <div class="program-icon" aria-hidden="true">
-                        <Icon name="heroicons:globe-americas" size={64} />
-                    </div>
-                    <h3>{t.residencies.southamerica.title}</h3>
-                    <p><strong>{t.residencies.duration_label}:</strong> {t.residencies.southamerica.duration}<br>
-                    <strong>{t.residencies.start_label}:</strong> {t.residencies.southamerica.start}<br>
-                    <strong>{t.residencies.location_label}:</strong> {t.residencies.southamerica.location}<br>
-                    </p>
-                    <p set:html={t.residencies.southamerica.description}></p>
-                </article>
-                
-                <article class="program-card">
-                    <div class="program-icon" aria-hidden="true">
-                        <Icon name="heroicons:globe-europe-africa" size={64} />
-                    </div>
-                    <h3>{t.residencies.europe.title}</h3>
-                    <p><strong>{t.residencies.duration_label}:</strong> {t.residencies.europe.duration}<br>
-                    <strong>{t.residencies.start_label}:</strong> {t.residencies.europe.start}<br>
-                    <strong>{t.residencies.location_label}:</strong> {t.residencies.europe.location}<br>
-                    </p>
-                    <p set:html={t.residencies.europe.description}></p>
-                </article>
-                
-                <article class="program-card">
-                    <div class="program-icon" aria-hidden="true">
-                        <Icon name="heroicons:globe-americas" size={64} />
-                    </div>
-                    <h3>{t.residencies.centralamerica.title}</h3>
-                    <p><strong>{t.residencies.duration_label}:</strong> {t.residencies.centralamerica.duration}<br>
-                    <strong>{t.residencies.start_label}:</strong> {t.residencies.centralamerica.start}<br>
-                    <strong>{t.residencies.location_label}:</strong> {t.residencies.centralamerica.location}<br>
-                    </p>
-                    <p set:html={t.residencies.centralamerica.description}></p>
-                </article>
-                
-                <article class="program-card">
-                    <div class="program-icon" aria-hidden="true">
-                        <Icon name="heroicons:globe-americas" size={64} />
-                    </div>
-                    <h3>{t.residencies.northamerica1.title}</h3>
-                    <p><strong>{t.residencies.duration_label}:</strong> {t.residencies.northamerica1.duration}<br>
-                    <strong>{t.residencies.start_label}:</strong> {t.residencies.northamerica1.start}<br>
-                    <strong>{t.residencies.location_label}:</strong> {t.residencies.northamerica1.location}<br>
-                    </p>
-                    <p>{t.residencies.northamerica1.description}</p>
-                </article>
+                {/* South America */}
+                {(() => {
+                    const status = getResidencyStatus('southamerica');
+                    return (
+                        <article class:list={["program-card", { 'pending-dates': status === 'pending' || status === 'cancelled' }]}>
+                            <span class:list={["residency-badge", getResidencyBadgeClass(status)]}>
+                                {getResidencyBadgeLabel(status, t)}
+                            </span>
+                            <div class="program-icon" aria-hidden="true">
+                                <Icon name="heroicons:globe-americas" size={64} />
+                            </div>
+                            <h3>{t.residencies.southamerica.title}</h3>
+                            <p><strong>{t.residencies.duration_label}:</strong> {t.residencies.southamerica.duration}<br>
+                            <strong>{t.residencies.start_label}:</strong> {t.residencies.southamerica.start}<br>
+                            <strong>{t.residencies.location_label}:</strong> {t.residencies.southamerica.location}<br>
+                            </p>
+                            <p set:html={t.residencies.southamerica.description}></p>
+                        </article>
+                    );
+                })()}
 
-                <article class="program-card">
-                    <div class="program-icon" aria-hidden="true">
-                        <Icon name="heroicons:globe-americas" size={64} />
-                    </div>
-                    <h3>{t.residencies.northamerica2.title}</h3>
-                    <p><strong>{t.residencies.duration_label}:</strong> {t.residencies.northamerica2.duration}<br>
-                    <strong>{t.residencies.start_label}:</strong> {t.residencies.northamerica2.start}<br>
-                    <strong>{t.residencies.location_label}:</strong> {t.residencies.northamerica2.location}<br>
-                    </p>
-                    <p set:html={t.residencies.northamerica2.description}></p>
-                </article>
+                {/* Europe */}
+                {(() => {
+                    const status = getResidencyStatus('europe');
+                    return (
+                        <article class:list={["program-card", { 'pending-dates': status === 'pending' || status === 'cancelled' }]}>
+                            <span class:list={["residency-badge", getResidencyBadgeClass(status)]}>
+                                {getResidencyBadgeLabel(status, t)}
+                            </span>
+                            <div class="program-icon" aria-hidden="true">
+                                <Icon name="heroicons:globe-europe-africa" size={64} />
+                            </div>
+                            <h3>{t.residencies.europe.title}</h3>
+                            <p><strong>{t.residencies.duration_label}:</strong> {t.residencies.europe.duration}<br>
+                            <strong>{t.residencies.start_label}:</strong> {t.residencies.europe.start}<br>
+                            <strong>{t.residencies.location_label}:</strong> {t.residencies.europe.location}<br>
+                            </p>
+                            <p set:html={t.residencies.europe.description}></p>
+                        </article>
+                    );
+                })()}
+
+                {/* Central America */}
+                {(() => {
+                    const status = getResidencyStatus('centralamerica');
+                    return (
+                        <article class:list={["program-card", { 'pending-dates': status === 'pending' || status === 'cancelled' }]}>
+                            <span class:list={["residency-badge", getResidencyBadgeClass(status)]}>
+                                {getResidencyBadgeLabel(status, t)}
+                            </span>
+                            <div class="program-icon" aria-hidden="true">
+                                <Icon name="heroicons:globe-americas" size={64} />
+                            </div>
+                            <h3>{t.residencies.centralamerica.title}</h3>
+                            <p><strong>{t.residencies.duration_label}:</strong> {t.residencies.centralamerica.duration}<br>
+                            <strong>{t.residencies.start_label}:</strong> {t.residencies.centralamerica.start}<br>
+                            <strong>{t.residencies.location_label}:</strong> {t.residencies.centralamerica.location}<br>
+                            </p>
+                            <p set:html={t.residencies.centralamerica.description}></p>
+                        </article>
+                    );
+                })()}
+
+                {/* North America 1 - Guadalajara */}
+                {(() => {
+                    const status = getResidencyStatus('northamerica1');
+                    return (
+                        <article class:list={["program-card", { 'pending-dates': status === 'pending' || status === 'cancelled' }]}>
+                            <span class:list={["residency-badge", getResidencyBadgeClass(status)]}>
+                                {getResidencyBadgeLabel(status, t)}
+                            </span>
+                            <div class="program-icon" aria-hidden="true">
+                                <Icon name="heroicons:globe-americas" size={64} />
+                            </div>
+                            <h3>{t.residencies.northamerica1.title}</h3>
+                            <p><strong>{t.residencies.duration_label}:</strong> {t.residencies.northamerica1.duration}<br>
+                            <strong>{t.residencies.start_label}:</strong> {t.residencies.northamerica1.start}<br>
+                            <strong>{t.residencies.location_label}:</strong> {t.residencies.northamerica1.location}<br>
+                            </p>
+                            <p>{t.residencies.northamerica1.description}</p>
+                        </article>
+                    );
+                })()}
+
+                {/* North America 2 - Chaincode */}
+                {(() => {
+                    const status = getResidencyStatus('northamerica2');
+                    return (
+                        <article class:list={["program-card", { 'pending-dates': status === 'pending' || status === 'cancelled' }]}>
+                            <span class:list={["residency-badge", getResidencyBadgeClass(status)]}>
+                                {getResidencyBadgeLabel(status, t)}
+                            </span>
+                            <div class="program-icon" aria-hidden="true">
+                                <Icon name="heroicons:globe-americas" size={64} />
+                            </div>
+                            <h3>{t.residencies.northamerica2.title}</h3>
+                            <p><strong>{t.residencies.duration_label}:</strong> {t.residencies.northamerica2.duration}<br>
+                            <strong>{t.residencies.start_label}:</strong> {t.residencies.northamerica2.start}<br>
+                            <strong>{t.residencies.location_label}:</strong> {t.residencies.northamerica2.location}<br>
+                            </p>
+                            <p set:html={t.residencies.northamerica2.description}></p>
+                        </article>
+                    );
+                })()}
             </div>
             <article style="text-align: center; margin-top: 2rem; color: var(--text-light); font-size: var(--font-size-sm);">
                 <p>{t.residencies.disclaimer}</p>
@@ -383,96 +304,7 @@ const isChaincodeFormOpen = chaincodeRegistrationFlag !== undefined
     </section>
 
     <!-- Timeline Section -->
-    <section id="cronograma" class="timeline">
-        <div class="container">
-            <header class="section-header">
-                <h2 class="section-title">{t.timeline.title}</h2>
-                <p class="section-subtitle" set:html={t.timeline.subtitle}></p>
-            </header>
-            <div class="timeline-container">
-                <article class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <p class="timeline-subdate">{t.timeline.registration.date}</p>
-                        <h3>{t.timeline.registration.title}</h3>
-                        <p>{t.timeline.registration.description}</p>
-                    </div>
-                </article>
-                
-                <article class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <p class="timeline-subdate">{t.timeline.challenges.date}</p>
-                        <h3>{t.timeline.challenges.title}</h3>
-                        <p>{t.timeline.challenges.description}</p>
-                        <div class="timeline-highlight">
-                            <p set:html={t.timeline.challenges.highlight}></p>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <p class="timeline-subdate">{t.timeline.review.date}</p>
-                        <h3>{t.timeline.review.title}</h3>
-                        <p>{t.timeline.review.description}</p>
-                    </div>
-                </article>
-
-                <article class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <p class="timeline-subdate">{t.timeline.guadalajara_selection.date}</p>
-                        <h3>{t.timeline.guadalajara_selection.title}</h3>
-                        <p>{t.timeline.guadalajara_selection.description}</p>
-                    </div>
-                </article>
-
-                <article class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <p class="timeline-subdate">{t.timeline.division.date}</p>
-                        <h3>{t.timeline.division.title}</h3>
-                        <ul>
-                            <li><strong>{t.timeline.division.routes.core}</strong></li>
-                            <li><strong>{t.timeline.division.routes.lightning}</strong></li>
-                            <li><strong>{t.timeline.division.routes.application}</strong></li>
-                        </ul>
-                        <p set:html={t.timeline.division.description}></p>
-                    </div>
-                </article>
-
-                <article class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <p class="timeline-subdate">{t.timeline.southamerica_selection.date}</p>
-                        <h3>{t.timeline.southamerica_selection.title}</h3>
-                        <p set:html={t.timeline.southamerica_selection.description}></p>
-                        <p>{t.timeline.southamerica_selection.note}</p>
-                    </div>
-                </article>
-
-                <article class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <p class="timeline-subdate">{t.timeline.residency.date}</p>
-                        <h3>{t.timeline.residency.title}</h3>
-                        <p set:html={t.timeline.residency.description}></p>
-                    </div>
-                </article>
-
-                <article class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <p class="timeline-subdate">{t.timeline.grantees.date}</p>
-                        <h3>{t.timeline.grantees.title}</h3>
-                        <p>{t.timeline.grantees.description}</p>
-                    </div>
-                </article>            
-            </div>
-        </div>
-    </section>
+    <TimelineCompact locale={locale} t={t} />
 
     <!-- Registration Section -->
     <section id="registro" class="registration">
@@ -505,19 +337,25 @@ const isChaincodeFormOpen = chaincodeRegistrationFlag !== undefined
                         )}
                     </div>
                 </div>
-                <div class:list={["registration-form-container", { 'form-closed': !isFormOpen }]}>
+                {/* Registro cerrado: solo waitlist prominente */}
+                {!isFormOpen ? (
+                    <div class="registration-closed-container">
+                        <div class="waitlist-prominent">
+                            <div class="waitlist-icon-large">
+                                <Icon name="heroicons:bell-alert" size={64} />
+                            </div>
+                            <h3 class="waitlist-title-lg">{t.registration.closed?.title || 'Registro temporalmente cerrado'}</h3>
+                            <p class="waitlist-subtitle-lg">{t.registration.closed?.subtitle || 'Pronto abriremos nuevas inscripciones. Sé de los primeros en saberlo:'}</p>
 
-                    {/* Overlay de waitlist cuando el formulario está cerrado */}
-                    {!isFormOpen && (
-                        <div class="form-overlay">
-                            <div class="waitlist-box">
-                                <div class="waitlist-icon">
-                                    <Icon name="heroicons:clock" size={56} />
+                            {/* {reopenDate && (
+                                <div class="reopen-date-badge">
+                                    <Icon name="heroicons:calendar" size={20} />
+                                    <span>{t.registration.closed?.reopen_label || 'Próxima apertura:'} {reopenDate}</span>
                                 </div>
-                                <h3 class="waitlist-title">{t.registration.closed?.title || 'Registro temporalmente cerrado'}</h3>
-                                <p class="waitlist-subtitle">{t.registration.closed?.subtitle || 'Pronto abriremos nuevas inscripciones. Sé de los primeros en saberlo:'}</p>
+                            )} */}
 
-                                <form class="waitlist-form" id="waitlistForm">
+                            <form class="waitlist-form-prominent" id="waitlistForm">
+                                <div class="waitlist-input-group">
                                     <input
                                         type="email"
                                         name="email"
@@ -525,16 +363,19 @@ const isChaincodeFormOpen = chaincodeRegistrationFlag !== undefined
                                         required
                                         aria-label={t.registration.closed?.email_aria_label || 'Email para lista de espera'}
                                     />
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primary btn-lg">
                                         <Icon name="heroicons:bell-alert" size={20} />
                                         {t.registration.closed?.cta || 'Notificarme'}
                                     </button>
-                                </form>
-                            </div>
-                        </div>
-                    )}
+                                </div>
+                            </form>
 
-                    <form class="registration-form" id="registrationForm" role="form" aria-label={t.registration.form.aria_label}>
+                            <p class="waitlist-privacy">{t.registration.closed?.privacy || 'Tu email solo será usado para notificarte. No spam.'}</p>
+                        </div>
+                    </div>
+                ) : (
+                    <div class="registration-form-container">
+                        <form class="registration-form" id="registrationForm" role="form" aria-label={t.registration.form.aria_label}>
                         <h3>{t.registration.form.title}</h3>
                         
                         <div class="form-group">
@@ -698,7 +539,8 @@ const isChaincodeFormOpen = chaincodeRegistrationFlag !== undefined
                             {t.registration.form.submit}
                         </button>
                     </form>
-                </div>
+                    </div>
+                )}
             </div>
         </div>
     </section>
@@ -840,52 +682,6 @@ const isChaincodeFormOpen = chaincodeRegistrationFlag !== undefined
             </div>
         </div>
     </section>
-
-    <!-- Careers Section -->
-    <section id="carreras" class="careers-section">
-        <div class="container">
-            <header class="section-header">
-                <h2 class="section-title">{t.careers.title}</h2>
-                <p class="section-subtitle" set:html={t.careers.subtitle}></p>
-            </header>
-            
-            <div class="careers-highlights">
-                <div class="career-highlight">
-                    <div class="highlight-icon">
-                        <Icon name="mdi:earth" size={32} />
-                    </div>
-                    <h3>{t.careers.highlights.remote.title}</h3>
-                    <p set:html={t.careers.highlights.remote.description}></p>
-                </div>
-                <div class="career-highlight">
-                    <div class="highlight-icon">
-                        <Icon name="mdi:bitcoin" size={32} />
-                    </div>
-                    <h3>{t.careers.highlights.bitcoin.title}</h3>
-                    <p set:html={t.careers.highlights.bitcoin.description}></p>
-                </div>
-                <div class="career-highlight">
-                    <div class="highlight-icon">
-                        <Icon name="mdi:rocket" size={32} />
-                    </div>
-                    <h3>{t.careers.highlights.mission.title}</h3>
-                    <p set:html={t.careers.highlights.mission.description}></p>
-                </div>
-            </div>
-
-            <div class="careers-cta">
-                <h3>{t.careers.cta.title}</h3>
-                <p>{t.careers.cta.description}</p>
-                <div class="careers-actions">
-                    <a href="https://libreria-de-satoshi.breezy.hr/" class="btn btn-primary" target="_blank" rel="noopener">
-                        <Icon name="mdi:briefcase" size={20} />
-                        {t.careers.cta.button}
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer id="contacto" class="footer" role="contentinfo">
         <div class="container">
@@ -905,7 +701,7 @@ const isChaincodeFormOpen = chaincodeRegistrationFlag !== undefined
                         <li><a href="#registro">{t.nav.register}</a></li>
                         <li><a href="#beneficios">{t.nav.benefits}</a></li>
                         <li><a href={getLocalizedPageUrl('donate', locale)}>{t.nav.donors}</a></li>
-                        <li><a href="#carreras">{t.nav.careers}</a></li>
+                        <li><a href="https://libreria-de-satoshi.breezy.hr/" target="_blank" rel="noopener">{t.careers?.footer_link || t.nav.careers || 'Trabaja con nosotros'}</a></li>
                     </ul>
                 </nav>
                 

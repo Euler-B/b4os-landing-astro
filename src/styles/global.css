@@ -59,6 +59,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 body {
@@ -233,7 +234,8 @@ body {
 /* objectives Section */
 .objectives {
     position: relative;
-    min-height: 100vh;
+    min-height: auto;
+    padding: var(--spacing-4xl) 0;
     display: flex;
     align-items: center;
     background:
@@ -284,7 +286,6 @@ body {
     z-index: 2;
     text-align: center;
     margin: 0 auto;
-    margin-top: var(--spacing-4xl);
 }
 
 .objectives-title {
@@ -298,7 +299,6 @@ body {
     display: block;
     font-size: var(--font-size-5xl);
     font-weight: 700;
-    /*background: linear-gradient(135deg, var(--primary-color), var(--accent-color));*/
     background-color: var(--primary-color);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -514,7 +514,7 @@ section {
     font-size: var(--font-size-4xl);
     font-weight: 700;
     margin-bottom: var(--spacing-md);
-    color: var(--text-dark);
+    color: var(--text-white);
     margin-top: 100px;
 }
 
@@ -532,7 +532,28 @@ section {
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
-    padding: 2rem;
+    padding: var(--spacing-4xl) 0;
+}
+
+.program-overview .section-title {
+    margin-top: 0;
+    color: var(--text-dark);
+}
+
+.program-overview .section-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.program-overview .program-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-xl);
+}
+
+.program-overview .program-card {
+    flex: 1 1 300px;
+    max-width: 380px;
 }
 
 .program-grid {
@@ -574,6 +595,53 @@ section {
     line-height: 1.7;
 }
 
+/* Residency status badges */
+.program-card {
+    position: relative;
+}
+
+.residency-badge {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-confirmed {
+    background: var(--success-color);
+    color: white;
+}
+
+.badge-pending {
+    background: var(--warning-color);
+    color: var(--text-dark);
+}
+
+.badge-completed {
+    background: var(--success-color);
+    color: white;
+}
+
+.badge-cancelled {
+    background: var(--text-light);
+    color: white;
+}
+
+/* Card atenuada para residencias sin fecha definida */
+.program-card.pending-dates {
+    opacity: 0.8;
+    border: 2px dashed var(--border-color);
+}
+
+.program-card.pending-dates:hover {
+    opacity: 1;
+}
+
 /* Timeline */
 .timeline {
     background: var(--bg-dark);
@@ -583,6 +651,14 @@ section {
 
 .timeline .section-title {
     color: var(--text-white);
+}
+
+.timeline-section .section-title {
+    margin-top: 0;
+}
+
+.timeline-section .section-header {
+    margin-bottom: var(--spacing-xl);
 }
 
 .timeline .section-subtitle {
@@ -927,6 +1003,16 @@ legend {
     background: var(--bg-light);
     position: relative;
     overflow: hidden;
+    padding: var(--spacing-4xl) 0;
+}
+
+.partnerships .section-title {
+    margin-top: 0;
+    color: var(--text-dark);
+}
+
+.partnerships .section-header {
+    margin-bottom: var(--spacing-xl);
 }
 
 .partnerships::before {
@@ -1710,6 +1796,19 @@ a:hover .sponsor-highlight {
     z-index: 2;
 }
 
+.alumni .section-title {
+    color: var(--text-dark);
+    margin-top: 0;
+}
+
+.alumni .section-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.alumni .section-subtitle {
+    margin-bottom: var(--spacing-2xl);
+}
+
 .alumni-card a {
     text-decoration: none;
 }
@@ -1756,7 +1855,8 @@ a:hover .sponsor-highlight {
     flex-wrap: wrap;
     gap: var(--spacing-2xl);
     margin-bottom: var(--spacing-3xl);
-    justify-content: center; /* Centra los elementos horizontalmente */
+    justify-content: center;
+    align-items: stretch;
 }
 /* Alumni Card */
 .alumni-card {
@@ -1771,7 +1871,7 @@ a:hover .sponsor-highlight {
     border: 1px solid var(--border-color);
     flex: 0 0 auto;
     width: 280px;
-    height: 480px;
+    height: auto;
 }
 
 .alumni-card::before {
@@ -1907,6 +2007,15 @@ a:hover .sponsor-highlight {
 
 .alumni-icons a:hover svg {
     color: white;
+}
+
+.powered-by .section-title {
+    margin-top: 0;
+    color: var(--text-dark);
+}
+
+.powered-by .section-header {
+    margin-bottom: var(--spacing-xl);
 }
 
 .powered-by-logo {
@@ -2221,81 +2330,135 @@ a:hover .sponsor-highlight {
 }
 
 /* ============================================ */
-/* WAITLIST OVERLAY & FORM CLOSED STATE */
+/* REGISTRO CERRADO - WAITLIST PROMINENTE */
 /* ============================================ */
 
-/* Form container when closed */
-.registration-form-container.form-closed {
-    position: relative;
-    min-height: auto;
-}
-
-/* Blur effect on background form */
-.registration-form-container.form-closed .registration-form {
-    filter: blur(4px);
-    pointer-events: none;
-    user-select: none;
-    opacity: 0.4;
-}
-
-/* Overlay */
-.form-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.97);
-    backdrop-filter: blur(2px);
+/* Contenedor principal cuando registro cerrado */
+.registration-closed-container {
+    min-height: 450px;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 100;
+    background: linear-gradient(135deg, rgba(247, 147, 26, 0.08), rgba(33, 212, 253, 0.05));
     border-radius: var(--border-radius-xl);
-    padding: var(--spacing-2xl);
-    min-height: 500px;
+    padding: var(--spacing-3xl) var(--spacing-xl);
+    border: 2px dashed rgba(247, 147, 26, 0.3);
 }
 
-/* Waitlist box */
-.waitlist-box {
+/* Caja del waitlist */
+.waitlist-prominent {
     text-align: center;
-    max-width: 480px;
-    width: 100%;
+    max-width: 500px;
 }
 
-/* Icon */
-.waitlist-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto var(--spacing-lg);
-    background: rgba(247, 147, 26, 0.1);
+/* Icono grande animado */
+.waitlist-icon-large {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto var(--spacing-xl);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary-color);
+    color: white;
+    animation: waitlist-pulse 2s ease-in-out infinite;
+    box-shadow: 0 8px 32px rgba(247, 147, 26, 0.3);
 }
 
-/* Title */
-.waitlist-title {
-    font-size: var(--font-size-2xl);
+@keyframes waitlist-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 8px 32px rgba(247, 147, 26, 0.3); }
+    50% { transform: scale(1.05); box-shadow: 0 12px 40px rgba(247, 147, 26, 0.4); }
+}
+
+/* Título grande */
+.waitlist-title-lg {
+    font-size: var(--font-size-3xl);
     font-weight: 700;
     margin-bottom: var(--spacing-md);
     color: var(--text-dark);
 }
 
-/* Subtitle */
-.waitlist-subtitle {
-    font-size: var(--font-size-base);
+/* Subtítulo */
+.waitlist-subtitle-lg {
+    font-size: var(--font-size-lg);
     color: var(--text-light);
     margin-bottom: var(--spacing-xl);
     line-height: 1.6;
 }
 
-/* Waitlist form */
-.waitlist-form {
+/* Badge de fecha de reapertura */
+.reopen-date-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: var(--primary-color);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--spacing-xl);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+}
+
+/* Formulario de waitlist prominente */
+.waitlist-form-prominent {
+    margin-top: var(--spacing-lg);
+}
+
+.waitlist-input-group {
     display: flex;
     gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-lg);
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.waitlist-input-group input {
+    flex: 1;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-base);
+    transition: var(--transition);
+}
+
+.waitlist-input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(247, 147, 26, 0.1);
+}
+
+/* Texto de privacidad */
+.waitlist-privacy {
+    font-size: var(--font-size-xs);
+    color: var(--text-light);
+    margin-top: var(--spacing-lg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .registration-closed-container {
+        padding: var(--spacing-2xl) var(--spacing-lg);
+        min-height: 400px;
+    }
+
+    .waitlist-icon-large {
+        width: 100px;
+        height: 100px;
+    }
+
+    .waitlist-title-lg {
+        font-size: var(--font-size-2xl);
+    }
+
+    .waitlist-input-group {
+        flex-direction: column;
+    }
+
+    .waitlist-input-group input,
+    .waitlist-input-group button {
+        width: 100%;
+    }
 }
 
 .waitlist-form input {

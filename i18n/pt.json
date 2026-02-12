@@ -103,6 +103,8 @@
   },
   "alumni": {
     "title": "B4OS 2024 FOI UM SUCESSO!",
+    "cohort": "Turma",
+    "coming_soon": "Em breve",
     "stats_aria": "Estatísticas do programa",
     "stats": {
       "registered": "Devs selecionados",
@@ -128,6 +130,10 @@
     "duration_label": "Duração",
     "start_label": "Início",
     "location_label": "Localização",
+    "status_confirmed": "Confirmada",
+    "status_pending": "A confirmar",
+    "status_completed": "Concluída",
+    "status_cancelled": "Cancelada",
     "southamerica": {
       "title": "América do Sul",
       "duration": "2 semanas",
@@ -152,14 +158,14 @@
     "northamerica1": {
       "title": "América do Norte I",
       "duration": "8 semanas",
-      "start": "15 Out. - Dez. 2025",
+      "start": "Data a definir",
       "location": "Guadalajara, México",
       "description": "Estágio para desenvolvedores na Bitcoin House Guadalajara."
     },
     "northamerica2": {
       "title": "América do Norte II",
       "duration": "6 semanas",
-      "start": "15 Out. - Nov. 2026",
+      "start": "Data a definir",
       "location": "Cidade do México",
       "description": "Exclusiva para <strong>bolsistas do programa</strong>, focada em projetos avançados e mentoria especializada."
     },
@@ -217,8 +223,8 @@
     }
   },
   "registration": {
-    "title": "Pronto para se juntar ao B4OS 2025?",
-    "description": "O programa <strong>B4OS 2025</strong> está aberto para desenvolvedores seniores da América Latina, Caribe e Espanha. O processo de <em>inscrição é completamente gratuito</em>.",
+    "title": "Pronto para participar do B4OS 2026?",
+    "description": "O programa <strong>B4OS 2026</strong> está aberto para programadores seniores da América Latina, Caribe e Espanha. O processo de <em>registo é completamente gratuito</em>.",
     "requirements": {
       "title": "Requisitos para se candidatar:",
       "experience": "<strong>Experiência em desenvolvimento</strong> de software (2+ anos)",
@@ -288,7 +294,7 @@
       "github": {
         "label": "GitHub *",
         "placeholder": "https://github.com/tu-usuario",
-        "help": "Compartilhe seu perfil do GitHub"
+        "help": "Partilhe o seu perfil do GitHub"
       },
       "linkedin": {
         "label": "LinkedIn",

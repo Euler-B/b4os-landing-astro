@@ -1,0 +1,75 @@
+{
+  "2024": {
+    "stats": {
+      "registered": 120,
+      "selected": 21,
+      "fulltime": 7,
+      "parttime": 8
+    },
+    "members": [
+      {
+        "name": "Fernando Ledesma",
+        "image": "/fledesma.webp",
+        "projects": ["SimLN", "LNDK"],
+        "grant": "grantee_b4os",
+        "github": "https://github.com/f3r10",
+        "linkedin": "https://www.linkedin.com/in/fernando-ledesma-ec"
+      },
+      {
+        "name": "Pol Espinasa",
+        "image": "/sliv3r.jpg",
+        "projects": ["Bitcoin Core"],
+        "grant": "grantee_b4os_localhost",
+        "grantLink": "https://lclhost.org/",
+        "github": "https://github.com/polespinasa",
+        "twitter": "https://x.com/sliv3r__"
+      },
+      {
+        "name": "Maurice Poirrier",
+        "image": "/maurice.jpg",
+        "projects": ["LNDK"],
+        "role": "main_maintainer",
+        "grant": "grantee_spiral",
+        "grantLink": "https://spiral.xyz",
+        "github": "http://github.com/a-mpch",
+        "linkedin": "https://www.linkedin.com/in/maurice-poirrier/",
+        "twitter": "https://x.com/mauricepoirrier"
+      },
+      {
+        "name": "Nymius",
+        "image": "/nymius.jpeg",
+        "projects": ["BDK", "Silent Payments - BIP 352"],
+        "grant": "grantee_bdk",
+        "grantLink": "https://bitcoindevkit.org/",
+        "github": "https://github.com/nymius"
+      },
+      {
+        "name": "Josefina Alliende",
+        "image": "/josefinalliende.webp",
+        "projects": ["White Noise"],
+        "grant": "grantee_whitenoise_b4os",
+        "grantLink": "https://github.com/parres-hq/whitenoise",
+        "github": "https://github.com/josefinalliende",
+        "linkedin": "https://www.linkedin.com/in/mar%C3%ADa-josefina-alliende/"
+      },
+      {
+        "name": "Javier Montoya",
+        "image": "/jmontoya.jpg",
+        "projects": ["White Noise"],
+        "grant": "grantee_whitenoise_b4os",
+        "grantLink": "https://github.com/parres-hq/whitenoise",
+        "github": "https://github.com/jgmontoya",
+        "linkedin": "https://www.linkedin.com/in/jgmontoya/"
+      }
+    ]
+  },
+  "2025": {
+    "stats": {
+      "registered": 0,
+      "selected": 0,
+      "fulltime": 0,
+      "parttime": 0
+    },
+    "members": []
+  }
+}

@@ -103,6 +103,8 @@
   },
   "alumni": {
     "title": "B4OS 2024 VA SER UN ÈXIT!",
+    "cohort": "Cohort",
+    "coming_soon": "Properament",
     "stats_aria": "Estadístiques del programa",
     "stats": {
       "registered": "Devs seleccionats",
@@ -128,6 +130,10 @@
     "duration_label": "Durada",
     "start_label": "Inici",
     "location_label": "Ubicació",
+    "status_confirmed": "Confirmada",
+    "status_pending": "Per confirmar",
+    "status_completed": "Completada",
+    "status_cancelled": "Cancel·lada",
     "southamerica": {
       "title": "Sud-amèrica",
       "duration": "2 setmanes",
@@ -152,14 +158,14 @@
     "northamerica1": {
       "title": "Amèrica del Nord I",
       "duration": "8 setmanes",
-      "start": "15 Oct. - Des. 2025",
+      "start": "Data per definir",
       "location": "Guadalajara, Mèxic",
       "description": "Pràctiques per a desenvolupadors a la Bitcoin House Guadalajara."
     },
     "northamerica2": {
       "title": "Amèrica del Nord II",
       "duration": "6 setmanes",
-      "start": "15 Oct. - Nov. 2026",
+      "start": "Data per definir",
       "location": "Mèxic DF",
       "description": "Exclusiva per a <strong>beneficiaris del programa</strong>, enfocada en projectes avançats i mentoria especialitzada."
     },
@@ -217,8 +223,8 @@
     }
   },
   "registration": {
-    "title": "Preparat per unir-te a B4OS 2025?",
-    "description": "El programa <strong>B4OS 2025</strong> està obert per a desenvolupadors sènior d'Amèrica Llatina, el Carib i Espanya. El procés de <em>registre és completament gratuït</em>.",
+    "title": "Preparat per unir-te a B4OS 2026?",
+    "description": "El programa <strong>B4OS 2026</strong> està obert per a desenvolupadors sènior d'Amèrica Llatina, el Carib i Espanya. El procés de <em>registre és completament gratuït</em>.",
     "requirements": {
       "title": "Requisits per aplicar:",
       "experience": "<strong>Experiència en desenvolupament</strong> de programari (2+ anys)",
