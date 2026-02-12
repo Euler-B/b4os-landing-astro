@@ -59,6 +59,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 body {
@@ -233,7 +234,8 @@ body {
 /* objectives Section */
 .objectives {
     position: relative;
-    min-height: 100vh;
+    min-height: auto;
+    padding: var(--spacing-4xl) 0;
     display: flex;
     align-items: center;
     background:
@@ -284,7 +286,6 @@ body {
     z-index: 2;
     text-align: center;
     margin: 0 auto;
-    margin-top: var(--spacing-4xl);
 }
 
 .objectives-title {
@@ -298,7 +299,6 @@ body {
     display: block;
     font-size: var(--font-size-5xl);
     font-weight: 700;
-    /*background: linear-gradient(135deg, var(--primary-color), var(--accent-color));*/
     background-color: var(--primary-color);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -514,7 +514,7 @@ section {
     font-size: var(--font-size-4xl);
     font-weight: 700;
     margin-bottom: var(--spacing-md);
-    color: var(--text-dark);
+    color: var(--text-white);
     margin-top: 100px;
 }
 
@@ -532,7 +532,28 @@ section {
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
-    padding: 2rem;
+    padding: var(--spacing-4xl) 0;
+}
+
+.program-overview .section-title {
+    margin-top: 0;
+    color: var(--text-dark);
+}
+
+.program-overview .section-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.program-overview .program-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-xl);
+}
+
+.program-overview .program-card {
+    flex: 1 1 300px;
+    max-width: 380px;
 }
 
 .program-grid {
@@ -630,6 +651,14 @@ section {
 
 .timeline .section-title {
     color: var(--text-white);
+}
+
+.timeline-section .section-title {
+    margin-top: 0;
+}
+
+.timeline-section .section-header {
+    margin-bottom: var(--spacing-xl);
 }
 
 .timeline .section-subtitle {
@@ -974,6 +1003,16 @@ legend {
     background: var(--bg-light);
     position: relative;
     overflow: hidden;
+    padding: var(--spacing-4xl) 0;
+}
+
+.partnerships .section-title {
+    margin-top: 0;
+    color: var(--text-dark);
+}
+
+.partnerships .section-header {
+    margin-bottom: var(--spacing-xl);
 }
 
 .partnerships::before {
@@ -1757,6 +1796,19 @@ a:hover .sponsor-highlight {
     z-index: 2;
 }
 
+.alumni .section-title {
+    color: var(--text-dark);
+    margin-top: 0;
+}
+
+.alumni .section-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.alumni .section-subtitle {
+    margin-bottom: var(--spacing-2xl);
+}
+
 .alumni-card a {
     text-decoration: none;
 }
@@ -1803,7 +1855,8 @@ a:hover .sponsor-highlight {
     flex-wrap: wrap;
     gap: var(--spacing-2xl);
     margin-bottom: var(--spacing-3xl);
-    justify-content: center; /* Centra los elementos horizontalmente */
+    justify-content: center;
+    align-items: stretch;
 }
 /* Alumni Card */
 .alumni-card {
@@ -1818,7 +1871,7 @@ a:hover .sponsor-highlight {
     border: 1px solid var(--border-color);
     flex: 0 0 auto;
     width: 280px;
-    height: 480px;
+    height: auto;
 }
 
 .alumni-card::before {
@@ -1954,6 +2007,15 @@ a:hover .sponsor-highlight {
 
 .alumni-icons a:hover svg {
     color: white;
+}
+
+.powered-by .section-title {
+    margin-top: 0;
+    color: var(--text-dark);
+}
+
+.powered-by .section-header {
+    margin-bottom: var(--spacing-xl);
 }
 
 .powered-by-logo {
