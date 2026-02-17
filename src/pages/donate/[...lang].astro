@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import '../../styles/donors.css';
 import { Icon } from 'astro-icon/components';
 import { getTranslation, getLocalizedPageUrl } from '../../i18n/utils.js';
+import LanguageSelector from '../../components/languageSelector.astro';
 
 export async function getStaticPaths() {
   return [
@@ -23,6 +24,12 @@ const pageTitle = t.donors?.title ? `${t.donors.title} - B4OS` : 'Donate - B4OS'
 const pageDescription = t.donors?.subtitle || 'Apoya los fondos de B4OS';
 
 const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
+
+// Feature flag for Chaincode-BOSS CTA (same as landing page)
+const chaincodeRegistrationFlag = import.meta.env.PUBLIC_CHAINCODE_REGISTRATION_OPEN;
+const isChaincodeFormOpen = chaincodeRegistrationFlag !== undefined
+    ? chaincodeRegistrationFlag === 'true'
+    : import.meta.env.PUBLIC_REGISTRATION_OPEN === 'true';
 ---
 
 <Layout
@@ -34,13 +41,36 @@ const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
   <header class="header" role="banner">
     <nav class="nav" role="navigation" aria-label={t.nav?.menu_aria || 'Navegación principal'}>
       <div class="nav-container">
-        <div class="nav-brand nav-brand-dual">
+        <div class="nav-brand">
           <a href={backHomeUrl} class="nav-link" aria-label={t.nav?.brand_link_aria || 'Ir al inicio'}>
-            <img src="/b4os.png" alt="B4OS" class="logo logo-b4os" width="64" height="64">
+            <img src="/b4os.png" alt={t.nav?.logo_alt || 'B4OS'} class="logo" width="64" height="64">
           </a>
         </div>
-        <div class="nav-menu">
-          <a href={backHomeUrl} class="nav-link">← {t.nav?.back_to_home || (locale === 'es' ? 'Inicio' : 'Home')}</a>
+        <div class="nav-menu" id="navMenu">
+          <a href={`${backHomeUrl}#alumni`} class="nav-link">{t.nav.alumni}</a>
+          <a href={`${backHomeUrl}#residencias`} class="nav-link">{t.nav.residences}</a>
+          <a href={`${backHomeUrl}#cronograma`} class="nav-link">{t.nav.schedule}</a>
+          <a href={`${backHomeUrl}#registro`} class="nav-link">{t.nav.register}</a>
+          <a href={`${backHomeUrl}#beneficios`} class="nav-link">{t.nav.benefits}</a>
+          <a href={getLocalizedPageUrl('donate', locale)} class="nav-link active">{t.nav.donors}</a>
+          {isChaincodeFormOpen && (
+            <a href="/chaincode-boss" class="nav-cta-mobile btn btn-primary chaincode-nav-btn">
+              {t.nav.chaincode_cta}
+            </a>
+          )}
+        </div>
+        <div class="nav-utilities">
+          {isChaincodeFormOpen && (
+            <a href="/chaincode-boss" class="nav-cta btn btn-primary chaincode-nav-btn">
+              {t.nav.chaincode_cta}
+            </a>
+          )}
+          <LanguageSelector locale={locale} />
+          <button class="nav-toggle" id="navToggle" aria-label={t.nav?.toggle_aria || 'Abrir menú'} aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </div>
     </nav>
