@@ -1,54 +1,81 @@
 ---
 // FAQ Component
-import '../styles/faq.css';
-import { getTranslation } from '../i18n/utils.js';
+import "../styles/faq.css";
+import { getTranslation } from "../i18n/utils.js";
+
+// Type definition for FAQ translations
+interface FAQData {
+  title: string;
+  subtitle: string;
+  questions: Record<string, { question: string; answer: string }>;
+}
+
+interface TranslationObject {
+  faq: FAQData;
+}
 
 // Obtener props del componente
-const { locale = 'es' } = Astro.props;
-const t = getTranslation(locale);
+const { locale = "es" } = Astro.props;
+const t = getTranslation(locale) as TranslationObject;
 ---
 
 <section class="faq-section">
   <div class="container">
-      <header class="faq-section-header">
-          <h2 class="faq-section-title">{t.faq.title}</h2>
-      </header>
-      
-      <div class="faq-container">
-          {Object.entries(t.faq.questions).map(([id, faq]) => {
-            const faqItem = faq as { question: string; answer: string };
-            return (
-              <div class="faq-item">
-                  <button class="faq-question" aria-expanded="false" aria-controls={`faq-answer-${id}`}>
-                      <span>{faqItem.question}</span>
-                      <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <polyline points="6,9 12,15 18,9"></polyline>
-                      </svg>
-                  </button>
-                  <div class="faq-answer" id={`faq-answer-${id}`}>
-                      <p set:html={faqItem.answer}></p>
-                  </div>
+    <header class="faq-section-header">
+      <h2 class="faq-section-title">{t.faq.title}</h2>
+    </header>
+
+    <div class="faq-container">
+      {
+        Object.entries(t.faq.questions).map(([id, faq]) => {
+          return (
+            <div class="faq-item">
+              <button
+                class="faq-question"
+                aria-expanded="false"
+                aria-controls={`faq-answer-${id}`}
+              >
+                <span>{faq.question}</span>
+                <svg
+                  class="faq-icon"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="6,9 12,15 18,9" />
+                </svg>
+              </button>
+              <div class="faq-answer" id={`faq-answer-${id}`}>
+                <p set:html={faq.answer} />
               </div>
-            );
-          })}
-      </div>
+            </div>
+          );
+        })
+      }
+    </div>
   </div>
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-      const faqQuestions = document.querySelectorAll('.faq-question');
-      
-      faqQuestions.forEach(question => {
-          question.addEventListener('click', function() {
-              const isExpanded = this.getAttribute('aria-expanded') === 'true';
-              
-              faqQuestions.forEach(q => {
-                  q.setAttribute('aria-expanded', 'false');
-              });
-              
-              this.setAttribute('aria-expanded', !isExpanded);
-          });
+  document.addEventListener("DOMContentLoaded", function () {
+    const faqQuestions =
+      document.querySelectorAll<HTMLButtonElement>(".faq-question");
+
+    faqQuestions.forEach((question) => {
+      question.addEventListener("click", function (this: HTMLButtonElement) {
+        const isExpanded = this.getAttribute("aria-expanded") === "true";
+
+        faqQuestions.forEach((q) => {
+          q.setAttribute("aria-expanded", "false");
+        });
+
+        this.setAttribute("aria-expanded", String(!isExpanded));
       });
+    });
   });
 </script>

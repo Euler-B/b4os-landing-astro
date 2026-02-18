@@ -163,8 +163,7 @@
     }
     
     .nav-menu .nav-link:hover,
-    .nav-menu .nav-link:focus {
-        /*background: linear-gradient(135deg, rgba(247, 147, 26, 0.1), rgba(212, 120, 26, 0.1));*/
+    .nav-menu .nav-link:focus { 
         padding-left: calc(var(--spacing-lg) + 10px);
         color: var(--primary-color);
     }
