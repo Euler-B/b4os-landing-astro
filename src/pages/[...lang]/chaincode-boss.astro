@@ -749,13 +749,27 @@ const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
 <script>
     // Sobrescribir el método setupHowHeardCheckboxes del FormHandler
     // porque en la página de Chaincode usamos un campo oculto en lugar del selector
+    interface FormHandlerInstance {
+        setupHowHeardCheckboxes(): void;
+        validateForm(): { errors: string[]; isValid: boolean };
+    }
+
+    interface FormHandlerConstructor {
+        prototype: FormHandlerInstance;
+    }
+
+    declare global {
+        interface Window {
+            FormHandler: FormHandlerConstructor;
+        }
+    }
+
     if (typeof window.FormHandler !== 'undefined') {
         const originalSetupHowHeardCheckboxes = window.FormHandler.prototype.setupHowHeardCheckboxes;
 
         window.FormHandler.prototype.setupHowHeardCheckboxes = function() {
             // En la página de Chaincode, el campo how-heard es oculto con valor fijo
             // No necesitamos configurar listeners
-            // console.log('✓ Campo how-heard configurado como oculto con valor "chaincode"');
         };
 
         // También sobrescribir la validación del campo how-heard
@@ -766,7 +780,7 @@ const backHomeUrl = locale === 'es' ? '/' : `/${locale}`;
 
             // Filtrar errores relacionados con how-heard ya que es un campo oculto
             if (result.errors) {
-                result.errors = result.errors.filter(error =>
+                result.errors = result.errors.filter((error: string) =>
                     !error.includes('cómo te enteraste de B4OS') &&
                     !error.includes('Otros')
                 );
